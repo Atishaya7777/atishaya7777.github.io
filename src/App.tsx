@@ -1,4 +1,4 @@
-import "./App.css";
+import "assets/scss/app.scss";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "@/theme";
 import { ErrorBoundary } from "components";
