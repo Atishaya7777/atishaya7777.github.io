@@ -1,32 +1,32 @@
 const Button = {
   baseStyle: {
-    fontSize: 'sm',
-    lineHeight: 'base',
-    fontWeight: 'normal',
+    fontSize: "sm",
+    lineHeight: "base",
+    fontWeight: "normal",
+    w: "100%",
   },
   variants: {
-    'primary-ghost': {
-      colorScheme: 'primary',
-      bg: 'primary.50',
-      color: 'primary.500',
-      '&:hover': {
-        bg: 'primary.500',
-        color: 'white',
+    "primary-ghost": {
+      bg: "primary.400",
+      color: "primary.50",
+      borderRadius: "base",
+      _hover: {
+        opacity: 0.8,
       },
     },
   },
   sizes: {
     md: {
-      fontSize: 'sm',
+      fontSize: "sm",
     },
     lg: {
-      fontSize: 'sm',
-      fontWeight: 'semibold',
+      fontSize: "sm",
+      fontWeight: "semibold",
     },
   },
   defaultProps: {
-    colorScheme: 'primary',
-    fontSize: 'sm',
+    colorScheme: "primary",
+    fontSize: "sm",
   },
 };
 

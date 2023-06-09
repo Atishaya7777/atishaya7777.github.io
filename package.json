@@ -16,13 +16,16 @@
     "@tanstack/react-query": "^4.29.12",
     "@types/axios": "^0.14.0",
     "axios": "^1.4.0",
+    "formik": "^2.4.1",
     "framer-motion": "^10.12.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.3",
+    "react-router-dom": "^6.12.1",
     "vite-plugin-react-svg": "^0.2.0",
     "vite-plugin-svgr": "^3.2.0",
-    "vite-tsconfig-paths": "^4.2.0"
+    "vite-tsconfig-paths": "^4.2.0",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

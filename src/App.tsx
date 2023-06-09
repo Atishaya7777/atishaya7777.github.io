@@ -2,9 +2,10 @@ import "./App.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "@/theme";
 import { ErrorBoundary } from "components";
-import { QueryClient } from "react-query";
+import { QueryClient, QueryClientProvider } from "react-query";
 import toaster from "@/utils/toaster";
 import { ReactQueryDevtools } from "react-query/devtools";
+import AppRouter from "@/containers/routes";
 
 const App = () => {
   const queryClient = new QueryClient({
