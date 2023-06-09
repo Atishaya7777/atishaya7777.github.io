@@ -1,7 +1,5 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, Text } from "@chakra-ui/react";
 import React, { ErrorInfo } from "react";
-
-import Button from "components/Button";
 
 interface IState {
   /** Flag to indicate if error captured or not */

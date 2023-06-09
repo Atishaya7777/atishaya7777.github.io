@@ -1,22 +1,22 @@
 // theme.js
-import { extendTheme, ThemeOverride } from '@chakra-ui/react';
+import { extendTheme, ThemeOverride } from "@chakra-ui/react";
 
-import Button from './component/Buttons';
-import Drawer from './component/Drawer';
-import Heading from './component/Heading';
-import Input from './component/Input';
-import Skeleton from './component/Skeleton';
-import Table from './component/Table';
-import Tooltip from './component/Tooltip';
-import breakpoints from './foundations/breakpoints';
-import colors from './foundations/colors';
-import fonts from './foundations/fonts';
-import textStyles from './foundations/textStyles';
-import styles from './styles';
+import Button from "./component/Buttons";
+import Drawer from "./component/Drawer";
+import Heading from "./component/Heading";
+import Input from "./component/Input";
+import Skeleton from "./component/Skeleton";
+import Table from "./component/Table";
+import Tooltip from "./component/Tooltip";
+import breakpoints from "./foundations/breakpoints";
+import colors from "./foundations/colors";
+import fonts from "./foundations/fonts";
+import textStyles from "./foundations/textStyles";
+import styles from "./styles";
 
 const overrides: ThemeOverride = {
   config: {
-    cssVarPrefix: 'timeero',
+    cssVarPrefix: "timeero",
   },
   fonts,
   textStyles,

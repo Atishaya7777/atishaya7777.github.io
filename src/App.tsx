@@ -1,9 +1,9 @@
 import "./App.css";
 import { ChakraProvider } from "@chakra-ui/react";
-import theme from "theme";
-import { ErrorBoundary } from "./components";
+import theme from "@/theme";
+import { ErrorBoundary } from "components";
 import { QueryClient } from "react-query";
-import toaster from "utils/toaster";
+import toaster from "@/utils/toaster";
 import { ReactQueryDevtools } from "react-query/devtools";
 
 const App = () => {
