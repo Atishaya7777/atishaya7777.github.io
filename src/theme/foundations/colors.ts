@@ -8,6 +8,9 @@ const colors = {
     500: "#2C2C2B",
     1000: "#000000",
   },
+  error: {
+    500: "#C50707",
+  },
 };
 
 export default colors;

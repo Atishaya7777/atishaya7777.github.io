@@ -3,10 +3,10 @@ import {
   Input,
   FormControl,
   FormLabel,
-  FormErrorMessage,
   InputProps,
   FormControlProps,
   InputGroup,
+  Text,
 } from "@chakra-ui/react";
 import { Field, FieldProps, ErrorMessage } from "formik";
 
@@ -66,22 +66,21 @@ const FormikInput: React.FC<IFormikInput> = ({
                   }
                   field.onChange(event);
                 }}
+                borderRadius='4px'
                 fontSize='md'
-                variant='filled'
                 type={type}
                 border='1px'
                 borderColor='inherit'
               />
               {inputElement && inputElement}
             </InputGroup>
-            <ErrorMessage
-              name={name}
-              render={(error: any) => (
-                <FormErrorMessage fontSize='sm' mt='1'>
-                  {error?.value}
-                </FormErrorMessage>
+            <ErrorMessage name={name}>
+              {(msg) => (
+                <Text color='error.500' fontSize='sm' mt={1}>
+                  {msg}
+                </Text>
               )}
-            />
+            </ErrorMessage>
           </FormControl>
         );
       }}
