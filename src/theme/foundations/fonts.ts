@@ -1,7 +1,7 @@
 const fonts = {
-  body: '"Muli", sans-serif',
-  heading: '"Muli", sans-serif',
-  mono: '"Muli", sans-serif',
+  body: '"Poppins", sans-serif',
+  heading: '"Poppins", sans-serif',
+  mono: '"Poppins", sans-serif',
 };
 
 export default fonts;

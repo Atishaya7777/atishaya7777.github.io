@@ -14,9 +14,9 @@ const AllRoutes = () => {
     {
       path: routePaths.dashboard,
       element: (
-        <Layout>
+        <>
           <Outlet />
-        </Layout>
+        </>
       ),
       children: [
         {

@@ -1,5 +1,3 @@
-import "assets/scss/app.scss";
-
 import { Suspense } from "react";
 
 import { Loader } from "components";
