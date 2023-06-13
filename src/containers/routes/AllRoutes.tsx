@@ -1,4 +1,4 @@
-import { ProtectedRoute, PublicRoute } from "components";
+import { Layout, ProtectedRoute, PublicRoute } from "components";
 import { Outlet, useRoutes } from "react-router-dom";
 import { routePaths } from "@/global/routePaths";
 import { Dashboard, Login } from "containers/pages";
@@ -14,9 +14,9 @@ const AllRoutes = () => {
     {
       path: routePaths.dashboard,
       element: (
-        <>
+        <Layout>
           <Outlet />
-        </>
+        </Layout>
       ),
       children: [
         {

@@ -1,9 +1,14 @@
-import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { QueryClient } from 'react-query';
+import axios, {
+  AxiosError,
+  AxiosInstance,
+  AxiosRequestConfig,
+  AxiosResponse,
+} from "axios";
+import { QueryClient } from "react-query";
 
-import { getHeader, THeader } from 'utils/header';
-import * as localStorage from 'utils/storage';
-import tokenService from 'utils/token';
+import { getHeader, THeader } from "utils/header";
+import * as localStorage from "utils/storage";
+import tokenService from "utils/token";
 
 const queryClient = new QueryClient();
 
@@ -16,7 +21,7 @@ const logout = () => {
 };
 
 // Default API will be your root
-const API_ROOT = import.meta.env.VITE_API_ENDPOINT || '';
+const API_ROOT = import.meta.env.VITE_API_ENDPOINT || "";
 const TIMEOUT = 180000;
 
 /**
@@ -28,7 +33,11 @@ const TIMEOUT = 180000;
  * @returns
  */
 
-const http = (headerType: THeader = 'json', baseURL: string = API_ROOT, timeout: number = TIMEOUT) => {
+const http = (
+  headerType: THeader = "json",
+  baseURL: string = API_ROOT,
+  timeout: number = TIMEOUT
+) => {
   const headers = getHeader(headerType);
 
   const client: AxiosInstance = axios.create({
@@ -64,26 +73,30 @@ const http = (headerType: THeader = 'json', baseURL: string = API_ROOT, timeout:
   }
 
   function get(path: string, config?: AxiosRequestConfig) {
-    return client.get(path, config).then(response => response.data);
+    return client.get(path, config).then((response) => response.data);
   }
 
   function post(path: string, payload: any, config?: AxiosRequestConfig) {
-    return client.post(path, payload, config).then(response => response.data);
+    return client.post(path, payload, config).then((response) => response.data);
   }
 
   function put(path: string, payload: any, config?: AxiosRequestConfig) {
-    return client.put(path, payload, config).then(response => response.data);
+    return client.put(path, payload, config).then((response) => response.data);
   }
 
   function patch(path: string, payload: any, config?: AxiosRequestConfig) {
-    return client.patch(path, payload, config).then(response => response.data);
+    return client
+      .patch(path, payload, config)
+      .then((response) => response.data);
   }
 
   function _delete(path: string, data?: any, config?: AxiosRequestConfig) {
     if (data) {
-      return client.delete(path, { data: data }).then(response => response.data);
+      return client
+        .delete(path, { data: data })
+        .then((response) => response.data);
     }
-    return client.delete(path, config).then(response => response.data);
+    return client.delete(path, config).then((response) => response.data);
   }
 
   return {

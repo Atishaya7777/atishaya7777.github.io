@@ -1,3 +1,4 @@
+import { useTest } from "@/hooks/test/useTest";
 import React from "react";
 
 interface IDashboard {
@@ -5,6 +6,8 @@ interface IDashboard {
 }
 
 const Dashboard: React.FC<IDashboard> = () => {
+  const { status, data } = useTest();
+  console.log(data);
   return <div>Dashboard</div>;
 };
 

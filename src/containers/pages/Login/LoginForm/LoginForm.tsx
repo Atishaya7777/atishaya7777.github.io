@@ -14,11 +14,21 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { IconArrowRight, IconEye, IconEyeSlash } from "@/assets/icons";
+import { ILogin, useLogin } from "@/hooks/auth/useLogin";
 
 const LoginForm = () => {
+  const { status: loginStatus, mutateAsync: loginFn } = useLogin();
+
   const handleFormSubmit = (values: ILoginValues) => {
-    console.log(values);
+    const postData: ILogin = {
+      Username: values.name,
+      Password: values.password,
+    };
+
+    loginFn(postData);
   };
+
+  console.log(loginStatus);
 
   const { isOpen: showPassword, onToggle: togglePassword } = useDisclosure();
 
@@ -73,6 +83,7 @@ const LoginForm = () => {
             fontSize='md'
             mt={10}
             type='submit'
+            isLoading={loginStatus === "loading"}
           >
             Log in
           </Button>
