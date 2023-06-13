@@ -6,7 +6,7 @@ const Button = {
     w: "100%",
   },
   variants: {
-    "primary-ghost": {
+    "primary-brown": {
       bg: "primary.400",
       color: "primary.50",
       borderRadius: "base",
