@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Atishaya7777.github.io/portfolio",
   "name": "portfolio",
   "version": "1.0.0",
   "main": "index.js",
@@ -28,7 +29,9 @@
     "serve": "vite preview",
     "test": "jest",
     "test:watch": "jest --watch",
-    "prepare": "husky install && chmod ug+x .husky/*"
+    "prepare": "husky install && chmod ug+x .husky/*",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@babel/core": "^7.22.9",
@@ -37,6 +40,7 @@
     "@babel/preset-typescript": "^7.22.5",
     "@testing-library/jest-dom": "^5.17.0",
     "babel-preset-jest": "^29.5.0",
+    "gh-pages": "^5.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
   },
