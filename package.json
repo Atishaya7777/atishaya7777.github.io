@@ -30,10 +30,11 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "prepare": "husky install && chmod ug+x .husky/*",
-    "predeploy": "yarn build",
+    "predeploy": "npm build",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "@Atishaya7777/custom-cursor": "npm:@atishaya7777/custom-cursor@^0.0.2",
     "@babel/core": "^7.22.9",
     "@babel/preset-env": "^7.22.9",
     "@babel/preset-react": "^7.22.5",
@@ -46,7 +47,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "CI=true yarn test"
+      "pre-commit": "CI=true npm test"
     }
   }
 }
