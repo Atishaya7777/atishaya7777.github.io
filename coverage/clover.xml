@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1692939512049" clover="3.2.0">
-  <project timestamp="1692939512049" name="All files">
-    <metrics statements="119" coveredstatements="112" conditionals="0" coveredconditionals="0" methods="19" coveredmethods="12" elements="138" coveredelements="124" complexity="0" loc="119" ncloc="119" packages="20" files="36" classes="36"/>
+<coverage generated="1693084335892" clover="3.2.0">
+  <project timestamp="1693084335892" name="All files">
+    <metrics statements="88" coveredstatements="85" conditionals="0" coveredconditionals="0" methods="15" coveredmethods="12" elements="103" coveredelements="97" complexity="0" loc="88" ncloc="88" packages="16" files="28" classes="28"/>
     <package name="src">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="App.tsx" path="C:\Work\SoAni Tech\stn\src\App.tsx">
+      <file name="App.tsx" path="C:\Work\portfolio\src\App.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -13,7 +13,7 @@
     </package>
     <package name="src.components">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\components\index.ts">
+      <file name="index.ts" path="C:\Work\portfolio\src\components\index.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -22,7 +22,7 @@
     </package>
     <package name="src.components.base">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\components\base\index.ts">
+      <file name="index.ts" path="C:\Work\portfolio\src\components\base\index.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -30,14 +30,14 @@
     </package>
     <package name="src.components.base.Layout">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="Layout.tsx" path="C:\Work\SoAni Tech\stn\src\components\base\Layout\Layout.tsx">
+      <file name="Layout.tsx" path="C:\Work\portfolio\src\components\base\Layout\Layout.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
       </file>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\components\base\Layout\index.ts">
+      <file name="index.ts" path="C:\Work\portfolio\src\components\base\Layout\index.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -45,7 +45,7 @@
     </package>
     <package name="src.components.ui">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\components\ui\index.ts">
+      <file name="index.ts" path="C:\Work\portfolio\src\components\ui\index.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -53,7 +53,7 @@
     </package>
     <package name="src.components.ui.NavBar">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="NavBar.tsx" path="C:\Work\SoAni Tech\stn\src\components\ui\NavBar\NavBar.tsx">
+      <file name="NavBar.tsx" path="C:\Work\portfolio\src\components\ui\NavBar\NavBar.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -61,7 +61,7 @@
         <line num="5" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
       </file>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\components\ui\NavBar\index.ts">
+      <file name="index.ts" path="C:\Work\portfolio\src\components\ui\NavBar\index.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -69,16 +69,16 @@
     </package>
     <package name="src.components.ui.NavBar.DesktopNav">
       <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="DesktopNav.tsx" path="C:\Work\SoAni Tech\stn\src\components\ui\NavBar\DesktopNav\DesktopNav.tsx">
+      <file name="DesktopNav.tsx" path="C:\Work\portfolio\src\components\ui\NavBar\DesktopNav\DesktopNav.tsx">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="8" count="8" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
       </file>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\components\ui\NavBar\DesktopNav\index.ts">
+      <file name="index.ts" path="C:\Work\portfolio\src\components\ui\NavBar\DesktopNav\index.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -86,16 +86,16 @@
     </package>
     <package name="src.components.ui.NavBar.MobileNav">
       <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="MobileNav.tsx" path="C:\Work\SoAni Tech\stn\src\components\ui\NavBar\MobileNav\MobileNav.tsx">
+      <file name="MobileNav.tsx" path="C:\Work\portfolio\src\components\ui\NavBar\MobileNav\MobileNav.tsx">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="8" count="8" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
       </file>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\components\ui\NavBar\MobileNav\index.ts">
+      <file name="index.ts" path="C:\Work\portfolio\src\components\ui\NavBar\MobileNav\index.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -103,91 +103,52 @@
     </package>
     <package name="src.components.ui.NavBar.shared">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\components\ui\NavBar\shared\index.ts">
+      <file name="index.ts" path="C:\Work\portfolio\src\components\ui\NavBar\shared\index.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
       </file>
-      <file name="navContents.ts" path="C:\Work\SoAni Tech\stn\src\components\ui\NavBar\shared\navContents.ts">
+      <file name="navContents.ts" path="C:\Work\portfolio\src\components\ui\NavBar\shared\navContents.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
-        <line num="57" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.containers.pages">
-      <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\containers\pages\index.ts">
-        <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="C:\Work\portfolio\src\containers\pages\index.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="src.containers.pages.AboutUs">
+    <package name="src.containers.pages.About">
       <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="AboutUs.tsx" path="C:\Work\SoAni Tech\stn\src\containers\pages\AboutUs\AboutUs.tsx">
+      <file name="About.tsx" path="C:\Work\portfolio\src\containers\pages\About\About.tsx">
         <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
       </file>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\containers\pages\AboutUs\index.ts">
+      <file name="index.ts" path="C:\Work\portfolio\src\containers\pages\About\index.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="src.containers.pages.Blog">
+    <package name="src.containers.pages.Contact">
       <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="Blog.tsx" path="C:\Work\SoAni Tech\stn\src\containers\pages\Blog\Blog.tsx">
+      <file name="Contact.tsx" path="C:\Work\portfolio\src\containers\pages\Contact\Contact.tsx">
         <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
       </file>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\containers\pages\Blog\index.ts">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="src.containers.pages.Careers">
-      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="Careers.tsx" path="C:\Work\SoAni Tech\stn\src\containers\pages\Careers\Careers.tsx">
-        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-      </file>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\containers\pages\Careers\index.ts">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="src.containers.pages.ContactUs">
-      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="ContactUs.tsx" path="C:\Work\SoAni Tech\stn\src\containers\pages\ContactUs\ContactUs.tsx">
-        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-      </file>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\containers\pages\ContactUs\index.ts">
+      <file name="index.ts" path="C:\Work\portfolio\src\containers\pages\Contact\index.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -195,55 +156,27 @@
     </package>
     <package name="src.containers.pages.Home">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="Home.tsx" path="C:\Work\SoAni Tech\stn\src\containers\pages\Home\Home.tsx">
+      <file name="Home.tsx" path="C:\Work\portfolio\src\containers\pages\Home\Home.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
       </file>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\containers\pages\Home\index.ts">
+      <file name="index.ts" path="C:\Work\portfolio\src\containers\pages\Home\index.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="src.containers.pages.OurTeam">
+    <package name="src.containers.pages.Work">
       <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="OurTeam.tsx" path="C:\Work\SoAni Tech\stn\src\containers\pages\OurTeam\OurTeam.tsx">
+      <file name="Work.tsx" path="C:\Work\portfolio\src\containers\pages\Work\Work.tsx">
         <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
       </file>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\containers\pages\OurTeam\index.ts">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="src.containers.pages.Services">
-      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="Services.tsx" path="C:\Work\SoAni Tech\stn\src\containers\pages\Services\Services.tsx">
-        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-      </file>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\containers\pages\Services\index.ts">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="src.containers.pages.WhySoAniTech">
-      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="WhySoAniTech.tsx" path="C:\Work\SoAni Tech\stn\src\containers\pages\WhySoAniTech\WhySoAniTech.tsx">
-        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-      </file>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\containers\pages\WhySoAniTech\index.ts">
+      <file name="index.ts" path="C:\Work\portfolio\src\containers\pages\Work\index.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -251,7 +184,7 @@
     </package>
     <package name="src.containers.routes">
       <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="AppRouter.tsx" path="C:\Work\SoAni Tech\stn\src\containers\routes\AppRouter.tsx">
+      <file name="AppRouter.tsx" path="C:\Work\portfolio\src\containers\routes\AppRouter.tsx">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -260,17 +193,17 @@
         <line num="6" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
       </file>
-      <file name="Routes.tsx" path="C:\Work\SoAni Tech\stn\src\containers\routes\Routes.tsx">
+      <file name="Routes.tsx" path="C:\Work\portfolio\src\containers\routes\Routes.tsx">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="68" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
       </file>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\containers\routes\index.ts">
+      <file name="index.ts" path="C:\Work\portfolio\src\containers\routes\index.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -278,15 +211,15 @@
     </package>
     <package name="src.global">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="index.ts" path="C:\Work\SoAni Tech\stn\src\global\index.ts">
+      <file name="index.ts" path="C:\Work\portfolio\src\global\index.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
       </file>
-      <file name="routePaths.ts" path="C:\Work\SoAni Tech\stn\src\global\routePaths.ts">
+      <file name="routePaths.ts" path="C:\Work\portfolio\src\global\routePaths.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
       </file>
     </package>
   </project>
