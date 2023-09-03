@@ -1,9 +1,12 @@
 import { AppRouter } from 'containers/routes';
+import { ErrorBoundary } from 'components';
 
 export default function App() {
 	return (
-		<main data-testid="app">
-			<AppRouter />
-		</main>
+		<ErrorBoundary>
+			<main data-testid="app">
+				<AppRouter />
+			</main>
+		</ErrorBoundary>
 	);
 }
