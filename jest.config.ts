@@ -179,7 +179,9 @@ const config: Config = {
 	// A map from regular expressions to paths to transformers
 	transform: {
 		'node_modules/variables/.+\\.(j|t)sx?$': 'ts-jest',
-		'^.+\\.svg$': '<rootDir>/svgTransform.cjs',
+		// '^.+\\.svg$': '<rootDir>/svgTransform.cjs',
+		// '^.+\\.svg$': 'svg-jest',
+		'\\.svg$': 'svg-jest',
 	},
 
 	// An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
