@@ -21,3 +21,7 @@
 	opacity: 1;
 	transform: scale(1);
 }
+
+.fluid-hover:active:before {
+	background-color: theme('colors.primary.20');
+}
