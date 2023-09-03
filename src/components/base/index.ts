@@ -1,4 +1,5 @@
 import Layout from './Layout';
 import ErrorBoundary from './ErrorBoundary';
+import Button from './Button';
 
-export { ErrorBoundary, Layout };
+export { Button, ErrorBoundary, Layout };

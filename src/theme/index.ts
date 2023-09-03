@@ -1,3 +1,3 @@
-import { animations, colors, fonts, keyframes } from './foundations';
+import { animations, boxShadow, colors, fonts, keyframes } from './foundations';
 
-export { animations, colors, fonts, keyframes };
+export { animations, boxShadow, colors, fonts, keyframes };
