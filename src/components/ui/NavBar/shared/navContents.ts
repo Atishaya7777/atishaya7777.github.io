@@ -29,7 +29,7 @@ const navContents: INavContent[] = [
 	},
 	{
 		path: routePaths.contact,
-		label: 'Contact',
+		label: 'Contact Me',
 		icon: undefined,
 	},
 ];

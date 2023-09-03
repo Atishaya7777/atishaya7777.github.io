@@ -1,3 +1,8 @@
-import { ImgHero, ImgHeroDefault } from 'assets/images';
+import {
+	ImgHero,
+	ImgHeroDefault,
+	ImgAboutMe,
+	ImgAboutMeDefault,
+} from 'assets/images';
 
-export { ImgHero, ImgHeroDefault };
+export { ImgHero, ImgHeroDefault, ImgAboutMe, ImgAboutMeDefault };

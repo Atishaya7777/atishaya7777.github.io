@@ -2,7 +2,7 @@ import { ImgHero } from 'assets';
 
 const Hero = () => {
 	return (
-		<div className="flex w-full justify-center">
+		<section className="flex w-full justify-center">
 			<div className="flex flex-col md:flex-row items-center justify-between max-w-7xl relative px-2 md:px-0">
 				<div className="flex flex-col text-center md:text-left w-full">
 					<h5 className="font-bold md:font-semibold text-tertiary-50 text-xl md:text-2xl">
@@ -38,7 +38,7 @@ const Hero = () => {
 					<ImgHero className="w-full h-fit motion-safe:animate-svg-stroke-draw hero-logo" />
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

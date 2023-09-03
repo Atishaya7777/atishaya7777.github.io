@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { ErrorInfo } from 'react';
+import { Button } from 'components';
 
 interface IState {
 	/** Flag to indicate if error captured or not */
@@ -46,18 +47,12 @@ class ErrorBoundary extends React.Component<any, IState> {
 							Oops... Looks like there was an error. We are on it!
 						</p>
 						<div className="flex w-full justify-center">
-							<button
-								className="p-4  rounded-md cursor-pointer uppercase fluid-hover mr-3 font-bold border-2 border-primary-60 "
-								onClick={this.refreshPage}
-							>
-								<p className="relative">Refresh the page</p>
-							</button>
-							<button
-								className="p-4  rounded-md cursor-pointer uppercase fluid-hover mr-3 font-bold border-2 border-primary-60"
-								onClick={() => window.history.back()}
-							>
-								<p className="relative">Go back</p>
-							</button>
+							<Button onClick={this.refreshPage}>
+								<p>Refresh the page</p>
+							</Button>
+							<Button onClick={() => window.history.back()}>
+								<p>Go back</p>
+							</Button>
 						</div>
 					</div>
 				</div>
