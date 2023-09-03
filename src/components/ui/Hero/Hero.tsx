@@ -21,10 +21,10 @@ const Hero = () => {
 					</h5>
 					<ul className="flex justify-center md:justify-start items-center font-bold text-xl text-primary-60 ">
 						<li className="underline underline-offset-2 mr-6">
-							<a href="#projects">Show projects</a>
+							<a href="#work">Show projects</a>
 						</li>
 						<li className="underline underline-offset-2">
-							<a href="#projects">Resume</a>
+							<a href="#works">Resume</a>
 						</li>
 					</ul>
 					<div className="hidden md:flex absolute items-center font-bold rotate-[270deg] bottom-[10%] left-[-5%]">
@@ -34,7 +34,7 @@ const Hero = () => {
 						<p>Scroll</p>
 					</div>
 				</div>
-				<div className="w-[80%] mt-8 md:mt-0 md:w-[70%]">
+				<div className="w-[80%] mt-8 md:mt-0 md:w-[70%] bg-background-10">
 					<ImgHero className="w-full h-fit motion-safe:animate-svg-stroke-draw hero-logo" />
 				</div>
 			</div>

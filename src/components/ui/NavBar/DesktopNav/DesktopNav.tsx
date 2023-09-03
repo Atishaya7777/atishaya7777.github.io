@@ -16,9 +16,9 @@ const DesktopNav = () => {
 								key={index}
 								className="p-4 font-medium rounded-md cursor-pointer relative fluid-hover ml-3 hover:font-bold"
 							>
-								<NavLink to={navItem.path} className="relative">
+								<a href={navItem.path} className="relative">
 									{navItem.label}
-								</NavLink>
+								</a>
 							</li>
 						);
 					})}

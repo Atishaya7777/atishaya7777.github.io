@@ -1,4 +1,6 @@
 import { ImgAboutMe } from 'assets';
+import { Container } from 'components';
+import { routePaths } from 'global';
 
 const About = () => {
 	const aboutMeContents: string[] = [
@@ -8,29 +10,26 @@ const About = () => {
 	];
 
 	return (
-		<section
-			id="about"
-			className="flex w-full justify-center bg-primary-60 text-background-10 py-20 "
-		>
-			<div className="flex flex-col md:flex-row justify-between max-w-7xl w-full px-5">
-				<p className="font-black text-xl md:text-2xl">About Me</p>
-				<div className="max-w-xl">
-					{aboutMeContents.map((content, index) => (
-						<p
-							key={index}
-							className={`font-bold tracking-wider ${
-								index !== aboutMeContents.length - 1 ? 'mb-5' : 'mb-0'
-							}`}
-						>
-							{content}
-						</p>
-					))}
-				</div>
-				<div className="mt-6 flex justify-center md:mt-0">
-					<ImgAboutMe className="shadow-solid-drop-shadow" />
-				</div>
+		<Container containerId={routePaths.about} isBlack>
+			<h3 className="font-black text-2xl underline mb-3 md:no-underline md:mb-0">
+				About Me
+			</h3>
+			<div className="max-w-xl">
+				{aboutMeContents.map((content, index) => (
+					<p
+						key={index}
+						className={`font-bold tracking-wider ${
+							index !== aboutMeContents.length - 1 ? 'mb-5' : 'mb-0'
+						}`}
+					>
+						{content}
+					</p>
+				))}
 			</div>
-		</section>
+			<div className="mt-6 flex justify-center md:mt-0">
+				<ImgAboutMe className="shadow-solid-drop-shadow" />
+			</div>
+		</Container>
 	);
 };
 
