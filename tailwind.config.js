@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-import { animations, keyframes } from './src/theme';
+import { animations, colors, fonts, keyframes } from './src/theme';
 
 export default {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -11,6 +11,12 @@ export default {
 			},
 			animations: {
 				...animations,
+			},
+			fontFamily: {
+				...fonts,
+			},
+			colors: {
+				...colors,
 			},
 		},
 	},

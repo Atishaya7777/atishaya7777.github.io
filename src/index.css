@@ -1,3 +1,5 @@
+@import './assets/styles/global.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,4 +12,62 @@
 
 :root {
 	background-color: grey;
+	font-family: 'helvetica-now', serif;
+	color: theme('colors.primary.60');
+}
+
+@font-face {
+	font-family: 'Helvetica-Now';
+	font-weight: 200;
+	font-display: swap;
+	src: url('../public/fonts/HelveticaNowDisplay-Hairline.ttf');
+}
+
+@font-face {
+	font-family: 'Helvetica-Now';
+	font-weight: 400;
+	font-display: swap;
+	src: url('../public/fonts/HelveticaNowDisplay-Thin.ttf');
+}
+
+@font-face {
+	font-family: 'Helvetica-Now';
+	font-weight: 500;
+	font-display: swap;
+	src: url('../public/fonts/HelveticaNowDisplay-ExtLt.ttf');
+}
+
+@font-face {
+	font-family: 'Helvetica-Now';
+	font-weight: 600;
+	font-display: swap;
+	src: url('../public/fonts/HelveticaNowDisplay-Light.ttf');
+}
+
+@font-face {
+	font-family: 'Helvetica-Now';
+	font-weight: 700;
+	font-display: swap;
+	src: url('../public/fonts/HelveticaNowDisplay-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'Helvetica-Now';
+	font-weight: 800;
+	font-display: swap;
+	src: url('../public/fonts/HelveticaNowDisplay-Medium.ttf');
+}
+
+@font-face {
+	font-family: 'Helvetica-Now';
+	font-weight: 900;
+	font-display: swap;
+	src: url('../public/fonts/HelveticaNowDisplay-Bold.ttf');
+}
+
+@font-face {
+	font-family: 'Helvetica-Now';
+	font-weight: 1000;
+	font-display: swap;
+	src: url('../public/fonts/HelveticaNowDisplay-Black.ttf');
 }
