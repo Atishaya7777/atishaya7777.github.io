@@ -18,17 +18,17 @@ const navContents: INavContent[] = [
 		icon: undefined,
 	},
 	{
-		path: routePaths.work,
-		label: 'Work',
-		icon: undefined,
-	},
-	{
-		path: routePaths.about,
+		path: '#' + routePaths.about,
 		label: 'About',
 		icon: undefined,
 	},
 	{
-		path: routePaths.contact,
+		path: '#' + routePaths.work,
+		label: 'Work',
+		icon: undefined,
+	},
+	{
+		path: '#' + routePaths.contact,
 		label: 'Contact Me',
 		icon: undefined,
 	},
