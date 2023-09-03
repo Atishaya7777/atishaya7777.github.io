@@ -1,0 +1,6 @@
+.hero-logo {
+	stroke: theme('colors.primary.60');
+	stroke-width: 1;
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+}

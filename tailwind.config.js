@@ -9,7 +9,7 @@ export default {
 			keyframes: {
 				...keyframes,
 			},
-			animations: {
+			animation: {
 				...animations,
 			},
 			fontFamily: {

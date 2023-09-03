@@ -1,1 +1,4 @@
-export { ReactComponent as ImgHero } from './img-hero.svg';
+export {
+	default as ImgHeroDefault,
+	ReactComponent as ImgHero,
+} from './img-hero.svg';

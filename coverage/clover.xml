@@ -1,23 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1693703900809" clover="3.2.0">
-  <project timestamp="1693703900810" name="All files">
-    <metrics statements="88" coveredstatements="85" conditionals="0" coveredconditionals="0" methods="15" coveredmethods="12" elements="103" coveredelements="97" complexity="0" loc="88" ncloc="88" packages="16" files="28" classes="28"/>
+<coverage generated="1693772119108" clover="3.2.0">
+  <project timestamp="1693772119108" name="All files">
+    <metrics statements="102" coveredstatements="99" conditionals="0" coveredconditionals="0" methods="21" coveredmethods="16" elements="123" coveredelements="115" complexity="0" loc="102" ncloc="102" packages="19" files="32" classes="32"/>
     <package name="src">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="App.tsx" path="C:\Work\portfolio\src\App.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.assets">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="index.ts" path="C:\Work\portfolio\src\assets\index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.assets.images">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="index.ts" path="C:\Work\portfolio\src\assets\images\index.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="index.ts" path="C:\Work\portfolio\src\components\index.ts">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.components.base">
@@ -34,7 +51,7 @@
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
       </file>
       <file name="index.ts" path="C:\Work\portfolio\src\components\base\Layout\index.ts">
@@ -44,8 +61,24 @@
       </file>
     </package>
     <package name="src.components.ui">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="C:\Work\portfolio\src\components\ui\index.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.ui.Hero">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Hero.tsx" path="C:\Work\portfolio\src\components\ui\Hero\Hero.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+      </file>
+      <file name="index.ts" path="C:\Work\portfolio\src\components\ui\Hero\index.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -58,7 +91,7 @@
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
       </file>
       <file name="index.ts" path="C:\Work\portfolio\src\components\ui\NavBar\index.ts">
@@ -68,15 +101,16 @@
       </file>
     </package>
     <package name="src.components.ui.NavBar.DesktopNav">
-      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="DesktopNav.tsx" path="C:\Work\portfolio\src\components\ui\NavBar\DesktopNav\DesktopNav.tsx">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="8" count="4" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
       </file>
       <file name="index.ts" path="C:\Work\portfolio\src\components\ui\NavBar\DesktopNav\index.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -91,8 +125,8 @@
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="8" count="4" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
       </file>
       <file name="index.ts" path="C:\Work\portfolio\src\components\ui\NavBar\MobileNav\index.ts">
@@ -155,12 +189,13 @@
       </file>
     </package>
     <package name="src.containers.pages.Home">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="Home.tsx" path="C:\Work\portfolio\src\containers\pages\Home\Home.tsx">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
       </file>
       <file name="index.ts" path="C:\Work\portfolio\src\containers\pages\Home\index.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -190,7 +225,7 @@
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
       </file>
       <file name="Routes.tsx" path="C:\Work\portfolio\src\containers\routes\Routes.tsx">
@@ -200,7 +235,7 @@
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
         <line num="43" count="1" type="stmt"/>
       </file>
       <file name="index.ts" path="C:\Work\portfolio\src\containers\routes\index.ts">

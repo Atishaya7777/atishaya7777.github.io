@@ -1,3 +1,3 @@
-import { ImgHero } from 'assets/images';
+import { ImgHero, ImgHeroDefault } from 'assets/images';
 
-export { ImgHero };
+export { ImgHero, ImgHeroDefault };

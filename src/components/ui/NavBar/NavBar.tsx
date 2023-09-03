@@ -3,10 +3,10 @@ import MobileNav from './MobileNav';
 
 const NavBar = () => {
 	return (
-		<>
+		<header>
 			<DesktopNav />
 			<MobileNav />
-		</>
+		</header>
 	);
 };
 

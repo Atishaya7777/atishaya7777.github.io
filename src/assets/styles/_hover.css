@@ -9,7 +9,7 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: theme('colors.primary.20');
+	background-color: theme('colors.primary.10');
 	border-radius: theme('borderRadius.md');
 	opacity: 0;
 	transform: scale(0);

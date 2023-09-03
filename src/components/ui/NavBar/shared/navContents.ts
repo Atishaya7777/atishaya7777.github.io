@@ -14,7 +14,7 @@ interface INavContent {
 const navContents: INavContent[] = [
 	{
 		path: routePaths.home,
-		label: 'Home',
+		label: 'Atishaya Maharjan.',
 		icon: undefined,
 	},
 	{
