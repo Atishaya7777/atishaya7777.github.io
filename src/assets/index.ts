@@ -10,7 +10,18 @@ import {
 	ImgVersuredLogo,
 	ImgVersuredLogoDefault,
 } from 'assets/images';
-import { IconLink, IconLinkDefault } from './icons';
+import {
+	IconLink,
+	IconLinkDefault,
+	IconFacebookDefault,
+	IconFacebook,
+	IconGithubDefault,
+	IconGithub,
+	IconInstagramDefault,
+	IconInstagram,
+	IconLinkedInDefault,
+	IconLinkedIn,
+} from './icons';
 
 export {
 	ImgHero,
@@ -25,4 +36,12 @@ export {
 	ImgVersuredLogoDefault,
 	IconLink,
 	IconLinkDefault,
+	IconFacebookDefault,
+	IconFacebook,
+	IconGithubDefault,
+	IconGithub,
+	IconInstagramDefault,
+	IconInstagram,
+	IconLinkedInDefault,
+	IconLinkedIn,
 };

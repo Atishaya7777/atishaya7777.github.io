@@ -1,4 +1,4 @@
-import { NavBar } from 'components';
+import { Footer, NavBar } from 'components';
 import React from 'react';
 
 interface ILayoutProps {
@@ -7,10 +7,11 @@ interface ILayoutProps {
 
 const Layout: React.FC<ILayoutProps> = ({ children }) => {
 	return (
-		<div>
+		<>
 			<NavBar />
 			{children}
-		</div>
+			<Footer />
+		</>
 	);
 };
 

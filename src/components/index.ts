@@ -1,4 +1,14 @@
 import { Button, Container, ErrorBoundary, Layout } from './base';
-import { About, Hero, NavBar, Works } from './ui';
+import { About, Footer, Hero, NavBar, Works } from './ui';
 
-export { About, Button, Container, ErrorBoundary, Hero, NavBar, Layout, Works };
+export {
+	About,
+	Button,
+	Container,
+	ErrorBoundary,
+	Footer,
+	Hero,
+	NavBar,
+	Layout,
+	Works,
+};
