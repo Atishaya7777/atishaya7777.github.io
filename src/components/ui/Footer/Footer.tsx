@@ -30,7 +30,7 @@ const Footer = () => {
 			icon: IconGithub,
 		},
 		{
-			path: 'www.linkedin.com/in/atishaya-maharjan07',
+			path: 'https://linkedin.com/in/atishaya-maharjan07',
 			icon: IconLinkedIn,
 		},
 	];
@@ -78,7 +78,12 @@ const Footer = () => {
 							{socialMediaContent.map((socialMedia, index: number) => {
 								return (
 									<li key={index} className="font-semibold cursor-pointer">
-										<a href={socialMedia.path} className="relative">
+										<a
+											href={socialMedia.path}
+											className="relative"
+											target="_blank"
+											rel="noreferrer"
+										>
 											{<socialMedia.icon />}
 										</a>
 									</li>
