@@ -4,10 +4,10 @@ Hello there! 👋 This repository showcases my skills, projects, and achievement
 
 ## 📜 Table of Contents
 
-- [👤 About Me](#about-me)
-- [🚀 Projects](#projects)
-- [🔧 Skills](#skills)
-- [📞 Contact](#contact)
+- [👤 About Me](#-about-me)
+- [🚀 Projects](#-projects)
+- [🔧 Skills](#-skills)
+- [📞 Contact](#-contact)
 
 ## 👤 About Me
 
