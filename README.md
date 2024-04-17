@@ -1,70 +1,54 @@
-# 👋 Welcome to My Portfolio Website
+# Astro Starter Kit: Basics
 
-Hello there! 👋 This repository showcases my skills, projects, and achievements in the exciting world of Frontend development. Feel free to explore the different sections to learn more about my journey, projects, and how to get in touch.
+```sh
+npm create astro@latest -- --template basics
+```
 
-## 📜 Table of Contents
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-- [👤 About Me](#-about-me)
-- [🚀 Projects](#-projects)
-- [🔧 Skills](#-skills)
-- [📞 Contact](#-contact)
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## 👤 About Me
+![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
-I'm Atishaya, a Front End & Android Developer at SoAni Tech. Proficient in HTML, CSS, JavaScript, and Java, I excel in building user-friendly interfaces and functional Android apps. Prioritizing ReactJS, I'm passionate about creating seamless user experiences and innovative website applications. 
+## 🚀 Project Structure
 
-I'm currently pursuing Computer Science, Mathematics, & Statistics at the University of Manitoba, I blend technical expertise with a logical mindset to tackle challenges effectively. I thrive on collaboration and enjoy learning new technologies. 
+Inside of your Astro project, you'll see the following folders and files:
 
-## 🚀 Projects
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-Here are some of the projects I have worked on:
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-1. **Timeero**
-   - 📝 Description: A time tracking web application with GPS and live tracking support
-   - 💻 Technologies Used: Typescript, Vite, React.js, React Query, Zustand, Chakra UI, Sass
-   - 🌐 Link: [Timeero](https://new.timeero.com)
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-2. **Versured**
-   - 📝 Description: An online insurance portal that simplifies insurance for the USA.
-   - 💻 Technologies Used: NextJS, Redux-toolkit, Sass
-   - 🌐 Link: [Versured](https://versured.com/)
+Any static assets, like images, can be placed in the `public/` directory.
 
-3. **EkNepal**
-   - 📝 Description: A news portal consisting of all the top national news stations.
-   - 💻 Technologies Used: NextJS, Redux-toolkit, Sass
-   - 🌐 Link: [EkNepal](https://eknepal.com/)
+## 🧞 Commands
 
-## 🔧 Skills
+All commands are run from the root of the project, from a terminal:
 
-I have experience working with a variety of technologies and tools, including:
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## 👀 Want to learn more?
 
-- [<img align="center" src="https://img.icons8.com/color/24/000000/typescript.png"> TypeScript](https://www.typescriptlang.org/)
-- [<img align="center" src="https://img.icons8.com/color/24/000000/javascript.png"> JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [<img align="center" src="https://img.icons8.com/color/24/000000/react-native.png"> React.js](https://reactjs.org/)
-- [<img align="center" src="https://img.icons8.com/color/24/000000/nextjs.png"> Next.js](https://nextjs.org/)
-- Git:
-  - [<img align="center" src="https://img.icons8.com/fluent/24/000000/github.png"> GitHub](https://github.com/)
-  - [<img align="center" src="https://img.icons8.com/color/24/000000/bitbucket.png"> Bitbucket](https://bitbucket.org/)
-- [<img align="center" src="https://img.icons8.com/color/24/000000/sass.png"> Sass](https://sass-lang.com/)
-- [<img align="center" src="https://img.icons8.com/color/24/000000/atom-editor.png"> Babel](https://babeljs.io/)
-- [<img align="center" src="https://img.icons8.com/color/24/000000/bear.png"> Zustand](https://zustand-demo.pmnd.rs/)
-- [<img align="center" src="https://img.icons8.com/color/24/000000/redux.png"> Redux](https://redux.js.org/) & [Redux-Toolkit](https://redux-toolkit.js.org/)
-- [<img align="center" src="https://img.icons8.com/color/24/000000/nodejs.png"> Vite](https://vitejs.dev/)
-- [<img align="center" src="https://img.icons8.com/color/24/000000/eslint.png"> ESLint](https://eslint.org/)
-- [<img align="center" src="https://img.icons8.com/color/24/000000/webpack.png"> Webpack](https://webpack.js.org/)
-
-I am always eager to learn and expand my skill set to tackle new challenges.
-
-## 📞 Contact
-
-If you're interested in collaborating, have any questions, or just want to say hello, feel free to reach out to me:
-
-- ✉️ Email: atishaya7777@gmail.com
-- 💼 LinkedIn: [Atishaya Maharjan](www.linkedin.com/in/atishaya-maharjan07)
-- 🐙 GitHub: [Atishaya7777](https://github.com/Atishaya7777)
-- 🌐 Website: UNDER PRODUCTION
-
-Feel free to explore my projects and get in touch if you'd like to collaborate or discuss any opportunities.
-
-Happy coding! 😊
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
