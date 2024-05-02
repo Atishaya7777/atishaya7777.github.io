@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow:
+
+# TODO: Replace the sitemap with your own
+Sitemap: https://www.example.com/sitemap_index.xml
