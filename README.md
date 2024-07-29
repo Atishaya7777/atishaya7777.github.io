@@ -19,17 +19,22 @@ I'm currently pursuing Computer Science, Mathematics, & Statistics at the Univer
 
 Here are some of the projects I have worked on:
 
-1. **Timeero**
+1. **LG**
+   - 📝 Description: LG US: Consumer and Home Electronics from LG
+   - 💻 Technologies Used: Next.js, Turbo, Rollup, PNPM, Redux, Redux-saga, Typescript, Material UI
+   - 🌐 Link: [LG](https://www.lg.com/us)
+
+2. **Timeero**
    - 📝 Description: A time tracking web application with GPS and live tracking support
    - 💻 Technologies Used: Typescript, Vite, React.js, React Query, Zustand, Chakra UI, Sass
    - 🌐 Link: [Timeero](https://new.timeero.com)
 
-2. **Versured**
+3. **Versured**
    - 📝 Description: An online insurance portal that simplifies insurance for the USA.
    - 💻 Technologies Used: NextJS, Redux-toolkit, Sass
    - 🌐 Link: [Versured](https://versured.com/)
 
-3. **EkNepal**
+4. **EkNepal**
    - 📝 Description: A news portal consisting of all the top national news stations.
    - 💻 Technologies Used: NextJS, Redux-toolkit, Sass
    - 🌐 Link: [EkNepal](https://eknepal.com/)
