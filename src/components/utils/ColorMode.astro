@@ -2,16 +2,26 @@
 
 ---
 
-<script is:inline}>
-
-function applyColorMode(theme) {
-	if(theme === 'dark') {
-		document.getElementsByName('body').classList.add('dark');
-	} else {
-		document.getElementsByName('body').classList.remove('dark');
+<script is:inline>
+	function applyColorMode(theme) {
+		if(theme === 'dark') {
+			document.getElementsByName('body').classList.add('dark');
+		} else {
+			document.getElementsByName('body').classList.remove('dark');
+		}
 	}
 
-	const defaultTheme = localStorage.getItem('theme');
-}
+	const currTheme = localStorage.getItem('theme');
+
+	if(!currTheme)  {
+		localStorage.setItem('theme', 'system');
+		if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)')) {
+			applyColorMode('dark');
+		} else {
+			applyColorMode('light');
+		}
+	} else {
+		applyColorMode(currTheme);
+	}
 
 </script>
