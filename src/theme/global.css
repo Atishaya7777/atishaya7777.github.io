@@ -10,7 +10,7 @@
 
 :root {
 	font-family: 'helvetica-now', serif;
-	color: theme('colors.primary.');
+	color: theme('colors.primary.base');
 }
 
 @font-face {

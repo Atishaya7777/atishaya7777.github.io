@@ -1,10 +1,17 @@
 ---
+
 import Layout from '../layouts/Layout.astro';
+
+import Button from  '../components/Button.astro'
+import NavLink from '../components/Navlink.astro'
+
 ---
 
 <Layout title="Atishaya Maharjan">
 	<main>
-		Hello welcome to my page.
+		<NavLink url='/about' label='About Me'/>
+		<Button>Test me</Button>
+		<h1>Test</h1>
 	</main>
 </Layout>
 
