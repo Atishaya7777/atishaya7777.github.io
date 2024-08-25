@@ -2,9 +2,53 @@
 
 import Layout from '../layouts/Layout.astro';
 
+import LGLogo from '../assets/lg-logo.svg';
+import VersuredLogo from '../assets/versured-logo.svg';
+import EkNepalLogo from '../assets/eknepal-logo.svg';
+import TimeeroLogo from '../assets/timeero-logo.svg';
+
+import { Card } from '../components/Card';
+
+const companiesData = [
+	{
+		img: LGLogo,
+		imgAlt: "Life's good logo.",
+		title: "Life's Good - US",
+		desc: "Life's Good with electronics by your side!",
+		url: "https://lg.com/us"
+	},
+	{
+		img: TimeeroLogo,
+		imgAlt: "Timmero logo.",
+		title: "Timeero",
+		desc: 'A time tracking and GPS company that provides precise and segmented time breakdowns for all employees.',
+		url: "https://timeero.com"
+	},
+	{
+		img: VersuredLogo,
+		imgAlt: "Versured logo.",
+		title: "Versured",
+		desc: 'An insurance portal that combines all possible insurance combinations to match your perfect needs.',
+		url: "https://www.linkedin.com/company/versured"
+	},
+	{
+		img: EkNepalLogo,
+		imgAlt: "Ek Nepal logo.",
+		title: "Ek Nepal",
+		desc: 'A truthful news aggregator. From Nepal, for Nepal.',
+		url: "https://www.eknepal.com/"
+	},
+]
+
 ---
 
 <Layout title="Works | Atish">
+	<section class="w-full text-left">
+		<h1 class="text-subtitle-1 font-bold text-secondary-800 mb-4">Works</h1>
+		<section class="flex flex-col gap-4">
+			{companiesData.map(c => <Card {...c} />)}
+		</section>
+	</section>
 </Layout>
 
 
