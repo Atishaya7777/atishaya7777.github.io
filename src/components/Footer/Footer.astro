@@ -1,0 +1,66 @@
+---
+
+import { Image } from 'astro:assets';
+
+import routes from '../../global/routes';
+
+import { NavLink } from '../Navbar';
+
+import LinkedInLogo from '../../assets/linkedin-logo.svg';
+import GithubLogo from '../../assets/github-logo.svg';
+
+import type { INavLink } from '../Navbar/types.ts';
+
+const navbarData: INavLink[] = [
+	{
+		url: routes.home,
+		label: 'Home',
+	},
+	{
+		url: routes.about,
+		label: 'About Me',
+	},
+	{
+		url: routes.works,
+		label: 'Works',
+	},
+	{
+		url: routes.blog,
+		label: 'Blog',
+	},
+	{
+		url: routes.contact,
+		label: 'Contact Me',
+	},
+];
+
+const socialMediaData = [
+	{
+		url: 'https://github.com/Atishaya7777',
+		icon: GithubLogo,
+	},
+	{
+		url: 'https://www.linkedin.com/in/atishaya-maharjan07',
+		icon: LinkedInLogo,
+	}
+]
+
+const currYear: number = new Date().getFullYear();
+
+---
+
+<footer class="flex flex-col items-center justify-center bg-primary-700">
+	<div class="flex flex-col max-w-screen-xl w-full justify-between py-14">
+		<section class="flex items-center justify-between text-primary-100 mb-16">
+			<p class="text-subtitle-1 font-bold">CONTACT ME</p>
+			<a class="text-h1" href="mailto:atishaya7777@gmail.com">atishaya7777@gmail.com</a>
+		</section>
+		<section class="flex justify-between text-primary-100">
+			<div class="flex">
+	{navbarData.map((n: INavLink) => <NavLink {...n} variant='footer' />)}
+			</div>
+			<div class="flex">{socialMediaData.map(s => <a href={s.url} target="_blank" rel="noref"><Image src={s.icon} alt={s.url} /></a>)}</div>
+		</section>
+	</div>
+		<section class="w-full text-center bg-primary-100 text-primary-1000 font-bold">&copy;{currYear} ATISHAYA MAHARJAN</section>
+</footer>

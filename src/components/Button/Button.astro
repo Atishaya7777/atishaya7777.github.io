@@ -1,0 +1,29 @@
+---
+
+interface Props {
+	onClick?: Function;
+	variant?: 'primary' | 'secondary' | 'tertiary';
+	style?: 'filled' | 'ghost' | 'outline' | 'unstyled';
+	children: any;
+}
+
+const { onClick, variant = 'primary', style = 'filled' } = Astro.props;
+
+const buttonStyleMapper = {
+	'filled': '',
+	'ghost': '',
+	'outline': '',
+	'unstyled': '',
+}
+
+const buttonVariantMapper = {
+	'primary': '',
+	'secondary': '',
+	'tertiary': '',
+}
+
+---
+
+<button class:list={[buttonStyleMapper[style], buttonVariantMapper[variant]]}>
+	<slot />
+</button>
