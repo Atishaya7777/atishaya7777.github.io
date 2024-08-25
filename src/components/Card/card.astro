@@ -1,0 +1,26 @@
+---
+import type { ImageMetadata } from 'astro';
+
+import { Image } from 'astro:assets';
+
+interface Props {
+	img: ImageMetadata;
+	imgAlt: string;
+	title: string;
+	desc: string;
+	url: string;
+}
+
+const { img, imgAlt, title, desc, url } = Astro.props;
+
+---
+
+<a href={url} target="_blank" class="flex gap-4 items-center group">
+	<div class="h-[200px] w-[200px] rounded-md bg-primary-200 flex justify-center items-center">
+		<Image class="w-fit h-fit" src={img} alt={imgAlt} />
+	</div>
+	<div>
+		<h4 class="text-subtitle-1 font-bold group-hover:underline underline-offset-2">{title}</h4>
+		<p class="text-body-1 font-medium">{desc}</p>
+	</div>
+</a>

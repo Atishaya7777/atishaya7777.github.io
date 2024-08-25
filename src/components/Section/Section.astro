@@ -1,0 +1,22 @@
+---
+
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+
+interface Props {
+	imgPos?: 'left' | 'right';
+	img: ImageMetadata;
+	imgAlt: string;
+}
+
+const { imgPos = 'left', img, imgAlt } = Astro.props;
+
+---
+
+<section class:list={["flex items-center gap-10", imgPos === 'right' && "flex-row-reverse"]}>
+	<div>
+		<slot />
+	</div>
+	<Image src={img} alt={imgAlt} />
+</section>

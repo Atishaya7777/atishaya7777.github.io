@@ -1,10 +1,59 @@
 ---
 
+import { Image } from 'astro:assets';
+
 import Layout from '../layouts/Layout.astro';
+
+import HeroImg from '../assets/hero-img.svg';
+
+import ResumePDF from '../../public/assets/resume.pdf';
+
+import routes from '../global/routes';
 
 ---
 
 <Layout title="About Me | Atish">
+	<section class="w-full text-left">
+		<h1 class="text-subtitle-1 font-bold text-secondary-800">About me.</h1>
+		<div>
+			<p class="text-body-1 font-medium mt-6">Hi, I’m Atishaya! Feel free to call me Atish though!</p>
+
+			<p class="text-body-1 font-medium mt-6">You can find my current updated resume <a href={ResumePDF} target="_blank" class="font-bold hover:underline">here</a> and my contact information to reach out <a href={routes.contact} class="font-bold hover:underline">here</a>.</p>
+
+			<p class="text-body-1 font-medium mt-4 mb-2">Aside from the professional side of stuff, here are some things about me:</p>	
+
+			<ul class="text-body-1 font-medium list-disc pl-10 flex flex-col gap-4">
+				<li>
+					Originally from Nepal, I’m currently based in Winnipeg, Canada working towards a Joint Honours Degree in Mathematics and Computer Science with a minor in Statistics.
+				</li>
+				<li>
+					If you couldn’t tell already, I love reading, writing, and researching Mathematics. Some of my favourite fields include <a href="https://en.wikipedia.org/wiki/Graph_theory">Graph Theory</a>, <a href="https://en.wikipedia.org/wiki/Computational_complexity_theory">Computational Complexity Theory</a>, and <a href="https://en.wikipedia.org/wiki/Combinatorics">Combinatorics</a>.
+				</li>
+				<li>
+					I currently work as a Frontend Developer at <a href="https://soanitech.com" target="_blank" class="font-bold hover:underline">SoAni Tech</a> working towards building and maintaining LG US’ website. I also am currently working as a student researcher for two projects; one in the faculty of Mathematics, the other in the <a href="https://home.cs.umanitoba.ca/~gada/" target="_blank" class="font-bold hover:underline">Geometric, Approximation, and Distributed Algorithms (GADA)</a> lab .
+				</li>
+				<li>
+					<p>
+						My Mathematics research currently delves into k-nary trees and HK-property. While the work is very theoretical, I have developed some computer programs to visualize and experiment numerically using Jupyter Notebooks with SageMath.
+					</p>
+					<br />
+					<p>
+						My Computer Science research with the GADA lab delves into finding a possible Fixed Parameter Tractable solution or approximation to a specific instance of ad-hoc networks interference in one dimension.
+					</p>
+
+					<br />
+
+					<p>
+						 I aim to go to graduate school and ultimately get a PhD, either in Computer Science or Mathematics.
+					</p>
+				</li>
+				<li>
+					My hobbies include taking long walks, biking, reading, and cooking. I especially like to cook stir fry traditional Nepali dishes and eat them with rice. Rice is the best! Aside from that, I love teaching and tutoring people; especially with software ideas and technologies that I struggled with.
+				</li>
+			</ul>
+		</div>
+
+	</section>
 </Layout>
 
 

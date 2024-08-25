@@ -2,9 +2,35 @@
 
 import Layout from '../layouts/Layout.astro';
 
+import { Button } from '../components';
+
 ---
 
 
 <Layout title="404 | Atish">
-	Oops, 404 page. You should not be here.
+
+	<section class="flex flex-col h-full items-center justify-center mb-16">
+		<p class="font-medium text-subtitle-1 mb-4">
+			Oops, 404 page. You should not be here.
+		</p>
+
+		<div class="flex gap-4">
+			<Button id="btn:go-back">Go back</Button>
+			<Button id="btn:reload">Reload</Button>
+		</div>
+
+	</section>
 </Layout>
+
+<script>
+	const goBackBtn = document.getElementById('btn:go-back');
+	const reloadBtn = document.getElementById('btn:reload');
+
+	goBackBtn?.addEventListener('click', () => {
+		window.history.back();
+	})
+
+	reloadBtn?.addEventListener('click', () => {
+		window.location.reload();
+	})
+</script>
