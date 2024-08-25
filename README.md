@@ -68,7 +68,7 @@ If you're interested in collaborating, have any questions, or just want to say h
 - ✉️ Email: atishaya7777@gmail.com
 - 💼 LinkedIn: [Atishaya Maharjan](www.linkedin.com/in/atishaya-maharjan07)
 - 🐙 GitHub: [Atishaya7777](https://github.com/Atishaya7777)
-- 🌐 Website: UNDER PRODUCTION
+- 🌐 Website: [atishaya7777.github.io](https://atishaya7777.github.io/)
 
 Feel free to explore my projects and get in touch if you'd like to collaborate or discuss any opportunities.
 
