@@ -7,7 +7,7 @@ export default defineConfig({
   integrations: [tailwind()],
   site: `https://www.atishaya7777.github.io`,
   output: 'static',
-  outDir: './docs',
+  outDir: './dist',
   image: {
     service: passthroughImageService(),
   },
