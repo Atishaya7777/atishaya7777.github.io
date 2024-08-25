@@ -2,16 +2,20 @@
 
 import Layout from '../layouts/Layout.astro';
 
-import Button from  '../components/Button.astro'
-import NavLink from '../components/Navlink.astro'
+import { Image } from 'astro:assets';
+
+import HeroImg from '../assets/hero-img.svg';
+import routes from '../global/routes';
 
 ---
 
-<Layout title="Atishaya Maharjan">
-	<main>
-		<NavLink url='/about' label='About Me'/>
-		<Button>Test me</Button>
-		<h1>Test</h1>
-	</main>
+<Layout title="Home | Atish">
+	<section class="flex items-center mt-20">
+		<div>
+			<h1 class="text-subtitle-1 font-bold text-secondary-800">Hello there 👋! You’ve reached Atish’s website!</h1>
+			<p class="text-body-1 font-medium mt-6">Here, you’ll find some of my musings, thoughts, ideas, and projects. Most of them will either be in Mathematics, Statistics, or Frontend development. You can find a list of them <a href={routes.works} class="font-bold hover:underline">here</a>.</p>
+		</div>
+		<Image src={HeroImg} alt="Man holding a microphone; speaking" />
+	</section>
 </Layout>
 

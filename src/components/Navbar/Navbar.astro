@@ -1,0 +1,20 @@
+---
+
+import { Image } from 'astro:assets';
+import FullLogo from '../../assets/logo-full.svg';
+
+import routes from '../../global/routes';
+
+
+const {} = Astro.props;
+
+---
+
+<nav class="flex items-center max-w-screen-xl w-full justify-between">
+	<a href={routes.home}>
+		<Image src={FullLogo} alt="@tish" />
+	</a>
+	<div class="flex">
+		<slot />	
+	</div>
+</nav>
