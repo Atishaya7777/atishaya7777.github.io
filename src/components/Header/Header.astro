@@ -6,7 +6,7 @@ import { Button } from '../Button';
 import { Image } from 'astro:assets';
 
 import HamburgerIconLight from '../../assets/hamburger-icon-light.svg';
-import HamburgerIconDark from '../../assets/hamburger-icon-dark.svg';
+// import HamburgerIconDark from '../../assets/hamburger-icon-dark.svg';
 
 import routes from '../../global/routes'
 
@@ -71,7 +71,7 @@ const navbarData: INavLink[] = [
 	})
 
 	window.addEventListener('click', (e) => {
-		if(!hamburgerMenuContainer.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+		if(!hamburgerMenuContainer?.contains(e?.target as any) && !hamburgerBtn?.contains(e?.target as any)) {
 			hamburgerBtn?.setAttribute('data-clicked', 'false');
 			hamburgerMenuContainer?.classList.add('hidden');
 		}
