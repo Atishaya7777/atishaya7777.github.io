@@ -11,7 +11,6 @@ import HamburgerIconDark from '../../assets/hamburger-icon-dark.svg';
 import routes from '../../global/routes'
 
 import type { INavLink } from '../Navbar/types.ts';
-import type { Image } from 'astro:assets';
 
 const navbarData: INavLink[] = [
 	{
@@ -42,7 +41,7 @@ const navbarData: INavLink[] = [
 	<Navbar class="sm:hidden flex">
 		<Button id='hamburger-menu-btn' class="py-1 px-1 relative" style="outline" data-show="false">
 			<Image src={HamburgerIconLight} alt='hamburger menu icon.' />	
-			<div id="hamburger-menu-container" class="hidden absolute top-10 right-2 bg-primary-100 border-primary-base border-2 rounded w-40">
+			<div id="hamburger-menu-container" class="hidden absolute top-5 right-2 bg-primary-100 border-primary-base border-2 rounded w-40">
 				<div>
 					{navbarData.map((n: INavLink) => <NavLink {...n} />)}
 				</div>
