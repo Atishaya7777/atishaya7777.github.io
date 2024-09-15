@@ -14,7 +14,7 @@ const heroData = [
 		imgPos: "left",
 		heading: "Hello there 👋! You’ve reached Atish’s website!",
 		body: [
-			`Here, you’ll find some of my musings, thoughts, ideas, and projects. Most of them will either be in Mathematics, Statistics, or Frontend development. You can find a list of them <a href={routes.works} class="font-bold hover:underline">here</a>.`
+			`Here, you’ll find some of my musings, thoughts, ideas, and projects. Most of them will either be in Mathematics, Statistics, or Frontend development. You can find a list of them <a href=${routes.works} class="font-bold hover:underline">here</a>.`
 		]
 	},
 	{
@@ -35,8 +35,8 @@ const heroData = [
 <Layout title="Home | Atish">
 	 {heroData.map(data => (<Section {...data} />))}
 	<section class="w-full text-left mt-10">
-		<h1 class="text-subtitle-1 font-bold text-secondary-800">Recent Highlights</h1>
-		<p class="text-body-1 font-medium mt-6">Here are some of my musings/notes in blogs:</p>
+		<h1 class="text-subtitle-2 md:text-subtitle-1 font-bold text-secondary-800">Recent Highlights</h1>
+		<p class="text-body-2 md:text-body-1 font-medium mt-6">Here are some of my musings/notes in blogs:</p>
 	</section>
 </Layout>
 
