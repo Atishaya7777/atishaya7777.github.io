@@ -5,12 +5,16 @@ import FullLogo from '../../assets/logo-full.svg';
 
 import routes from '../../global/routes';
 
+interface Props {
+	class?: string | string[];
+}
 
-const {} = Astro.props;
+const { class: className } = Astro.props;
+
 
 ---
 
-<nav class="flex items-center max-w-screen-xl w-full justify-between">
+<nav class:list={["flex items-center max-w-screen-xl w-full justify-between", className]}>
 	<a href={routes.home}>
 		<Image src={FullLogo} alt="@tish" />
 	</a>

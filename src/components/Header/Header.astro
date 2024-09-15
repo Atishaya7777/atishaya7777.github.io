@@ -1,6 +1,12 @@
 ---
 
 import { Navbar, NavLink } from '../Navbar';
+import { Button } from '../Button';
+
+import { Image } from 'astro:assets';
+
+import HamburgerIconLight from '../../assets/hamburger-icon-light.svg';
+import HamburgerIconDark from '../../assets/hamburger-icon-dark.svg';
 
 import routes from '../../global/routes'
 
@@ -31,8 +37,43 @@ const navbarData: INavLink[] = [
 
 ---
 
-<header class="flex justify-center py-3 border-b-2 border-primary-600 dark:border-primary-100">
-	<Navbar>
+<header class="px-4 flex justify-center py-3 border-b-2 border-primary-600 dark:border-primary-100">
+	<Navbar class="sm:hidden flex">
+		<Button id='hamburger-menu-btn' class="py-1 px-1 relative" style="outline" data-show="false">
+			<Image src={HamburgerIconLight} alt='hamburger menu icon.' />	
+			<div id="hamburger-menu-container" class="hidden absolute top-5 right-2 bg-primary-100 border-primary-base border-2 rounded w-40">
+				<div>
+					{navbarData.map((n: INavLink) => <NavLink {...n} />)}
+				</div>
+			</div>
+		</Button>
+	</Navbar>
+	<Navbar class="hidden sm:flex">
 		{navbarData.map((n: INavLink) => <NavLink {...n} />)}
 	</Navbar>
 </header>
+
+<script>
+	const hamburgerBtn = document.getElementById('hamburger-menu-btn');
+	const hamburgerMenuContainer = document.getElementById("hamburger-menu-container");
+
+	hamburgerBtn?.setAttribute('data-clicked', 'false');
+
+	hamburgerBtn?.addEventListener('click', () => {
+		const currState: string | undefined = hamburgerBtn.dataset.clicked;
+		if(currState === 'true') {
+			hamburgerBtn.setAttribute('data-clicked', 'false');
+			hamburgerMenuContainer?.classList.add('hidden');
+		} else {
+			hamburgerBtn.setAttribute('data-clicked', 'true');
+			hamburgerMenuContainer?.classList.remove('hidden');
+		}
+	})
+
+	window.addEventListener('click', (e) => {
+		if(!hamburgerMenuContainer.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+			hamburgerBtn?.setAttribute('data-clicked', 'false');
+			hamburgerMenuContainer?.classList.add('hidden');
+		}
+	})
+</script>

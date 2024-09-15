@@ -7,23 +7,33 @@ import HeroImg from '../assets/hero-img.svg';
 import MountainImg from '../assets/mountains-img.svg';
 import routes from '../global/routes';
 
+const heroData = [
+	{
+		img: HeroImg, 
+		imgAlt: "Man holding a microphone; speaking.",
+		imgPos: "left",
+		heading: "Hello there 👋! You’ve reached Atish’s website!",
+		body: [
+			`Here, you’ll find some of my musings, thoughts, ideas, and projects. Most of them will either be in Mathematics, Statistics, or Frontend development. You can find a list of them <a href={routes.works} class="font-bold hover:underline">here</a>.`
+		]
+	},
+	{
+		img: MountainImg,
+		imgAlt: "Magnificient mountains",
+		imgPos: "right",
+		heading: "A little bit about me.",
+		body: [
+			`I grew up in Nepal and am currently based in Winnipeg, Canada; studying Mathematics, Computer Science, and Statistics.`,
+			`I spend my time as a Frontend Developer at <a href="https://soanitech.com" target="_blank" class="font-bold hover:underline">SoAni Tech</a>, an undergraduate student researcher in Combinatorics & Graph Theory with Dr. Mahsa Nasrollahishirazi, and in Computer Science with <a href="https://home.cs.umanitoba.ca/~gada/" target="_blank" class="font-bold hover:underline">GADA</a> lab under Dr. Stephane Durocher. You can find more information about me <a href={routes.about} class="font-bold hover:underline">here</a>.`
+
+		]
+	}
+]
+
 ---
 
 <Layout title="Home | Atish">
-	<Section img={HeroImg} imgAlt="Man holding a microphone; speaking.">
-			<h1 class="text-subtitle-1 font-bold text-secondary-800">Hello there 👋! You’ve reached Atish’s website!</h1>
-			<p class="text-body-1 font-medium mt-6">Here, you’ll find some of my musings, thoughts, ideas, and projects. Most of them will either be in Mathematics, Statistics, or Frontend development. You can find a list of them <a href={routes.works} class="font-bold hover:underline">here</a>.</p>
-	</Section>
-	<Section img={MountainImg} imgAlt="Magnificient mountains" imgPos="right">
-			<h1 class="text-subtitle-1 font-bold text-secondary-800">A little bit about me.</h1>
-			<p class="text-body-1 font-medium mt-6">
-				I grew up in Nepal and am currently based in Winnipeg, Canada; studying Mathematics, Computer Science, and Statistics.
-			</p>
-			<p class="text-body-1 font-medium mt-6">
-				I spend my time as a Frontend Developer at <a href="https://soanitech.com" target="_blank" class="font-bold hover:underline">SoAni Tech</a>, an undergraduate student researcher in Combinatorics & Graph Theory with Dr. Mahsa Nasrollahishirazi, and in Computer Science with <a href="https://home.cs.umanitoba.ca/~gada/" target="_blank" class="font-bold hover:underline">GADA</a> lab under Dr. Stephane Durocher. You can find more information about me <a href={routes.about} class="font-bold hover:underline">here</a>.
-			</p>
-	</Section>
-
+	 {heroData.map(data => (<Section {...data} />))}
 	<section class="w-full text-left mt-10">
 		<h1 class="text-subtitle-1 font-bold text-secondary-800">Recent Highlights</h1>
 		<p class="text-body-1 font-medium mt-6">Here are some of my musings/notes in blogs:</p>

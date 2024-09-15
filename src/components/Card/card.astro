@@ -16,11 +16,11 @@ const { img, imgAlt, title, desc, url } = Astro.props;
 ---
 
 <a href={url} target="_blank" class="flex gap-4 items-center group">
-	<div class="h-[200px] w-[200px] rounded-md bg-primary-200 flex justify-center items-center">
-		<Image class="w-fit h-fit" src={img} alt={imgAlt} />
+	<div class="w-24 h-24 md:h-[200px] md:w-[200px] rounded-md bg-primary-200 flex justify-center items-center">
+		<Image class="w-16 h-16 md:w-fit md:h-fit" src={img} alt={imgAlt} />
 	</div>
-	<div>
-		<h4 class="text-subtitle-1 font-bold group-hover:underline underline-offset-2">{title}</h4>
-		<p class="text-body-1 font-medium">{desc}</p>
+	<div class="flex-1">
+		<h4 class="text-body-1 md:text-subtitle-1 font-bold group-hover:underline underline-offset-2">{title}</h4>
+		<p class="text-button md:text-body-1 font-medium">{desc}</p>
 	</div>
 </a>
