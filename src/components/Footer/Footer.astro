@@ -62,5 +62,14 @@ const currYear: number = new Date().getFullYear();
 			<div class="flex">{socialMediaData.map(s => <a href={s.url} target="_blank" rel="noref"><Image src={s.icon} alt={s.url} /></a>)}</div>
 		</section>
 	</div>
-		<section class="w-full text-center bg-primary-100 text-primary-1000 font-bold">&copy;{currYear} ATISHAYA MAHARJAN</section>
+	<section id="curr-year" class="w-full text-center bg-primary-100 text-primary-1000 font-bold">
+		&copy;<span id="year"></span> ATISHAYA MAHARJAN 
+	</section>
+	<script>
+		const yearSpan = document.getElementById('year');
+		const currYear = new Date().getFullYear();
+		if (yearSpan) {
+			yearSpan.textContent = currYear.toString();
+		}
+	</script>
 </footer>
