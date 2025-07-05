@@ -9,8 +9,8 @@ interface Props extends INavLink {
 
 const { url = '', label = '', variant = 'header' } = Astro.props;
 ---
-<a href={url}>
-	<div class:list={["block text-base md:text-xl px-4 py-3.5 bg-transparent w-full md:w-fit font-regular rounded cursor-pointer tracking-wide hover:outline-primary-600 hover:transition-all active:bg-primary-200 dark:text-primary-100 dark:hover:outline-primary-100 dark:active:bg-primary-600", variant === 'header' ? "outline outline-1 outline-transparent text-primary-600" : "text-primary-100", "navlink" ]}>
+<a href={url} class="cursor-pointer">
+	<div class:list={["block text-base md:text-lg px-4 py-3 w-full md:w-fit font-medium tracking-wide cursor-pointer transition-all duration-300 border border-transparent hover:border-primary-600 dark:hover:border-primary-400 hover:bg-secondary-100 dark:hover:bg-secondary-800 hover:shadow-sm rounded-sm", variant === 'header' ? "text-primary-800 dark:text-white" : "text-primary-100", "navlink" ]}>
 		{label}
 	</div>
 </a>

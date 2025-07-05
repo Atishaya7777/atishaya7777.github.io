@@ -9,62 +9,261 @@
 }
 
 :root {
-	font-family: 'helvetica-now', serif;
+	font-family: 'Helvetica-Now', serif;
 	color: theme('colors.primary.base');
+	scroll-behavior: smooth;
 }
 
 @font-face {
 	font-family: 'Helvetica-Now';
-	font-weight: 200;
+	font-weight: 100;
 	font-display: swap;
 	src: url('/fonts/HelveticaNowDisplay-Hairline.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'Helvetica-Now';
-	font-weight: 400;
+	font-weight: 200;
 	font-display: swap;
 	src: url('/fonts/HelveticaNowDisplay-Thin.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'Helvetica-Now';
-	font-weight: 500;
+	font-weight: 300;
 	font-display: swap;
 	src: url('/fonts/HelveticaNowDisplay-ExtLt.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'Helvetica-Now';
-	font-weight: 600;
+	font-weight: 400;
 	font-display: swap;
 	src: url('/fonts/HelveticaNowDisplay-Light.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'Helvetica-Now';
-	font-weight: 700;
+	font-weight: 500;
 	font-display: swap;
 	src: url('/fonts/HelveticaNowDisplay-Regular.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'Helvetica-Now';
-	font-weight: 800;
+	font-weight: 600;
 	font-display: swap;
 	src: url('/fonts/HelveticaNowDisplay-Medium.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'Helvetica-Now';
-	font-weight: 900;
+	font-weight: 700;
 	font-display: swap;
 	src: url('/fonts/HelveticaNowDisplay-Bold.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'Helvetica-Now';
-	font-weight: 1000;
+	font-weight: 800;
 	font-display: swap;
 	src: url('/fonts/HelveticaNowDisplay-Black.ttf') format('truetype');
+}
+
+/* Enhanced base styles while maintaining academic feel */
+@layer base {
+	html {
+		@apply antialiased scroll-smooth;
+	}
+	
+	body {
+		@apply leading-relaxed;
+		font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	
+	/* Dark mode specific styles */
+	.dark body {
+		color-scheme: dark;
+	}
+	
+	/* Refined focus states */
+	*:focus-visible {
+		@apply outline-none ring-2 ring-secondary-500 ring-offset-2 ring-offset-background-base dark:ring-offset-primary-900;
+		transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+}
+
+/* Academic component styles with sophisticated enhancements */
+@layer components {
+	.prose {
+		@apply leading-relaxed;
+	}
+	
+	.academic-card {
+		@apply bg-background-50 border border-primary-300 semi-sharp p-8 hover:shadow-refined transition-elegant;
+		backdrop-filter: blur(20px);
+	}
+	
+	.academic-badge {
+		@apply px-4 py-2 bg-secondary-50 text-secondary-800 semi-sharp text-sm font-medium border border-secondary-400;
+	}
+	
+	/* Refined link styles for academic content */
+	.academic-link {
+		@apply relative text-secondary-700 dark:text-secondary-300 hover:text-secondary-900 dark:hover:text-secondary-100 transition-colors duration-300;
+		text-decoration: none;
+	}
+	
+	.academic-link::after {
+		content: '';
+		position: absolute;
+		bottom: -1px;
+		left: 0;
+		width: 0;
+		height: 1px;
+		background: currentColor;
+		transition: width 0.3s ease-in-out;
+	}
+	
+	.academic-link:hover::after {
+		width: 100%;
+	}
+	
+	/* Enhanced mathematical symbols with proper typography */
+	.math-symbol {
+		font-family: 'Times New Roman', 'Computer Modern', serif;
+		font-style: italic;
+		font-weight: 400;
+		letter-spacing: 0.02em;
+	}
+	
+	/* Refined cards for content sections */
+	.content-card {
+		@apply bg-background-25 dark:bg-primary-900 border border-primary-400 dark:border-primary-600 p-8 transition-all duration-300 semi-sharp;
+	}
+	
+	.content-card:hover {
+		@apply border-secondary-500 dark:border-secondary-500 shadow-refined;
+	}
+	
+	/* Academic typography enhancements */
+	.academic-title {
+		@apply font-bold text-primary-800 dark:text-primary-200 leading-tight;
+		letter-spacing: -0.025em;
+	}
+	
+	.academic-subtitle {
+		@apply font-semibold text-primary-700 dark:text-primary-300 leading-relaxed;
+	}
+	
+	.academic-body {
+		@apply font-normal text-primary-600 dark:text-primary-300 leading-relaxed;
+		line-height: 1.7;
+	}
+}
+
+/* Refined utilities for academic-modern aesthetic */
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
+	
+	.transition-smooth {
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+	
+	.transition-elegant {
+		transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+	}
+	
+	/* Refined shadows - more subtle and academic */
+	.shadow-refined {
+		box-shadow: 3px 3px 0px 0px;
+	}
+	
+	.shadow-refined-hover {
+		box-shadow: 2px 2px 0px 0px;
+	}
+	
+	.shadow-refined-sm {
+		box-shadow: 2px 2px 0px 0px;
+	}
+	
+	.shadow-refined-lg {
+		box-shadow: 4px 4px 0px 0px;
+	}
+	
+	/* Subtle transforms for elegance */
+	.transform-refined-hover {
+		transform: translate(0.5px, 0.5px);
+	}
+	
+	.transform-refined-active {
+		transform: translate(1px, 1px);
+	}
+	
+	/* Academic spacing with mathematical precision */
+	.academic-spacing {
+		@apply space-y-8;
+	}
+	
+	.mathematical-spacing {
+		@apply space-y-6;
+	}
+	
+	/* Refined button styling - less aggressive */
+	.btn-refined {
+		@apply border-2 font-semibold tracking-wide transition-all duration-300;
+		box-shadow: 2px 2px 0px 0px;
+	}
+	
+	.btn-refined:hover {
+		transform: translate(0.5px, 0.5px);
+		box-shadow: 1px 1px 0px 0px;
+	}
+	
+	.btn-refined:active {
+		transform: translate(1px, 1px);
+		box-shadow: 0.5px 0.5px 0px 0px;
+	}
+	
+	/* Academic elegance */
+	.academic-underline {
+		position: relative;
+	}
+	
+	.academic-underline::after {
+		content: '';
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		width: 0;
+		height: 1px;
+		background: currentColor;
+		transition: width 0.3s ease-in-out;
+	}
+	
+	.academic-underline:hover::after {
+		width: 100%;
+	}
+	
+	/* Mathematical symbol styling */
+	.math-accent {
+		font-family: 'Times New Roman', 'Computer Modern', serif;
+		font-style: italic;
+		font-weight: 400;
+		letter-spacing: 0.05em;
+	}
+	
+	/* Sharp corners with subtle rounding for readability */
+	.semi-sharp {
+		border-radius: 2px;
+	}
+	
+	.sharp {
+		border-radius: 0 !important;
+	}
 }

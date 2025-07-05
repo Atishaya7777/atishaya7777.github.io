@@ -8,8 +8,6 @@ import EkNepalLogo from '../assets/eknepal-logo.svg';
 import TimeeroLogo from '../assets/timeero-logo.svg';
 import TrackflyLogo from '../assets/trackfly-logo.svg';
 
-import { Card } from '../components/Card';
-
 const companiesData = [
 	{
 		img: LGLogo,
@@ -51,12 +49,274 @@ const companiesData = [
 ---
 
 <Layout title="Works | Atish">
-	<section class="w-full text-left">
-		<h1 class="text-subtitle-2 md:text-subtitle-1 font-bold text-secondary-800 mb-4">Works</h1>
-		<section class="flex flex-col gap-4">
-			{companiesData.map(c => <Card {...c} />)}
+	<main class="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
+		<section class="py-16 md:py-24">
+			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-900 dark:text-primary-100 mb-8">
+				Works & Projects
+			</h1>
+			<p class="text-lg md:text-xl text-primary-700 dark:text-primary-200 font-regular leading-relaxed max-w-3xl">
+				Here's a collection of things I've been working on – from research projects that keep me up at night thinking, to professional work that actually pays the bills.
+			</p>
 		</section>
-	</section>
+
+		<section class="py-12 md:py-16">
+			<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-8">
+				Professional Projects
+			</h2>
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{companiesData.map(company => (
+					<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 rounded-sm overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+						<div class="p-6">
+							<div class="flex items-center mb-4">
+								<div class="w-12 h-12 bg-white dark:bg-white rounded-sm flex items-center justify-center mr-3 p-2 border border-primary-200 dark:border-primary-600">
+									<img src={company.img.src} alt={company.imgAlt} class="w-full h-full object-contain" />
+								</div>
+								<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100">
+									{company.title}
+								</h3>
+							</div>
+							<p class="text-base text-primary-800 dark:text-primary-200 font-medium leading-relaxed mb-6">
+								{company.desc}
+							</p>
+							<a 
+								href={company.url} 
+								target="_blank" 
+								class="inline-flex items-center text-secondary-600 dark:text-secondary-400 font-bold hover:underline transition-all duration-200"
+							>
+								Visit Project
+								<svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+								</svg>
+							</a>
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<section class="py-12 md:py-16">
+			<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-8">
+				Research & Academic Work
+			</h2>
+			
+			<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-8 rounded-sm mb-8">
+				<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100 mb-4">
+					Multi-Lab Research Portfolio
+				</h3>
+				<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed mb-4">
+					I'm lucky enough to be doing research in three different labs.
+				</p>
+				<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed mb-4">
+					With the mathematics department, I'm diving deep into k-nary trees and something called the HK-property with Dr. Mahsa Nasrollahi-Shirazi and Dr. Andrii Arman. It's related to the famous <a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Ko%E2%80%93Rado_theorem" target="_blank" class="text-secondary-600 dark:text-secondary-400 hover:underline">Erdős–Ko–Rado theorem</a> but restricted to <a href="https://xlinux.nist.gov/dads/HTML/perfectBinaryTree.html" target="_blank" class="text-secondary-600 dark:text-secondary-400 hover:underline">perfect binary trees</a>.
+				</p>
+				<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed mb-4">
+					On the theoretical algorithms side, I'm working with the <a href="https://home.cs.umanitoba.ca/~gada/" target="_blank" class="text-secondary-600 dark:text-secondary-400 font-bold hover:underline">GADA lab</a> under Dr. Stephane Durocher. We're working on approximation algorithms for spatially embedded graphs, which is a fancy way of saying we're trying to make sense of complex networks in a more manageable way.
+				</p>
+				<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed">
+					And finally, I'm also doing some research in the <a href="https://terrabyte.acs.uwinnipeg.ca/" target="_blank" class="text-secondary-600 dark:text-secondary-400 font-bold hover:underline">Computer Vision Lab</a> with Dr. Christopher Henry.
+				</p>
+			</div>
+			
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-8 rounded-sm">
+					<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100 mb-4">
+						Mathematics Research
+					</h3>
+					<p class="text-base text-primary-800 dark:text-primary-200 font-medium leading-relaxed mb-4">
+						Working with Dr. Mahsa Nasrollahi-Shirazi and Dr. Andrii on k-nary trees and the HK-property. It's connected to the Erdős–Ko–Rado theorem but applied to perfect binary trees.
+					</p>
+					<div class="space-y-2">
+						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
+							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
+							Perfect k-nary Trees
+						</div>
+						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
+							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
+							HK-property Analysis
+						</div>
+						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
+							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
+							SageMath Visualizations
+						</div>
+					</div>
+				</div>
+
+				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-8 rounded-sm">
+					<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100 mb-4">
+						GADA Lab Research
+					</h3>
+					<p class="text-base text-primary-800 dark:text-primary-200 font-medium leading-relaxed mb-4">
+						Working with Dr. Stephane Durocher on approximation algorithms for spatially embedded graphs, tackling complex networks in manageable ways.
+					</p>
+					<div class="space-y-2">
+						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
+							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
+							Approximation Algorithms
+						</div>
+						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
+							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
+							Spatially Embedded Graphs
+						</div>
+						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
+							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
+							Metric Optimization	
+						</div>
+					</div>
+				</div>
+
+				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-8 rounded-sm">
+					<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100 mb-4">
+						Computer Vision Lab
+					</h3>
+					<p class="text-base text-primary-800 dark:text-primary-200 font-medium leading-relaxed mb-4">
+						Collaborating with Dr. Christopher Henry on computer vision research, exploring innovative approaches to visual data analysis and machine learning.
+					</p>
+					<div class="space-y-2">
+						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
+							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
+							PyTorch and PyTorch Geometric	
+						</div>
+						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
+							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
+							Machine Learning
+						</div>
+						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
+							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
+							Visual Data Analysis
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="py-12 md:py-16">
+			<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-8">
+				Skills & Technologies
+			</h2>
+			<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-6 rounded-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+					<div class="flex items-center mb-4">
+						<div class="w-10 h-10 bg-primary-600 dark:bg-primary-500 rounded-sm flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+							<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+							</svg>
+						</div>
+						<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100">
+							Languages & Databases
+						</h3>
+					</div>
+					<div class="space-y-3">
+						<div class="flex items-center">
+							<span class="w-1.5 h-1.5 bg-primary-600 dark:bg-primary-400 rounded-full mr-2 flex-shrink-0"></span>
+							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">JavaScript, Java, Python</span>
+						</div>
+						<div class="flex items-center">
+							<span class="w-1.5 h-1.5 bg-primary-600 dark:bg-primary-400 rounded-full mr-2 flex-shrink-0"></span>
+							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">C/C++, R, SageMath</span>
+						</div>
+						<div class="flex items-center">
+							<span class="w-1.5 h-1.5 bg-primary-600 dark:bg-primary-400 rounded-full mr-2 flex-shrink-0"></span>
+							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">PostgreSQL, MSSQL</span>
+						</div>
+						<div class="flex items-center">
+							<span class="w-1.5 h-1.5 bg-primary-600 dark:bg-primary-400 rounded-full mr-2 flex-shrink-0"></span>
+							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">SQLite, MongoDB</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-6 rounded-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+					<div class="flex items-center mb-4">
+						<div class="w-10 h-10 bg-secondary-600 dark:bg-secondary-500 rounded-sm flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+							<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14-7l2 2-2 2M5 7l-2 2 2 2m14 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6"/>
+							</svg>
+						</div>
+						<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100">
+							Frameworks
+						</h3>
+					</div>
+					<div class="space-y-3">
+						<div class="flex items-center">
+							<span class="w-1.5 h-1.5 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2 flex-shrink-0"></span>
+							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">ReactJS</span>
+						</div>
+						<div class="flex items-center">
+							<span class="w-1.5 h-1.5 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2 flex-shrink-0"></span>
+							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">NextJS</span>
+						</div>
+						<div class="flex items-center">
+							<span class="w-1.5 h-1.5 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2 flex-shrink-0"></span>
+							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">AstroJS</span>
+						</div>
+						<div class="flex items-center">
+							<span class="w-1.5 h-1.5 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2 flex-shrink-0"></span>
+							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">FastAPI</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-6 rounded-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+					<div class="flex items-center mb-4">
+						<div class="w-10 h-10 bg-tertiary-600 dark:bg-tertiary-500 rounded-sm flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+							<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+							</svg>
+						</div>
+						<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100">
+							Developer Tools
+						</h3>
+					</div>
+					<div class="space-y-3">
+						<div class="flex items-center">
+							<span class="w-1.5 h-1.5 bg-tertiary-600 dark:bg-tertiary-400 rounded-full mr-2 flex-shrink-0"></span>
+							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">Git, Neovim</span>
+						</div>
+						<div class="flex items-center">
+							<span class="w-1.5 h-1.5 bg-tertiary-600 dark:bg-tertiary-400 rounded-full mr-2 flex-shrink-0"></span>
+							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">Tmux, Docker</span>
+						</div>
+						<div class="flex items-center">
+							<span class="w-1.5 h-1.5 bg-tertiary-600 dark:bg-tertiary-400 rounded-full mr-2 flex-shrink-0"></span>
+							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">VS Code</span>
+						</div>
+						<div class="flex items-center">
+							<span class="w-1.5 h-1.5 bg-tertiary-600 dark:bg-tertiary-400 rounded-full mr-2 flex-shrink-0"></span>
+							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">IntelliJ</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-6 rounded-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+					<div class="flex items-center mb-4">
+						<div class="w-10 h-10 bg-primary-700 dark:bg-primary-600 rounded-sm flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+							<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v6a4 4 0 004 4h4V5z"/>
+							</svg>
+						</div>
+						<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100">
+							UI Tools
+						</h3>
+					</div>
+					<div class="space-y-3">
+						<div class="flex items-center">
+							<span class="w-1.5 h-1.5 bg-primary-700 dark:bg-primary-500 rounded-full mr-2 flex-shrink-0"></span>
+							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">Figma</span>
+						</div>
+						<div class="flex items-center">
+							<span class="w-1.5 h-1.5 bg-primary-700 dark:bg-primary-500 rounded-full mr-2 flex-shrink-0"></span>
+							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">Adobe XD</span>
+						</div>
+						<div class="flex items-center">
+							<span class="w-1.5 h-1.5 bg-primary-700 dark:bg-primary-500 rounded-full mr-2 flex-shrink-0"></span>
+							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">Adobe Illustrator</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
 </Layout>
 
 

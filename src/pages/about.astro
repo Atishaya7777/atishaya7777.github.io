@@ -1,10 +1,6 @@
 ---
 
-import { Image } from 'astro:assets';
-
 import Layout from '../layouts/Layout.astro';
-
-import HeroImg from '../assets/hero-img.svg';
 
 import ResumePDF from '../../public/assets/resume.pdf';
 
@@ -13,47 +9,95 @@ import routes from '../global/routes';
 ---
 
 <Layout title="About Me | Atish">
-	<section class="w-full text-left">
-		<h1 class="text-subtitle-2 md:text-subtitle-1 font-bold text-secondary-800">About me.</h1>
-		<div>
-			<p class="text-body-2 md:text-body-1 font-medium mt-6">Hi, I’m Atishaya! Feel free to call me Atish though!</p>
+	<main class="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
+		<section class="py-16 md:py-24">
+			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-900 dark:text-primary-100 mb-8">
+				About Me
+			</h1>
+			<p class="text-lg md:text-xl text-primary-700 dark:text-primary-200 font-regular leading-relaxed max-w-3xl">
+				Hi there! I'm Atishaya, but honestly, everyone just calls me Atish. I'm that person who gets way too excited about graph theory proofs and can spend hours debugging code just to make a website pixel-perfect.
+			</p>
+		</section>
 
-			<p class="text-body-2 md:text-body-1 font-medium mt-6">You can find my current updated resume <a href={ResumePDF} target="_blank" class="font-bold hover:underline">here</a> and my contact information to reach out <a href={routes.contact} class="font-bold hover:underline">here</a>.</p>
-
-			<p class="text-body-2 md:text-body-1 font-medium mt-4 mb-2">Aside from the professional side of stuff, here are some things about me:</p>	
-
-			<ul class="text-body-2 md:text-body-1 font-medium list-disc pl-10 flex flex-col gap-4">
-				<li>
-					Originally from Nepal, I’m currently based in Winnipeg, Canada working towards a Joint Honours Degree in Mathematics and Computer Science with a minor in Statistics.
-				</li>
-				<li>
-					If you couldn’t tell already, I love reading, writing, and researching Mathematics. Some of my favourite fields include <a href="https://en.wikipedia.org/wiki/Graph_theory">Graph Theory</a>, <a href="https://en.wikipedia.org/wiki/Computational_complexity_theory">Computational Complexity Theory</a>, and <a href="https://en.wikipedia.org/wiki/Combinatorics">Combinatorics</a>.
-				</li>
-				<li>
-					I currently work as a Frontend Developer at <a href="https://soanitech.com" target="_blank" class="font-bold hover:underline">SoAni Tech</a> working towards building and maintaining LG US’ website. I also am currently working as a student researcher for two projects; one in the faculty of Mathematics, the other in the <a href="https://home.cs.umanitoba.ca/~gada/" target="_blank" class="font-bold hover:underline">Geometric, Approximation, and Distributed Algorithms (GADA)</a> lab .
-				</li>
-				<li>
-					<p>
-						My Mathematics research currently delves into k-nary trees and HK-property. While the work is very theoretical, I have developed some computer programs to visualize and experiment numerically using Jupyter Notebooks with SageMath.
+		<section class="py-6 md:py-8">
+			<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-6">
+				My Story
+			</h2>
+			<div class="space-y-6">
+				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-300 p-8 rounded-sm">
+					<p class="text-base md:text-lg text-primary-800 dark:text-primary-200 font-regular leading-relaxed mb-6">
+						I grew up in Nepal and somehow ended up in Winnipeg, Canada (trust me, the weather was quite the adjustment!). Currently, I'm working on a Joint Honours degree in Mathematics and Computer Science with a minor in Statistics at the University of Manitoba.
 					</p>
-					<br />
-					<p>
-						My Computer Science research with the GADA lab delves into finding a possible Fixed Parameter Tractable solution or approximation to a specific instance of ad-hoc networks interference in one dimension.
+					<p class="text-base md:text-lg text-primary-800 dark:text-primary-200 font-regular leading-relaxed">
+						If you need my resume, you can grab it <a href={ResumePDF} target="_blank" class="text-secondary-600 dark:text-secondary-400 font-bold hover:underline transition-all duration-200">here</a>. Want to chat? Hit me up through my <a href={routes.contact} class="text-secondary-600 dark:text-secondary-400 font-bold hover:underline transition-all duration-200">contact page</a>.
 					</p>
+				</div>
+			</div>
+		</section>
 
-					<br />
+		<section class="py-6 md:py-8">
+			<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-6">
+				What Gets Me Excited
+			</h2>
+			<div class="space-y-6">
+				<p class="text-base md:text-lg text-primary-800 dark:text-primary-200 font-regular leading-relaxed">
+					If you couldn't tell already, I'm pretty obsessed with mathematics. There's something beautiful about how abstract concepts can solve real-world problems. My favorite areas are probably <a href="https://en.wikipedia.org/wiki/Graph_theory" target="_blank" class="text-secondary-600 dark:text-secondary-400 hover:underline">Graph Theory</a>, <a href="https://en.wikipedia.org/wiki/Computational_complexity_theory" target="_blank" class="text-secondary-600 dark:text-secondary-400 hover:underline">Computational Complexity Theory</a>, and <a href="https://en.wikipedia.org/wiki/Combinatorics" target="_blank" class="text-secondary-600 dark:text-secondary-400 hover:underline">Combinatorics</a> – basically the stuff that makes your brain hurt in the best possible way.
+				</p>
+				
+				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-300 p-8 rounded-sm">
+					<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100 mb-6">
+						What I'm Working On
+					</h3>
+					<div class="space-y-6">
+						<div>
+							<h4 class="text-lg font-bold text-primary-900 dark:text-primary-100 mb-3">Day Job</h4>
+							<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed">
+								I work as a Frontend Developer at <a href="https://alpiniststudios.com" target="_blank" class="text-accent-600 dark:text-accent-400 font-bold hover:underline">Alpinist Studios</a>, where I help build and maintain LG US' website. It's pretty cool getting to work on something that millions of people actually use.
+							</p>
+						</div>
+						<div>
+							<h4 class="text-lg font-bold text-primary-900 dark:text-primary-100 mb-3">Research (The Fun Stuff)</h4>
+							<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed mb-4">
+								I'm lucky enough to be doing research in three different labs. 
+							</p>
+							<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed mb-4">
+								With the mathematics department, I'm diving deep into k-nary trees and something called the HK-property with Dr. Mahsa Nasrollahi-Shirazi and Dr. Andrii. It's related to the famous <a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Ko%E2%80%93Rado_theorem" target="_blank" class="text-secondary-600 dark:text-secondary-400 hover:underline">Erdős–Ko–Rado theorem</a> but restricted to <a href="https://xlinux.nist.gov/dads/HTML/perfectBinaryTree.html" target="_blank" class="text-secondary-600 dark:text-secondary-400 hover:underline">perfect binary trees</a>.
+							</p>
+							<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed">
+								On the theoretical algorthims side, I'm working with the <a href="https://home.cs.umanitoba.ca/~gada/" target="_blank" class="text-accent-600 dark:text-accent-400 font-bold hover:underline">GADA lab</a> under Dr. Stephane Durocher. We're working on approximation algorithms for spatially embedded graphs, which is a fancy way of saying we're trying to make sense of complex networks in a more manageable way.
+							</p>
+							<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed mt-4">
+								And finally, I'm also doing some research in the <a href="https://terrabyte.acs.uwinnipeg.ca/" target="_blank" class="text-accent-600 dark:text-accent-400 font-bold hover:underline">Computer Vision Lab</a> with Dr. Christopher Henry, 
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-					<p>
-						 I aim to go to graduate school and ultimately get a PhD, either in Computer Science or Mathematics.
-					</p>
-				</li>
-				<li>
-					My hobbies include taking long walks, biking, reading, and cooking. I especially like to cook stir fry traditional Nepali dishes and eat them with rice. Rice is the best! Aside from that, I love teaching and tutoring people; especially with software ideas and technologies that I struggled with.
-				</li>
-			</ul>
-		</div>
+		<section class="py-6 md:py-8">
+			<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-6">
+				Where I'm Headed
+			</h2>
+			<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-300 p-8 rounded-sm">
+				<p class="text-base md:text-lg text-primary-800 dark:text-primary-200 font-regular leading-relaxed">
+					The goal is to eventually get a PhD – probably in Computer Science or Mathematics (still figuring that one out). I love the idea of spending even more time diving deep into research and maybe teaching along the way.
+				</p>
+			</div>
+		</section>
 
-	</section>
+		<section class="py-6 md:py-8">
+			<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-6">
+				When I'm Not Nerding Out
+			</h2>
+			<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-300 p-8 rounded-sm">
+				<p class="text-lg text-primary-800 dark:text-primary-200 font-regular leading-relaxed">
+					I'm probably out taking long walks (great for thinking through tough problems), biking around the city, reading, or experimenting in the kitchen. I have a serious weakness for traditional Nepali food – especially anything with rice. Rice is honestly the best food ever invented.
+				</p>
+				<p class="text-lg text-primary-800 dark:text-primary-200 font-regular leading-relaxed mt-6">
+					I also really enjoy teaching and helping people figure out tricky concepts, especially when it comes to programming or math stuff that I struggled with myself. There's something really satisfying about that "aha!" moment when things finally click.
+				</p>
+			</div>
+		</section>
+	</main>
 </Layout>
-
-

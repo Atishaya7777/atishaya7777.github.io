@@ -5,11 +5,114 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Blog | Atish">
-	<section class="w-full text-left">
-		<h1 class="text-subtitle-2 md:text-subtitle-1 font-bold text-secondary-800 mb-4">Blog:</h1>
+	<main class="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
+		<section class="py-16 md:py-24">
+			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-900 dark:text-primary-100 mb-8">
+				Blog & Insights
+			</h1>
+			<p class="text-lg md:text-xl text-primary-700 dark:text-primary-200 font-regular leading-relaxed max-w-3xl">
+				Eventually, this will be where I share thoughts on math, code, and those "aha!" moments that happen during research. For now, it's a work in progress.
+			</p>
+		</section>
 
-		<p class="font-medium text-body-2 md:text-body-1">For now, I don't have anything much to show but I promise I will add more content in the future! :)</p>
-	</section>
+		<section class="py-12 md:py-16">
+			<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-300 p-12 rounded-sm text-center">
+				<div class="max-w-2xl mx-auto">
+					<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-6">
+						Coming Soon
+					</h2>
+					<p class="text-base md:text-lg text-primary-800 dark:text-primary-200 font-medium leading-relaxed mb-8">
+						I'm working on putting together some thoughtful posts about the stuff I'm actually working on – mathematical research, the weird bugs I encounter while coding, and those moments when theory suddenly clicks with practice. Should be up soon!
+					</p>
+					<div class="grid md:grid-cols-3 gap-6 text-left">
+						<div class="bg-white dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-6 rounded-sm">
+							<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100 mb-3">
+								Research Insights
+							</h3>
+							<p class="text-sm text-primary-800 dark:text-primary-200 font-medium">
+								What I'm discovering in my current research projects and why it's actually pretty cool.
+							</p>
+						</div>
+						<div class="bg-white dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-6 rounded-sm">
+							<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100 mb-3">
+								Academic Journey
+							</h3>
+							<p class="text-sm text-primary-800 dark:text-primary-200 font-medium">
+								Honest thoughts about university life, research struggles, and those breakthrough moments.
+							</p>
+						</div>
+						<div class="bg-white dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-6 rounded-sm">
+							<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100 mb-3">
+								Technical Tutorials
+							</h3>
+							<p class="text-sm text-primary-800 dark:text-primary-200 font-medium">
+								Step-by-step guides for tools and techniques that gave me trouble (so maybe they won't for you).
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="py-12 md:py-16">
+			<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-8">
+				Topics I'll Be Exploring
+			</h2>
+			<div class="grid md:grid-cols-2 gap-8">
+				<div class="border border-primary-200 dark:border-primary-300 p-8 rounded-sm shadow-sm hover:shadow-md transition-all duration-300">
+					<div class="flex items-center mb-6">
+						<div class="w-12 h-12 bg-primary-600 dark:bg-primary-500 rounded-sm flex items-center justify-center mr-4 shadow-sm">
+							<span class="text-white text-2xl font-bold">Σ</span>
+						</div>
+						<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100">
+							Mathematics & Theory
+						</h3>
+					</div>
+					<ul class="space-y-4">
+						<li class="flex items-start group">
+							<div class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></div>
+							<span class="text-base text-primary-900 dark:text-primary-100 font-medium leading-relaxed">Graph Theory Applications and Visualizations</span>
+						</li>
+						<li class="flex items-start group">
+							<div class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></div>
+							<span class="text-base text-primary-900 dark:text-primary-100 font-medium leading-relaxed">Computational Complexity in Real-World Problems</span>
+						</li>
+						<li class="flex items-start group">
+							<div class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></div>
+							<span class="text-base text-primary-900 dark:text-primary-100 font-medium leading-relaxed">Combinatorial Optimization Techniques</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="border border-primary-200 dark:border-primary-300 p-8 rounded-sm shadow-sm hover:shadow-md transition-all duration-300">
+					<div class="flex items-center mb-6">
+						<div class="w-12 h-12 bg-secondary-600 dark:bg-secondary-500 rounded-sm flex items-center justify-center mr-4 shadow-sm">
+							<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+							</svg>
+						</div>
+						<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100">
+							Technology & Development
+						</h3>
+					</div>
+					<ul class="space-y-4">
+						<li class="flex items-start group">
+							<div class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></div>
+							<span class="text-base text-primary-900 dark:text-primary-100 font-medium leading-relaxed">Modern Frontend Architecture Patterns</span>
+						</li>
+						<li class="flex items-start group">
+							<div class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></div>
+							<span class="text-base text-primary-900 dark:text-primary-100 font-medium leading-relaxed">Research Tools and Computational Methods</span>
+						</li>
+						<li class="flex items-start group">
+							<div class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></div>
+							<span class="text-base text-primary-900 dark:text-primary-100 font-medium leading-relaxed">Bridging Theory and Implementation</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
 </Layout>
 
 

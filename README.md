@@ -11,7 +11,7 @@ Hello there! 👋 This repository showcases my skills, projects, and achievement
 
 ## 👤 About Me
 
-I'm Atishaya, a Front End & Android Developer at SoAni Tech. Proficient in HTML, CSS, JavaScript, and Java, I excel in building user-friendly interfaces and functional Android apps. Prioritizing ReactJS, I'm passionate about creating seamless user experiences and innovative website applications. 
+I'm Atishaya, a Frontend Developer at Alpinist Studios and a mathematics & computer science student at the University of Manitoba. I'm passionate about exploring the intersection of abstract mathematical theory and practical web development, working on everything from graph theory research to modern React applications. 
 
 I'm currently pursuing Computer Science, Mathematics, & Statistics at the University of Manitoba, I blend technical expertise with a logical mindset to tackle challenges effectively. I thrive on collaboration and enjoy learning new technologies. 
 

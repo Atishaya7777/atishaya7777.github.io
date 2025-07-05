@@ -1,0 +1,156 @@
+---
+interface Props {
+	title?: string;
+	subtitle?: string;
+	description?: string;
+	ctaText?: string;
+	ctaLink?: string;
+	secondaryCtaText?: string;
+	secondaryCtaLink?: string;
+}
+
+const {
+	title = "Hello there 👋 You've reached Atish's website",
+	subtitle = "Mathematician, Computer Scientist & Frontend Developer",
+	description = "Exploring the intersection of mathematics, statistics, and modern web development. Based in Winnipeg, Canada, studying the beautiful patterns that connect abstract theory with practical innovation.",
+	ctaText = "Explore My Work",
+	ctaLink = "/works",
+	secondaryCtaText = "Read My Research",
+	secondaryCtaLink = "/blog"
+} = Astro.props;
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+	<!-- Subtle background elements -->
+	<div class="absolute inset-0 bg-gradient-to-br from-background-base via-background-paper to-accent-50/30"></div>
+	
+	<!-- Floating geometric elements -->
+	<div class="absolute inset-0 pointer-events-none">
+		<div class="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-accent-100 to-accent-200 rounded-full blur-xl opacity-60 animate-float"></div>
+		<div class="absolute top-40 right-32 w-24 h-24 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-full blur-xl opacity-50 animate-float" style="animation-delay: 2s;"></div>
+		<div class="absolute bottom-32 left-32 w-20 h-20 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full blur-xl opacity-40 animate-float" style="animation-delay: 4s;"></div>
+	</div>
+
+	<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+		<div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+			<!-- Content -->
+			<div class="space-y-8 animate-on-scroll">
+				<!-- Academic badge -->
+				<div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-50 text-accent-700 border border-accent-200">
+					<span class="w-2 h-2 bg-accent-500 rounded-full mr-2 animate-pulse"></span>
+					Currently researching at University of Manitoba
+				</div>
+
+				<!-- Main heading -->
+				<div class="space-y-4">
+					<h1 class="text-display-md lg:text-display-lg font-black text-gray-900 leading-tight text-balance">
+						{title}
+					</h1>
+					<p class="text-xl lg:text-2xl font-medium text-accent-600 text-balance">
+						{subtitle}
+					</p>
+				</div>
+
+				<!-- Description -->
+				<p class="text-body-lg text-gray-600 leading-relaxed max-w-prose text-balance">
+					{description}
+				</p>
+
+				<!-- Call to actions -->
+				<div class="flex flex-col sm:flex-row gap-4">
+					<a 
+						href={ctaLink}
+						class="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-gradient-to-r from-accent-500 to-secondary-500 rounded-xl hover:from-accent-600 hover:to-secondary-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+					>
+						{ctaText}
+						<svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+						</svg>
+					</a>
+					
+					<a 
+						href={secondaryCtaLink}
+						class="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-gray-700 bg-white border-2 border-gray-200 rounded-xl hover:border-accent-300 hover:text-accent-600 transition-all shadow-sm hover:shadow-md"
+					>
+						{secondaryCtaText}
+					</a>
+				</div>
+
+				<!-- Academic credentials -->
+				<div class="pt-8 border-t border-gray-100">
+					<div class="flex flex-wrap items-center gap-6 text-sm text-gray-500">
+						<div class="flex items-center">
+							<span class="w-2 h-2 bg-accent-400 rounded-full mr-2"></span>
+							Mathematics & Computer Science
+						</div>
+						<div class="flex items-center">
+							<span class="w-2 h-2 bg-secondary-400 rounded-full mr-2"></span>
+							Frontend Developer at Alpinist Studios
+						</div>
+						<div class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-2"></span>
+							Combinatorics Research
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Visual element -->
+			<div class="relative animate-on-scroll" style="animation-delay: 0.3s;">
+				<!-- Main visual container -->
+				<div class="relative">
+					<!-- Background gradient -->
+					<div class="absolute inset-0 bg-gradient-to-br from-accent-100 via-secondary-50 to-primary-100 rounded-3xl transform rotate-6"></div>
+					
+					<!-- Content container -->
+					<div class="relative bg-white rounded-3xl shadow-2xl p-8 lg:p-12 transform -rotate-1 hover:rotate-0 transition-transform duration-700">
+						<!-- Mathematical formula or code snippet -->
+						<div class="space-y-6">
+							<div class="flex items-center justify-between">
+								<h3 class="text-lg font-semibold text-gray-800">Current Focus</h3>
+								<div class="flex space-x-2">
+									<div class="w-3 h-3 bg-red-400 rounded-full"></div>
+									<div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+									<div class="w-3 h-3 bg-green-400 rounded-full"></div>
+								</div>
+							</div>
+							
+							<div class="bg-gray-50 rounded-xl p-6 font-mono text-sm">
+								<div class="text-accent-600 mb-2">// Exploring graph theory</div>
+								<div class="text-gray-800">
+									<span class="text-purple-600">function</span> exploreConnections(
+									<br/>{"  "}<span class="text-blue-600">vertices</span>: Set&lt;Node&gt;,
+									<br/>{"  "}<span class="text-blue-600">edges</span>: Graph
+									<br/>) {"{"}
+									<br/>{"  "}<span class="text-purple-600">return</span> findPatterns(
+									<br/>{"    "}mathematics,
+									<br/>{"    "}technology
+									<br/>{"  "});
+									<br/>{"}"}</div>
+							</div>
+
+							<!-- Stats -->
+							<div class="grid grid-cols-2 gap-4 pt-4">
+								<div class="text-center">
+									<div class="text-2xl font-bold text-accent-600">15+</div>
+									<div class="text-xs text-gray-500">Projects</div>
+								</div>
+								<div class="text-center">
+									<div class="text-2xl font-bold text-secondary-600">3</div>
+									<div class="text-xs text-gray-500">Research Areas</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Scroll indicator -->
+	<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+		<div class="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center">
+			<div class="w-1 h-3 bg-gray-300 rounded-full mt-2 animate-pulse"></div>
+		</div>
+	</div>
+</section>

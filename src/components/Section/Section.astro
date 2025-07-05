@@ -18,8 +18,8 @@ const { imgPos = 'left', img, imgAlt, heading, body } = Astro.props;
 
 <section class:list={["flex flex-col justify-center md:justify-start lg:flex-row items-center gap-6 md:gap-10", imgPos === 'right' && "flex-row-reverse"]}>
 	<div>
-		<h1 class="text-subtitle-2 md:text-subtitle-1 font-bold text-secondary-800">{heading}</h1>
-			{body.length > 0 && body.map((text: string) => <p class="text-base md:text-body-1 leading-6 md:leading-7 font-medium mt-6" set:html={text}></p>)}
+		<h1 class="text-subtitle-2 md:text-subtitle-1 font-bold text-secondary-800 dark:text-secondary-200">{heading}</h1>
+			{body.length > 0 && body.map((text: string) => <p class="text-base md:text-body-1 leading-6 md:leading-7 font-regular mt-6 text-primary-700 dark:text-primary-200" set:html={text}></p>)}
 		<slot />
 	</div>
 	<Image src={img} alt={imgAlt} class="w-64 h-64 hidden md:block" />

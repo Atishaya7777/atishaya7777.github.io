@@ -1,36 +1,142 @@
 ---
-
 import '../theme/global.css';
-
 import { Header } from '../components/Header/';
-import { Footer } from '../components/Footer/'
+import { Footer } from '../components/Footer/';
 
 interface Props {
 	title: string;
+	description?: string;
+	image?: string;
+	type?: string;
 }
 
-const { title } = Astro.props;
+const { 
+	title, 
+	description = "Mathematician, Computer Scientist & Frontend Developer exploring the intersection of abstract theory and practical innovation.",
+	image = "/assets/logo.svg",
+	type = "website"
+} = Astro.props;
 
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
 		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
 		<title>{title}</title>
-
+		<link rel="canonical" href={canonicalURL} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content={type} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.url)} />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(image, Astro.url)} />
+		
+		<!-- Preload critical fonts -->
+		<link rel="preload" href="/fonts/HelveticaNowDisplay-Regular.ttf" as="font" type="font/ttf" crossorigin />
+		<link rel="preload" href="/fonts/HelveticaNowDisplay-Bold.ttf" as="font" type="font/ttf" crossorigin />
+		
+		<!-- Dark mode script - runs before body renders to prevent flash -->
+		<script is:inline>
+			function initTheme() {
+				const savedTheme = localStorage.getItem('theme');
+				let theme;
+				
+				if (savedTheme) {
+					theme = savedTheme;
+				} else {
+					// Use system preference if no saved theme
+					theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+					localStorage.setItem('theme', theme);
+				}
+				
+				document.documentElement.setAttribute('data-theme', theme);
+				document.documentElement.classList.toggle('dark', theme === 'dark');
+			}
+			initTheme();
+		</script>
 	</head>
-	<body class="bg-primary-100">
+	<body class="bg-background-base dark:bg-primary-900 text-primary-800 dark:text-background-100 antialiased transition-colors duration-300">
 		<Header />
-		<main class="min-h-dvh flex justify-center">
-			<div class="max-w-screen-xl flex flex-col items-center gap-5 my-10 px-4">
+		<main class="pt-16 lg:pt-20">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<slot />
 			</div>
 		</main>
 		<Footer />
+		
+		<!-- Enhanced scroll animation and dark mode script -->
+		<script>
+			function initScrollAnimations() {
+				const observerOptions = {
+					threshold: 0.1,
+					rootMargin: '0px 0px -50px 0px'
+				};
+
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('visible');
+						}
+					});
+				}, observerOptions);
+
+				// Observe all elements with animation class
+				document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+					observer.observe(el);
+				});
+			}
+			
+			function initThemeToggle() {
+				const themeToggle = document.querySelector('#theme-toggle');
+				if (themeToggle) {
+					themeToggle.addEventListener('click', () => {
+						const currentTheme = document.documentElement.getAttribute('data-theme');
+						const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+						
+						document.documentElement.setAttribute('data-theme', newTheme);
+						document.documentElement.classList.toggle('dark', newTheme === 'dark');
+						localStorage.setItem('theme', newTheme);
+					});
+				}
+				
+				// Listen for system color scheme changes
+				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+					// Only apply system preference if user hasn't set a manual preference
+					const savedTheme = localStorage.getItem('theme');
+					if (!savedTheme) {
+						const theme = e.matches ? 'dark' : 'light';
+						document.documentElement.setAttribute('data-theme', theme);
+						document.documentElement.classList.toggle('dark', theme === 'dark');
+					}
+				});
+			}
+ 
+			// Initialize on DOM load
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', () => {
+					initScrollAnimations();
+					initThemeToggle();
+				});
+			} else {
+				initScrollAnimations();
+				initThemeToggle();
+			}
+		</script>
 	</body>
 </html>
