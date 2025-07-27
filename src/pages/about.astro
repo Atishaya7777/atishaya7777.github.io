@@ -1,103 +1,326 @@
 ---
-
 import Layout from '../layouts/Layout.astro';
-
 import ResumePDF from '../../public/assets/resume.pdf';
-
 import routes from '../global/routes';
-
 ---
 
-<Layout title="About Me | Atish">
-	<main class="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
-		<section class="py-16 md:py-24">
-			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-900 dark:text-primary-100 mb-8">
-				About Me
-			</h1>
-			<p class="text-lg md:text-xl text-primary-700 dark:text-primary-200 font-regular leading-relaxed max-w-3xl">
-				Hi there! I'm Atishaya, but honestly, everyone just calls me Atish. I'm that person who gets way too excited about graph theory proofs and can spend hours debugging code just to make a website pixel-perfect.
-			</p>
-		</section>
-
-		<section class="py-6 md:py-8">
-			<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-6">
-				My Story
-			</h2>
-			<div class="space-y-6">
-				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-300 p-8 rounded-sm">
-					<p class="text-base md:text-lg text-primary-800 dark:text-primary-200 font-regular leading-relaxed mb-6">
-						I grew up in Nepal and somehow ended up in Winnipeg, Canada (trust me, the weather was quite the adjustment!). Currently, I'm working on a Joint Honours degree in Mathematics and Computer Science with a minor in Statistics at the University of Manitoba.
-					</p>
-					<p class="text-base md:text-lg text-primary-800 dark:text-primary-200 font-regular leading-relaxed">
-						If you need my resume, you can grab it <a href={ResumePDF} target="_blank" class="text-secondary-600 dark:text-secondary-400 font-bold hover:underline transition-all duration-200">here</a>. Want to chat? Hit me up through my <a href={routes.contact} class="text-secondary-600 dark:text-secondary-400 font-bold hover:underline transition-all duration-200">contact page</a>.
-					</p>
+<Layout title="atish@terminal:~$ cat about.txt">
+	<!-- Terminal Header -->
+	<div class="bg-primary-900 border-b-2 border-tertiary-base">
+		<div class="container mx-auto px-4">
+			<div class="flex items-center justify-between py-2 text-xs">
+				<div class="flex items-center space-x-4">
+					<div class="flex space-x-2">
+						<div class="w-3 h-3 rounded-full bg-red-500"></div>
+						<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+						<div class="w-3 h-3 rounded-full bg-green-500"></div>
+					</div>
+					<span class="text-text-400 font-mono">atish@terminal: ~/about</span>
+				</div>
+				<div class="text-text-500 font-mono">
+					{new Date().toLocaleTimeString()} | file: about.txt
 				</div>
 			</div>
-		</section>
+		</div>
+	</div>
 
-		<section class="py-6 md:py-8">
-			<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-6">
-				What Gets Me Excited
-			</h2>
-			<div class="space-y-6">
-				<p class="text-base md:text-lg text-primary-800 dark:text-primary-200 font-regular leading-relaxed">
-					If you couldn't tell already, I'm pretty obsessed with mathematics. There's something beautiful about how abstract concepts can solve real-world problems. My favorite areas are probably <a href="https://en.wikipedia.org/wiki/Graph_theory" target="_blank" class="text-secondary-600 dark:text-secondary-400 hover:underline">Graph Theory</a>, <a href="https://en.wikipedia.org/wiki/Computational_complexity_theory" target="_blank" class="text-secondary-600 dark:text-secondary-400 hover:underline">Computational Complexity Theory</a>, and <a href="https://en.wikipedia.org/wiki/Combinatorics" target="_blank" class="text-secondary-600 dark:text-secondary-400 hover:underline">Combinatorics</a> – basically the stuff that makes your brain hurt in the best possible way.
-				</p>
-				
-				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-300 p-8 rounded-sm">
-					<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100 mb-6">
-						What I'm Working On
-					</h3>
-					<div class="space-y-6">
-						<div>
-							<h4 class="text-lg font-bold text-primary-900 dark:text-primary-100 mb-3">Day Job</h4>
-							<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed">
-								I work as a Frontend Developer at <a href="https://alpiniststudios.com" target="_blank" class="text-accent-600 dark:text-accent-400 font-bold hover:underline">Alpinist Studios</a>, where I help build and maintain LG US' website. It's pretty cool getting to work on something that millions of people actually use.
+	<!-- Main Terminal Content -->
+	<main class="min-h-screen bg-primary-1000 text-tertiary-200 font-mono">
+		<div class="container mx-auto px-4 py-6 max-w-6xl">
+			
+			<!-- File Header -->
+			<section class="mb-8">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/about</span>$ cat about.txt
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="text-text-400 text-sm mb-4">
+						<span class="text-tertiary-base">#</span> File: about.txt
+						<br><span class="text-tertiary-base">#</span> Size: 2.4KB
+						<br><span class="text-tertiary-base">#</span> Last modified: {new Date().toLocaleDateString()}
+						<br><span class="text-tertiary-base">#</span> Encoding: UTF-8
+					</div>
+					<div class="border-l-2 border-tertiary-base pl-6 mb-6">
+						<h1 class="text-2xl md:text-3xl font-bold text-tertiary-base mb-4 font-mono">
+							ABOUT_ATISH.md
+						</h1>
+						<p class="text-text-300 leading-relaxed mb-4">
+							Hi there! I'm Atishaya, but honestly, everyone just calls me Atish. 
+							I'm that person who gets way too excited about graph theory proofs and 
+							can spend hours debugging code just to make a website pixel-perfect.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- My Story Section -->
+			<section class="mb-8">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/about</span>$ grep -A 20 "STORY" about.txt
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="bg-primary-900 border border-primary-700 p-6 mb-4">
+						<h2 class="text-xl font-bold text-tertiary-base mb-4 font-mono">
+							== MY_STORY ==
+						</h2>
+						<div class="space-y-4 text-text-300">
+							<div class="border-l-2 border-secondary-400 pl-4">
+								<p class="leading-relaxed mb-4">
+									I grew up in Nepal and somehow ended up in Winnipeg, Canada 
+									(trust me, the weather was quite the adjustment!). Currently, 
+									I'm working on a Joint Honours degree in Mathematics and Computer 
+									Science with a minor in Statistics at the University of Manitoba.
+								</p>
+								<p class="leading-relaxed">
+									If you need my resume, you can grab it 
+									<a href={ResumePDF} target="_blank" class="text-tertiary-base hover:text-tertiary-400 underline font-bold transition-colors">
+										[resume.pdf]
+									</a>. Want to chat? Hit me up through my 
+									<a href={routes.contact} class="text-tertiary-base hover:text-tertiary-400 underline font-bold transition-colors">
+										[contact.sh]
+									</a>.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- What Gets Me Excited -->
+			<section class="mb-8">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/about</span>$ cat interests.txt
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="bg-primary-900 border border-primary-700 p-6 mb-4">
+						<h2 class="text-xl font-bold text-tertiary-base mb-4 font-mono">
+							== INTERESTS.LOG ==
+						</h2>
+						<div class="text-text-300 leading-relaxed mb-6">
+							<p>
+								If you couldn't tell already, I'm pretty obsessed with mathematics. 
+								There's something beautiful about how abstract concepts can solve real-world problems. 
+								My favorite areas are probably:
 							</p>
 						</div>
-						<div>
-							<h4 class="text-lg font-bold text-primary-900 dark:text-primary-100 mb-3">Research (The Fun Stuff)</h4>
-							<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed mb-4">
-								I'm lucky enough to be doing research in three different labs. 
-							</p>
-							<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed mb-4">
-								With the mathematics department, I'm diving deep into k-nary trees and something called the HK-property with Dr. Mahsa Nasrollahi-Shirazi and Dr. Andrii. It's related to the famous <a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Ko%E2%80%93Rado_theorem" target="_blank" class="text-secondary-600 dark:text-secondary-400 hover:underline">Erdős–Ko–Rado theorem</a> but restricted to <a href="https://xlinux.nist.gov/dads/HTML/perfectBinaryTree.html" target="_blank" class="text-secondary-600 dark:text-secondary-400 hover:underline">perfect binary trees</a>.
-							</p>
-							<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed">
-								On the theoretical algorthims side, I'm working with the <a href="https://home.cs.umanitoba.ca/~gada/" target="_blank" class="text-accent-600 dark:text-accent-400 font-bold hover:underline">GADA lab</a> under Dr. Stephane Durocher. We're working on approximation algorithms for spatially embedded graphs, which is a fancy way of saying we're trying to make sense of complex networks in a more manageable way.
-							</p>
-							<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed mt-4">
-								And finally, I'm also doing some research in the <a href="https://terrabyte.acs.uwinnipeg.ca/" target="_blank" class="text-accent-600 dark:text-accent-400 font-bold hover:underline">Computer Vision Lab</a> with Dr. Christopher Henry, 
+						<div class="grid md:grid-cols-3 gap-4 mb-6">
+							<div class="bg-primary-850 border border-primary-600 p-4">
+								<div class="text-tertiary-400 font-bold mb-2">[LINK_01]</div>
+								<a href="https://en.wikipedia.org/wiki/Graph_theory" target="_blank" 
+									class="text-secondary-400 hover:text-secondary-300 underline transition-colors">
+									Graph Theory
+								</a>
+							</div>
+							<div class="bg-primary-850 border border-primary-600 p-4">
+								<div class="text-tertiary-400 font-bold mb-2">[LINK_02]</div>
+								<a href="https://en.wikipedia.org/wiki/Computational_complexity_theory" target="_blank" 
+									class="text-secondary-400 hover:text-secondary-300 underline transition-colors">
+									Computational Complexity
+								</a>
+							</div>
+							<div class="bg-primary-850 border border-primary-600 p-4">
+								<div class="text-tertiary-400 font-bold mb-2">[LINK_03]</div>
+								<a href="https://en.wikipedia.org/wiki/Combinatorics" target="_blank" 
+									class="text-secondary-400 hover:text-secondary-300 underline transition-colors">
+									Combinatorics
+								</a>
+							</div>
+						</div>
+						<div class="text-text-400 text-sm">
+							<span class="text-tertiary-base">//</span> Basically the stuff that makes your brain hurt in the best possible way.
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Current Work -->
+			<section class="mb-8">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/about</span>$ ls -la ~/work/ ~/research/
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="bg-primary-900 border border-primary-700 p-6 mb-4">
+						<h2 class="text-xl font-bold text-tertiary-base mb-4 font-mono">
+							== CURRENT_PROJECTS ==
+						</h2>
+						
+						<!-- Day Job -->
+						<div class="mb-6">
+							<div class="flex items-center mb-3">
+								<span class="text-tertiary-400 mr-2">📁</span>
+								<h3 class="text-lg font-bold text-tertiary-200 font-mono">~/work/day_job/</h3>
+							</div>
+							<div class="border-l-2 border-tertiary-400 pl-4 text-text-300">
+								<p class="leading-relaxed">
+									I work as a Frontend Developer at 
+									<a href="https://alpiniststudios.com" target="_blank" 
+										class="text-tertiary-base hover:text-tertiary-400 underline font-bold transition-colors">
+										[Alpinist Studios]
+									</a>, where I help build and maintain LG US' website. 
+									It's pretty cool getting to work on something that millions of people actually use.
+								</p>
+							</div>
+						</div>
+
+						<!-- Research -->
+						<div class="mb-6">
+							<div class="flex items-center mb-3">
+								<span class="text-tertiary-400 mr-2">🔬</span>
+								<h3 class="text-lg font-bold text-tertiary-200 font-mono">~/research/</h3>
+							</div>
+							<div class="border-l-2 border-secondary-400 pl-4 text-text-300">
+								<p class="leading-relaxed mb-4">
+									I'm lucky enough to be doing research in three different labs.
+								</p>
+								
+								<div class="space-y-4">
+									<div class="bg-primary-850 border border-primary-600 p-4">
+										<div class="text-tertiary-400 font-bold mb-2">[MATH_DEPT]</div>
+										<p class="text-sm leading-relaxed">
+											Deep dive into k-nary trees and the HK-property with Dr. Mahsa Nasrollahi-Shirazi 
+											and Dr. Andrii. Related to the famous 
+											<a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Ko%E2%80%93Rado_theorem" target="_blank" 
+												class="text-secondary-400 hover:text-secondary-300 underline">
+												Erdős–Ko–Rado theorem
+											</a> but restricted to 
+											<a href="https://xlinux.nist.gov/dads/HTML/perfectBinaryTree.html" target="_blank" 
+												class="text-secondary-400 hover:text-secondary-300 underline">
+												perfect binary trees
+											</a>.
+										</p>
+									</div>
+									
+									<div class="bg-primary-850 border border-primary-600 p-4">
+										<div class="text-tertiary-400 font-bold mb-2">[GADA_LAB]</div>
+										<p class="text-sm leading-relaxed">
+											Working with the 
+											<a href="https://home.cs.umanitoba.ca/~gada/" target="_blank" 
+												class="text-tertiary-base hover:text-tertiary-400 underline font-bold">
+												GADA lab
+											</a> under Dr. Stephane Durocher on approximation algorithms 
+											for spatially embedded graphs. Fancy way of saying we're making 
+											sense of complex networks in a more manageable way.
+										</p>
+									</div>
+									
+									<div class="bg-primary-850 border border-primary-600 p-4">
+										<div class="text-tertiary-400 font-bold mb-2">[CV_LAB]</div>
+										<p class="text-sm leading-relaxed">
+											Research in the 
+											<a href="https://terrabyte.acs.uwinnipeg.ca/" target="_blank" 
+												class="text-tertiary-base hover:text-tertiary-400 underline font-bold">
+												Computer Vision Lab
+											</a> with Dr. Christopher Henry.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Future Plans -->
+			<section class="mb-8">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/about</span>$ cat future_plans.txt
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="bg-primary-900 border border-primary-700 p-6">
+						<h2 class="text-xl font-bold text-tertiary-base mb-4 font-mono">
+							== ROADMAP.md ==
+						</h2>
+						<div class="border-l-2 border-tertiary-base pl-4 text-text-300">
+							<p class="leading-relaxed">
+								The goal is to eventually get a PhD – probably in Computer Science or Mathematics 
+								(still figuring that one out). I love the idea of spending even more time diving 
+								deep into research and maybe teaching along the way.
 							</p>
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
 
-		<section class="py-6 md:py-8">
-			<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-6">
-				Where I'm Headed
-			</h2>
-			<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-300 p-8 rounded-sm">
-				<p class="text-base md:text-lg text-primary-800 dark:text-primary-200 font-regular leading-relaxed">
-					The goal is to eventually get a PhD – probably in Computer Science or Mathematics (still figuring that one out). I love the idea of spending even more time diving deep into research and maybe teaching along the way.
-				</p>
-			</div>
-		</section>
+			<!-- Personal Life -->
+			<section class="mb-8">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/about</span>$ cat personal.txt
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="bg-primary-900 border border-primary-700 p-6">
+						<h2 class="text-xl font-bold text-tertiary-base mb-4 font-mono">
+							== PERSONAL_LIFE.log ==
+						</h2>
+						<div class="border-l-2 border-secondary-400 pl-4 text-text-300 space-y-4">
+							<p class="leading-relaxed">
+								I'm probably out taking long walks (great for thinking through tough problems), 
+								biking around the city, reading, or experimenting in the kitchen. I have a serious 
+								weakness for traditional Nepali food – especially anything with rice. Rice is 
+								honestly the best food ever invented.
+							</p>
+							<p class="leading-relaxed">
+								I also really enjoy teaching and helping people figure out tricky concepts, 
+								especially when it comes to programming or math stuff that I struggled with myself. 
+								There's something really satisfying about that "aha!" moment when things finally click.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
 
-		<section class="py-6 md:py-8">
-			<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-6">
-				When I'm Not Nerding Out
-			</h2>
-			<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-300 p-8 rounded-sm">
-				<p class="text-lg text-primary-800 dark:text-primary-200 font-regular leading-relaxed">
-					I'm probably out taking long walks (great for thinking through tough problems), biking around the city, reading, or experimenting in the kitchen. I have a serious weakness for traditional Nepali food – especially anything with rice. Rice is honestly the best food ever invented.
-				</p>
-				<p class="text-lg text-primary-800 dark:text-primary-200 font-regular leading-relaxed mt-6">
-					I also really enjoy teaching and helping people figure out tricky concepts, especially when it comes to programming or math stuff that I struggled with myself. There's something really satisfying about that "aha!" moment when things finally click.
-				</p>
+			<!-- Terminal Footer -->
+			<div class="border-t border-primary-800 pt-4">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/about</span>$ echo "End of file reached."
+				</div>
+				<div class="pl-4 text-text-400 font-mono text-sm">
+					<span class="text-tertiary-base">></span> Total lines: 127 | Characters: 2,431
+				</div>
+				<div class="pl-4 text-text-500 font-mono text-xs mt-2">
+					<span class="animate-pulse">█</span> Ready for next command...
+				</div>
 			</div>
-		</section>
+		</div>
 	</main>
+
+	<style>
+		/* Custom scrollbar for terminal feel */
+		::-webkit-scrollbar {
+			width: 8px;
+		}
+		
+		::-webkit-scrollbar-track {
+			background: #0F0110;
+		}
+		
+		::-webkit-scrollbar-thumb {
+			background: #FF7D00;
+			border-radius: 4px;
+		}
+		
+		::-webkit-scrollbar-thumb:hover {
+			background: #FFA855;
+		}
+
+		/* Terminal cursor animation */
+		@keyframes blink {
+			0%, 50% { opacity: 1; }
+			51%, 100% { opacity: 0; }
+		}
+		
+		.animate-pulse {
+			animation: blink 1s infinite;
+		}
+
+		/* Terminal text selection */
+		::selection {
+			background: #FF7D00;
+			color: #0F0110;
+		}
+
+		/* Monospace font stack for better terminal feel */
+		.font-mono {
+			font-family: 'Fira Code', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+		}
+	</style>
 </Layout>

@@ -1,7 +1,5 @@
 ---
-
 import Layout from '../layouts/Layout.astro';
-
 import LGLogo from '../assets/lg-logo.svg';
 import VersuredLogo from '../assets/versured-logo.svg';
 import EkNepalLogo from '../assets/eknepal-logo.svg';
@@ -14,309 +12,431 @@ const companiesData = [
 		imgAlt: "Life's good logo.",
 		title: "Life's Good - US",
 		desc: "Life's Good with electronics by your side!",
-		url: "https://lg.com/us"
+		url: "https://lg.com/us",
+		status: "active",
+		pid: "1001"
 	},
 	{
 		img: TrackflyLogo,
 		imgAlt: "Trackfly logo.",
 		title: "Trackfly",
-		desc: 'Better market intelligence to independet retailers and their suppliers.',
-		url: "https://www.trackfly.com/"
+		desc: 'Better market intelligence to independent retailers and their suppliers.',
+		url: "https://www.trackfly.com/",
+		status: "completed",
+		pid: "1002"
 	},
 	{
 		img: TimeeroLogo,
-		imgAlt: "Timmero logo.",
+		imgAlt: "Timeero logo.",
 		title: "Timeero",
 		desc: 'A time tracking and GPS company that provides precise and segmented time breakdowns for all employees.',
-		url: "https://timeero.com"
+		url: "https://timeero.com",
+		status: "completed",
+		pid: "1003"
 	},
 	{
 		img: VersuredLogo,
 		imgAlt: "Versured logo.",
 		title: "Versured",
 		desc: 'An insurance portal that combines all possible insurance combinations to match your perfect needs.',
-		url: "https://www.linkedin.com/company/versured"
+		url: "https://www.linkedin.com/company/versured",
+		status: "completed",
+		pid: "1004"
 	},
 	{
 		img: EkNepalLogo,
 		imgAlt: "Ek Nepal logo.",
 		title: "Ek Nepal",
 		desc: 'A truthful news aggregator. From Nepal, for Nepal.',
-		url: "https://www.eknepal.com/"
+		url: "https://www.eknepal.com/",
+		status: "completed",
+		pid: "1005"
 	},
-]
+];
 
+const researchProjects = [
+	{
+		title: "Mathematics Research",
+		lab: "Math Department",
+		supervisor: "Dr. Mahsa Nasrollahi-Shirazi & Dr. Andrii",
+		description: "Working on k-nary trees and the HK-property. Connected to the Erdős–Ko–Rado theorem but applied to perfect binary trees.",
+		technologies: ["Perfect k-nary Trees", "HK-property Analysis", "SageMath Visualizations"],
+		status: "active",
+		pid: "2001"
+	},
+	{
+		title: "GADA Lab Research",
+		lab: "GADA Lab",
+		supervisor: "Dr. Stephane Durocher",
+		description: "Working on approximation algorithms for spatially embedded graphs, tackling complex networks in manageable ways.",
+		technologies: ["Approximation Algorithms", "Spatially Embedded Graphs", "Metric Optimization"],
+		status: "active",
+		pid: "2002"
+	},
+	{
+		title: "Computer Vision Lab",
+		lab: "CV Lab",
+		supervisor: "Dr. Christopher Henry",
+		description: "Collaborating on computer vision research, exploring innovative approaches to visual data analysis and machine learning.",
+		technologies: ["PyTorch and PyTorch Geometric", "Machine Learning", "Visual Data Analysis"],
+		status: "active",
+		pid: "2003"
+	}
+];
+
+const skillCategories = [
+	{
+		category: "Languages & Databases",
+		icon: "💾",
+		skills: ["JavaScript, Java, Python", "C/C++, R, SageMath", "PostgreSQL, MSSQL", "SQLite, MongoDB"]
+	},
+	{
+		category: "Frameworks",
+		icon: "⚡",
+		skills: ["ReactJS", "NextJS", "AstroJS", "FastAPI"]
+	},
+	{
+		category: "Developer Tools",
+		icon: "🔧",
+		skills: ["Git, Neovim", "Tmux, Docker", "VS Code", "IntelliJ"]
+	},
+	{
+		category: "UI Tools",
+		icon: "🎨",
+		skills: ["Figma", "Adobe XD", "Adobe Illustrator"]
+	}
+];
 ---
 
-<Layout title="Works | Atish">
-	<main class="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
-		<section class="py-16 md:py-24">
-			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-900 dark:text-primary-100 mb-8">
-				Works & Projects
-			</h1>
-			<p class="text-lg md:text-xl text-primary-700 dark:text-primary-200 font-regular leading-relaxed max-w-3xl">
-				Here's a collection of things I've been working on – from research projects that keep me up at night thinking, to professional work that actually pays the bills.
-			</p>
-		</section>
+<Layout title="atish@terminal:~$ ls -la ~/projects/">
+	<!-- Terminal Header -->
+	<div class="bg-primary-900 border-b-2 border-tertiary-base">
+		<div class="container mx-auto px-4">
+			<div class="flex items-center justify-between py-2 text-xs">
+				<div class="flex items-center space-x-4">
+					<div class="flex space-x-2">
+						<div class="w-3 h-3 rounded-full bg-red-500"></div>
+						<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+						<div class="w-3 h-3 rounded-full bg-green-500"></div>
+					</div>
+					<span class="text-text-400 font-mono">atish@terminal: ~/projects</span>
+				</div>
+				<div class="text-text-500 font-mono">
+					{new Date().toLocaleTimeString()} | directory: projects/
+				</div>
+			</div>
+		</div>
+	</div>
 
-		<section class="py-12 md:py-16">
-			<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-8">
-				Professional Projects
-			</h2>
-			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-				{companiesData.map(company => (
-					<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 rounded-sm overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
-						<div class="p-6">
-							<div class="flex items-center mb-4">
-								<div class="w-12 h-12 bg-white dark:bg-white rounded-sm flex items-center justify-center mr-3 p-2 border border-primary-200 dark:border-primary-600">
-									<img src={company.img.src} alt={company.imgAlt} class="w-full h-full object-contain" />
+	<!-- Main Terminal Content -->
+	<main class="min-h-screen bg-primary-1000 text-tertiary-200 font-mono">
+		<div class="container mx-auto px-4 py-6 max-w-6xl">
+			
+			<!-- Directory Header -->
+			<section class="mb-8">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/projects</span>$ ls -la
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="text-text-400 text-sm mb-4">
+						<span class="text-tertiary-base">#</span> Directory: ~/projects/
+						<br><span class="text-tertiary-base">#</span> Total entries: {companiesData.length + researchProjects.length}
+						<br><span class="text-tertiary-base">#</span> Last updated: {new Date().toLocaleDateString()}
+						<br><span class="text-tertiary-base">#</span> Permission: rwxr-xr-x
+					</div>
+					<div class="border-l-2 border-tertiary-base pl-6 mb-6">
+						<h1 class="text-2xl md:text-3xl font-bold text-tertiary-base mb-4 font-mono">
+							PROJECTS_INDEX.md
+						</h1>
+						<p class="text-text-300 leading-relaxed mb-4">
+							Here's a collection of things I've been working on – from research projects 
+							that keep me up at night thinking, to professional work that actually pays the bills.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Professional Projects -->
+			<section class="mb-12">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/projects</span>$ find ./professional -type f -name "*.project"
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="text-text-400 mb-4">
+						<span class="text-tertiary-base">></span> Found {companiesData.length} professional project(s):
+					</div>
+					
+					<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+						{companiesData.map((company) => (
+							<div class="bg-primary-900 border border-primary-700 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 group">
+								<div class="p-6">
+									<div class="flex items-center justify-between mb-4">
+										<div class="flex items-center">
+											<div class="w-8 h-8 bg-white rounded-sm flex items-center justify-center mr-3 p-1">
+												<img src={company.img.src} alt={company.imgAlt} class="w-full h-full object-contain" />
+											</div>
+											<div class="text-xs text-text-500">
+												PID: {company.pid}
+											</div>
+										</div>
+										<div class={`px-2 py-1 text-xs font-mono rounded ${
+											company.status === 'active' 
+												? 'bg-green-900 text-green-400 border border-green-700' 
+												: 'bg-primary-850 text-text-400 border border-primary-600'
+										}`}>
+											[{company.status.toUpperCase()}]
+										</div>
+									</div>
+									
+									<h3 class="text-lg font-bold text-tertiary-200 mb-3 group-hover:text-tertiary-base transition-colors font-mono">
+										{company.title}
+									</h3>
+									
+									<p class="text-text-400 text-sm leading-relaxed mb-4 font-mono">
+										{company.desc}
+									</p>
+									
+									<div class="flex items-center justify-between">
+										<a 
+											href={company.url} 
+											target="_blank" 
+											class="inline-flex items-center text-secondary-400 hover:text-secondary-300 font-mono text-sm transition-colors"
+										>
+											./visit_project.sh
+											<span class="ml-2">→</span>
+										</a>
+										<div class="text-xs text-text-500 font-mono">
+											{new Date().toLocaleDateString()}
+										</div>
+									</div>
 								</div>
-								<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100">
-									{company.title}
-								</h3>
 							</div>
-							<p class="text-base text-primary-800 dark:text-primary-200 font-medium leading-relaxed mb-6">
-								{company.desc}
+						))}
+					</div>
+				</div>
+			</section>
+
+			<!-- Research Projects -->
+			<section class="mb-12">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/projects</span>$ find ./research -type d -name "*lab*"
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="text-text-400 mb-4">
+						<span class="text-tertiary-base">></span> Research portfolio overview:
+					</div>
+					
+					<div class="bg-primary-900 border border-primary-700 p-6 mb-6">
+						<h2 class="text-xl font-bold text-tertiary-base mb-4 font-mono">
+							== MULTI_LAB_RESEARCH.md ==
+						</h2>
+						<div class="border-l-2 border-secondary-400 pl-4 text-text-300 leading-relaxed space-y-4">
+							<p>I'm lucky enough to be doing research in three different labs.</p>
+							<p>
+								With the mathematics department, I'm diving deep into k-nary trees and something called the HK-property 
+								with Dr. Mahsa Nasrollahi-Shirazi and Dr. Andrii Arman. It's related to the famous 
+								<a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Ko%E2%80%93Rado_theorem" target="_blank" 
+									class="text-secondary-400 hover:text-secondary-300 underline">
+									Erdős–Ko–Rado theorem
+								</a> but restricted to 
+								<a href="https://xlinux.nist.gov/dads/HTML/perfectBinaryTree.html" target="_blank" 
+									class="text-secondary-400 hover:text-secondary-300 underline">
+									perfect binary trees
+								</a>.
 							</p>
-							<a 
-								href={company.url} 
-								target="_blank" 
-								class="inline-flex items-center text-secondary-600 dark:text-secondary-400 font-bold hover:underline transition-all duration-200"
-							>
-								Visit Project
-								<svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-								</svg>
-							</a>
+							<p>
+								On the theoretical algorithms side, I'm working with the 
+								<a href="https://home.cs.umanitoba.ca/~gada/" target="_blank" 
+									class="text-tertiary-base hover:text-tertiary-400 underline font-bold">
+									GADA lab
+								</a> under Dr. Stephane Durocher. We're working on approximation algorithms 
+								for spatially embedded graphs, which is a fancy way of saying we're trying to make 
+								sense of complex networks in a more manageable way.
+							</p>
+							<p>
+								And finally, I'm also doing some research in the 
+								<a href="https://terrabyte.acs.uwinnipeg.ca/" target="_blank" 
+									class="text-tertiary-base hover:text-tertiary-400 underline font-bold">
+									Computer Vision Lab
+								</a> with Dr. Christopher Henry.
+							</p>
 						</div>
 					</div>
-				))}
-			</div>
-		</section>
 
-		<section class="py-12 md:py-16">
-			<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-8">
-				Research & Academic Work
-			</h2>
-			
-			<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-8 rounded-sm mb-8">
-				<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-					Multi-Lab Research Portfolio
-				</h3>
-				<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed mb-4">
-					I'm lucky enough to be doing research in three different labs.
-				</p>
-				<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed mb-4">
-					With the mathematics department, I'm diving deep into k-nary trees and something called the HK-property with Dr. Mahsa Nasrollahi-Shirazi and Dr. Andrii Arman. It's related to the famous <a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Ko%E2%80%93Rado_theorem" target="_blank" class="text-secondary-600 dark:text-secondary-400 hover:underline">Erdős–Ko–Rado theorem</a> but restricted to <a href="https://xlinux.nist.gov/dads/HTML/perfectBinaryTree.html" target="_blank" class="text-secondary-600 dark:text-secondary-400 hover:underline">perfect binary trees</a>.
-				</p>
-				<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed mb-4">
-					On the theoretical algorithms side, I'm working with the <a href="https://home.cs.umanitoba.ca/~gada/" target="_blank" class="text-secondary-600 dark:text-secondary-400 font-bold hover:underline">GADA lab</a> under Dr. Stephane Durocher. We're working on approximation algorithms for spatially embedded graphs, which is a fancy way of saying we're trying to make sense of complex networks in a more manageable way.
-				</p>
-				<p class="text-base text-primary-800 dark:text-primary-200 font-regular leading-relaxed">
-					And finally, I'm also doing some research in the <a href="https://terrabyte.acs.uwinnipeg.ca/" target="_blank" class="text-secondary-600 dark:text-secondary-400 font-bold hover:underline">Computer Vision Lab</a> with Dr. Christopher Henry.
-				</p>
-			</div>
-			
-			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-8 rounded-sm">
-					<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-						Mathematics Research
-					</h3>
-					<p class="text-base text-primary-800 dark:text-primary-200 font-medium leading-relaxed mb-4">
-						Working with Dr. Mahsa Nasrollahi-Shirazi and Dr. Andrii on k-nary trees and the HK-property. It's connected to the Erdős–Ko–Rado theorem but applied to perfect binary trees.
-					</p>
-					<div class="space-y-2">
-						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
-							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
-							Perfect k-nary Trees
-						</div>
-						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
-							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
-							HK-property Analysis
-						</div>
-						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
-							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
-							SageMath Visualizations
+					<div class="text-text-400 mb-4">
+						<span class="text-tertiary-base">></span> Active research processes:
+					</div>
+					
+					<div class="grid md:grid-cols-1 gap-4">
+						{researchProjects.map((project) => (
+							<div class="bg-primary-900 border border-primary-700 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
+								<div class="p-6">
+									<div class="flex items-center justify-between mb-4">
+										<div class="flex items-center space-x-4">
+											<div class="text-tertiary-400 text-lg">🔬</div>
+											<div>
+												<h3 class="text-lg font-bold text-tertiary-200 font-mono">
+													{project.title}
+												</h3>
+												<div class="text-xs text-text-500 font-mono">
+													Lab: {project.lab} | Supervisor: {project.supervisor}
+												</div>
+											</div>
+										</div>
+										<div class="flex items-center space-x-2">
+											<div class="px-2 py-1 bg-green-900 text-green-400 border border-green-700 text-xs font-mono rounded">
+												[{project.status.toUpperCase()}]
+											</div>
+											<div class="text-xs text-text-500 font-mono">
+												PID: {project.pid}
+											</div>
+										</div>
+									</div>
+									
+									<p class="text-text-400 text-sm leading-relaxed mb-4 font-mono">
+										{project.description}
+									</p>
+									
+									<div class="border-l-2 border-tertiary-400 pl-4">
+										<div class="text-xs text-text-500 font-mono mb-2">Technologies & Methods:</div>
+										<div class="flex flex-wrap gap-2">
+											{project.technologies.map((tech) => (
+												<span class="px-2 py-1 bg-primary-850 text-text-400 border border-primary-600 text-xs font-mono rounded">
+													{tech}
+												</span>
+											))}
+										</div>
+									</div>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<!-- Skills & Technologies -->
+			<section class="mb-12">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/projects</span>$ cat ~/config/skills.conf
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="text-text-400 mb-4">
+						<span class="text-tertiary-base">></span> System configuration loaded:
+					</div>
+					
+					<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+						{skillCategories.map((category, index) => (
+							<div class="bg-primary-900 border border-primary-700 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 group">
+								<div class="p-6">
+									<div class="flex items-center mb-4">
+										<div class="text-2xl mr-3">{category.icon}</div>
+										<div>
+											<h3 class="text-md font-bold text-tertiary-200 group-hover:text-tertiary-base transition-colors font-mono">
+												{category.category}
+											</h3>
+											<div class="text-xs text-text-500 font-mono">
+												config_section_{index + 1}
+											</div>
+										</div>
+									</div>
+									
+									<div class="space-y-2">
+										{category.skills.map((skill) => (
+											<div class="flex items-center">
+												<span class="w-2 h-2 bg-tertiary-400 rounded-full mr-3 flex-shrink-0"></span>
+												<span class="text-xs text-text-400 font-mono">{skill}</span>
+											</div>
+										))}
+									</div>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<!-- Command Summary -->
+			<section class="mb-8">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/projects</span>$ wc -l *
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="bg-primary-900 border border-primary-700 p-4">
+						<div class="text-text-400 font-mono text-sm space-y-1">
+							<div class="flex justify-between">
+								<span>Professional projects:</span>
+								<span class="text-tertiary-base">{companiesData.length} files</span>
+							</div>
+							<div class="flex justify-between">
+								<span>Research projects:</span>
+								<span class="text-tertiary-base">{researchProjects.length} directories</span>
+							</div>
+							<div class="flex justify-between">
+								<span>Skill categories:</span>
+								<span class="text-tertiary-base">{skillCategories.length} configs</span>
+							</div>
+							<div class="border-t border-primary-600 pt-2 mt-2 flex justify-between font-bold">
+								<span>Total entries:</span>
+								<span class="text-tertiary-base">{companiesData.length + researchProjects.length + skillCategories.length}</span>
+							</div>
 						</div>
 					</div>
 				</div>
+			</section>
 
-				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-8 rounded-sm">
-					<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-						GADA Lab Research
-					</h3>
-					<p class="text-base text-primary-800 dark:text-primary-200 font-medium leading-relaxed mb-4">
-						Working with Dr. Stephane Durocher on approximation algorithms for spatially embedded graphs, tackling complex networks in manageable ways.
-					</p>
-					<div class="space-y-2">
-						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
-							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
-							Approximation Algorithms
-						</div>
-						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
-							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
-							Spatially Embedded Graphs
-						</div>
-						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
-							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
-							Metric Optimization	
-						</div>
-					</div>
+			<!-- Terminal Footer -->
+			<div class="border-t border-primary-800 pt-4">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/projects</span>$ echo "Project directory scan complete."
 				</div>
-
-				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-8 rounded-sm">
-					<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-						Computer Vision Lab
-					</h3>
-					<p class="text-base text-primary-800 dark:text-primary-200 font-medium leading-relaxed mb-4">
-						Collaborating with Dr. Christopher Henry on computer vision research, exploring innovative approaches to visual data analysis and machine learning.
-					</p>
-					<div class="space-y-2">
-						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
-							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
-							PyTorch and PyTorch Geometric	
-						</div>
-						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
-							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
-							Machine Learning
-						</div>
-						<div class="flex items-center font-regular text-md text-primary-700 dark:text-primary-300">
-							<span class="w-2 h-2 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2"></span>
-							Visual Data Analysis
-						</div>
-					</div>
+				<div class="pl-4 text-text-400 font-mono text-sm">
+					<span class="text-tertiary-base">></span> All projects indexed and categorized successfully
 				</div>
-			</div>
-		</section>
-
-		<section class="py-12 md:py-16">
-			<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-8">
-				Skills & Technologies
-			</h2>
-			<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-6 rounded-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
-					<div class="flex items-center mb-4">
-						<div class="w-10 h-10 bg-primary-600 dark:bg-primary-500 rounded-sm flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-							<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-							</svg>
-						</div>
-						<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100">
-							Languages & Databases
-						</h3>
-					</div>
-					<div class="space-y-3">
-						<div class="flex items-center">
-							<span class="w-1.5 h-1.5 bg-primary-600 dark:bg-primary-400 rounded-full mr-2 flex-shrink-0"></span>
-							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">JavaScript, Java, Python</span>
-						</div>
-						<div class="flex items-center">
-							<span class="w-1.5 h-1.5 bg-primary-600 dark:bg-primary-400 rounded-full mr-2 flex-shrink-0"></span>
-							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">C/C++, R, SageMath</span>
-						</div>
-						<div class="flex items-center">
-							<span class="w-1.5 h-1.5 bg-primary-600 dark:bg-primary-400 rounded-full mr-2 flex-shrink-0"></span>
-							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">PostgreSQL, MSSQL</span>
-						</div>
-						<div class="flex items-center">
-							<span class="w-1.5 h-1.5 bg-primary-600 dark:bg-primary-400 rounded-full mr-2 flex-shrink-0"></span>
-							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">SQLite, MongoDB</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-6 rounded-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
-					<div class="flex items-center mb-4">
-						<div class="w-10 h-10 bg-secondary-600 dark:bg-secondary-500 rounded-sm flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-							<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14-7l2 2-2 2M5 7l-2 2 2 2m14 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6"/>
-							</svg>
-						</div>
-						<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100">
-							Frameworks
-						</h3>
-					</div>
-					<div class="space-y-3">
-						<div class="flex items-center">
-							<span class="w-1.5 h-1.5 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2 flex-shrink-0"></span>
-							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">ReactJS</span>
-						</div>
-						<div class="flex items-center">
-							<span class="w-1.5 h-1.5 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2 flex-shrink-0"></span>
-							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">NextJS</span>
-						</div>
-						<div class="flex items-center">
-							<span class="w-1.5 h-1.5 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2 flex-shrink-0"></span>
-							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">AstroJS</span>
-						</div>
-						<div class="flex items-center">
-							<span class="w-1.5 h-1.5 bg-secondary-600 dark:bg-secondary-400 rounded-full mr-2 flex-shrink-0"></span>
-							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">FastAPI</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-6 rounded-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
-					<div class="flex items-center mb-4">
-						<div class="w-10 h-10 bg-tertiary-600 dark:bg-tertiary-500 rounded-sm flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-							<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-							</svg>
-						</div>
-						<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100">
-							Developer Tools
-						</h3>
-					</div>
-					<div class="space-y-3">
-						<div class="flex items-center">
-							<span class="w-1.5 h-1.5 bg-tertiary-600 dark:bg-tertiary-400 rounded-full mr-2 flex-shrink-0"></span>
-							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">Git, Neovim</span>
-						</div>
-						<div class="flex items-center">
-							<span class="w-1.5 h-1.5 bg-tertiary-600 dark:bg-tertiary-400 rounded-full mr-2 flex-shrink-0"></span>
-							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">Tmux, Docker</span>
-						</div>
-						<div class="flex items-center">
-							<span class="w-1.5 h-1.5 bg-tertiary-600 dark:bg-tertiary-400 rounded-full mr-2 flex-shrink-0"></span>
-							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">VS Code</span>
-						</div>
-						<div class="flex items-center">
-							<span class="w-1.5 h-1.5 bg-tertiary-600 dark:bg-tertiary-400 rounded-full mr-2 flex-shrink-0"></span>
-							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">IntelliJ</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-6 rounded-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
-					<div class="flex items-center mb-4">
-						<div class="w-10 h-10 bg-primary-700 dark:bg-primary-600 rounded-sm flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-							<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v6a4 4 0 004 4h4V5z"/>
-							</svg>
-						</div>
-						<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100">
-							UI Tools
-						</h3>
-					</div>
-					<div class="space-y-3">
-						<div class="flex items-center">
-							<span class="w-1.5 h-1.5 bg-primary-700 dark:bg-primary-500 rounded-full mr-2 flex-shrink-0"></span>
-							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">Figma</span>
-						</div>
-						<div class="flex items-center">
-							<span class="w-1.5 h-1.5 bg-primary-700 dark:bg-primary-500 rounded-full mr-2 flex-shrink-0"></span>
-							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">Adobe XD</span>
-						</div>
-						<div class="flex items-center">
-							<span class="w-1.5 h-1.5 bg-primary-700 dark:bg-primary-500 rounded-full mr-2 flex-shrink-0"></span>
-							<span class="text-sm text-primary-800 dark:text-primary-200 font-medium">Adobe Illustrator</span>
-						</div>
-					</div>
+				<div class="pl-4 text-text-500 font-mono text-xs mt-2">
+					<span class="animate-pulse">█</span> Ready for next command...
 				</div>
 			</div>
-		</section>
+		</div>
 	</main>
+
+	<style>
+		/* Custom scrollbar for terminal feel */
+		::-webkit-scrollbar {
+			width: 8px;
+		}
+		
+		::-webkit-scrollbar-track {
+			background: #0F0110;
+		}
+		
+		::-webkit-scrollbar-thumb {
+			background: #FF7D00;
+			border-radius: 4px;
+		}
+		
+		::-webkit-scrollbar-thumb:hover {
+			background: #FFA855;
+		}
+
+		/* Terminal cursor animation */
+		@keyframes blink {
+			0%, 50% { opacity: 1; }
+			51%, 100% { opacity: 0; }
+		}
+		
+		.animate-pulse {
+			animation: blink 1s infinite;
+		}
+
+		/* Terminal text selection */
+		::selection {
+			background: #FF7D00;
+			color: #0F0110;
+		}
+
+		/* Monospace font stack for better terminal feel */
+		.font-mono {
+			font-family: 'Fira Code', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+		}
+	</style>
 </Layout>
-
-

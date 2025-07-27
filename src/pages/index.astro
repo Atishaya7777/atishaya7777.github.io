@@ -8,19 +8,22 @@ const currentFocus = [
 		symbol: "∑",
 		title: "Graph Theory Research",
 		description: "Working on the HK property for perfect binary trees with Dr. Nasrollahi-Shirazi and Dr. Andrii Arman",
-		link: routes.works
+		link: routes.works,
+		command: "research --graph-theory"
 	},
 	{
 		symbol: "λ",
 		title: "Computational Geometry", 
 		description: "GADA lab research with Dr. Stephane Durocher",
-		link: routes.works
+		link: routes.works,
+		command: "research --comp-geometry"
 	},
 	{
-		symbol: "react",
+		symbol: "⚛",
 		title: "Frontend Development",
 		description: "Building web applications at Alpinist Studios",
-		link: routes.works
+		link: routes.works,
+		command: "work --frontend"
 	}
 ];
 
@@ -28,181 +31,308 @@ const highlights = [
 	{
 		title: "Graph Theory Research",
 		description: "Exploring chromatic polynomials and their applications to network optimization problems.",
-		category: "Research",
+		category: "research",
 		year: "2024",
-		link: routes.works
+		link: routes.works,
+		command: "cat ~/projects/graph-theory.md"
 	},
 	{
 		title: "Frontend Development",
 		description: "Building modern web applications with TypeScript and React at Alpinist Studios.",
-		category: "Professional", 
+		category: "work", 
 		year: "2024",
-		link: routes.works
+		link: routes.works,
+		command: "ls ~/work/alpinist-studios/"
 	}
 ];
 
+const terminalCommands = [
+	"whoami",
+	"pwd", 
+	"ls -la",
+	"cat about.txt",
+	"./start_projects.sh",
+	"grep -r 'mathematics' ~/research/"
+];
 ---
 
-<Layout title="Atish Maharjan - Mathematician & Developer">
-	<section class="py-16 md:py-24">
-		<div class="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
-			<div class="grid lg:grid-cols-1 gap-12 items-center">
-				<div class="space-y-8">
-					<h1 class="text-4xl md:text-5xl lg:text-6xl text-center font-bold text-primary-900 dark:text-primary-100 leading-tight">
-						Hey there! 👋
-						I'm <span class="text-secondary-700 dark:text-secondary-300">Atish</span>
-					</h1>
-					<p class="text-lg md:text-xl text-primary-700 dark:text-primary-200 font-regular leading-relaxed">
-						A mathematician and computer scientist exploring the beautiful intersection of abstract theory and practical innovation. Currently studying at the University of Manitoba and building web applications at Alpinist Studios.
-					</p>
-					<div class="flex flex-col justify-center sm:flex-row gap-4">
-						<a 
-							href={routes.about} 
-							class="inline-flex items-center px-8 py-3 bg-primary-600 dark:bg-primary-500 text-white font-semibold hover:bg-primary-700 dark:hover:bg-primary-400 transition-all duration-300 hover:shadow-lg"
-						>
-							Learn More About Me
-						</a>
-						<a 
-							href={routes.works} 
-							class="inline-flex items-center px-8 py-3 bg-transparent border-2 border-primary-600 dark:border-primary-400 text-primary-600 dark:text-primary-400 font-semibold hover:bg-primary-50 dark:hover:bg-primary-900 transition-all duration-300"
-						>
-							View My Work
-							<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-							</svg>
-						</a>
+<Layout title="atish@terminal:~$ whoami">
+	<!-- Terminal Header -->
+	<div class="bg-primary-900 border-b-2 border-tertiary-base">
+		<div class="container mx-auto px-4">
+			<div class="flex items-center justify-between py-2 text-xs">
+				<div class="flex items-center space-x-4">
+					<div class="flex space-x-2">
+						<div class="w-3 h-3 rounded-full bg-red-500"></div>
+						<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+						<div class="w-3 h-3 rounded-full bg-green-500"></div>
 					</div>
+					<span class="text-text-400 font-mono">atish@terminal: ~</span>
+				</div>
+				<div class="text-text-500 font-mono">
+					{new Date().toLocaleTimeString()} | session: active
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 
-	<!-- Current Focus -->
-	<section class="py-12 md:py-16 bg-primary-50 dark:bg-primary-900">
-		<div class="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
-			<div class="text-center mb-12">
-				<h2 class="text-3xl md:text-4xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-					What I'm Working On
-				</h2>
-				<p class="text-lg text-primary-700 dark:text-primary-200 max-w-2xl mx-auto font-regular">
-					Here's what's keeping me busy these days
-				</p>
-			</div>
+	<!-- Main Terminal Content -->
+	<section class="min-h-screen bg-primary-1000 text-tertiary-200 font-mono">
+		<div class="container mx-auto px-4 py-6 max-w-6xl">
+			
+			<!-- Terminal Prompt & Intro -->
+			<div class="mb-8">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~</span>$ whoami
+				</div>
+				<div class="pl-4 mb-6 space-y-2">
+					<div class="text-tertiary-200">
+						<span class="text-tertiary-base">></span> Atish Maharjan
+					</div>
+					<div class="text-text-400">
+						<span class="text-tertiary-base">></span> mathematician | computer_scientist | problem_solver
+					</div>
+					<div class="text-text-400">
+						<span class="text-tertiary-base">></span> location: University of Manitoba
+					</div>
+					<div class="text-text-400">
+						<span class="text-tertiary-base">></span> status: exploring the intersection of theory and innovation
+					</div>
+				</div>
 
-			<div class="grid md:grid-cols-3 gap-8">
-				{currentFocus.map((area, index) => (
-					<a href={area.link} class="group block">
-						<div class="bg-white dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-8 h-full hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all duration-300 rounded-lg group-hover:-translate-y-1">
-							<div class={`w-16 h-16 flex items-center justify-center mb-6 font-bold text-2xl rounded-lg ${
-								index === 0 ? 'bg-primary-100 dark:bg-primary-700 text-primary-700 dark:text-primary-300' :
-								index === 1 ? 'bg-secondary-100 dark:bg-secondary-700 text-secondary-700 dark:text-secondary-300' :
-								'bg-tertiary-100 dark:bg-tertiary-700 text-tertiary-700 dark:text-tertiary-300'
-							}`}>
-								{area.symbol === "react" ? (
-									<ReactLogo class="w-10 h-10" />
-								) : (
-									area.symbol
-								)}
-							</div>
-							<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100 mb-4 group-hover:text-secondary-700 dark:group-hover:text-secondary-300 transition-colors">
-								{area.title}
-							</h3>
-							<p class="text-primary-700 dark:text-primary-200 text-base font-regular leading-relaxed">
-								{area.description}
-							</p>
-						</div>
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~</span>$ cat welcome.txt
+				</div>
+				<div class="pl-4 mb-6 max-w-4xl">
+					<div class="border-l-2 border-tertiary-base pl-4 text-text-300 leading-relaxed">
+						Hey there! 👋 Welcome to my terminal interface.
+						<br><br>
+						I'm a mathematician and computer scientist currently studying at the University of Manitoba 
+						and building web applications at Alpinist Studios. I love exploring the beautiful intersection 
+						of abstract mathematical theory and practical software innovation.
+						<br><br>
+						Feel free to explore the commands below or navigate through my projects and research.
+					</div>
+				</div>
+
+				<div class="flex flex-wrap gap-4 mb-8">
+					<a 
+						href={routes.about} 
+						class="inline-flex items-center px-4 py-2 bg-tertiary-base text-primary-1000 font-semibold hover:bg-tertiary-400 transition-all duration-300 border border-tertiary-base hover:shadow-lg font-mono text-sm"
+					>
+						./about --verbose
 					</a>
-				))}
-			</div>
-		</div>
-	</section>
-
-	<section class="py-12 md:py-16">
-		<div class="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
-			<div class="flex items-center justify-between mb-12">
-				<div>
-					<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-3">Recent Highlights</h2>
-					<p class="text-primary-700 dark:text-primary-200 font-regular">What I've been up to lately</p>
+					<a 
+						href={routes.works} 
+						class="inline-flex items-center px-4 py-2 bg-transparent border border-tertiary-base text-tertiary-base font-semibold hover:bg-tertiary-base hover:text-primary-1000 transition-all duration-300 font-mono text-sm"
+					>
+						ls ~/projects/
+						<span class="ml-2">→</span>
+					</a>
 				</div>
-				<a href={routes.works} class="hidden md:inline-flex items-center text-secondary-700 dark:text-secondary-300 hover:text-secondary-900 dark:hover:text-secondary-100 font-semibold transition-all duration-300 group">
-					All Projects
-					<span class="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
-				</a>
 			</div>
 
-			<div class="grid md:grid-cols-2 gap-8">
-				{highlights.map((item) => (
-					<article class="group">
-						<a href={item.link} class="block h-full">
-							<div class="bg-white dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-6 h-full hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all duration-300 rounded-lg">
-								<div class="flex items-center justify-between mb-4">
-									<span class="px-3 py-1 bg-secondary-100 dark:bg-secondary-900 text-secondary-800 dark:text-secondary-200 border border-secondary-200 dark:border-secondary-700 font-semibold text-xs rounded-md">
-										{item.category}
-									</span>
-									<span class="text-xs text-primary-600 dark:text-primary-400 font-regular">{item.year}</span>
+			<!-- Current Focus Section -->
+			<div class="mb-12">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~</span>$ ps aux | grep "current_focus"
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="text-text-400 mb-4">
+						<span class="text-tertiary-base">></span> Found 3 active processes:
+					</div>
+					
+					<div class="grid md:grid-cols-1 gap-4">
+						{currentFocus.map((area, index) => (
+							<a href={area.link} class="group block">
+								<div class="bg-primary-900 border border-primary-700 p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
+									<div class="flex items-start space-x-4">
+										<div class={`w-8 h-8 flex items-center justify-center font-bold text-lg ${
+											index === 0 ? 'text-tertiary-400' :
+											index === 1 ? 'text-secondary-400' :
+											'text-tertiary-base'
+										}`}>
+											{area.symbol === "react" ? "⚛" : area.symbol}
+										</div>
+										<div class="flex-1">
+											<div class="flex items-center justify-between mb-2">
+												<h3 class="text-lg font-bold text-tertiary-200 group-hover:text-tertiary-base transition-colors font-mono">
+													{area.title}
+												</h3>
+												<span class="text-xs text-text-500 font-mono">
+													PID: {1000 + index}
+												</span>
+											</div>
+											<p class="text-text-400 text-sm mb-2 font-mono">
+												{area.description}
+											</p>
+											<div class="text-xs text-secondary-400 font-mono">
+												$ {area.command}
+											</div>
+										</div>
+									</div>
 								</div>
-								
-								<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100 mb-3 group-hover:text-secondary-700 dark:group-hover:text-secondary-300 transition-colors duration-300">
-									{item.title}
+							</a>
+						))}
+					</div>
+				</div>
+			</div>
+
+			<!-- Recent Highlights -->
+			<div class="mb-12">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~</span>$ tail -n 10 ~/activity.log
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="text-text-400 mb-4">
+						<span class="text-tertiary-base">></span> Recent activity:
+					</div>
+					
+					<div class="space-y-4">
+						{highlights.map((item, index) => (
+							<article class="group">
+								<a href={item.link} class="block">
+									<div class="bg-primary-900 border border-primary-700 p-4 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
+										<div class="flex items-center justify-between mb-2">
+											<div class="flex items-center space-x-3">
+												<span class="px-2 py-1 bg-tertiary-base text-primary-1000 font-mono text-xs">
+													[{item.category.toUpperCase()}]
+												</span>
+												<span class="text-xs text-text-500 font-mono">{item.year}</span>
+											</div>
+											<span class="text-xs text-secondary-400 font-mono">
+												{new Date().toLocaleDateString()} 12:3{index}
+											</span>
+										</div>
+										
+										<h3 class="text-lg font-bold text-tertiary-200 mb-2 group-hover:text-tertiary-base transition-colors font-mono">
+											{item.title}
+										</h3>
+										
+										<p class="text-text-400 text-sm mb-2 font-mono">
+											{item.description}
+										</p>
+										
+										<div class="text-xs text-secondary-400 font-mono">
+											$ {item.command}
+										</div>
+									</div>
+								</a>
+							</article>
+						))}
+					</div>
+				</div>
+			</div>
+
+			<!-- Available Commands -->
+			<div class="mb-12">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~</span>$ help
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="text-text-400 mb-4">
+						<span class="text-tertiary-base">></span> Available commands:
+					</div>
+					
+					<div class="grid md:grid-cols-3 gap-4">
+						<a href={routes.about} class="block group">
+							<div class="bg-primary-900 border border-primary-700 p-4 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
+								<h3 class="text-md font-bold text-tertiary-200 mb-2 group-hover:text-tertiary-base transition-colors font-mono">
+									./about
 								</h3>
-								
-								<p class="text-primary-700 dark:text-primary-200 leading-relaxed font-regular">
-									{item.description}
+								<p class="text-text-400 text-xs font-mono">
+									Display personal information, background, and interests
 								</p>
+								<div class="text-xs text-secondary-400 font-mono mt-2">
+									--verbose --story --background
+								</div>
 							</div>
 						</a>
-					</article>
-				))}
+
+						<a href={routes.works} class="block group">
+							<div class="bg-primary-900 border border-primary-700 p-4 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
+								<h3 class="text-md font-bold text-tertiary-200 mb-2 group-hover:text-tertiary-base transition-colors font-mono">
+									ls ~/projects/
+								</h3>
+								<p class="text-text-400 text-xs font-mono">
+									List all research projects, professional work, and builds
+								</p>
+								<div class="text-xs text-secondary-400 font-mono mt-2">
+									--research --professional --personal
+								</div>
+							</div>
+						</a>
+
+						<a href={routes.blog} class="block group">
+							<div class="bg-primary-900 border border-primary-700 p-4 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
+								<h3 class="text-md font-bold text-tertiary-200 mb-2 group-hover:text-tertiary-base transition-colors font-mono">
+									cat ~/thoughts/*
+								</h3>
+								<p class="text-text-400 text-xs font-mono">
+									Read blog posts, insights on math, CS, and everything between
+								</p>
+								<div class="text-xs text-secondary-400 font-mono mt-2">
+									--mathematics --code --philosophy
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Terminal Footer -->
+			<div class="border-t border-primary-800 pt-4">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~</span>$ echo "Thanks for visiting! Type any command to explore."
+				</div>
+				<div class="pl-4 text-text-400 font-mono text-sm">
+					<span class="text-tertiary-base">></span> Session active since {new Date().toLocaleDateString()}
+				</div>
+				<div class="pl-4 text-text-500 font-mono text-xs mt-2">
+					<span class="animate-pulse">█</span> Ready for input...
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Quick Links -->
-	<section class="py-12 md:py-16 bg-primary-50 dark:bg-primary-900">
-		<div class="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
-			<div class="text-center mb-12">
-				<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-					Want to Learn More?
-				</h2>
-				<p class="text-primary-700 dark:text-primary-200 max-w-2xl mx-auto font-regular">
-					Dive deeper into my work, research, and thoughts
-				</p>
-			</div>
+	<style>
+		/* Custom scrollbar for terminal feel */
+		::-webkit-scrollbar {
+			width: 8px;
+		}
+		
+		::-webkit-scrollbar-track {
+			background: #0F0110;
+		}
+		
+		::-webkit-scrollbar-thumb {
+			background: #FF7D00;
+			border-radius: 4px;
+		}
+		
+		::-webkit-scrollbar-thumb:hover {
+			background: #FFA855;
+		}
 
-			<div class="grid md:grid-cols-3 gap-6">
-				<a href={routes.about} class="block group">
-					<div class="bg-white dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-6 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all duration-300 rounded-lg group-hover:-translate-y-1">
-						<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100 mb-2 group-hover:text-secondary-700 dark:group-hover:text-secondary-300 transition-colors">
-							About Me
-						</h3>
-						<p class="text-primary-700 dark:text-primary-200 text-md font-regular">
-							My story, background, and what gets me excited about math and code
-						</p>
-					</div>
-				</a>
+		/* Terminal cursor animation */
+		@keyframes blink {
+			0%, 50% { opacity: 1; }
+			51%, 100% { opacity: 0; }
+		}
+		
+		.animate-pulse {
+			animation: blink 1s infinite;
+		}
 
-				<a href={routes.works} class="block group">
-					<div class="bg-white dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-6 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all duration-300 rounded-lg group-hover:-translate-y-1">
-						<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100 mb-2 group-hover:text-secondary-700 dark:group-hover:text-secondary-300 transition-colors">
-							My Work
-						</h3>
-						<p class="text-primary-700 dark:text-primary-200 text-md font-regular">
-							Research projects, professional experience, and things I've built
-						</p>
-					</div>
-				</a>
+		/* Terminal text selection */
+		::selection {
+			background: #FF7D00;
+			color: #0F0110;
+		}
 
-				<a href={routes.blog} class="block group">
-					<div class="bg-white dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-6 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all duration-300 rounded-lg group-hover:-translate-y-1">
-						<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100 mb-2 group-hover:text-secondary-700 dark:group-hover:text-secondary-300 transition-colors">
-							Blog & Insights
-						</h3>
-						<p class="text-primary-700 dark:text-primary-200 text-md font-regular">
-							Thoughts on mathematics, computer science, and everything in between
-						</p>
-					</div>
-				</a>
-			</div>
-		</div>
-	</section>
+		/* Monospace font stack for better terminal feel */
+		.font-mono {
+			font-family: 'Fira Code', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+		}
+	</style>
 </Layout>

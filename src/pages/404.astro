@@ -1,64 +1,410 @@
 ---
-
 import Layout from '../layouts/Layout.astro';
-
 ---
 
-
-<Layout title="404 | Atish">
-	<main class="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
-		<section class="flex flex-col items-center justify-center min-h-[60vh] py-16 md:py-24 text-center">
-			<div class="max-w-2xl mx-auto">
-				<h1 class="text-6xl md:text-8xl font-bold text-primary-900 dark:text-primary-100 mb-8">
-					404
-				</h1>
-				<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-6">
-					Page Not Found
-				</h2>
-				<p class="text-lg md:text-xl text-primary-700 dark:text-primary-200 font-light leading-relaxed mb-12">
-					Hmm, looks like this page decided to take a walk. Even the most elegant proofs sometimes need a redirect, right?
-				</p>
-				
-				<div class="flex flex-col sm:flex-row gap-4 justify-center">
-					<button 
-						id="btn:go-back"
-						class="bg-secondary-600 dark:bg-secondary-500 text-white px-8 py-4 rounded-sm font-bold hover:bg-secondary-700 dark:hover:bg-secondary-600 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-					>
-						Go Back
-					</button>
-					<button 
-						id="btn:reload"
-						class="bg-primary-100 dark:bg-primary-700 text-primary-900 dark:text-primary-100 border border-primary-200 dark:border-primary-600 px-8 py-4 rounded-sm font-bold hover:bg-primary-200 dark:hover:bg-primary-600 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-					>
-						Reload Page
-					</button>
+<Layout title="404 | atish@terminal:~$">
+	<!-- Terminal Header -->
+	<div class="bg-primary-900 border-b-2 border-tertiary-base">
+		<div class="container mx-auto px-4">
+			<div class="flex items-center justify-between py-2 text-xs">
+				<div class="flex items-center space-x-4">
+					<div class="flex space-x-2">
+						<div class="w-3 h-3 rounded-full bg-red-500"></div>
+						<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+						<div class="w-3 h-3 rounded-full bg-green-500"></div>
+					</div>
+					<span class="text-text-400 font-mono">atish@terminal: ~/404</span>
 				</div>
-
-				<!-- Fun mathematical reference -->
-				<div class="mt-16 bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-8 rounded-sm">
-					<p class="text-base text-primary-800 dark:text-primary-200 font-medium italic">
-						"In mathematics, you don't understand things. You just get used to them." 
-						<br />
-						<span class="text-sm text-primary-600 dark:text-primary-400">– John von Neumann</span>
-					</p>
-					<p class="text-sm text-primary-600 dark:text-primary-400 mt-4">
-						Sometimes even the smartest algorithms lead us astray. Let's get back to familiar territory.
-					</p>
+				<div class="text-text-500 font-mono">
+					{new Date().toLocaleTimeString()} | error.log
 				</div>
 			</div>
-		</section>
+		</div>
+	</div>
+
+	<!-- Main Terminal Content -->
+	<main class="min-h-screen bg-primary-1000 text-tertiary-200 font-mono">
+		<div class="container mx-auto px-4 py-6 max-w-6xl">
+			
+			<!-- Terminal Error Output -->
+			<div class="mb-8">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/</span>$ cd <span id="current-path">/unknown-path</span>
+				</div>
+				<div class="pl-4 mb-4">
+					<div class="text-red-400 font-mono">
+						bash: cd: <span id="current-path-error">/unknown-path</span>: No such file or directory
+					</div>
+				</div>
+
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/</span>$ ls -la <span id="current-path-ls">/unknown-path</span>
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="text-red-400 font-mono">
+						ls: cannot access '<span id="current-path-ls-error">/unknown-path</span>': No such file or directory
+					</div>
+				</div>
+			</div>
+
+			<!-- 404 Status Display -->
+			<div class="mb-12">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/</span>$ curl -I <span id="full-url">https://atish.dev/unknown-path</span>
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="bg-primary-900 border border-red-500 p-8 text-center">
+						<div class="mb-6">
+							<div class="flex items-center justify-center mb-4">
+								<span class="w-3 h-3 bg-red-500 rounded-full mr-2"></span>
+								<span class="text-red-400 font-mono text-lg">HTTP/1.1 404 Not Found</span>
+							</div>
+							<h1 class="text-6xl md:text-8xl font-bold text-red-400 mb-4 font-mono">
+								404
+							</h1>
+							<h2 class="text-2xl font-bold text-tertiary-200 mb-4 font-mono">
+								File Not Found
+							</h2>
+							<div class="text-text-300 text-sm leading-relaxed font-mono max-w-2xl mx-auto">
+								The requested resource could not be located on this server. 
+								<br>
+								Either the path is incorrect or the file has been moved to /dev/null.
+							</div>
+						</div>
+						
+						<div class="text-xs text-text-500 font-mono space-y-1">
+							<div>Server: nginx/1.18.0</div>
+							<div>Date: {new Date().toUTCString()}</div>
+							<div>Content-Type: text/html; charset=UTF-8</div>
+							<div>Connection: keep-alive</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Error Analysis -->
+			<div class="mb-12">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/</span>$ cat /var/log/nginx/error.log | tail -5
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="bg-primary-900 border border-primary-700 p-6">
+						<div class="space-y-2 text-xs font-mono">
+							<div class="text-text-500">
+								[<span id="error-timestamp">{new Date().toISOString()}</span>] ERROR: 404 "GET <span id="request-path">/unknown-path</span> HTTP/1.1"
+							</div>
+							<div class="text-yellow-400">
+								[<span id="warn-timestamp">{new Date().toISOString()}</span>] WARN: Possible typo in URL path
+							</div>
+							<div class="text-text-500">
+								[<span id="info-timestamp">{new Date().toISOString()}</span>] INFO: User-agent: <span id="user-agent">Mozilla/5.0</span>
+							</div>
+							<div class="text-secondary-400">
+								[<span id="debug-timestamp">{new Date().toISOString()}</span>] DEBUG: Suggesting alternative paths...
+							</div>
+							<div class="text-tertiary-base">
+								[<span id="success-timestamp">{new Date().toISOString()}</span>] SUCCESS: Recovery options identified
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Recovery Options -->
+			<div class="mb-12">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/</span>$ find . -type f -name "*.html" | head -5
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="text-text-400 mb-4">
+						<span class="text-tertiary-base">></span> Available navigation options:
+					</div>
+					
+					<div class="grid md:grid-cols-3 gap-6">
+						<div class="bg-primary-900 border border-primary-700 p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 cursor-pointer" id="go-back-btn">
+							<div class="flex items-start space-x-3 mb-4">
+								<div class="w-8 h-8 flex items-center justify-center font-bold text-lg text-secondary-400">
+									←
+								</div>
+								<div class="flex-1">
+									<h3 class="text-md font-bold text-tertiary-200 mb-2 font-mono">
+										history.back()
+									</h3>
+									<div class="text-xs text-text-500 font-mono mb-3">
+										-rwxr-xr-x 1 browser navigation
+									</div>
+								</div>
+							</div>
+							<p class="text-xs text-text-400 font-mono leading-relaxed mb-3">
+								Return to the previous page in your browser history.
+							</p>
+							<div class="text-xs text-secondary-400 font-mono">
+								$ cd ../
+							</div>
+						</div>
+
+						<div class="bg-primary-900 border border-primary-700 p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 cursor-pointer" id="home-btn">
+							<div class="flex items-start space-x-3 mb-4">
+								<div class="w-8 h-8 flex items-center justify-center font-bold text-lg text-tertiary-400">
+									🏠
+								</div>
+								<div class="flex-1">
+									<h3 class="text-md font-bold text-tertiary-200 mb-2 font-mono">
+										./index.html
+									</h3>
+									<div class="text-xs text-text-500 font-mono mb-3">
+										-rw-r--r-- 1 atish staff 4096
+									</div>
+								</div>
+							</div>
+							<p class="text-xs text-text-400 font-mono leading-relaxed mb-3">
+								Navigate back to the home directory and start fresh.
+							</p>
+							<div class="text-xs text-secondary-400 font-mono">
+								$ cd ~/
+							</div>
+						</div>
+
+						<div class="bg-primary-900 border border-primary-700 p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 cursor-pointer" id="reload-btn">
+							<div class="flex items-start space-x-3 mb-4">
+								<div class="w-8 h-8 flex items-center justify-center font-bold text-lg text-secondary-400">
+									🔄
+								</div>
+								<div class="flex-1">
+									<h3 class="text-md font-bold text-tertiary-200 mb-2 font-mono">
+										reload()
+									</h3>
+									<div class="text-xs text-text-500 font-mono mb-3">
+										-rwxr-xr-x 1 browser refresh
+									</div>
+								</div>
+							</div>
+							<p class="text-xs text-text-400 font-mono leading-relaxed mb-3">
+								Try loading this page again, just in case it was a temporary glitch.
+							</p>
+							<div class="text-xs text-secondary-400 font-mono">
+								$ source ./current_page
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Debug Info -->
+			<div class="mb-12">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/</span>$ echo "Debugging info for the curious..."
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="bg-primary-900 border border-primary-700 p-6">
+						<div class="text-text-400 mb-4">
+							<span class="text-tertiary-base">></span> Request details:
+						</div>
+						<div class="grid md:grid-cols-2 gap-8">
+							<div>
+								<div class="text-xs text-secondary-400 font-mono mb-2">URL_PATH:</div>
+								<div class="text-xs text-text-300 font-mono mb-4 break-all" id="debug-path">/unknown-path</div>
+								
+								<div class="text-xs text-secondary-400 font-mono mb-2">TIMESTAMP:</div>
+								<div class="text-xs text-text-300 font-mono mb-4" id="debug-timestamp-display">{new Date().toISOString()}</div>
+								
+								<div class="text-xs text-secondary-400 font-mono mb-2">REFERRER:</div>
+								<div class="text-xs text-text-300 font-mono mb-4" id="debug-referrer">Direct access</div>
+							</div>
+							<div>
+								<div class="text-xs text-secondary-400 font-mono mb-2">USER_AGENT:</div>
+								<div class="text-xs text-text-300 font-mono mb-4 break-all" id="debug-user-agent">Loading...</div>
+								
+								<div class="text-xs text-secondary-400 font-mono mb-2">SCREEN_RES:</div>
+								<div class="text-xs text-text-300 font-mono mb-4" id="debug-screen">Loading...</div>
+								
+								<div class="text-xs text-secondary-400 font-mono mb-2">PROTOCOL:</div>
+								<div class="text-xs text-text-300 font-mono" id="debug-protocol">https:</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Terminal Footer -->
+			<div class="border-t border-primary-800 pt-4">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/</span>$ fortune | cowsay
+				</div>
+				<div class="pl-4 text-text-400 font-mono text-xs">
+					<pre class="text-text-300">
+ ________________________________________
+/ "The best error messages tell you     \
+| exactly what went wrong and exactly   |
+\ what to do about it."                 /
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||</pre>
+				</div>
+				<div class="pl-4 text-text-500 font-mono text-xs mt-4">
+					<span class="animate-pulse">█</span> Error handled gracefully. Ready for next command...
+				</div>
+			</div>
+		</div>
 	</main>
+
+	<style>
+		/* Custom scrollbar for terminal feel */
+		::-webkit-scrollbar {
+			width: 8px;
+		}
+		
+		::-webkit-scrollbar-track {
+			background: #0F0110;
+		}
+		
+		::-webkit-scrollbar-thumb {
+			background: #FF7D00;
+			border-radius: 4px;
+		}
+		
+		::-webkit-scrollbar-thumb:hover {
+			background: #FFA855;
+		}
+
+		/* Terminal cursor animation */
+		@keyframes blink {
+			0%, 50% { opacity: 1; }
+			51%, 100% { opacity: 0; }
+		}
+		
+		.animate-pulse {
+			animation: blink 1s infinite;
+		}
+
+		/* Terminal text selection */
+		::selection {
+			background: #FF7D00;
+			color: #0F0110;
+		}
+
+		/* Monospace font stack for better terminal feel */
+		.font-mono {
+			font-family: 'Fira Code', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+		}
+
+		/* Syntax highlighting colors */
+		.text-secondary-400 {
+			color: #7aa2f7;
+		}
+
+		.text-tertiary-400 {
+			color: #e0af68;
+		}
+
+		.text-red-400 {
+			color: #f7768e;
+		}
+
+		.text-yellow-400 {
+			color: #e0af68;
+		}
+
+		/* Status indicators */
+		.bg-red-500 {
+			background-color: #f7768e;
+		}
+
+		.border-red-500 {
+			border-color: #f7768e;
+		}
+
+		/* Hover effects */
+		.hover\:border-tertiary-base:hover {
+			border-color: #FF7D00;
+		}
+
+		.hover\:bg-primary-850:hover {
+			background-color: #16161e;
+		}
+
+		/* ASCII art spacing */
+		pre {
+			line-height: 1.2;
+		}
+	</style>
+
+	<script>
+		// Client-side hydration - only runs in the browser
+		document.addEventListener('DOMContentLoaded', function() {
+			// Update path references
+			const currentPath = window.location.pathname;
+			const elements = [
+				'current-path',
+				'current-path-error', 
+				'current-path-ls',
+				'current-path-ls-error',
+				'request-path',
+				'debug-path'
+			];
+			
+			elements.forEach(id => {
+				const el = document.getElementById(id);
+				if (el) el.textContent = currentPath;
+			});
+
+			// Update full URL
+			const fullUrlEl = document.getElementById('full-url');
+			if (fullUrlEl) fullUrlEl.textContent = window.location.href;
+
+			// Update timestamps
+			const now = new Date().toISOString();
+			const timestampElements = [
+				'error-timestamp',
+				'warn-timestamp',
+				'info-timestamp', 
+				'debug-timestamp',
+				'success-timestamp',
+				'debug-timestamp-display'
+			];
+
+			timestampElements.forEach(id => {
+				const el = document.getElementById(id);
+				if (el) el.textContent = now;
+			});
+
+			// Update user agent
+			const userAgentEl = document.getElementById('user-agent');
+			if (userAgentEl) userAgentEl.textContent = navigator.userAgent.split(' ')[0];
+
+			const debugUserAgentEl = document.getElementById('debug-user-agent');
+			if (debugUserAgentEl) debugUserAgentEl.textContent = navigator.userAgent.substring(0, 60) + '...';
+
+			// Update screen resolution
+			const screenEl = document.getElementById('debug-screen');
+			if (screenEl) screenEl.textContent = screen.width + 'x' + screen.height;
+
+			// Update protocol
+			const protocolEl = document.getElementById('debug-protocol');
+			if (protocolEl) protocolEl.textContent = window.location.protocol;
+
+			// Update referrer
+			const referrerEl = document.getElementById('debug-referrer');
+			if (referrerEl) referrerEl.textContent = document.referrer || 'Direct access';
+
+			// Add click handlers
+			const goBackBtn = document.getElementById('go-back-btn');
+			if (goBackBtn) {
+				goBackBtn.addEventListener('click', () => window.history.back());
+			}
+
+			const homeBtn = document.getElementById('home-btn');
+			if (homeBtn) {
+				homeBtn.addEventListener('click', () => window.location.href = '/');
+			}
+
+			const reloadBtn = document.getElementById('reload-btn');
+			if (reloadBtn) {
+				reloadBtn.addEventListener('click', () => window.location.reload());
+			}
+		});
+	</script>
 </Layout>
-
-<script>
-	const goBackBtn = document.getElementById('btn:go-back');
-	const reloadBtn = document.getElementById('btn:reload');
-
-	goBackBtn?.addEventListener('click', () => {
-		window.history.back();
-	})
-
-	reloadBtn?.addEventListener('click', () => {
-		window.location.reload();
-	})
-</script>
