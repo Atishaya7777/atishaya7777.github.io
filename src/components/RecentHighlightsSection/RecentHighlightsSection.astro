@@ -1,0 +1,78 @@
+---
+import TerminalPrompt from '../TerminalPrompt/TerminalPrompt.astro';
+
+interface Props {
+	items: Array<{
+		title: string;
+		description: string;
+		category: string;
+		year: string;
+		link: string;
+		command: string;
+	}>;
+}
+
+const { items } = Astro.props;
+
+const getCategoryColor = (category: string) => {
+	switch (category.toLowerCase()) {
+		case 'research': return 'bg-blue-600 text-blue-100';
+		case 'work': return 'bg-green-600 text-green-100';
+		case 'project': return 'bg-purple-600 text-purple-100';
+		default: return 'bg-gray-600 text-gray-100';
+	}
+};
+---
+
+<section class="mb-12">
+	<TerminalPrompt command="tail -n 10 ~/activity.log" />
+	<div class="pl-4 mb-6">
+		<div class="text-text-400 mb-6 flex items-center space-x-2">
+			<span class="text-tertiary-base">></span> 
+			<span>Recent activity log:</span>
+			<span class="text-xs text-text-500">({items.length} entries)</span>
+		</div>
+		
+		<div class="space-y-4">
+			{items.map((item, index) => (
+				<article class="group">
+					<a href={item.link} class="block">
+						<div class="bg-primary-900 border border-primary-700 p-5 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 rounded-sm">
+							
+							<!-- Header with metadata -->
+							<div class="flex items-center justify-between mb-3">
+								<div class="flex items-center space-x-3">
+									<span class={`px-3 py-1 rounded-sm font-mono text-xs font-semibold ${getCategoryColor(item.category)}`}>
+										{item.category.toUpperCase()}
+									</span>
+									<span class="text-xs text-text-500 font-mono bg-primary-800 px-2 py-1 rounded-sm">
+										{item.year}
+									</span>
+								</div>
+								<time class="text-xs text-secondary-400 font-mono">
+									{new Date().toLocaleDateString()} 12:3{index}
+								</time>
+							</div>
+							
+							<!-- Content -->
+							<h3 class="text-lg font-bold text-tertiary-200 mb-3 group-hover:text-tertiary-base transition-colors font-mono">
+								{item.title}
+							</h3>
+							
+							<p class="text-text-400 text-sm mb-4 font-mono leading-relaxed">
+								{item.description}
+							</p>
+							
+							<!-- Command -->
+							<div class="bg-primary-800 p-3 rounded-sm border-l-4 border-tertiary-base">
+								<code class="text-xs text-secondary-400 font-mono">
+									$ {item.command}
+								</code>
+							</div>
+						</div>
+					</a>
+				</article>
+			))}
+		</div>
+	</div>
+</section>

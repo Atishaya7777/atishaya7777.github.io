@@ -1,0 +1,82 @@
+---
+import TerminalPrompt from '../TerminalPrompt/TerminalPrompt.astro';
+
+export interface Props {
+	items: Array<{
+		symbol: string;
+		title: string;
+		description: string;
+		link: string;
+		command: string;
+		status: string;
+	}>;
+}
+
+const { items } = Astro.props;
+
+const getStatusColor = (status: string) => {
+	switch (status) {
+		case 'active': return 'text-green-400';
+		case 'running': return 'text-blue-400';
+		case 'paused': return 'text-yellow-400';
+		default: return 'text-gray-400';
+	}
+};
+
+const getSymbolColor = (index: number) => {
+	const colors = ['text-tertiary-400', 'text-secondary-400', 'text-tertiary-base'];
+	return colors[index % colors.length];
+};
+---
+
+<section class="mb-12">
+	<TerminalPrompt command='ps aux | grep "current_focus"' />
+	<div class="pl-4 mb-6">
+		<div class="text-text-400 mb-6 flex items-center space-x-2">
+			<span class="text-tertiary-base">></span> 
+			<span>Found {items.length} active processes:</span>
+			<div class="flex items-center space-x-2 ml-4">
+				<div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+				<span class="text-xs text-green-400">ACTIVE</span>
+			</div>
+		</div>
+		
+		<div class="grid lg:grid-cols-1 gap-6">
+			{items.map((area, index) => (
+				<a href={area.link} class="group block">
+					<article class="bg-primary-900 border border-primary-700 p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 rounded-sm">
+						<div class="flex items-start space-x-6">
+							<div class={`w-12 h-12 flex items-center justify-center font-bold text-2xl ${getSymbolColor(index)} bg-primary-800 rounded-sm group-hover:scale-110 transition-transform`}>
+								{area.symbol}
+							</div>
+							<div class="flex-1 min-w-0">
+								<div class="flex items-center justify-between mb-3">
+									<h3 class="text-xl font-bold text-tertiary-200 group-hover:text-tertiary-base transition-colors font-mono">
+										{area.title}
+									</h3>
+									<div class="flex items-center space-x-3 text-xs">
+										<span class={`flex items-center space-x-1 ${getStatusColor(area.status)}`}>
+											<div class="w-2 h-2 bg-current rounded-full animate-pulse"></div>
+											<span>{area.status.toUpperCase()}</span>
+										</span>
+										<span class="text-text-500 font-mono">
+											PID: {1000 + index}
+										</span>
+									</div>
+								</div>
+								<p class="text-text-400 mb-4 font-mono text-sm leading-relaxed">
+									{area.description}
+								</p>
+								<div class="bg-primary-800 p-3 rounded-sm border-l-4 border-secondary-400">
+									<code class="text-xs text-secondary-400 font-mono">
+										$ {area.command}
+									</code>
+								</div>
+							</div>
+						</div>
+					</article>
+				</a>
+			))}
+		</div>
+	</div>
+</section>
