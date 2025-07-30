@@ -25,6 +25,12 @@ export const commands = {
       description: 'View all projects and work',
       category: 'navigation'
     },
+    'cd ~': {
+      action: 'navigate',
+      route: '/',
+      description: 'Navigate back to home page',
+      category: 'navigation'
+    },
     'cd about': { 
       action: 'navigate', 
       route: '/about', 
