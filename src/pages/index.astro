@@ -1,26 +1,35 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import routes from '../global/routes';
-import ReactLogo from '../components/ReactLogo.astro';
+import WelcomeSection from '../components/WelcomeSection/WelcomeSection.astro';
+import CurrentFocusSection from '../components/CurrentFocusSection/CurrentFocusSection.astro';
+import RecentHighlightsSection from '../components/RecentHighlightsSection/RecentHighlightsSection.astro';
+import CommandsSection from '../components/CommandsSection/CommandsSection.astro';
 
 const currentFocus = [
 	{
 		symbol: "∑",
 		title: "Graph Theory Research",
 		description: "Working on the HK property for perfect binary trees with Dr. Nasrollahi-Shirazi and Dr. Andrii Arman",
-		link: routes.works
+		link: routes.works,
+		command: "research --graph-theory",
+		status: "active"
 	},
 	{
 		symbol: "λ",
 		title: "Computational Geometry", 
 		description: "GADA lab research with Dr. Stephane Durocher",
-		link: routes.works
+		link: routes.works,
+		command: "research --comp-geometry",
+		status: "active"
 	},
 	{
-		symbol: "react",
+		symbol: "⚛",
 		title: "Frontend Development",
 		description: "Building web applications at Alpinist Studios",
-		link: routes.works
+		link: routes.works,
+		command: "work --frontend",
+		status: "running"
 	}
 ];
 
@@ -28,181 +37,49 @@ const highlights = [
 	{
 		title: "Graph Theory Research",
 		description: "Exploring chromatic polynomials and their applications to network optimization problems.",
-		category: "Research",
+		category: "research",
 		year: "2024",
-		link: routes.works
+		link: routes.works,
+		command: "cat ~/projects/graph-theory.md"
 	},
 	{
 		title: "Frontend Development",
 		description: "Building modern web applications with TypeScript and React at Alpinist Studios.",
-		category: "Professional", 
+		category: "work", 
 		year: "2024",
-		link: routes.works
+		link: routes.works,
+		command: "ls ~/work/alpinist-studios/"
 	}
 ];
 
+const availableCommands = [
+	{
+		command: "./about",
+		title: "About Me",
+		description: "Learn about my background, education, and interests",
+		flags: "--verbose --story --background",
+		link: routes.about
+	},
+	{
+		command: "ls ~/projects/",
+		title: "My Projects",
+		description: "Browse my research projects, professional work, and personal builds",
+		flags: "--research --professional --personal",
+		link: routes.works
+	},
+	{
+		command: "cat ~/thoughts/*",
+		title: "Blog & Thoughts",
+		description: "Read my insights on mathematics, computer science, and technology",
+		flags: "--mathematics --code --philosophy",
+		link: routes.blog
+	}
+];
 ---
 
-<Layout title="Atish Maharjan - Mathematician & Developer">
-	<section class="py-16 md:py-24">
-		<div class="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
-			<div class="grid lg:grid-cols-1 gap-12 items-center">
-				<div class="space-y-8">
-					<h1 class="text-4xl md:text-5xl lg:text-6xl text-center font-bold text-primary-900 dark:text-primary-100 leading-tight">
-						Hey there! 👋
-						I'm <span class="text-secondary-700 dark:text-secondary-300">Atish</span>
-					</h1>
-					<p class="text-lg md:text-xl text-primary-700 dark:text-primary-200 font-regular leading-relaxed">
-						A mathematician and computer scientist exploring the beautiful intersection of abstract theory and practical innovation. Currently studying at the University of Manitoba and building web applications at Alpinist Studios.
-					</p>
-					<div class="flex flex-col justify-center sm:flex-row gap-4">
-						<a 
-							href={routes.about} 
-							class="inline-flex items-center px-8 py-3 bg-primary-600 dark:bg-primary-500 text-white font-semibold hover:bg-primary-700 dark:hover:bg-primary-400 transition-all duration-300 hover:shadow-lg"
-						>
-							Learn More About Me
-						</a>
-						<a 
-							href={routes.works} 
-							class="inline-flex items-center px-8 py-3 bg-transparent border-2 border-primary-600 dark:border-primary-400 text-primary-600 dark:text-primary-400 font-semibold hover:bg-primary-50 dark:hover:bg-primary-900 transition-all duration-300"
-						>
-							View My Work
-							<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-							</svg>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Current Focus -->
-	<section class="py-12 md:py-16 bg-primary-50 dark:bg-primary-900">
-		<div class="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
-			<div class="text-center mb-12">
-				<h2 class="text-3xl md:text-4xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-					What I'm Working On
-				</h2>
-				<p class="text-lg text-primary-700 dark:text-primary-200 max-w-2xl mx-auto font-regular">
-					Here's what's keeping me busy these days
-				</p>
-			</div>
-
-			<div class="grid md:grid-cols-3 gap-8">
-				{currentFocus.map((area, index) => (
-					<a href={area.link} class="group block">
-						<div class="bg-white dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-8 h-full hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all duration-300 rounded-lg group-hover:-translate-y-1">
-							<div class={`w-16 h-16 flex items-center justify-center mb-6 font-bold text-2xl rounded-lg ${
-								index === 0 ? 'bg-primary-100 dark:bg-primary-700 text-primary-700 dark:text-primary-300' :
-								index === 1 ? 'bg-secondary-100 dark:bg-secondary-700 text-secondary-700 dark:text-secondary-300' :
-								'bg-tertiary-100 dark:bg-tertiary-700 text-tertiary-700 dark:text-tertiary-300'
-							}`}>
-								{area.symbol === "react" ? (
-									<ReactLogo class="w-10 h-10" />
-								) : (
-									area.symbol
-								)}
-							</div>
-							<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100 mb-4 group-hover:text-secondary-700 dark:group-hover:text-secondary-300 transition-colors">
-								{area.title}
-							</h3>
-							<p class="text-primary-700 dark:text-primary-200 text-base font-regular leading-relaxed">
-								{area.description}
-							</p>
-						</div>
-					</a>
-				))}
-			</div>
-		</div>
-	</section>
-
-	<section class="py-12 md:py-16">
-		<div class="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
-			<div class="flex items-center justify-between mb-12">
-				<div>
-					<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-3">Recent Highlights</h2>
-					<p class="text-primary-700 dark:text-primary-200 font-regular">What I've been up to lately</p>
-				</div>
-				<a href={routes.works} class="hidden md:inline-flex items-center text-secondary-700 dark:text-secondary-300 hover:text-secondary-900 dark:hover:text-secondary-100 font-semibold transition-all duration-300 group">
-					All Projects
-					<span class="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
-				</a>
-			</div>
-
-			<div class="grid md:grid-cols-2 gap-8">
-				{highlights.map((item) => (
-					<article class="group">
-						<a href={item.link} class="block h-full">
-							<div class="bg-white dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-6 h-full hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all duration-300 rounded-lg">
-								<div class="flex items-center justify-between mb-4">
-									<span class="px-3 py-1 bg-secondary-100 dark:bg-secondary-900 text-secondary-800 dark:text-secondary-200 border border-secondary-200 dark:border-secondary-700 font-semibold text-xs rounded-md">
-										{item.category}
-									</span>
-									<span class="text-xs text-primary-600 dark:text-primary-400 font-regular">{item.year}</span>
-								</div>
-								
-								<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100 mb-3 group-hover:text-secondary-700 dark:group-hover:text-secondary-300 transition-colors duration-300">
-									{item.title}
-								</h3>
-								
-								<p class="text-primary-700 dark:text-primary-200 leading-relaxed font-regular">
-									{item.description}
-								</p>
-							</div>
-						</a>
-					</article>
-				))}
-			</div>
-		</div>
-	</section>
-
-	<!-- Quick Links -->
-	<section class="py-12 md:py-16 bg-primary-50 dark:bg-primary-900">
-		<div class="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
-			<div class="text-center mb-12">
-				<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-					Want to Learn More?
-				</h2>
-				<p class="text-primary-700 dark:text-primary-200 max-w-2xl mx-auto font-regular">
-					Dive deeper into my work, research, and thoughts
-				</p>
-			</div>
-
-			<div class="grid md:grid-cols-3 gap-6">
-				<a href={routes.about} class="block group">
-					<div class="bg-white dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-6 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all duration-300 rounded-lg group-hover:-translate-y-1">
-						<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100 mb-2 group-hover:text-secondary-700 dark:group-hover:text-secondary-300 transition-colors">
-							About Me
-						</h3>
-						<p class="text-primary-700 dark:text-primary-200 text-md font-regular">
-							My story, background, and what gets me excited about math and code
-						</p>
-					</div>
-				</a>
-
-				<a href={routes.works} class="block group">
-					<div class="bg-white dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-6 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all duration-300 rounded-lg group-hover:-translate-y-1">
-						<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100 mb-2 group-hover:text-secondary-700 dark:group-hover:text-secondary-300 transition-colors">
-							My Work
-						</h3>
-						<p class="text-primary-700 dark:text-primary-200 text-md font-regular">
-							Research projects, professional experience, and things I've built
-						</p>
-					</div>
-				</a>
-
-				<a href={routes.blog} class="block group">
-					<div class="bg-white dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-6 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg transition-all duration-300 rounded-lg group-hover:-translate-y-1">
-						<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100 mb-2 group-hover:text-secondary-700 dark:group-hover:text-secondary-300 transition-colors">
-							Blog & Insights
-						</h3>
-						<p class="text-primary-700 dark:text-primary-200 text-md font-regular">
-							Thoughts on mathematics, computer science, and everything in between
-						</p>
-					</div>
-				</a>
-			</div>
-		</div>
-	</section>
+<Layout title=":~$ whoami">
+	<WelcomeSection />
+	<CurrentFocusSection items={currentFocus} />
+	<RecentHighlightsSection items={highlights} />
+	<CommandsSection commands={availableCommands} />
 </Layout>

@@ -1,0 +1,64 @@
+---
+import TerminalPrompt from '../TerminalPrompt/TerminalPrompt.astro';
+import routes from '../../global/routes';
+
+const personal_bio = [
+  "name: Atishaya Maharjan",
+  "job: mathematician | computer_scientist | problem_solver",
+  "location: Winnipeg, Manitoba",
+  "status: Researching and Studying"
+]
+---
+
+<section class="mb-12">
+	<TerminalPrompt command="whoami" />
+	<div class="pl-4 mb-8 space-y-2">
+      {personal_bio.map((item, idx)=> {
+          let clsx = "text-text-400";
+          if (idx === 0) {
+            clsx = "text-tertiary-200 text-lg";
+          }
+
+          return (
+            <div class={clsx}>
+              <span class="text-tertiary-base">></span> {item}
+            </div>
+          )
+      })}
+	</div>
+
+	<!-- Welcome Message -->
+	<TerminalPrompt command="cat welcome.txt" />
+	<div class="pl-4 mb-8 max-w-4xl">
+		<div class="border-l-2 border-tertiary-base pl-6 text-text-300 leading-relaxed space-y-4">
+			<p>
+				Hey there! You've found Atish's website.
+			</p>
+			<p>
+				I'm a mathematician and computer scientist currently studying at the University of Manitoba 
+                and building web applications at Alpinist Studios. I love anything tackling hard problems, especially if they involve some math in them!
+			</p>
+			<p>
+Feel free to explore using the navigation buttons below, or try using the terminal commands in the spotlight (Ctrl + /) !
+			</p>
+		</div>
+	</div>
+
+	<!-- Quick Navigation -->
+	<div class="flex flex-wrap gap-4 mb-4">
+		<a 
+			href={routes.about} 
+			class="inline-flex items-center px-6 py-3 bg-tertiary-base text-primary-1000 font-semibold hover:bg-tertiary-400 transition-all duration-300 border border-tertiary-base hover:shadow-lg font-mono text-sm rounded-sm group"
+		>
+			<span>./about --verbose</span>
+			<span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+		</a>
+		<a 
+			href={routes.works} 
+			class="inline-flex items-center px-6 py-3 bg-transparent border border-tertiary-base text-tertiary-base font-semibold hover:bg-tertiary-base hover:text-primary-1000 transition-all duration-300 font-mono text-sm rounded-sm group"
+		>
+			<span>ls ~/projects/</span>
+			<span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+		</a>
+	</div>
+</section>

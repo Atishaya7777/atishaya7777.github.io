@@ -1,0 +1,73 @@
+---
+import TerminalPrompt from '../TerminalPrompt/TerminalPrompt.astro';
+
+export interface Props {
+	commands: Array<{
+		command: string;
+		title: string;
+		description: string;
+		flags: string;
+		link: string;
+	}>;
+}
+
+const { commands } = Astro.props;
+---
+
+<section class="mb-12">
+	<TerminalPrompt command="help" />
+	<div class="pl-4 mb-6">
+		<div class="text-text-400 mb-6 flex items-center space-x-2">
+			<span class="text-tertiary-base">></span> 
+			<span>Available commands and navigation:</span>
+		</div>
+		
+		<div class="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
+			{commands.map((cmd, index) => (
+				<a href={cmd.link} class="block group">
+					<article class="bg-primary-900 border border-primary-700 p-5 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 rounded-sm h-full">
+						
+						<!-- Command Header -->
+						<div class="flex items-center justify-between mb-4">
+							<div class="bg-primary-800 px-3 py-2 rounded-sm border-l-4 border-tertiary-base">
+								<code class="text-sm font-bold text-tertiary-base font-mono">
+									{cmd.command}
+								</code>
+							</div>
+						</div>
+
+						<!-- Title and Description -->
+						<h3 class="text-lg font-bold text-tertiary-200 mb-3 group-hover:text-tertiary-base transition-colors font-mono">
+							{cmd.title}
+						</h3>
+						
+						<p class="text-text-400 text-sm mb-4 font-mono leading-relaxed flex-grow">
+							{cmd.description}
+						</p>
+						
+						<!-- Flags -->
+						<div class="mt-auto">
+							<div class="text-xs text-secondary-400 font-mono bg-primary-800 p-2 rounded-sm">
+								<span class="text-text-500">Options:</span> {cmd.flags}
+							</div>
+						</div>
+					</article>
+				</a>
+			))}
+		</div>
+
+		<!-- Quick Tips -->
+		<div class="mt-8 bg-primary-900 border border-primary-700 p-4 rounded-sm">
+			<div class="flex items-start space-x-3">
+				<div>
+					<h4 class="text-tertiary-base font-mono font-semibold mb-2">Pro Tips:</h4>
+					<ul class="text-text-400 text-sm font-mono space-y-1">
+						<li>• Click on any command to navigate</li>
+						<li>• Use keyboard shortcuts: <kbd class="bg-primary-800 px-2 py-1 rounded text-xs">Ctrl+K</kbd> for quick search</li>
+						<li>• All terminal commands are interactive!</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

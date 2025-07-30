@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+    --font-mono: 'JetBrains Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace;
+}
+
+.font-mono {
+    font-family: var(--font-mono);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga' 1, 'calt' 1, 'zero' 1;
+    text-rendering: optimizeLegibility;
+
+    letter-spacing: 0.025em;
+
+    line-height: 1.6;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .font-mono {
+        -webkit-font-smoothing: subpixel-antialiased;
+        font-weight: 400;
+    }
+}
+
+::selection {
+    background: rgba(255, 125, 0, 0.25);
+    color: #FF7D00;
+    text-shadow: none;
+}
+
+::-moz-selection {
+    background: rgba(255, 125, 0, 0.25);
+    color: #FF7D00;
+    text-shadow: none;
+}
+
+a:focus,
+button:focus {
+    outline: 2px solid #FF7D00;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+kbd {
+    background: #1a1a2e;
+    border: 1px solid #333;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+    color: #fff;
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    font-weight: 500;
+    line-height: 1;
+    padding: 2px 6px;
+    white-space: nowrap;
+}
+
+code {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    color: #e2e8f0;
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    padding: 0.125rem 0.25rem;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    53%,
+    80%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    40%,
+    43% {
+        transform: translate3d(0, -8px, 0);
+    }
+
+    70% {
+        transform: translate3d(0, -4px, 0);
+    }
+
+    90% {
+        transform: translate3d(0, -2px, 0);
+    }
+}

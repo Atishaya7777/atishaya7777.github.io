@@ -1,75 +1,45 @@
 ---
-
-import { Image } from 'astro:assets';
-
-import routes from '../../global/routes';
-
-import { NavLink } from '../Navbar';
-
-import LinkedInLogo from '../../assets/linkedin-logo.svg';
-import GithubLogo from '../../assets/github-logo.svg';
-
-import type { INavLink } from '../Navbar/types.ts';
-
-const navbarData: INavLink[] = [
-	{
-		url: routes.home,
-		label: 'Home',
-	},
-	{
-		url: routes.about,
-		label: 'About Me',
-	},
-	{
-		url: routes.works,
-		label: 'Works',
-	},
-	{
-		url: routes.blog,
-		label: 'Blog',
-	},
-	{
-		url: routes.contact,
-		label: 'Contact Me',
-	},
-];
-
-const socialMediaData = [
-	{
-		url: 'https://github.com/Atishaya7777',
-		icon: GithubLogo,
-	},
-	{
-		url: 'https://www.linkedin.com/in/atishaya-maharjan07',
-		icon: LinkedInLogo,
-	}
-]
-
-const currYear: number = new Date().getFullYear();
-
+import TerminalPrompt from '../TerminalPrompt/TerminalPrompt.astro';
 ---
 
-<footer class="flex flex-col items-center justify-center bg-primary-700">
-	<div class="flex flex-col max-w-screen-xl w-full justify-between py-14">
-		<section class="flex flex-col sm:flex-row items-center justify-between text-primary-100 mb-16 px-4">
-			<p class="text-body-2 md:text-subtitle-1 font-bold">CONTACT ME</p>
-			<a class="text-subtitle-2 md:text-h3 xl:text-h1" href="mailto:atishaya7777@gmail.com">atishaya7777@gmail.com</a>
-		</section>
-		<section class="flex justify-between text-primary-100">
-			<div class="flex flex-col md:flex-row">
-	{navbarData.map((n: INavLink) => <NavLink {...n} variant='footer' />)}
+<footer class="border-t border-primary-800 pt-6 mt-12">
+	<TerminalPrompt command='echo "Thanks for visiting! Ready to explore more?"' />
+	<div class="pl-4 space-y-3">
+		<div class="text-text-400 font-mono text-sm flex items-center space-x-2">
+			<span class="text-tertiary-base">></span> 
+			<span>Session active since {new Date().toLocaleDateString()}</span>
+			<div class="flex items-center space-x-1 ml-4">
+				<div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+				<span class="text-green-400 text-xs">CONNECTED</span>
 			</div>
-			<div class="flex">{socialMediaData.map(s => <a href={s.url} target="_blank" rel="noref"><Image src={s.icon} alt={s.url} /></a>)}</div>
-		</section>
+		</div>
+		
+		<div class="flex items-center justify-between">
+			<div class="text-text-500 font-mono text-xs flex items-center space-x-2">
+				<span class="animate-pulse">█</span> 
+				<span>Ready for input...</span>
+			</div>
+			
+			<!-- Social Links as Terminal Commands -->
+			<div class="flex items-center space-x-4 text-xs">
+				<a href="mailto:contact@atish.dev" class="text-secondary-400 hover:text-tertiary-base transition-colors font-mono">
+					./contact --email
+				</a>
+				<a href="https://github.com/atish" class="text-secondary-400 hover:text-tertiary-base transition-colors font-mono">
+					git remote -v
+				</a>
+				<a href="https://linkedin.com/in/atish" class="text-secondary-400 hover:text-tertiary-base transition-colors font-mono">
+					./network --professional
+				</a>
+			</div>
+		</div>
+		
+		<!-- System Info -->
+		<div class="text-xs text-text-600 font-mono pt-2 border-t border-primary-800">
+			<div class="flex items-center justify-between">
+				<span>System: Portfolio OS v2.0 | Shell: bash 5.1</span>
+				<span>Uptime: {Math.floor(Math.random() * 30) + 1} days</span>
+			</div>
+		</div>
 	</div>
-	<section id="curr-year" class="w-full text-center bg-primary-100 text-primary-1000 font-bold">
-		&copy;<span id="year"></span> ATISHAYA MAHARJAN 
-	</section>
-	<script>
-		const yearSpan = document.getElementById('year');
-		const currYear = new Date().getFullYear();
-		if (yearSpan) {
-			yearSpan.textContent = currYear.toString();
-		}
-	</script>
 </footer>

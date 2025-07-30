@@ -1,163 +1,385 @@
 ---
-
 import Layout from '../layouts/Layout.astro';
-
 ---
 
-<Layout title="Contact Me | Atish">
-	<main class="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
-		<!-- Hero Section -->
-		<section class="py-16 md:py-24">
-			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-900 dark:text-primary-100 mb-8">
-				Let's Chat!
-			</h1>
-			<p class="text-lg md:text-xl text-primary-700 dark:text-primary-200 font-light leading-relaxed max-w-3xl">
-				Whether you want to talk about math, code, research ideas, or just say hi – I'd love to hear from you. Seriously, don't be shy!
-			</p>
-		</section>
+<Layout title=":~$ contact --all">
+	<!-- Terminal Header -->
+	<div class="bg-primary-900 border-b-2 border-tertiary-base">
+		<div class="container mx-auto px-4">
+			<div class="flex items-center justify-between py-2 text-xs">
+				<div class="flex items-center space-x-4">
+					<div class="flex space-x-2">
+						<div class="w-3 h-3 rounded-full bg-red-500"></div>
+						<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+						<div class="w-3 h-3 rounded-full bg-green-500"></div>
+					</div>
+					<span class="text-text-400 font-mono">atish@terminal: ~/contact</span>
+				</div>
+				<div class="text-text-500 font-mono">
+					{new Date().toLocaleTimeString()} | contact.sh
+				</div>
+			</div>
+		</div>
+	</div>
 
-		<!-- Contact Information -->
-		<section class="py-12 md:py-16">
-			<div class="grid md:grid-cols-2 gap-12">
-				<!-- Primary Contact -->
-				<div class="space-y-8">
-					<div>
-						<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-8">
-							Drop Me a Line
-						</h2>
-						<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-8 rounded-sm">
-							<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-								Email Me
-							</h3>
-							<p class="text-base text-primary-800 dark:text-primary-200 font-medium leading-relaxed mb-4">
-								Email is probably the best way to reach me. I try to respond pretty quickly, especially if you mention something interesting about math or programming!
-							</p>
+	<!-- Main Terminal Content -->
+	<main class="min-h-screen bg-primary-1000 text-tertiary-200 font-mono">
+		<div class="container mx-auto px-4 py-6 max-w-6xl">
+			
+			<!-- Terminal Prompt & Intro -->
+			<div class="mb-8">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/contact</span>$ ./start_conversation.sh
+				</div>
+				<div class="pl-4 mb-6 space-y-2">
+					<div class="text-tertiary-200">
+						<span class="text-tertiary-base">></span> Initiating contact protocols...
+					</div>
+					<div class="text-text-400">
+						<span class="text-tertiary-base">></span> Loading communication channels...
+					</div>
+					<div class="text-secondary-400">
+						<span class="text-tertiary-base">></span> Status: Ready to connect!
+					</div>
+				</div>
+
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/contact</span>$ cat README.md
+				</div>
+				<div class="pl-4 mb-8 max-w-4xl">
+					<div class="border-l-2 border-tertiary-base pl-4 text-text-300 leading-relaxed">
+						# Let's Chat! 🚀
+						<br><br>
+						Whether you want to talk about math, code, research ideas, or just say hi – 
+						I'd love to hear from you. Seriously, don't be shy! I'm always excited to 
+						connect with fellow mathematicians, developers, and curious minds.
+						<br><br>
+						Choose your preferred communication protocol below:
+					</div>
+				</div>
+			</div>
+
+			<!-- Primary Contact Methods -->
+			<div class="mb-12">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/contact</span>$ ls -la communication/
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="text-text-400 mb-4">
+						<span class="text-tertiary-base">></span> Available communication channels:
+					</div>
+					
+					<div class="grid md:grid-cols-2 gap-6">
+						<!-- Email -->
+						<div class="bg-primary-900 border border-primary-700 p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
+							<div class="flex items-start space-x-4 mb-4">
+								<div class="w-8 h-8 flex items-center justify-center font-bold text-lg text-secondary-400">
+									@
+								</div>
+								<div class="flex-1">
+									<h3 class="text-lg font-bold text-tertiary-200 mb-2 font-mono">
+										primary_email.sh
+									</h3>
+									<div class="text-xs text-text-500 font-mono mb-3">
+										-rwxr-xr-x 1 atish staff 2048 Jul 27 12:00
+									</div>
+									<p class="text-text-400 text-sm mb-4 font-mono">
+										Email is probably the best way to reach me. I try to respond pretty quickly, 
+										especially if you mention something interesting about math or programming!
+									</p>
+								</div>
+							</div>
 							<a 
 								href="mailto:atishaya7777@gmail.com" 
-								class="inline-flex items-center text-secondary-600 dark:text-secondary-400 font-bold text-lg hover:underline transition-all duration-200"
+								class="inline-flex items-center text-secondary-400 hover:text-tertiary-base font-mono text-sm transition-colors duration-200 group"
 							>
-								atishaya7777@gmail.com
-								<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								$ echo "atishaya7777@gmail.com" | mail
+								<svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+								</svg>
+							</a>
+						</div>
+
+						<!-- Quick Connect -->
+						<div class="bg-primary-900 border border-primary-700 p-6">
+							<div class="flex items-start space-x-4 mb-4">
+								<div class="w-8 h-8 flex items-center justify-center font-bold text-lg text-tertiary-400">
+									⚡
+								</div>
+								<div class="flex-1">
+									<h3 class="text-lg font-bold text-tertiary-200 mb-2 font-mono">
+										quick_connect.sh
+									</h3>
+									<div class="text-xs text-text-500 font-mono mb-3">
+										-rwxr-xr-x 1 atish staff 1536 Jul 27 12:00
+									</div>
+									<p class="text-text-400 text-sm mb-4 font-mono">
+										For urgent matters or quick questions. This goes straight to my primary inbox 
+										with high priority notification.
+									</p>
+								</div>
+							</div>
+							<a 
+								href="mailto:atishaya7777@gmail.com?subject=Quick Connect - Urgent" 
+								class="inline-flex items-center text-tertiary-400 hover:text-tertiary-base font-mono text-sm transition-colors duration-200 group"
+							>
+								$ ./quick_connect --urgent
+								<svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Social Connections -->
+			<div class="mb-12">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/contact</span>$ find . -name "*.social" -type f
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="text-text-400 mb-4">
+						<span class="text-tertiary-base">></span> Social network endpoints discovered:
+					</div>
+					
+					<div class="grid gap-4">
+						<a 
+							href="https://www.linkedin.com/in/atishaya-maharjan07" 
+							target="_blank"
+							class="bg-primary-900 border border-primary-700 p-4 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 flex items-center group"
+						>
+							<div class="flex items-center flex-1">
+								<div class="w-10 h-10 bg-blue-600 flex items-center justify-center mr-4 font-mono text-white font-bold">
+									in
+								</div>
+								<div class="flex-1">
+									<div class="flex items-center justify-between mb-1">
+										<h4 class="text-md font-bold text-tertiary-200 font-mono">./linkedin.social</h4>
+										<span class="text-xs text-text-500 font-mono">HTTPS/1.1</span>
+									</div>
+									<p class="text-xs text-text-400 font-mono">Where I pretend to be professional</p>
+									<div class="text-xs text-secondary-400 font-mono mt-1">
+										$ curl -X GET "professional_network"
+									</div>
+								</div>
+							</div>
+							<svg class="w-4 h-4 text-text-500 group-hover:translate-x-1 group-hover:text-tertiary-base transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+							</svg>
+						</a>
+
+						<a 
+							href="https://github.com/Atishaya7777" 
+							target="_blank"
+							class="bg-primary-900 border border-primary-700 p-4 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 flex items-center group"
+						>
+							<div class="flex items-center flex-1">
+								<div class="w-10 h-10 bg-gray-800 flex items-center justify-center mr-4 font-mono text-white font-bold">
+									gh
+								</div>
+								<div class="flex-1">
+									<div class="flex items-center justify-between mb-1">
+										<h4 class="text-md font-bold text-tertiary-200 font-mono">./github.social</h4>
+										<span class="text-xs text-text-500 font-mono">Git/2.41</span>
+									</div>
+									<p class="text-xs text-text-400 font-mono">Where my code lives (and sometimes dies)</p>
+									<div class="text-xs text-secondary-400 font-mono mt-1">
+										$ git clone "interesting_projects"
+									</div>
+								</div>
+							</div>
+							<svg class="w-4 h-4 text-text-500 group-hover:translate-x-1 group-hover:text-tertiary-base transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Conversation Topics -->
+			<div class="mb-12">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/contact</span>$ cat topics_of_interest.txt
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="text-text-400 mb-4">
+						<span class="text-tertiary-base">></span> Things I absolutely love talking about:
+					</div>
+					
+					<div class="grid md:grid-cols-2 gap-6">
+						<div class="space-y-4">
+							<div class="bg-primary-900 border border-primary-700 p-4">
+								<div class="flex items-start space-x-3 mb-2">
+									<span class="text-tertiary-400 font-mono">∑</span>
+									<h3 class="text-md font-bold text-tertiary-200 font-mono">
+										research_mathematics.md
+									</h3>
+								</div>
+								<p class="text-xs text-text-400 font-mono leading-relaxed">
+									Got an interesting problem? Want to collaborate on something? Or just want to 
+									geek out about graph theory? I'm all ears!
+								</p>
+								<div class="text-xs text-secondary-400 font-mono mt-2">
+									$ discuss --topic="graph_theory" --depth="infinite"
+								</div>
+							</div>
+
+							<div class="bg-primary-900 border border-primary-700 p-4">
+								<div class="flex items-start space-x-3 mb-2">
+									<span class="text-secondary-400 font-mono">λ</span>
+									<h3 class="text-md font-bold text-tertiary-200 font-mono">
+										web_development.js
+									</h3>
+								</div>
+								<p class="text-xs text-text-400 font-mono leading-relaxed">
+									Frontend projects, cool libraries you've discovered, or that weird bug 
+									that's been driving you crazy – I love talking shop about development.
+								</p>
+								<div class="text-xs text-secondary-400 font-mono mt-2">
+									$ npm run discuss --framework="any" --bugs="welcome"
+								</div>
+							</div>
+						</div>
+
+						<div class="space-y-4">
+							<div class="bg-primary-900 border border-primary-700 p-4">
+								<div class="flex items-start space-x-3 mb-2">
+									<span class="text-tertiary-400 font-mono">🎓</span>
+									<h3 class="text-md font-bold text-tertiary-200 font-mono">
+										academic_life.log
+									</h3>
+								</div>
+								<p class="text-xs text-text-400 font-mono leading-relaxed">
+									Thinking about grad programs? Want to share experiences about research or 
+									academic conferences? Let's chat about the academic journey.
+								</p>
+								<div class="text-xs text-secondary-400 font-mono mt-2">
+									$ share --experience="grad_school" --advice="freely"
+								</div>
+							</div>
+
+							<div class="bg-primary-900 border border-primary-700 p-4">
+								<div class="flex items-start space-x-3 mb-2">
+									<span class="text-secondary-400 font-mono">📚</span>
+									<h3 class="text-md font-bold text-tertiary-200 font-mono">
+										teaching_learning.txt
+									</h3>
+								</div>
+								<p class="text-xs text-text-400 font-mono leading-relaxed">
+									Need help with something I might know? Want to share teaching experiences? 
+									I'm always down to help out or learn something new.
+								</p>
+								<div class="text-xs text-secondary-400 font-mono mt-2">
+									$ help --mutual --learning="continuous"
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Call to Action -->
+			<div class="mb-12">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/contact</span>$ ./conclusion.sh --call-to-action
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="bg-primary-900 border border-tertiary-base p-8 text-center">
+						<div class="mb-6">
+							<h2 class="text-xl font-bold text-tertiary-base mb-4 font-mono">
+								$ echo "So, What Are You Waiting For?"
+							</h2>
+							<div class="max-w-2xl mx-auto text-text-300 text-sm leading-relaxed font-mono">
+								Whether you have a cool project idea, want to debate the beauty of mathematical proofs, 
+								or just want to say hello – shoot me an email! I promise I don't bite (much).
+							</div>
+						</div>
+						
+						<div class="space-y-4">
+							<a 
+								href="mailto:atishaya7777@gmail.com" 
+								class="inline-flex items-center px-6 py-3 bg-tertiary-base text-primary-1000 font-bold font-mono hover:bg-tertiary-400 transition-all duration-300 group"
+							>
+								$ send_email --to="atish" --subject="Let's chat!"
+								<svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
 								</svg>
 							</a>
-						</div>
-					</div>
-
-					<!-- Social Links -->
-					<div class="space-y-6">
-						<h3 class="text-xl font-bold text-primary-900 dark:text-primary-100">
-							Or Find Me Here
-						</h3>
-						<div class="grid gap-4">
-							<a 
-								href="https://www.linkedin.com/in/atishaya-maharjan07" 
-								target="_blank"
-								class="bg-primary-50 dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-6 rounded-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex items-center group"
-							>
-								<div class="flex items-center">
-									<div class="w-12 h-12 bg-blue-600 rounded-sm flex items-center justify-center mr-4">
-										<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-											<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-										</svg>
-									</div>
-									<div>
-										<h4 class="text-lg font-bold text-primary-900 dark:text-primary-100">LinkedIn</h4>
-										<p class="text-sm text-primary-700 dark:text-primary-300">Where I pretend to be professional</p>
-									</div>
-								</div>
-								<svg class="w-5 h-5 text-primary-400 ml-auto group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-								</svg>
-							</a>
-							<a 
-								href="https://github.com/Atishaya7777" 
-								target="_blank"
-								class="bg-primary-50 dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-6 rounded-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex items-center group"
-							>
-								<div class="flex items-center">
-									<div class="w-12 h-12 bg-gray-900 dark:bg-gray-100 rounded-sm flex items-center justify-center mr-4">
-										<svg class="w-6 h-6 text-white dark:text-gray-900" fill="currentColor" viewBox="0 0 24 24">
-											<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-										</svg>
-									</div>
-									<div>
-										<h4 class="text-lg font-bold text-primary-900 dark:text-primary-100">GitHub</h4>
-										<p class="text-sm text-primary-700 dark:text-primary-300">Where my code lives (and sometimes dies)</p>
-									</div>
-								</div>
-								<svg class="w-5 h-5 text-primary-400 ml-auto group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-								</svg>
-							</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Topics & Interests -->
-				<div>
-					<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-8">
-						Things I Love Talking About
-					</h2>
-					<div class="space-y-6">
-						<div class="bg-primary-50 dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-6 rounded-sm">
-							<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100 mb-3">
-								Research & Math Stuff
-							</h3>
-							<p class="text-base text-primary-800 dark:text-primary-200 font-medium leading-relaxed">
-								Got an interesting problem? Want to collaborate on something? Or just want to geek out about graph theory? I'm all ears!
-							</p>
-						</div>
-						<div class="bg-primary-50 dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-6 rounded-sm">
-							<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100 mb-3">
-								Grad School & Academic Life
-							</h3>
-							<p class="text-base text-primary-800 dark:text-primary-200 font-medium leading-relaxed">
-								Thinking about grad programs? Want to share experiences about research or academic conferences? Let's chat about the academic journey.
-							</p>
-						</div>
-						<div class="bg-primary-50 dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-6 rounded-sm">
-							<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100 mb-3">
-								Code & Web Development
-							</h3>
-							<p class="text-base text-primary-800 dark:text-primary-200 font-medium leading-relaxed">
-								Frontend projects, cool libraries you've discovered, or that weird bug that's been driving you crazy – I love talking shop about development.
-							</p>
-						</div>
-						<div class="bg-primary-50 dark:bg-primary-800 border border-primary-200 dark:border-primary-700 p-6 rounded-sm">
-							<h3 class="text-lg font-bold text-primary-900 dark:text-primary-100 mb-3">
-								Teaching & Learning
-							</h3>
-							<p class="text-base text-primary-800 dark:text-primary-200 font-medium leading-relaxed">
-								Need help with something I might know? Want to share teaching experiences? I'm always down to help out or learn something new.
-							</p>
+							
+							<div class="text-xs text-text-500 font-mono">
+								<span class="text-tertiary-base">></span> Email sent successfully! ✓
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
 
-		<!-- Call to Action -->
-		<section class="py-12 md:py-16">
-			<div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 p-12 rounded-sm text-center">
-				<h2 class="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-6">
-					So, What Are You Waiting For?
-				</h2>
-				<p class="text-base md:text-lg text-primary-800 dark:text-primary-200 font-medium leading-relaxed mb-8 max-w-2xl mx-auto">
-					Whether you have a cool project idea, want to debate the beauty of mathematical proofs, or just want to say hello – shoot me an email! I promise I don't bite (much).
-				</p>
-				<a 
-					href="mailto:atishaya7777@gmail.com" 
-					class="inline-flex items-center text-secondary-600 dark:text-secondary-400 font-bold text-lg transition-all duration-200 hover:underline underline-offset-4 decoration-2"
-				>
-					Send me an email
-					<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-					</svg>
-				</a>
+			<!-- Terminal Footer -->
+			<div class="border-t border-primary-800 pt-4">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/contact</span>$ uptime
+				</div>
+				<div class="pl-4 text-text-400 font-mono text-xs">
+					<span class="text-tertiary-base">></span> Contact system running since {new Date().toLocaleDateString()}
+				</div>
+				<div class="pl-4 text-text-400 font-mono text-xs mt-1">
+					<span class="text-tertiary-base">></span> Average response time: &lt; 24 hours
+				</div>
+				<div class="pl-4 text-text-500 font-mono text-xs mt-2">
+					<span class="animate-pulse">█</span> Ready for connections...
+				</div>
 			</div>
-		</section>
+		</div>
 	</main>
+
+	<style>
+		/* Custom scrollbar for terminal feel */
+		::-webkit-scrollbar {
+			width: 8px;
+		}
+		
+		::-webkit-scrollbar-track {
+			background: #0F0110;
+		}
+		
+		::-webkit-scrollbar-thumb {
+			background: #FF7D00;
+			border-radius: 4px;
+		}
+		
+		::-webkit-scrollbar-thumb:hover {
+			background: #FFA855;
+		}
+
+		/* Terminal cursor animation */
+		@keyframes blink {
+			0%, 50% { opacity: 1; }
+			51%, 100% { opacity: 0; }
+		}
+		
+		.animate-pulse {
+			animation: blink 1s infinite;
+		}
+
+		/* Terminal text selection */
+		::selection {
+			background: #FF7D00;
+			color: #0F0110;
+		}
+
+		/* Monospace font stack for better terminal feel */
+		.font-mono {
+			font-family: 'Fira Code', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+		}
+
+		/* Hover effects for terminal commands */
+		.group:hover .group-hover\:translate-x-1 {
+			transform: translateX(0.25rem);
+		}
+
+		.group:hover .group-hover\:text-tertiary-base {
+			color: #FF7D00;
+		}
+	</style>
 </Layout>
-
-
