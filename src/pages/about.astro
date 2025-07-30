@@ -5,27 +5,6 @@ import routes from '../global/routes';
 ---
 
 <Layout title="atish@terminal:~$ cat about.txt">
-	<!-- Terminal Header -->
-	<div class="bg-primary-900 border-b-2 border-tertiary-base">
-		<div class="container mx-auto px-4">
-			<div class="flex items-center justify-between py-2 text-xs">
-				<div class="flex items-center space-x-4">
-					<div class="flex space-x-2">
-						<div class="w-3 h-3 rounded-full bg-red-500"></div>
-						<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-						<div class="w-3 h-3 rounded-full bg-green-500"></div>
-					</div>
-					<span class="text-text-400 font-mono">atish@terminal: ~/about</span>
-				</div>
-				<div class="text-text-500 font-mono">
-					{new Date().toLocaleTimeString()} | file: about.txt
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Main Terminal Content -->
-	<main class="min-h-screen bg-primary-1000 text-tertiary-200 font-mono">
 		<div class="container mx-auto px-4 py-6 max-w-6xl">
 			
 			<!-- File Header -->
@@ -267,60 +246,5 @@ import routes from '../global/routes';
 					</div>
 				</div>
 			</section>
-
-			<!-- Terminal Footer -->
-			<div class="border-t border-primary-800 pt-4">
-				<div class="text-tertiary-base mb-2">
-					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/about</span>$ echo "End of file reached."
-				</div>
-				<div class="pl-4 text-text-400 font-mono text-sm">
-					<span class="text-tertiary-base">></span> Total lines: 127 | Characters: 2,431
-				</div>
-				<div class="pl-4 text-text-500 font-mono text-xs mt-2">
-					<span class="animate-pulse">█</span> Ready for next command...
-				</div>
-			</div>
 		</div>
-	</main>
-
-	<style>
-		/* Custom scrollbar for terminal feel */
-		::-webkit-scrollbar {
-			width: 8px;
-		}
-		
-		::-webkit-scrollbar-track {
-			background: #0F0110;
-		}
-		
-		::-webkit-scrollbar-thumb {
-			background: #FF7D00;
-			border-radius: 4px;
-		}
-		
-		::-webkit-scrollbar-thumb:hover {
-			background: #FFA855;
-		}
-
-		/* Terminal cursor animation */
-		@keyframes blink {
-			0%, 50% { opacity: 1; }
-			51%, 100% { opacity: 0; }
-		}
-		
-		.animate-pulse {
-			animation: blink 1s infinite;
-		}
-
-		/* Terminal text selection */
-		::selection {
-			background: #FF7D00;
-			color: #0F0110;
-		}
-
-		/* Monospace font stack for better terminal feel */
-		.font-mono {
-			font-family: 'Fira Code', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-		}
-	</style>
 </Layout>

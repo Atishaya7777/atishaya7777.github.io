@@ -1,118 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
+import { commands } from './commands';
 
 const TerminalSpotlight = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
-  const [history, setHistory] = useState([]);
+  const [history, setHistory] = useState<any>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
-  const [suggestions, setSuggestions] = useState([]);
+  const [suggestions, setSuggestions] = useState<any>([]);
   const [selectedSuggestion, setSelectedSuggestion] = useState(0);
-  const [output, setOutput] = useState([]);
+  const [output, setOutput] = useState<any>([]);
   const [showOutput, setShowOutput] = useState(false);
   const inputRef = useRef(null);
   const outputRef = useRef(null);
 
-  const commands = {
-    'help': { 
-      action: 'showHelp', 
-      description: 'Show available commands',
-      category: 'system'
-    },
-    'whoami': { 
-      action: 'showWhoami', 
-      description: 'Display user information',
-      category: 'system'
-    },
-    'pwd': { 
-      action: 'showPwd', 
-      description: 'Print working directory',
-      category: 'system'
-    },
-    'ls': { 
-      action: 'listDirectory', 
-      description: 'List directory contents',
-      category: 'navigation'
-    },
-    'ls ~/projects/': { 
-      action: 'navigate', 
-      route: '/works', 
-      description: 'View all projects and work',
-      category: 'navigation'
-    },
-    'cd about': { 
-      action: 'navigate', 
-      route: '/about', 
-      description: 'Navigate to about page',
-      category: 'navigation'
-    },
-    'cd projects': { 
-      action: 'navigate', 
-      route: '/works', 
-      description: 'Navigate to projects',
-      category: 'navigation'
-    },
-    'cd blog': { 
-      action: 'navigate', 
-      route: '/blog', 
-      description: 'Navigate to blog',
-      category: 'navigation'
-    },
-    './about': { 
-      action: 'navigate', 
-      route: '/about', 
-      description: 'Execute about script',
-      category: 'navigation'
-    },
-    './about --verbose': { 
-      action: 'showAboutVerbose', 
-      description: 'Execute about script with verbose output',
-      category: 'navigation'
-    },
-    'cat ~/thoughts/*': { 
-      action: 'navigate', 
-      route: '/blog', 
-      description: 'Read all blog posts',
-      category: 'navigation'
-    },
-    'cat welcome.txt': { 
-      action: 'showWelcome', 
-      description: 'Display welcome message',
-      category: 'system'
-    },
-    'cat about.txt': { 
-      action: 'showAbout', 
-      description: 'Display about information',
-      category: 'system'
-    },
-    'tree': { 
-      action: 'showTree', 
-      description: 'Display directory tree',
-      category: 'navigation'
-    },
-    'date': { 
-      action: 'showDate', 
-      description: 'Display current date and time',
-      category: 'system'
-    },
-    'uname -a': { 
-      action: 'showSystem', 
-      description: 'Display system information',
-      category: 'system'
-    },
-    'clear': { 
-      action: 'clear', 
-      description: 'Clear terminal output',
-      category: 'system'
-    },
-    'exit': { 
-      action: 'exit', 
-      description: 'Close command palette',
-      category: 'system'
-    }
-  };
-
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: any) => {
       if ((e.ctrlKey || e.metaKey) && (e.key === '/' || e.key === 'k')) {
         e.preventDefault();
         setIsOpen(true);
@@ -130,27 +32,27 @@ const TerminalSpotlight = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Focus input when opened
   useEffect(() => {
     if (isOpen && inputRef.current) {
       inputRef.current.focus();
+      executeCommand('clear');
+      executeCommand('help');
     }
   }, [isOpen]);
 
-  // Scroll output to bottom when new content is added
   useEffect(() => {
     if (outputRef.current) {
       outputRef.current.scrollTop = outputRef.current.scrollHeight;
     }
   }, [output]);
 
-  // Update suggestions based on input
   useEffect(() => {
     if (input.trim() === '') {
       setSuggestions([]);
       return;
     }
 
+    // TODO: Update this to be fuzzy search instead of just searching with starts with
     const filtered = Object.entries(commands)
       .filter(([cmd]) => cmd.toLowerCase().includes(input.toLowerCase()))
       .sort((a, b) => {
@@ -171,29 +73,24 @@ const TerminalSpotlight = () => {
     setSelectedSuggestion(0);
   }, [input]);
 
-  const addOutput = (content, type = 'output') => {
+  const addOutput = (content: any, type = 'output') => {
     const timestamp = new Date().toLocaleTimeString();
-    setOutput(prev => [...prev, { content, type, timestamp, id: Date.now() }]);
+    setOutput((prev: any) => [...prev, { content, type, timestamp, id: Date.now() }]);
     setShowOutput(true);
   };
 
-  const navigate = (route) => {
-    // For Astro, we'll use window.location for navigation
-    // You might want to use your preferred router method here
+  const navigate = (route: string) => {
     addOutput(`Navigating to ${route}...`, 'success');
     setTimeout(() => {
       window.location.href = route;
     }, 1000);
   };
 
-  const executeCommand = (command) => {
+  const executeCommand = (command: keyof typeof commands) => {
     const cmd = commands[command];
     
-    // Add command to output
     addOutput(`$ ${command}`, 'command');
-    
-    // Add to history
-    setHistory(prev => [command, ...prev.filter(h => h !== command)].slice(0, 20));
+    setHistory((prev: any)=> [command, ...prev.filter(h => h !== command)].slice(0, 20));
     
     if (!cmd) {
       addOutput(`bash: ${command}: command not found`, 'error');
@@ -218,7 +115,7 @@ const TerminalSpotlight = () => {
         
       case 'showWhoami':
         addOutput([
-          'Atish Maharjan',
+          'Atishaya Maharjan',
           'mathematician | computer_scientist | problem_solver',
           'location: University of Manitoba',
           '',
@@ -245,7 +142,7 @@ const TerminalSpotlight = () => {
         
       case 'showWelcome':
         addOutput([
-          '=== Welcome to Atish\'s Terminal Interface ===',
+          '=== Welcome to Atishaya\'s Terminal Interface ===',
           '',
           'Hey there! Welcome to my interactive terminal.',
           '',
@@ -260,13 +157,13 @@ const TerminalSpotlight = () => {
           '• cd projects - View my work',
           '• cd blog     - Read my thoughts',
           '',
-          'Happy exploring! 🚀'
+          'Happy exploring!'
         ].join('\n'));
         break;
         
       case 'showAbout':
         addOutput([
-          '=== About Atish Maharjan ===',
+          '=== About Atishaya Maharjan ===',
           '',
           'A passionate mathematician and computer scientist with a love',
           'for solving complex problems and building innovative solutions.',
@@ -287,7 +184,7 @@ const TerminalSpotlight = () => {
         addOutput([
           '=== Detailed About Information ===',
           '',
-          'Name: Atish Maharjan',
+          'Name: Atishaya Maharjan',
           'Role: Mathematician | Computer Scientist | Problem Solver',
           'Location: University of Manitoba, Canada',
           '',
@@ -348,7 +245,7 @@ const TerminalSpotlight = () => {
         
       case 'showSystem':
         addOutput([
-          'AtishOS 1.0.0 (Mathematical Computing Environment)',
+          'AtishayaOS 1.0.0 (Mathematical Computing Environment)',
           'Kernel: Brain v2.5.0-mathematician',
           'Architecture: x86_64-problem-solver',
           'Uptime: Continuously learning since birth',

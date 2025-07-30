@@ -1,13 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import routes from '../global/routes';
-import Header from '../components/Header/Header.astro';
 import WelcomeSection from '../components/WelcomeSection/WelcomeSection.astro';
 import CurrentFocusSection from '../components/CurrentFocusSection/CurrentFocusSection.astro';
 import RecentHighlightsSection from '../components/RecentHighlightsSection/RecentHighlightsSection.astro';
 import CommandsSection from '../components/CommandsSection/CommandsSection.astro';
-import Footer from '../components/Footer/Footer.astro';
-import './index.css'
 
 const currentFocus = [
 	{
@@ -80,15 +77,9 @@ const availableCommands = [
 ];
 ---
 
-<Layout title="atish@terminal:~$ whoami">
-	<Header />
-	<main class="min-h-screen bg-primary-600 text-tertiary-25 font-mono">
-		<div class="container mx-auto px-4 py-6 max-w-6xl">
-			<WelcomeSection />
-			<CurrentFocusSection items={currentFocus} />
-			<RecentHighlightsSection items={highlights} />
-			<CommandsSection commands={availableCommands} />
-			<Footer />
-		</div>
-	</main>
+<Layout title=":~$ whoami">
+	<WelcomeSection />
+	<CurrentFocusSection items={currentFocus} />
+	<RecentHighlightsSection items={highlights} />
+	<CommandsSection commands={availableCommands} />
 </Layout>

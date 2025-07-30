@@ -3,30 +3,6 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="atish@terminal:~$ cat ~/thoughts/*">
-	<!-- Terminal Header -->
-	<div class="bg-primary-900 border-b-2 border-tertiary-base">
-		<div class="container mx-auto px-4">
-			<div class="flex items-center justify-between py-2 text-xs">
-				<div class="flex items-center space-x-4">
-					<div class="flex space-x-2">
-						<div class="w-3 h-3 rounded-full bg-red-500"></div>
-						<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-						<div class="w-3 h-3 rounded-full bg-green-500"></div>
-					</div>
-					<span class="text-text-400 font-mono">atish@terminal: ~/blog</span>
-				</div>
-				<div class="text-text-500 font-mono">
-					{new Date().toLocaleTimeString()} | thoughts.log
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Main Terminal Content -->
-	<main class="min-h-screen bg-primary-1000 text-tertiary-200 font-mono">
-		<div class="container mx-auto px-4 py-6 max-w-6xl">
-			
-			<!-- Terminal Prompt & Intro -->
 			<div class="mb-8">
 				<div class="text-tertiary-base mb-2">
 					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/blog</span>$ ls -la thoughts/
@@ -63,7 +39,7 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 				<div class="pl-4 mb-8 max-w-4xl">
 					<div class="border-l-2 border-tertiary-base pl-4 text-text-300 leading-relaxed">
-						# Blog & Insights 📝
+						# Blog & Insights
 						<br><br>
 						Eventually, this will be where I share thoughts on math, code, and those "aha!" 
 						moments that happen during research. For now, it's a work in progress – but I'm 
@@ -119,9 +95,6 @@ import Layout from '../layouts/Layout.astro';
 					<div class="grid md:grid-cols-3 gap-6">
 						<div class="bg-primary-900 border border-primary-700 p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
 							<div class="flex items-start space-x-3 mb-4">
-								<div class="w-8 h-8 flex items-center justify-center font-bold text-lg text-tertiary-400">
-									🔍
-								</div>
 								<div class="flex-1">
 									<h3 class="text-md font-bold text-tertiary-200 mb-2 font-mono">
 										./deep_dives/
@@ -141,9 +114,6 @@ import Layout from '../layouts/Layout.astro';
 
 						<div class="bg-primary-900 border border-primary-700 p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
 							<div class="flex items-start space-x-3 mb-4">
-								<div class="w-8 h-8 flex items-center justify-center font-bold text-lg text-secondary-400">
-									⚙️
-								</div>
 								<div class="flex-1">
 									<h3 class="text-md font-bold text-tertiary-200 mb-2 font-mono">
 										./build_logs/
@@ -163,9 +133,6 @@ import Layout from '../layouts/Layout.astro';
 
 						<div class="bg-primary-900 border border-primary-700 p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
 							<div class="flex items-start space-x-3 mb-4">
-								<div class="w-8 h-8 flex items-center justify-center font-bold text-lg text-tertiary-400">
-									💭
-								</div>
 								<div class="flex-1">
 									<h3 class="text-md font-bold text-tertiary-200 mb-2 font-mono">
 										./random_bits/
@@ -180,132 +147,6 @@ import Layout from '../layouts/Layout.astro';
 							</p>
 							<div class="text-xs text-secondary-400 font-mono">
 								$ ls -t random_bits/ | head -5
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Planned Topics -->
-			<div class="mb-12">
-				<div class="text-tertiary-base mb-2">
-					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/blog</span>$ cat planned_topics.json | jq '.categories'
-				</div>
-				<div class="pl-4 mb-6">
-					<div class="text-text-400 mb-4">
-						<span class="text-tertiary-base">></span> Topics I'll be exploring:
-					</div>
-					
-					<div class="grid md:grid-cols-2 gap-8">
-						<!-- Research & Theory -->
-						<div class="bg-primary-900 border border-primary-700 p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
-							<div class="flex items-center mb-6">
-								<div class="w-10 h-10 bg-tertiary-base flex items-center justify-center mr-4 font-mono text-primary-1000 font-bold">
-									∇
-								</div>
-								<h3 class="text-lg font-bold text-tertiary-200 font-mono">
-									research_threads.json
-								</h3>
-							</div>
-							<div class="space-y-4">
-								<div class="border-l-2 border-tertiary-400 pl-4">
-									<div class="text-xs text-secondary-400 font-mono mb-1">
-										"complexity_theory": {
-									</div>
-									<div class="text-xs text-text-400 font-mono pl-4">
-										"topic": "When algorithms meet reality",
-									</div>
-									<div class="text-xs text-text-400 font-mono pl-4">
-										"status": "investigating"
-									</div>
-									<div class="text-xs text-secondary-400 font-mono">
-										},
-									</div>
-								</div>
-								<div class="border-l-2 border-tertiary-400 pl-4">
-									<div class="text-xs text-secondary-400 font-mono mb-1">
-										"graph_problems": {
-									</div>
-									<div class="text-xs text-text-400 font-mono pl-4">
-										"topic": "Visualizing abstract mathematical structures",
-									</div>
-									<div class="text-xs text-text-400 font-mono pl-4">
-										"status": "drafting"
-									</div>
-									<div class="text-xs text-secondary-400 font-mono">
-										},
-									</div>
-								</div>
-								<div class="border-l-2 border-tertiary-400 pl-4">
-									<div class="text-xs text-secondary-400 font-mono mb-1">
-										"optimization": {
-									</div>
-									<div class="text-xs text-text-400 font-mono pl-4">
-										"topic": "Finding better solutions to hard problems",
-									</div>
-									<div class="text-xs text-text-400 font-mono pl-4">
-										"status": "experimenting"
-									</div>
-									<div class="text-xs text-secondary-400 font-mono">
-										}
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Development & Tools -->
-						<div class="bg-primary-900 border border-primary-700 p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
-							<div class="flex items-center mb-6">
-								<div class="w-10 h-10 bg-secondary-400 flex items-center justify-center mr-4 font-mono text-primary-1000 font-bold">
-									▶
-								</div>
-								<h3 class="text-lg font-bold text-tertiary-200 font-mono">
-									dev_notes.json
-								</h3>
-							</div>
-							<div class="space-y-4">
-								<div class="border-l-2 border-secondary-400 pl-4">
-									<div class="text-xs text-secondary-400 font-mono mb-1">
-										"debugging_stories": {
-									</div>
-									<div class="text-xs text-text-400 font-mono pl-4">
-										"topic": "Bugs that taught me something important",
-									</div>
-									<div class="text-xs text-text-400 font-mono pl-4">
-										"status": "collecting"
-									</div>
-									<div class="text-xs text-secondary-400 font-mono">
-										},
-									</div>
-								</div>
-								<div class="border-l-2 border-secondary-400 pl-4">
-									<div class="text-xs text-secondary-400 font-mono mb-1">
-										"tool_reviews": {
-									</div>
-									<div class="text-xs text-text-400 font-mono pl-4">
-										"topic": "Software that actually makes life easier",
-									</div>
-									<div class="text-xs text-text-400 font-mono pl-4">
-										"status": "testing"
-									</div>
-									<div class="text-xs text-secondary-400 font-mono">
-										},
-									</div>
-								</div>
-								<div class="border-l-2 border-secondary-400 pl-4">
-									<div class="text-xs text-secondary-400 font-mono mb-1">
-										"quick_wins": {
-									</div>
-									<div class="text-xs text-text-400 font-mono pl-4">
-										"topic": "Small improvements with big impact",
-									</div>
-									<div class="text-xs text-text-400 font-mono pl-4">
-										"status": "documenting"
-									</div>
-									<div class="text-xs text-secondary-400 font-mono">
-										}
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -348,86 +189,4 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 				</div>
 			</div>
-
-			<!-- Terminal Footer -->
-			<div class="border-t border-primary-800 pt-4">
-				<div class="text-tertiary-base mb-2">
-					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/blog</span>$ crontab -l | grep "content_generation"
-				</div>
-				<div class="pl-4 text-text-400 font-mono text-xs">
-					<span class="text-tertiary-base">></span> 0 9 * * 1-5 /home/atish/scripts/generate_content.sh --quality-first
-				</div>
-				<div class="pl-4 text-text-400 font-mono text-xs mt-1">
-					<span class="text-tertiary-base">></span> Next content generation: Soon™
-				</div>
-				<div class="pl-4 text-text-500 font-mono text-xs mt-2">
-					<span class="animate-pulse">█</span> Building quality content...
-				</div>
-			</div>
-		</div>
-	</main>
-
-	<style>
-		/* Custom scrollbar for terminal feel */
-		::-webkit-scrollbar {
-			width: 8px;
-		}
-		
-		::-webkit-scrollbar-track {
-			background: #0F0110;
-		}
-		
-		::-webkit-scrollbar-thumb {
-			background: #FF7D00;
-			border-radius: 4px;
-		}
-		
-		::-webkit-scrollbar-thumb:hover {
-			background: #FFA855;
-		}
-
-		/* Terminal cursor animation */
-		@keyframes blink {
-			0%, 50% { opacity: 1; }
-			51%, 100% { opacity: 0; }
-		}
-		
-		.animate-pulse {
-			animation: blink 1s infinite;
-		}
-
-		/* Terminal text selection */
-		::selection {
-			background: #FF7D00;
-			color: #0F0110;
-		}
-
-		/* Monospace font stack for better terminal feel */
-		.font-mono {
-			font-family: 'Fira Code', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-		}
-
-		/* JSON syntax highlighting */
-		.text-secondary-400 {
-			color: #7aa2f7;
-		}
-
-		.text-tertiary-400 {
-			color: #e0af68;
-		}
-
-		/* Status indicators */
-		.bg-yellow-500 {
-			background-color: #e0af68;
-		}
-
-		/* Hover effects */
-		.hover\:border-tertiary-base:hover {
-			border-color: #FF7D00;
-		}
-
-		.hover\:bg-primary-850:hover {
-			background-color: #16161e;
-		}
-	</style>
 </Layout>

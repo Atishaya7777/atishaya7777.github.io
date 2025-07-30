@@ -1,8 +1,9 @@
 ---
-import '../theme/global.css';
-import { Header } from '../components/Header/';
-import { Footer } from '../components/Footer/';
-import { TerminalSpotlight } from '../components';
+import './layout.css';
+
+import Header from '../components/Header/Header.astro';
+import Footer from '../components/Footer/Footer.astro';
+import TerminalSpotlight from '../components/TerminalSpotlight/TerminalSpotlight.component';
 
 interface Props {
 	title: string;
@@ -13,7 +14,7 @@ interface Props {
 
 const { 
 	title, 
-	description = "Mathematician, Computer Scientist & Frontend Developer exploring the intersection of abstract theory and practical innovation.",
+	description = "Student of Mathematics and Computer Science",
 	image = "/assets/logo.svg",
 	type = "website"
 } = Astro.props;
@@ -30,111 +31,29 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
 		<meta name="generator" content={Astro.generator} />
 		
-		<!-- SEO Meta Tags -->
 		<title>{title}</title>
 		<link rel="canonical" href={canonicalURL} />
 		
-		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content={type} />
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={new URL(image, Astro.url)} />
 		
-		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={canonicalURL} />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={new URL(image, Astro.url)} />
-		
-		<!-- Preload critical fonts -->
-		<link rel="preload" href="/fonts/HelveticaNowDisplay-Regular.ttf" as="font" type="font/ttf" crossorigin />
-		<link rel="preload" href="/fonts/HelveticaNowDisplay-Bold.ttf" as="font" type="font/ttf" crossorigin />
-		
-		<!-- Dark mode script - runs before body renders to prevent flash -->
-		<script is:inline>
-			function initTheme() {
-				const savedTheme = localStorage.getItem('theme');
-				let theme;
-				
-				if (savedTheme) {
-					theme = savedTheme;
-				} else {
-					// Use system preference if no saved theme
-					theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-					localStorage.setItem('theme', theme);
-				}
-				
-				document.documentElement.setAttribute('data-theme', theme);
-				document.documentElement.classList.toggle('dark', theme === 'dark');
-			}
-			initTheme();
-		</script>
 	</head>
 	<body class="bg-background-base dark:bg-primary-900 text-primary-800 dark:text-background-100 antialiased transition-colors duration-300">
-		<main>
-			<TerminalSpotlight client:load />
-			<slot />
+		<Header />
+		<main class="min-h-screen bg-primary-700 text-tertiary-25 font-mono">
+			<div class="container mx-auto px-4 py-6 max-w-6xl">
+				<TerminalSpotlight client:load />
+				<slot />
+				<Footer />
+			</div>
 		</main>
-		
-		<!-- Enhanced scroll animation and dark mode script -->
-		<script>
-			function initScrollAnimations() {
-				const observerOptions = {
-					threshold: 0.1,
-					rootMargin: '0px 0px -50px 0px'
-				};
-
-				const observer = new IntersectionObserver((entries) => {
-					entries.forEach((entry) => {
-						if (entry.isIntersecting) {
-							entry.target.classList.add('visible');
-						}
-					});
-				}, observerOptions);
-
-				// Observe all elements with animation class
-				document.querySelectorAll('.animate-on-scroll').forEach((el) => {
-					observer.observe(el);
-				});
-			}
-			
-			function initThemeToggle() {
-				const themeToggle = document.querySelector('#theme-toggle');
-				if (themeToggle) {
-					themeToggle.addEventListener('click', () => {
-						const currentTheme = document.documentElement.getAttribute('data-theme');
-						const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-						
-						document.documentElement.setAttribute('data-theme', newTheme);
-						document.documentElement.classList.toggle('dark', newTheme === 'dark');
-						localStorage.setItem('theme', newTheme);
-					});
-				}
-				
-				// Listen for system color scheme changes
-				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-					// Only apply system preference if user hasn't set a manual preference
-					const savedTheme = localStorage.getItem('theme');
-					if (!savedTheme) {
-						const theme = e.matches ? 'dark' : 'light';
-						document.documentElement.setAttribute('data-theme', theme);
-						document.documentElement.classList.toggle('dark', theme === 'dark');
-					}
-				});
-			}
- 
-			// Initialize on DOM load
-			if (document.readyState === 'loading') {
-				document.addEventListener('DOMContentLoaded', () => {
-					initScrollAnimations();
-					initThemeToggle();
-				});
-			} else {
-				initScrollAnimations();
-				initThemeToggle();
-			}
-		</script>
 	</body>
 </html>
