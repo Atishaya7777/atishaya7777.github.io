@@ -34,7 +34,7 @@ const TerminalSpotlight = () => {
 
   useEffect(() => {
     if (isOpen && inputRef.current) {
-      inputRef.current.focus();
+      (inputRef.current as any).focus();
       executeCommand('clear');
       executeCommand('help');
     }
@@ -42,7 +42,7 @@ const TerminalSpotlight = () => {
 
   useEffect(() => {
     if (outputRef.current) {
-      outputRef.current.scrollTop = outputRef.current.scrollHeight;
+      (outputRef.current as any).scrollTop = (outputRef.current as any).scrollHeight;
     }
   }, [output]);
 
@@ -90,7 +90,7 @@ const TerminalSpotlight = () => {
     const cmd = commands[command];
     
     addOutput(`$ ${command}`, 'command');
-    setHistory((prev: any)=> [command, ...prev.filter(h => h !== command)].slice(0, 20));
+    setHistory((prev: any)=> [command, ...prev.filter((h: any) => h !== command)].slice(0, 20));
     
     if (!cmd) {
       addOutput(`bash: ${command}: command not found`, 'error');
@@ -99,7 +99,7 @@ const TerminalSpotlight = () => {
     
     switch (cmd.action) {
       case 'navigate':
-        navigate(cmd.route);
+        navigate((cmd as any).route);
         break;
         
       case 'showHelp':
@@ -279,14 +279,14 @@ const TerminalSpotlight = () => {
     setSelectedSuggestion(0);
   };
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: any) => {
     switch (e.key) {
       case 'Enter':
         e.preventDefault();
         if (suggestions.length > 0) {
           executeCommand(suggestions[selectedSuggestion].cmd);
         } else if (input.trim()) {
-          executeCommand(input.trim());
+          executeCommand(input.trim() as any);
         }
         setInput("");
         break;
@@ -368,7 +368,7 @@ const TerminalSpotlight = () => {
               className="flex-1 p-4 overflow-y-auto bg-gray-950 border-b border-gray-700"
               style={{ maxHeight: '50%' }}
             >
-              {output.map((item) => (
+              {output.map((item: any) => (
                 <div key={item.id} className="mb-2">
                   <pre className={`font-mono text-sm whitespace-pre-wrap ${
                     item.type === 'command' ? 'text-cyan-400' :
@@ -402,7 +402,7 @@ const TerminalSpotlight = () => {
             {/* Suggestions */}
             {suggestions.length > 0 && (
               <div className="space-y-1 mb-4">
-                {suggestions.map((suggestion, index) => (
+                {suggestions.map((suggestion: any, index: any) => (
                   <div
                     key={suggestion.cmd}
                     className={`flex items-center justify-between p-2 rounded cursor-pointer font-mono text-sm transition-colors ${
