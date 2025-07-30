@@ -12,10 +12,10 @@ Professionally, I work with LG Electronics US as a senior frontend developer for
 
 You can find my information here:
 
-- ✉️Email: atishaya7777@gmail.com
--  LinkedIn: [Atishaya Maharjan](www.linkedin.com/in/atishaya-maharjan07)
--  GitHub: [Atishaya7777](https://github.com/Atishaya7777)
--  Website: [atishaya7777.github.io](https://atishaya7777.github.io/)
+- Email: atishaya7777@gmail.com
+- LinkedIn: [Atishaya Maharjan](www.linkedin.com/in/atishaya-maharjan07)
+- GitHub: [Atishaya7777](https://github.com/Atishaya7777)
+- Website: [atishaya7777.github.io](https://atishaya7777.github.io/)
 
 # Website Details 
 
