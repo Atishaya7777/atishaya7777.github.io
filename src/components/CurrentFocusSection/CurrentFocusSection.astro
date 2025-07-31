@@ -35,23 +35,19 @@ const getSymbolColor = (index: number) => {
 		<div class="text-text-400 mb-6 flex items-center space-x-2">
 			<span class="text-tertiary-base">></span> 
 			<span>Found {items.length} active processes:</span>
-			<div class="flex items-center space-x-2 ml-4">
-				<div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-				<span class="text-xs text-green-400">ACTIVE</span>
-			</div>
 		</div>
 		
 		<div class="grid lg:grid-cols-1 gap-6">
 			{items.map((area, index) => (
 				<a href={area.link} class="group block">
-					<article class="bg-primary-900 border border-primary-700 p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 rounded-sm">
-						<div class="flex items-start space-x-6">
-							<div class={`w-12 h-12 flex items-center justify-center font-bold text-2xl ${getSymbolColor(index)} bg-primary-800 rounded-sm group-hover:scale-110 transition-transform`}>
+					<article class="bg-primary-900 border border-primary-700 p-4 md:p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 rounded-sm">
+						<div class="flex items-start md:space-x-6">
+							<div class={`hidden md:flex w-12 h-12 items-center justify-center font-bold text-2xl ${getSymbolColor(index)} bg-primary-800 rounded-sm group-hover:scale-110 transition-transform`}>
 								{area.symbol}
 							</div>
 							<div class="flex-1 min-w-0">
-								<div class="flex items-center justify-between mb-3">
-									<h3 class="text-xl font-bold text-tertiary-200 group-hover:text-tertiary-base transition-colors font-mono">
+								<div class="flex flex-col md:flex-row items-center justify-between mb-3">
+									<h3 class="text-base md:text-xl font-bold text-tertiary-200 group-hover:text-tertiary-base transition-colors font-mono">
 										{area.title}
 									</h3>
 									<div class="flex items-center space-x-3 text-xs">
@@ -67,7 +63,7 @@ const getSymbolColor = (index: number) => {
 								<p class="text-text-400 mb-4 font-mono text-sm leading-relaxed">
 									{area.description}
 								</p>
-								<div class="bg-primary-800 p-3 rounded-sm border-l-4 border-secondary-400">
+								<div class="bg-primary-800 p-1 md:p-3 rounded-sm border-l-4 border-secondary-400">
 									<code class="text-xs text-secondary-400 font-mono">
 										$ {area.command}
 									</code>
