@@ -14,21 +14,21 @@ import TerminalPrompt from '../TerminalPrompt/TerminalPrompt.astro';
 			</div>
 		</div>
 		
-		<div class="flex items-center justify-between">
+		<div class="flex flex-col md:flex-row items-center justify-between">
 			<div class="text-text-500 font-mono text-xs flex items-center space-x-2">
 				<span class="animate-pulse">█</span> 
 				<span>Ready for input...</span>
 			</div>
 			
 			<!-- Social Links as Terminal Commands -->
-			<div class="flex items-center space-x-4 text-xs">
-				<a href="mailto:contact@atish.dev" class="text-secondary-400 hover:text-tertiary-base transition-colors font-mono">
+			<div class="flex flex-col md:flex-row items-center md:space-x-4 text-xs">
+				<a href="mailto:contact@atish.dev" class="text-secondary-400 hover:text-tertiary-base transition-colors font-mono underline">
 					./contact --email
 				</a>
-				<a href="https://github.com/atish" class="text-secondary-400 hover:text-tertiary-base transition-colors font-mono">
+				<a href="https://github.com/atish" class="text-secondary-400 hover:text-tertiary-base transition-colors font-mono underline">
 					git remote -v
 				</a>
-				<a href="https://linkedin.com/in/atish" class="text-secondary-400 hover:text-tertiary-base transition-colors font-mono">
+				<a href="https://linkedin.com/in/atish" class="text-secondary-400 hover:text-tertiary-base transition-colors font-mono underline">
 					./network --professional
 				</a>
 			</div>

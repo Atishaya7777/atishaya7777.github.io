@@ -29,7 +29,7 @@ const { commands } = Astro.props;
 						
 						<!-- Command Header -->
 						<div class="flex items-center justify-between mb-4">
-							<div class="bg-primary-800 px-3 py-2 rounded-sm border-l-4 border-tertiary-base">
+							<div class="bg-primary-800 p-1 md:px-3 md:py-2 rounded-sm border-l-4 border-tertiary-base">
 								<code class="text-sm font-bold text-tertiary-base font-mono">
 									{cmd.command}
 								</code>
@@ -37,7 +37,7 @@ const { commands } = Astro.props;
 						</div>
 
 						<!-- Title and Description -->
-						<h3 class="text-lg font-bold text-tertiary-200 mb-3 group-hover:text-tertiary-base transition-colors font-mono">
+						<h3 class="text-base md:text-lg font-bold text-tertiary-200 mb-3 group-hover:text-tertiary-base transition-colors font-mono">
 							{cmd.title}
 						</h3>
 						
