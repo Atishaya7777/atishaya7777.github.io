@@ -7,7 +7,7 @@ import Layout from '../layouts/Layout.astro';
 				<div class="text-tertiary-base mb-2">
 					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/contact</span>$ ./start_conversation.sh
 				</div>
-				<div class="pl-4 mb-6 space-y-2">
+				<div class="md:pl-4 mb-6 space-y-2">
 					<div class="text-tertiary-200">
 						<span class="text-tertiary-base">></span> Initiating contact protocols...
 					</div>
@@ -23,7 +23,7 @@ import Layout from '../layouts/Layout.astro';
 					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/contact</span>$ cat README.md
 				</div>
 				<div class="pl-4 mb-8 max-w-4xl">
-					<div class="border-l-2 border-tertiary-base pl-4 text-text-300 leading-relaxed">
+					<div class="text-sm md:text-base border-l-2 border-tertiary-base pl-4 text-text-300 leading-relaxed">
 						# Let's Chat! 
 						<br><br>
 						Whether you want to talk about math, code, research ideas, or just say hi – 
@@ -40,23 +40,23 @@ import Layout from '../layouts/Layout.astro';
 				<div class="text-tertiary-base mb-2">
 					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/contact</span>$ ls -la communication/
 				</div>
-				<div class="pl-4 mb-6">
+				<div class="md:pl-4 mb-6">
 					<div class="text-text-400 mb-4">
 						<span class="text-tertiary-base">></span> Available communication channels:
 					</div>
 					
 					<div class="grid md:grid-cols-2 gap-6">
 						<!-- Email -->
-						<div class="bg-primary-900 border border-primary-700 p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
-							<div class="flex items-start space-x-4 mb-4">
-								<div class="w-8 h-8 flex items-center justify-center font-bold text-lg text-secondary-400">
+						<div class="bg-primary-900 border border-primary-700 p-3 md:p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
+							<div class="flex items-start md:space-x-4 mb-4">
+								<div class="hidden w-8 h-8 md:flex items-center justify-center font-bold text-lg text-secondary-400">
 									@
 								</div>
 								<div class="flex-1">
 									<h3 class="text-lg font-bold text-tertiary-200 mb-2 font-mono">
 										primary_email.sh
 									</h3>
-									<div class="text-xs text-text-500 font-mono mb-3">
+									<div class="text-sm text-text-500 font-mono mb-3">
 										-rwxr-xr-x 1 atish staff 2048 Jul 27 12:00
 									</div>
 									<p class="text-text-400 text-sm mb-4 font-mono">
@@ -78,15 +78,15 @@ import Layout from '../layouts/Layout.astro';
 
 						<!-- Quick Connect -->
 						<div class="bg-primary-900 border border-primary-700 p-6">
-							<div class="flex items-start space-x-4 mb-4">
-								<div class="w-8 h-8 flex items-center justify-center font-bold text-lg text-tertiary-400">
+							<div class="flex items-start md:space-x-4 mb-4">
+								<div class="hidden w-8 h-8 md:flex items-center justify-center font-bold text-lg text-tertiary-400">
 									@
 								</div>
 								<div class="flex-1">
 									<h3 class="text-lg font-bold text-tertiary-200 mb-2 font-mono">
 										quick_connect.sh
 									</h3>
-									<div class="text-xs text-text-500 font-mono mb-3">
+									<div class="text-sm text-text-500 font-mono mb-3">
 										-rwxr-xr-x 1 atish staff 1536 Jul 27 12:00
 									</div>
 									<p class="text-text-400 text-sm mb-4 font-mono">
@@ -114,7 +114,7 @@ import Layout from '../layouts/Layout.astro';
 				<div class="text-tertiary-base mb-2">
 					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/contact</span>$ find . -name "*.social" -type f
 				</div>
-				<div class="pl-4 mb-6">
+				<div class="md:pl-4 mb-6">
 					<div class="text-text-400 mb-4">
 						<span class="text-tertiary-base">></span> Social network endpoints discovered:
 					</div>
@@ -126,16 +126,16 @@ import Layout from '../layouts/Layout.astro';
 							class="bg-primary-900 border border-primary-700 p-4 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 flex items-center group"
 						>
 							<div class="flex items-center flex-1">
-								<div class="w-10 h-10 bg-blue-600 flex items-center justify-center mr-4 font-mono text-white font-bold">
+								<div class="hidden w-10 h-10 bg-blue-600 md:flex items-center justify-center mr-4 font-mono text-white font-bold">
 									in
 								</div>
 								<div class="flex-1">
 									<div class="flex items-center justify-between mb-1">
 										<h4 class="text-md font-bold text-tertiary-200 font-mono">./linkedin.social</h4>
-										<span class="text-xs text-text-500 font-mono">HTTPS/1.1</span>
+										<span class="text-sm text-text-500 font-mono">HTTPS/1.1</span>
 									</div>
-									<p class="text-xs text-text-400 font-mono">Where I pretend to be professional</p>
-									<div class="text-xs text-secondary-400 font-mono mt-1">
+									<p class="text-sm text-text-400 font-mono">Where I pretend to be professional</p>
+									<div class="text-sm text-secondary-400 font-mono mt-1">
 										$ curl -X GET "professional_network"
 									</div>
 								</div>
@@ -151,16 +151,16 @@ import Layout from '../layouts/Layout.astro';
 							class="bg-primary-900 border border-primary-700 p-4 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 flex items-center group"
 						>
 							<div class="flex items-center flex-1">
-								<div class="w-10 h-10 bg-gray-800 flex items-center justify-center mr-4 font-mono text-white font-bold">
+								<div class="hidden w-10 h-10 bg-gray-800 md:flex items-center justify-center mr-4 font-mono text-white font-bold">
 									gh
 								</div>
 								<div class="flex-1">
 									<div class="flex items-center justify-between mb-1">
 										<h4 class="text-md font-bold text-tertiary-200 font-mono">./github.social</h4>
-										<span class="text-xs text-text-500 font-mono">Git/2.41</span>
+										<span class="text-sm text-text-500 font-mono">Git/2.41</span>
 									</div>
-									<p class="text-xs text-text-400 font-mono">Where my code lives (and sometimes dies)</p>
-									<div class="text-xs text-secondary-400 font-mono mt-1">
+									<p class="text-sm text-text-400 font-mono">Where my code lives (and sometimes dies)</p>
+									<div class="text-sm text-secondary-400 font-mono mt-1">
 										$ git clone "interesting_projects"
 									</div>
 								</div>
@@ -178,7 +178,7 @@ import Layout from '../layouts/Layout.astro';
 				<div class="text-tertiary-base mb-2">
 					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/contact</span>$ cat topics_of_interest.txt
 				</div>
-				<div class="pl-4 mb-6">
+				<div class="md:pl-4 mb-6">
 					<div class="text-text-400 mb-4">
 						<span class="text-tertiary-base">></span> Things I absolutely love talking about:
 					</div>
@@ -187,32 +187,30 @@ import Layout from '../layouts/Layout.astro';
 						<div class="space-y-4">
 							<div class="bg-primary-900 border border-primary-700 p-4">
 								<div class="flex items-start space-x-3 mb-2">
-									<span class="text-tertiary-400 font-mono">∑</span>
 									<h3 class="text-md font-bold text-tertiary-200 font-mono">
 										research_mathematics.md
 									</h3>
 								</div>
-								<p class="text-xs text-text-400 font-mono leading-relaxed">
+								<p class="text-sm text-text-400 font-mono leading-relaxed">
 									Got an interesting problem? Want to collaborate on something? Or just want to 
 									geek out about graph theory? I'm all ears!
 								</p>
-								<div class="text-xs text-secondary-400 font-mono mt-2">
+								<div class="text-sm text-secondary-400 font-mono mt-2">
 									$ discuss --topic="graph_theory" --depth="infinite"
 								</div>
 							</div>
 
 							<div class="bg-primary-900 border border-primary-700 p-4">
 								<div class="flex items-start space-x-3 mb-2">
-									<span class="text-secondary-400 font-mono">λ</span>
 									<h3 class="text-md font-bold text-tertiary-200 font-mono">
 										web_development.js
 									</h3>
 								</div>
-								<p class="text-xs text-text-400 font-mono leading-relaxed">
+								<p class="text-sm text-text-400 font-mono leading-relaxed">
 									Frontend projects, cool libraries you've discovered, or that weird bug 
 									that's been driving you crazy – I love talking shop about development.
 								</p>
-								<div class="text-xs text-secondary-400 font-mono mt-2">
+								<div class="text-sm text-secondary-400 font-mono mt-2">
 									$ npm run discuss --framework="any" --bugs="welcome"
 								</div>
 							</div>
@@ -221,32 +219,30 @@ import Layout from '../layouts/Layout.astro';
 						<div class="space-y-4">
 							<div class="bg-primary-900 border border-primary-700 p-4">
 								<div class="flex items-start space-x-3 mb-2">
-									<span class="text-tertiary-400 font-mono">🎓</span>
 									<h3 class="text-md font-bold text-tertiary-200 font-mono">
 										academic_life.log
 									</h3>
 								</div>
-								<p class="text-xs text-text-400 font-mono leading-relaxed">
+								<p class="text-sm text-text-400 font-mono leading-relaxed">
 									Thinking about grad programs? Want to share experiences about research or 
 									academic conferences? Let's chat about the academic journey.
 								</p>
-								<div class="text-xs text-secondary-400 font-mono mt-2">
+								<div class="text-sm text-secondary-400 font-mono mt-2">
 									$ share --experience="grad_school" --advice="freely"
 								</div>
 							</div>
 
 							<div class="bg-primary-900 border border-primary-700 p-4">
 								<div class="flex items-start space-x-3 mb-2">
-									<span class="text-secondary-400 font-mono">📚</span>
 									<h3 class="text-md font-bold text-tertiary-200 font-mono">
 										teaching_learning.txt
 									</h3>
 								</div>
-								<p class="text-xs text-text-400 font-mono leading-relaxed">
+								<p class="text-sm text-text-400 font-mono leading-relaxed">
 									Need help with something I might know? Want to share teaching experiences? 
 									I'm always down to help out or learn something new.
 								</p>
-								<div class="text-xs text-secondary-400 font-mono mt-2">
+								<div class="text-sm text-secondary-400 font-mono mt-2">
 									$ help --mutual --learning="continuous"
 								</div>
 							</div>
@@ -260,8 +256,8 @@ import Layout from '../layouts/Layout.astro';
 				<div class="text-tertiary-base mb-2">
 					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/contact</span>$ ./conclusion.sh --call-to-action
 				</div>
-				<div class="pl-4 mb-6">
-					<div class="bg-primary-900 border border-tertiary-base p-8 text-center">
+				<div class="md:pl-4 mb-6">
+					<div class="bg-primary-900 border border-tertiary-base p-4 md:p-8 text-center">
 						<div class="mb-6">
 							<h2 class="text-xl font-bold text-tertiary-base mb-4 font-mono">
 								$ echo "So, What Are You Waiting For?"
@@ -275,17 +271,13 @@ import Layout from '../layouts/Layout.astro';
 						<div class="space-y-4">
 							<a 
 								href="mailto:atishaya7777@gmail.com" 
-								class="inline-flex items-center px-6 py-3 bg-tertiary-base text-primary-1000 font-bold font-mono hover:bg-tertiary-400 transition-all duration-300 group"
+								class="text-sm md:text-base inline-flex items-center px-6 py-3 bg-tertiary-base text-primary-1000 font-bold font-mono hover:bg-tertiary-400 transition-all duration-300 group"
 							>
 								$ send_email --to="atish" --subject="Let's chat!"
-								<svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="hidden md:block w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
 								</svg>
 							</a>
-							
-							<div class="text-xs text-text-500 font-mono">
-								<span class="text-tertiary-base">></span> Email sent successfully! ✓
-							</div>
 						</div>
 					</div>
 				</div>

@@ -49,6 +49,12 @@ export const commands = {
       description: 'Navigate to blog',
       category: 'navigation'
     },
+    'cd contact': { 
+      action: 'navigate', 
+      route: '/contact', 
+      description: 'Navigate to contact',
+      category: 'navigation'
+    },
     './about': { 
       action: 'navigate', 
       route: '/about', 
