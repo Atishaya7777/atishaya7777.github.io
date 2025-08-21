@@ -10,6 +10,8 @@ const TerminalSpotlight = () => {
   const [selectedSuggestion, setSelectedSuggestion] = useState(0);
   const [output, setOutput] = useState<any>([]);
   const [showOutput, setShowOutput] = useState(false);
+  const [vimMode, setVimMode] = useState(false);
+  const [cursorPosition, setCursorPosition] = useState(0);
   const inputRef = useRef(null);
   const outputRef = useRef(null);
 
@@ -25,6 +27,7 @@ const TerminalSpotlight = () => {
         setSuggestions([]);
         setSelectedSuggestion(0);
         setShowOutput(false);
+        setVimMode(false);
       }
     };
 
@@ -108,7 +111,16 @@ const TerminalSpotlight = () => {
           '',
           ...Object.entries(commands)
             .sort((a, b) => a[1].category.localeCompare(b[1].category))
-            .map(([cmdName, info]) => `  ${cmdName.padEnd(20)} - ${info.description}`)
+            .map(([cmdName, info]) => `  ${cmdName.padEnd(20)} - ${info.description}`),
+          '',
+          'Vim key bindings:',
+          '  Ctrl+n / j        - Next suggestion',
+          '  Ctrl+p / k        - Previous suggestion',
+          '  gg                - First suggestion',
+          '  G                 - Last suggestion',
+          '  dd                - Clear input',
+          '  0                 - Beginning of line',
+          '  $                 - End of line'
         ];
         addOutput(helpContent.join('\n'));
         break;
@@ -132,9 +144,9 @@ const TerminalSpotlight = () => {
         addOutput([
           'total 8',
           'drwxr-xr-x  3 atish atish 4096 Jan 30 12:00 projects/',
-          'drwxr-xr-x  2 atish atish 4096 Jan 30 12:00 research/',
-          'drwxr-xr-x  2 atish atish 4096 Jan 30 12:00 thoughts/',
-          '-rw-r--r--  1 atish atish  256 Jan 30 12:00 about.txt',
+          'drwxr-xr-x  2 atish atish 4096 Jan 30 12:00 about/',
+          'drwxr-xr-x  2 atish atish 4096 Jan 30 12:00 blog/',
+          'drwxr-xr-x  2 atish atish 4096 Jan 30 12:00 contact/',
           '-rw-r--r--  1 atish atish  128 Jan 30 12:00 welcome.txt',
           '-rwxr-xr-x  1 atish atish  512 Jan 30 12:00 about*'
         ].join('\n'));
@@ -218,16 +230,9 @@ const TerminalSpotlight = () => {
         addOutput([
           '.',
           '├── projects/',
-          '│   ├── web-apps/',
-          '│   ├── algorithms/',
-          '│   └── research/',
-          '├── thoughts/',
-          '│   ├── mathematics/',
-          '│   ├── technology/',
-          '│   └── philosophy/',
-          '├── research/',
-          '│   ├── papers/',
-          '│   └── experiments/',
+          '├── about/',
+          '├── contact/',
+          '├── blog/',
           '├── about.txt',
           '├── welcome.txt',
           '└── about*'
@@ -279,7 +284,122 @@ const TerminalSpotlight = () => {
     setSelectedSuggestion(0);
   };
 
+  const handleVimCommand = (keys: string) => {
+    switch (keys) {
+      case 'dd':
+        setInput('');
+        setCursorPosition(0);
+        break;
+      case 'gg':
+        if (suggestions.length > 0) {
+          setSelectedSuggestion(0);
+        }
+        break;
+      case 'G':
+        if (suggestions.length > 0) {
+          setSelectedSuggestion(suggestions.length - 1);
+        }
+        break;
+      case '0':
+        setCursorPosition(0);
+        if (inputRef.current) {
+          (inputRef.current as any).setSelectionRange(0, 0);
+        }
+        break;
+      case '$':
+        const endPos = input.length;
+        setCursorPosition(endPos);
+        if (inputRef.current) {
+          (inputRef.current as any).setSelectionRange(endPos, endPos);
+        }
+        break;
+    }
+  };
+
+  const [keySequence, setKeySequence] = useState('');
+  const [keyTimeout, setKeyTimeout] = useState<NodeJS.Timeout | null>(null);
+
   const handleKeyDown = (e: any) => {
+    // Handle Ctrl key combinations for vim-style navigation
+    if (e.ctrlKey) {
+      switch (e.key) {
+        case 'n':
+          e.preventDefault();
+          if (suggestions.length > 0) {
+            setSelectedSuggestion(prev => 
+              prev < suggestions.length - 1 ? prev + 1 : 0
+            );
+          }
+          return;
+        case 'p':
+          e.preventDefault();
+          if (suggestions.length > 0) {
+            setSelectedSuggestion(prev => 
+              prev > 0 ? prev - 1 : suggestions.length - 1
+            );
+          }
+          return;
+      }
+    }
+
+    // Handle vim key sequences
+    if (!e.ctrlKey && !e.metaKey && !e.altKey) {
+      if (e.key === 'j' && suggestions.length > 0) {
+        e.preventDefault();
+        setSelectedSuggestion(prev => 
+          prev < suggestions.length - 1 ? prev + 1 : 0
+        );
+        return;
+      }
+      if (e.key === 'k' && suggestions.length > 0) {
+        e.preventDefault();
+        setSelectedSuggestion(prev => 
+          prev > 0 ? prev - 1 : suggestions.length - 1
+        );
+        return;
+      }
+
+      // Build key sequences for multi-key vim commands
+      if (['d', 'g', '0', '$'].includes(e.key)) {
+        e.preventDefault();
+        const newSequence = keySequence + e.key;
+        setKeySequence(newSequence);
+        
+        // Clear existing timeout
+        if (keyTimeout) {
+          clearTimeout(keyTimeout);
+        }
+
+        // Check for complete vim commands
+        if (newSequence === 'dd' || newSequence === 'gg') {
+          handleVimCommand(newSequence);
+          setKeySequence('');
+          return;
+        }
+        
+        if (newSequence === '0' || newSequence === '$') {
+          handleVimCommand(newSequence);
+          setKeySequence('');
+          return;
+        }
+
+        // Set timeout to clear sequence if no matching command
+        const timeout = setTimeout(() => {
+          setKeySequence('');
+        }, 1000);
+        setKeyTimeout(timeout);
+        return;
+      }
+    }
+
+    // Clear key sequence for other keys
+    setKeySequence('');
+    if (keyTimeout) {
+      clearTimeout(keyTimeout);
+      setKeyTimeout(null);
+    }
+
+    // Handle standard terminal navigation
     switch (e.key) {
       case 'Enter':
         e.preventDefault();
@@ -344,10 +464,14 @@ const TerminalSpotlight = () => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-80 flex items-start justify-center pt-16 z-50">
       <div className="bg-gray-900 border-2 border-green-500 rounded-lg shadow-2xl max-w-4xl w-full mx-4 max-h-[80vh] flex flex-col">
-        {/* Terminal Header */}
         <div className="bg-gray-800 px-4 py-2 border-b border-green-500 flex items-center justify-between flex-shrink-0">
           <div className="flex items-center space-x-2">
             <span className="text-green-400 font-mono text-sm ml-4">atish@terminal:~</span>
+            {keySequence && (
+              <span className="text-yellow-400 font-mono text-xs bg-gray-700 px-2 py-1 rounded">
+                {keySequence}
+              </span>
+            )}
           </div>
           <button
             onClick={() => setIsOpen(false)}
@@ -358,7 +482,6 @@ const TerminalSpotlight = () => {
         </div>
 
         <div className="flex-1 flex flex-col min-h-0">
-          {/* Output Section */}
           {showOutput && (
             <div 
               ref={outputRef}
@@ -380,7 +503,6 @@ const TerminalSpotlight = () => {
             </div>
           )}
 
-          {/* Command Input Section */}
           <div className="p-4 flex-shrink-0">
             <div className="flex items-center space-x-2 mb-4">
               <span className="text-green-400 font-mono">$</span>
@@ -388,15 +510,18 @@ const TerminalSpotlight = () => {
                 ref={inputRef}
                 type="text"
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={(e) => {
+                  setInput(e.target.value);
+                  setCursorPosition(e.target.selectionStart || 0);
+                }}
                 onKeyDown={handleKeyDown}
+                onSelect={(e) => setCursorPosition((e.target as any).selectionStart || 0)}
                 placeholder="Type a command..."
                 className="flex-1 bg-transparent text-green-400 font-mono outline-none placeholder-gray-500"
                 autoComplete="off"
               />
             </div>
 
-            {/* Suggestions */}
             {suggestions.length > 0 && (
               <div className="space-y-1 mb-4">
                 {suggestions.map((suggestion: any, index: any) => (
@@ -425,10 +550,10 @@ const TerminalSpotlight = () => {
               </div>
             )}
 
-            {/* Help Text */}
             <div className="pt-4 border-t border-gray-700">
               <div className="text-gray-400 text-xs font-mono space-y-1">
                 <div>↑↓ Navigate • Tab Complete • Enter Execute • Esc Close</div>
+                <div>Vim: Ctrl+n/j Next • Ctrl+p/k Previous • gg First • G Last • dd Clear • 0/$ Start/End</div>
                 <div>Try: help, whoami, ls, tree, cat welcome.txt, ./about --verbose</div>
               </div>
             </div>

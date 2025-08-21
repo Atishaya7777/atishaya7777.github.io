@@ -19,12 +19,6 @@ export const commands = {
       description: 'List directory contents',
       category: 'navigation'
     },
-    'ls ~/projects/': { 
-      action: 'navigate', 
-      route: '/works', 
-      description: 'View all projects and work',
-      category: 'navigation'
-    },
     'cd ~': {
       action: 'navigate',
       route: '/',
@@ -53,23 +47,6 @@ export const commands = {
       action: 'navigate', 
       route: '/contact', 
       description: 'Navigate to contact',
-      category: 'navigation'
-    },
-    './about': { 
-      action: 'navigate', 
-      route: '/about', 
-      description: 'Execute about script',
-      category: 'navigation'
-    },
-    './about --verbose': { 
-      action: 'showAboutVerbose', 
-      description: 'Execute about script with verbose output',
-      category: 'navigation'
-    },
-    'cat ~/thoughts/*': { 
-      action: 'navigate', 
-      route: '/blog', 
-      description: 'Read all blog posts',
       category: 'navigation'
     },
     'cat welcome.txt': { 
