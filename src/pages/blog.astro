@@ -1,5 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import GitFundamentalsPDF from '../../public/assets/git_fundamentals.pdf'
+import BinaryTreeHKPropertyPDF from '../../public/assets/perfect_binary_trees_hk_property.pdf'
+import SpectralGraphTheoryMazePDF from '../../public/assets/spectral_graph_theory_for_maze_solving.pdf'
+
+const presentations = [
+	{
+		presentationName: 'Spectral Graph Theory For Maze Solving',
+		presentationLink: SpectralGraphTheoryMazePDF,
+		conferenceName: 'GADA Lab Research Meetings',
+		conferenceLocation: 'EITC E2, University of Manitoba',
+		presentationDate: 'Jul 28 2025',
+		fileSize: '1.7M',
+		tags: ['spectral_graph_theory', 'linear_algebra', 'linear_programming', 'path_finding']
+	},
+	{
+		presentationName: 'Git Fundamentals',
+		presentationLink: GitFundamentalsPDF,
+		conferenceName: 'Coding Kickoff',
+		conferenceLocation: 'EITC E2, University of Manitoba',
+		presentationDate: 'Sep 18 2024',
+		fileSize: '179K',
+		tags: ['version_control', 'software_development']
+	},
+	{
+		presentationName: 'Exploring Perfect Binary Trees With Relation To The HK-Property',
+		presentationLink: BinaryTreeHKPropertyPDF,
+		conferenceName: 'UM Combinatorics Seminar',
+		conferenceLocation: 'Machray Hall, University of Manitoba',
+		presentationDate: 'Mar 28 2024',
+		fileSize: '233K',
+		tags: ['combinatorics', 'enumeration', 'graph_theory', 'independent_sets']
+	},
+]
 ---
 
 <Layout title=":~$ cat ~/thoughts/*">
@@ -9,10 +42,10 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 				<div class="pl-4 mb-6 space-y-2">
 					<div class="text-text-400 text-xs font-mono">
-						total 42
+						total 64
 					</div>
 					<div class="text-text-400 text-xs font-mono">
-						drwxr-xr-x  8 atish staff   256 Jul 27 12:00 .
+						drwxr-xr-x  9 atish staff   288 Jul 27 12:00 .
 					</div>
 					<div class="text-text-400 text-xs font-mono">
 						drwxr-xr-x 15 atish staff   480 Jul 27 11:30 ..
@@ -20,14 +53,8 @@ import Layout from '../layouts/Layout.astro';
 					<div class="text-text-400 text-xs font-mono">
 						-rw-r--r--  1 atish staff  2048 Jul 27 12:00 README.md
 					</div>
-					<div class="text-secondary-400 text-xs font-mono">
-						drwxr-xr-x  3 atish staff    96 Jul 27 10:15 deep_dives/
-					</div>
-					<div class="text-secondary-400 text-xs font-mono">
-						drwxr-xr-x  4 atish staff   128 Jul 27 09:45 build_logs/
-					</div>
-					<div class="text-secondary-400 text-xs font-mono">
-						drwxr-xr-x  2 atish staff    64 Jul 27 08:30 random_bits/
+					<div class="text-tertiary-base text-xs font-mono">
+						drwxr-xr-x  5 atish staff   160 Jul 28 14:20 presentations/
 					</div>
 					<div class="text-text-500 text-xs font-mono">
 						-rw-r--r--  1 atish staff     0 Jul 27 12:01 .coming_soon
@@ -46,7 +73,55 @@ import Layout from '../layouts/Layout.astro';
 						actively working on putting together some thoughtful posts about the stuff I'm 
 						actually working on.
 						<br><br>
+						You'll also find presentation slides from talks I've given over the years.
+						<br><br>
 						Check the directories below for upcoming content areas:
+					</div>
+				</div>
+			</div>
+
+			<!-- Presentations Section -->
+			<div class="mb-12">
+				<div class="text-tertiary-base mb-2">
+					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/blog</span>$ ls -la presentations/
+				</div>
+				<div class="pl-4 mb-6">
+					<div class="bg-primary-900 border border-tertiary-base p-6">
+						<div class="text-text-400 mb-4">
+							<span class="text-tertiary-base">></span> Conference talks and presentations:
+						</div>
+						<div class="space-y-4">
+							{presentations.map((presentation) => {
+								return (
+											<div class="border-l-2 border-secondary-400 pl-4 hover:border-tertiary-base transition-colors duration-300">
+												<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+													<h3 class="text-base font-bold text-tertiary-200 font-mono">
+														{presentation.presentationName}.pdf
+													</h3>
+													<div class="text-xs text-text-500 font-mono">
+-rw-r--r-- 1 atish staff {presentation.fileSize} {presentation.presentationDate}
+													</div>
+												</div>
+												<p class="text-sm text-text-400 font-mono mb-2">
+													"{presentation.presentationName}"
+													</p>
+													<div class="text-xs text-secondary-400 font-mono mb-2">
+														{ presentation.conferenceName } • {presentation.conferenceLocation} 
+													</div>
+												<div class="flex flex-wrap gap-2 text-xs">
+															{presentation.tags.map((tag) => (
+															<span class="bg-primary-800 text-tertiary-400 px-2 py-1 font-mono">#{tag}</span>
+															))}
+													<span class="bg-primary-800 text-tertiary-400 px-2 py-1 font-mono">#mathematics</span>
+													<span class="bg-primary-800 text-tertiary-400 px-2 py-1 font-mono">#research</span>
+<a href={presentation.presentationLink} class="bg-secondary-800 hover:bg-secondary-700 text-secondary-200 px-2 py-1 font-mono transition-colors duration-200">
+														[download.pdf]
+													</a>
+												</div>
+											</div>
+										)
+								})}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -82,76 +157,6 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 			</div>
 
-			<!-- Content Categories -->
-			<div class="mb-12">
-				<div class="text-tertiary-base mb-2">
-					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/blog</span>$ find ./thoughts -type d -name "*" | head -3
-				</div>
-				<div class="pl-4 mb-6">
-					<div class="text-text-400 mb-4">
-						<span class="text-tertiary-base">></span> Discovered content categories:
-					</div>
-					
-					<div class="grid md:grid-cols-3 gap-6">
-						<div class="bg-primary-900 border border-primary-700 p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
-							<div class="flex items-start space-x-3 mb-4">
-								<div class="flex-1">
-									<h3 class="text-base font-bold text-tertiary-200 mb-2 font-mono">
-										./deep_dives/
-									</h3>
-									<div class="text-xs text-text-500 font-mono mb-3">
-										drwxr-xr-x 3 atish staff 96
-									</div>
-								</div>
-							</div>
-							<p class="text-xs text-text-400 font-mono leading-relaxed mb-3">
-								Long-form explorations of problems that kept me up at night thinking.
-							</p>
-							<div class="text-xs text-secondary-400 font-mono">
-								$ find . -name "*.deep" -type f
-							</div>
-						</div>
-
-						<div class="bg-primary-900 border border-primary-700 p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
-							<div class="flex items-start space-x-3 mb-4">
-								<div class="flex-1">
-									<h3 class="text-base font-bold text-tertiary-200 mb-2 font-mono">
-										./build_logs/
-									</h3>
-									<div class="text-xs text-text-500 font-mono mb-3">
-										drwxr-xr-x 4 atish staff 128
-									</div>
-								</div>
-							</div>
-							<p class="text-xs text-text-400 font-mono leading-relaxed mb-3">
-								Things I built, broke, fixed, and lessons learned along the way.
-							</p>
-							<div class="text-xs text-secondary-400 font-mono">
-								$ grep -r "ERROR\|SUCCESS" ./build_logs/
-							</div>
-						</div>
-
-						<div class="bg-primary-900 border border-primary-700 p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
-							<div class="flex items-start space-x-3 mb-4">
-								<div class="flex-1">
-									<h3 class="text-base font-bold text-tertiary-200 mb-2 font-mono">
-										./random_bits/
-									</h3>
-									<div class="text-xs text-text-500 font-mono mb-3">
-										drwxr-xr-x 2 atish staff 64
-									</div>
-								</div>
-							</div>
-							<p class="text-xs text-text-400 font-mono leading-relaxed mb-3">
-								Quick thoughts, interesting links, and stuff that doesn't fit elsewhere.
-							</p>
-							<div class="text-xs text-secondary-400 font-mono">
-								$ ls -t random_bits/ | head -5
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 
 			<!-- Build Status -->
 			<div class="mb-12">
@@ -178,6 +183,9 @@ import Layout from '../layouts/Layout.astro';
 							</div>
 							<div class="text-secondary-400">
 								[{new Date().toISOString().slice(0,19)}] DEBUG: Code syntax highlighting configured
+							</div>
+							<div class="text-tertiary-base">
+								[{new Date().toISOString().slice(0,19)}] SUCCESS: PDF presentation parser ready
 							</div>
 							<div class="text-tertiary-base">
 								[{new Date().toISOString().slice(0,19)}] SUCCESS: Blog system ready for content
