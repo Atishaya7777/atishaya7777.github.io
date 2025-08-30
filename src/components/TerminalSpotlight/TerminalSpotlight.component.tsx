@@ -118,7 +118,6 @@ const TerminalSpotlight = () => {
           '  Ctrl+p / k        - Previous suggestion',
           '  gg                - First suggestion',
           '  G                 - Last suggestion',
-          '  dd                - Clear input',
           '  0                 - Beginning of line',
           '  $                 - End of line'
         ];
@@ -360,7 +359,7 @@ const TerminalSpotlight = () => {
       }
 
       // Build key sequences for multi-key vim commands
-      if (['d', 'g', '0', '$'].includes(e.key)) {
+      if (['g', '0', '$'].includes(e.key)) {
         e.preventDefault();
         const newSequence = keySequence + e.key;
         setKeySequence(newSequence);
@@ -371,7 +370,7 @@ const TerminalSpotlight = () => {
         }
 
         // Check for complete vim commands
-        if (newSequence === 'dd' || newSequence === 'gg') {
+        if (newSequence === 'gg') {
           handleVimCommand(newSequence);
           setKeySequence('');
           return;
@@ -553,7 +552,7 @@ const TerminalSpotlight = () => {
             <div className="pt-4 border-t border-gray-700">
               <div className="text-gray-400 text-xs font-mono space-y-1">
                 <div>↑↓ Navigate • Tab Complete • Enter Execute • Esc Close</div>
-                <div>Vim: Ctrl+n/j Next • Ctrl+p/k Previous • gg First • G Last • dd Clear • 0/$ Start/End</div>
+                <div>Vim: Ctrl+n/j Next • Ctrl+p/k Previous • gg First • G Last • 0/$ Start/End</div>
                 <div>Try: help, whoami, ls, tree, cat welcome.txt, ./about --verbose</div>
               </div>
             </div>
