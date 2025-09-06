@@ -1,0 +1,3 @@
+[submodule "games"]
+	path = games
+	url = https://github.com/Atishaya7777/math-games.git
