@@ -1,0 +1,30 @@
+---
+interface Props {
+	title?: string;
+	borderColor?: 'tertiary' | 'secondary';
+	className?: string;
+	centered?: boolean;
+}
+
+const { 
+	title,
+	borderColor = 'tertiary',
+	className = "",
+	centered = false
+} = Astro.props;
+
+const borderClass = borderColor === 'secondary' ? 'border-secondary-400' : 'border-primary-700';
+const borderLeftClass = borderColor === 'secondary' ? 'border-secondary-400' : 'border-tertiary-base';
+---
+
+<div class={`bg-primary-900 border ${borderClass} p-3 md:p-6 ${centered ? 'text-center' : ''} ${className}`}>
+	{title && (
+		<h2 class={`text-lg md:text-xl font-bold text-tertiary-base mb-4 font-mono ${centered ? 'text-center' : ''}`}>
+			{title}
+		</h2>
+	)}
+	<div class={`text-sm md:text-base border-l-2 ${borderLeftClass} pl-4 text-text-300 leading-relaxed ${centered ? 'text-left md:text-center md:max-w-2xl md:mx-auto' : ''}`}>
+		<slot />
+	</div>
+</div>
+

@@ -1,245 +1,185 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { TerminalSection, FileHeader, ContentBox } from '../components';
 import ResumePDF from '../../public/assets/resume.pdf';
 import routes from '../global/routes';
 ---
 
 <Layout title=":~$ cat about.txt">
-			<!-- File Header -->
-			<section class="mb-8">
-				<div class="text-tertiary-base mb-2">
-					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/about</span>$ cat about.txt
-				</div>
-				<div class="pl-4 mb-6">
-					<div class="text-text-400 text-sm mb-4">
-						<span class="text-tertiary-base">#</span> File: about.txt
-						<br><span class="text-tertiary-base">#</span> Size: 2.4KB
-						<br><span class="text-tertiary-base">#</span> Last modified: {new Date().toLocaleDateString()}
-						<br><span class="text-tertiary-base">#</span> Encoding: UTF-8
-					</div>
-					<div class="border-l-2 border-tertiary-base pl-6 mb-6">
-						<h1 class="text-2xl md:text-3xl font-bold text-tertiary-base mb-4 font-mono">
-							ABOUT_ATISH.md
-						</h1>
-						<p class="text-text-300 leading-relaxed mb-4">
-							Hi there! I'm Atishaya, but honestly, everyone just calls me Atish. 
-							I'm that person who gets way too excited about graph theory proofs and 
-							can spend hours debugging code just to make a website pixel-perfect.
-						</p>
-					</div>
-				</div>
-			</section>
+	<TerminalSection command="cat about.txt" path="~/about">
+		<FileHeader 
+			fileName="about.txt"
+			fileSize="2.4KB"
+		>
+			<h1 class="text-2xl md:text-3xl font-bold text-tertiary-base mb-4 font-mono">
+				ABOUT_ATISH.md
+			</h1>
+			<p class="text-text-300 leading-relaxed mb-4">
+				Hi there! I'm Atishaya, but honestly, everyone just calls me Atish. 
+				I'm that person who gets way too excited about graph theory proofs and 
+				can spend hours debugging code just to make a website pixel-perfect.
+			</p>
+		</FileHeader>
+	</TerminalSection>
 
-			<!-- My Story Section -->
-			<section class="mb-8">
-				<div class="text-tertiary-base mb-2">
-					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/about</span>$ grep -A 20 "STORY" about.txt
-				</div>
-				<div class="md:pl-4 mb-6">
-					<div class="bg-primary-900 border border-primary-700 p-3 md:p-6 mb-4">
-						<h2 class="text-xl font-bold text-tertiary-base mb-4 font-mono text-center">
-							== MY_STORY ==
-						</h2>
-						<div class="text-sm md:text-base space-y-4 text-text-300">
-							<div class="border-l-2 border-secondary-400 pl-4">
-								<p class="leading-relaxed mb-4">
-									I grew up in Nepal and somehow ended up in Winnipeg, Canada 
-									(trust me, the weather was quite the adjustment!). Currently, 
-									I'm working on a Joint Honours degree in Mathematics and Computer 
-									Science with a minor in Statistics at the University of Manitoba.
-								</p>
-								<p class="leading-relaxed">
-									If you need my resume, you can grab it 
-									<a href={ResumePDF} target="_blank" class="text-tertiary-base hover:text-tertiary-400 underline font-bold transition-colors">
-										[resume.pdf]
-									</a>. Want to chat? Hit me up through my 
-									<a href={routes.contact} class="text-tertiary-base hover:text-tertiary-400 underline font-bold transition-colors">
-										[contact.sh]
-									</a>.
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+	<TerminalSection command='grep -A 20 "STORY" about.txt' path="~/about">
+		<ContentBox title="== MY_STORY ==" centered={true}>
+			<div class="space-y-4">
+				<p class="leading-relaxed mb-4">
+					I grew up in Nepal and somehow ended up in Winnipeg, Canada 
+					(trust me, the weather was quite the adjustment!). Currently, 
+					I'm working on a Joint Honours degree in Mathematics and Computer 
+					Science with a minor in Statistics at the University of Manitoba.
+				</p>
+				<p class="leading-relaxed">
+					If you need my resume, you can grab it 
+					<a href={ResumePDF} target="_blank" rel="noopener noreferrer" class="text-tertiary-base hover:text-tertiary-400 underline font-bold transition-colors">
+						[resume.pdf]
+					</a>. Want to chat? Hit me up through my 
+					<a href={routes.contact} class="text-tertiary-base hover:text-tertiary-400 underline font-bold transition-colors">
+						[contact.sh]
+					</a>.
+				</p>
+			</div>
+		</ContentBox>
+	</TerminalSection>
 
-			<!-- What Gets Me Excited -->
-			<section class="mb-8">
-				<div class="text-tertiary-base mb-2">
-					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/about</span>$ cat interests.txt
+	<TerminalSection command="cat interests.txt" path="~/about">
+		<ContentBox title="== INTERESTS.LOG ==" centered={true}>
+			<div class="text-sm md:text-base text-text-300 leading-relaxed mb-6">
+				<p>
+					If you couldn't tell already, I'm pretty obsessed with mathematics. 
+					There's something beautiful about how abstract concepts can solve real-world problems. 
+					My favorite areas are probably:
+				</p>
+			</div>
+			<div class="text-sm md:text-base grid md:grid-cols-3 gap-4 mb-6">
+				<div class="bg-primary-850 border border-primary-600 p-4">
+					<div class="text-tertiary-400 font-bold mb-2">[LINK_01]</div>
+					<a href="https://en.wikipedia.org/wiki/Graph_theory" target="_blank" rel="noopener noreferrer"
+						class="text-secondary-400 hover:text-secondary-300 underline transition-colors">
+						Graph Theory
+					</a>
 				</div>
-				<div class="md:pl-4 mb-6">
-					<div class="bg-primary-900 border border-primary-700 p-4 md:p-6 mb-4">
-						<h2 class="text-xl font-bold text-tertiary-base mb-4 font-mono text-center">
-							== INTERESTS.LOG ==
-						</h2>
-						<div class="text-sm md:text-base text-text-300 leading-relaxed mb-6">
-							<p>
-								If you couldn't tell already, I'm pretty obsessed with mathematics. 
-								There's something beautiful about how abstract concepts can solve real-world problems. 
-								My favorite areas are probably:
+				<div class="bg-primary-850 border border-primary-600 p-4">
+					<div class="text-tertiary-400 font-bold mb-2">[LINK_02]</div>
+					<a href="https://en.wikipedia.org/wiki/Computational_complexity_theory" target="_blank" rel="noopener noreferrer"
+						class="text-secondary-400 hover:text-secondary-300 underline transition-colors">
+						Computational Complexity
+					</a>
+				</div>
+				<div class="bg-primary-850 border border-primary-600 p-4">
+					<div class="text-tertiary-400 font-bold mb-2">[LINK_03]</div>
+					<a href="https://en.wikipedia.org/wiki/Combinatorics" target="_blank" rel="noopener noreferrer"
+						class="text-secondary-400 hover:text-secondary-300 underline transition-colors">
+						Combinatorics
+					</a>
+				</div>
+			</div>
+			<div class="text-text-400 text-sm">
+				<span class="text-tertiary-base">//</span> Basically the stuff that makes your brain hurt in the best possible way.
+			</div>
+		</ContentBox>
+	</TerminalSection>
+
+	<TerminalSection command="ls -la ~/work/ ~/research/" path="~/about">
+		<ContentBox title="== CURRENT_PROJECTS ==">
+			<div class="mb-6">
+				<div class="flex items-center mb-3">
+					<h3 class="text-base md:text-lg font-bold text-tertiary-200 font-mono">~/work/day_job/</h3>
+				</div>
+				<div class="text-sm md:text-base border-l-2 border-tertiary-400 pl-4 text-text-300">
+					<p class="leading-relaxed">
+						I work as a Frontend Developer at 
+						<a href="https://alpiniststudios.com" target="_blank" rel="noopener noreferrer"
+							class="text-tertiary-base hover:text-tertiary-400 underline font-bold transition-colors">
+							[Alpinist Studios]
+						</a>, where I help build and maintain LG US' website. 
+						It's pretty cool getting to work on something that millions of people actually use.
+					</p>
+				</div>
+			</div>
+
+			<div class="mb-6">
+				<div class="flex items-center mb-3">
+					<h3 class="text-base md:text-lg font-bold text-tertiary-200 font-mono">~/research/</h3>
+				</div>
+				<div class="text-sm md:text-base border-l-2 border-secondary-400 pl-4 text-text-300">
+					<p class="leading-relaxed mb-4">
+						I'm lucky enough to be doing research in three different labs.
+					</p>
+					
+					<div class="space-y-4">
+						<div class="bg-primary-850 border border-primary-600 p-4">
+							<div class="text-tertiary-400 font-bold mb-2">[MATH_DEPT]</div>
+							<p class="text-sm leading-relaxed">
+								Deep dive into k-nary trees and the HK-property with Dr. Mahsa Nasrollahi-Shirazi 
+								and Dr. Andrii. Related to the famous 
+								<a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Ko%E2%80%93Rado_theorem" target="_blank" rel="noopener noreferrer"
+									class="text-secondary-400 hover:text-secondary-300 underline">
+									Erdős–Ko–Rado theorem
+								</a> but restricted to 
+								<a href="https://xlinux.nist.gov/dads/HTML/perfectBinaryTree.html" target="_blank" rel="noopener noreferrer"
+									class="text-secondary-400 hover:text-secondary-300 underline">
+									perfect binary trees
+								</a>.
 							</p>
 						</div>
-						<div class="text-sm md:text-base grid md:grid-cols-3 gap-4 mb-6">
-							<div class="bg-primary-850 border border-primary-600 p-4">
-								<div class="text-tertiary-400 font-bold mb-2">[LINK_01]</div>
-								<a href="https://en.wikipedia.org/wiki/Graph_theory" target="_blank" 
-									class="text-secondary-400 hover:text-secondary-300 underline transition-colors">
-									Graph Theory
-								</a>
-							</div>
-							<div class="bg-primary-850 border border-primary-600 p-4">
-								<div class="text-tertiary-400 font-bold mb-2">[LINK_02]</div>
-								<a href="https://en.wikipedia.org/wiki/Computational_complexity_theory" target="_blank" 
-									class="text-secondary-400 hover:text-secondary-300 underline transition-colors">
-									Computational Complexity
-								</a>
-							</div>
-							<div class="bg-primary-850 border border-primary-600 p-4">
-								<div class="text-tertiary-400 font-bold mb-2">[LINK_03]</div>
-								<a href="https://en.wikipedia.org/wiki/Combinatorics" target="_blank" 
-									class="text-secondary-400 hover:text-secondary-300 underline transition-colors">
-									Combinatorics
-								</a>
-							</div>
-						</div>
-						<div class="text-text-400 text-sm">
-							<span class="text-tertiary-base">//</span> Basically the stuff that makes your brain hurt in the best possible way.
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- Current Work -->
-			<section class="mb-8">
-				<div class="text-tertiary-base mb-2">
-					<span class="text-secondary-400">atish@terminal</span>:<span class="text-sm md:text-base text-tertiary-base">~/about</span>$ ls -la ~/work/ ~/research/
-				</div>
-				<div class="md:pl-4 mb-6">
-					<div class="bg-primary-900 border border-primary-700 p-6 mb-4">
-						<h2 class="text-xl font-bold text-tertiary-base mb-4 font-mono">
-							== CURRENT_PROJECTS ==
-						</h2>
 						
-						<!-- Day Job -->
-						<div class="mb-6">
-							<div class="flex items-center mb-3">
-								<h3 class="text-base md:text-lg font-bold text-tertiary-200 font-mono">~/work/day_job/</h3>
-							</div>
-							<div class="text-sm md:text-base border-l-2 border-tertiary-400 pl-4 text-text-300">
-								<p class="leading-relaxed">
-									I work as a Frontend Developer at 
-									<a href="https://alpiniststudios.com" target="_blank" 
-										class="text-tertiary-base hover:text-tertiary-400 underline font-bold transition-colors">
-										[Alpinist Studios]
-									</a>, where I help build and maintain LG US' website. 
-									It's pretty cool getting to work on something that millions of people actually use.
-								</p>
-							</div>
+						<div class="bg-primary-850 border border-primary-600 p-4">
+							<div class="text-tertiary-400 font-bold mb-2">[GADA_LAB]</div>
+							<p class="text-sm leading-relaxed">
+								Working with the 
+								<a href="https://home.cs.umanitoba.ca/~gada/" target="_blank" rel="noopener noreferrer"
+									class="text-tertiary-base hover:text-tertiary-400 underline font-bold">
+									GADA lab
+								</a> under Dr. Stephane Durocher on approximation algorithms 
+								for spatially embedded graphs. Fancy way of saying we're making 
+								sense of complex networks in a more manageable way.
+							</p>
 						</div>
-
-						<!-- Research -->
-						<div class="mb-6">
-							<div class="flex items-center mb-3">
-								<h3 class="text-base md:text-lg font-bold text-tertiary-200 font-mono">~/research/</h3>
-							</div>
-							<div class="text-sm md:text-base border-l-2 border-secondary-400 pl-4 text-text-300">
-								<p class="leading-relaxed mb-4">
-									I'm lucky enough to be doing research in three different labs.
-								</p>
-								
-								<div class="space-y-4">
-									<div class="bg-primary-850 border border-primary-600 p-4">
-										<div class="text-tertiary-400 font-bold mb-2">[MATH_DEPT]</div>
-										<p class="text-sm leading-relaxed">
-											Deep dive into k-nary trees and the HK-property with Dr. Mahsa Nasrollahi-Shirazi 
-											and Dr. Andrii. Related to the famous 
-											<a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Ko%E2%80%93Rado_theorem" target="_blank" 
-												class="text-secondary-400 hover:text-secondary-300 underline">
-												Erdős–Ko–Rado theorem
-											</a> but restricted to 
-											<a href="https://xlinux.nist.gov/dads/HTML/perfectBinaryTree.html" target="_blank" 
-												class="text-secondary-400 hover:text-secondary-300 underline">
-												perfect binary trees
-											</a>.
-										</p>
-									</div>
-									
-									<div class="bg-primary-850 border border-primary-600 p-4">
-										<div class="text-tertiary-400 font-bold mb-2">[GADA_LAB]</div>
-										<p class="text-sm leading-relaxed">
-											Working with the 
-											<a href="https://home.cs.umanitoba.ca/~gada/" target="_blank" 
-												class="text-tertiary-base hover:text-tertiary-400 underline font-bold">
-												GADA lab
-											</a> under Dr. Stephane Durocher on approximation algorithms 
-											for spatially embedded graphs. Fancy way of saying we're making 
-											sense of complex networks in a more manageable way.
-										</p>
-									</div>
-									
-									<div class="bg-primary-850 border border-primary-600 p-4">
-										<div class="text-tertiary-400 font-bold mb-2">[CV_LAB]</div>
-										<p class="text-sm leading-relaxed">
-											Research in the 
-											<a href="https://terrabyte.acs.uwinnipeg.ca/" target="_blank" 
-												class="text-tertiary-base hover:text-tertiary-400 underline font-bold">
-												Computer Vision Lab
-											</a> with Dr. Christopher Henry.
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- Future Plans -->
-			<section class="mb-8">
-				<div class="text-tertiary-base mb-2">
-					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/about</span>$ cat future_plans.txt
-				</div>
-				<div class="pl-4 mb-6">
-					<div class="bg-primary-900 border border-primary-700 p-6">
-						<h2 class="text-xl font-bold text-tertiary-base mb-4 font-mono">
-							== ROADMAP.md ==
-						</h2>
-						<div class="text-sm md:text-base border-l-2 border-tertiary-base pl-4 text-text-300">
-							<p class="leading-relaxed">
-								The goal is to eventually get a PhD – probably in Computer Science or Mathematics 
-								(still figuring that one out). I love the idea of spending even more time diving 
-								deep into research and maybe teaching along the way.
+						
+						<div class="bg-primary-850 border border-primary-600 p-4">
+							<div class="text-tertiary-400 font-bold mb-2">[CV_LAB]</div>
+							<p class="text-sm leading-relaxed">
+								Research in the 
+								<a href="https://terrabyte.acs.uwinnipeg.ca/" target="_blank" rel="noopener noreferrer"
+									class="text-tertiary-base hover:text-tertiary-400 underline font-bold">
+									Computer Vision Lab
+								</a> with Dr. Christopher Henry.
 							</p>
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
+		</ContentBox>
+	</TerminalSection>
 
-			<!-- Personal Life -->
-			<section class="mb-8">
-				<div class="text-tertiary-base mb-2">
-					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/about</span>$ cat personal.txt
-				</div>
-				<div class="md:pl-4 mb-6">
-					<div class="bg-primary-900 border border-primary-700 md:p-6 p-3">
-						<h2 class="text-xl font-bold text-tertiary-base mb-4 font-mono">
-							== PERSONAL_LIFE.log ==
-						</h2>
-						<div class="text-sm md:text-base border-l-2 border-secondary-400 pl-4 text-text-300 space-y-4">
-							<p class="leading-relaxed">
-								I'm probably out taking long walks (great for thinking through tough problems), 
-								biking around the city, reading, or experimenting in the kitchen. I have a serious 
-								weakness for traditional Nepali food – especially anything with rice. Rice is 
-								honestly the best food ever invented.
-							</p>
-							<p class="leading-relaxed">
-								I also really enjoy teaching and helping people figure out tricky concepts, 
-								especially when it comes to programming or math stuff that I struggled with myself. 
-								There's something really satisfying about that "aha!" moment when things finally click.
-							</p>
-						</div>
-					</div>
-				</div>
-			</section>
+	<TerminalSection command="cat future_plans.txt" path="~/about">
+		<ContentBox title="== ROADMAP.md ==">
+			<p class="leading-relaxed">
+				The goal is to eventually get a PhD – probably in Computer Science or Mathematics 
+				(still figuring that one out). I love the idea of spending even more time diving 
+				deep into research and maybe teaching along the way.
+			</p>
+		</ContentBox>
+	</TerminalSection>
+
+	<TerminalSection command="cat personal.txt" path="~/about">
+		<ContentBox title="== PERSONAL_LIFE.log ==" borderColor="secondary">
+			<div class="space-y-4">
+				<p class="leading-relaxed">
+					I'm probably out taking long walks (great for thinking through tough problems), 
+					biking around the city, reading, or experimenting in the kitchen. I have a serious 
+					weakness for traditional Nepali food – especially anything with rice. Rice is 
+					honestly the best food ever invented.
+				</p>
+				<p class="leading-relaxed">
+					I also really enjoy teaching and helping people figure out tricky concepts, 
+					especially when it comes to programming or math stuff that I struggled with myself. 
+					There's something really satisfying about that "aha!" moment when things finally click.
+				</p>
+			</div>
+		</ContentBox>
+	</TerminalSection>
 </Layout>

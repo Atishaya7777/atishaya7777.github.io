@@ -1,0 +1,19 @@
+---
+import TerminalCommand from '../TerminalCommand/TerminalCommand.astro';
+
+interface Props {
+	command: string;
+	path?: string;
+	className?: string;
+}
+
+const { command, path = "~", className = "" } = Astro.props;
+---
+
+<section class={`mb-8 ${className}`}>
+	<TerminalCommand command={command} path={path} />
+	<div class="md:pl-4 mb-6">
+		<slot />
+	</div>
+</section>
+

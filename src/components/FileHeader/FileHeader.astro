@@ -1,0 +1,61 @@
+---
+interface Props {
+	fileName: string;
+	fileSize?: string;
+	lastModified?: string;
+	encoding?: string;
+	permission?: string;
+	totalEntries?: number;
+	className?: string;
+}
+
+const { 
+	fileName,
+	fileSize,
+	lastModified = new Date().toLocaleDateString(),
+	encoding = "UTF-8",
+	permission,
+	totalEntries,
+	className = ""
+} = Astro.props;
+---
+
+<div class={`pl-4 mb-6 ${className}`}>
+	<div class="text-text-400 text-sm mb-4">
+		{fileSize && (
+			<>
+				<span class="text-tertiary-base">#</span> File: {fileName}
+				<br />
+			</>
+		)}
+		{fileSize && (
+			<>
+				<span class="text-tertiary-base">#</span> Size: {fileSize}
+				<br />
+			</>
+		)}
+		<span class="text-tertiary-base">#</span> Last modified: {lastModified}
+		{encoding && (
+			<>
+				<br />
+				<span class="text-tertiary-base">#</span> Encoding: {encoding}
+			</>
+		)}
+		{permission && (
+			<>
+				<br />
+				<span class="text-tertiary-base">#</span> Permission: {permission}
+			</>
+		)}
+		{totalEntries !== undefined && (
+			<>
+				<br />
+				<span class="text-tertiary-base">#</span> Total entries: {totalEntries}
+			</>
+		)}
+	</div>
+	<div class="border-l-2 border-tertiary-base pl-6 mb-6">
+		<slot />
+	</div>
+</div>
+

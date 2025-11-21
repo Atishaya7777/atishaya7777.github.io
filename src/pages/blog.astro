@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { TerminalCommand, TerminalSection, PresentationCard, ContentBox, StatusBadge } from '../components';
 import GitFundamentalsPDF from '../../public/assets/git_fundamentals.pdf'
 import BinaryTreeHKPropertyPDF from '../../public/assets/perfect_binary_trees_hk_property.pdf'
 import SpectralGraphTheoryMazePDF from '../../public/assets/spectral_graph_theory_for_maze_solving.pdf'
@@ -12,7 +13,7 @@ const presentations = [
 		conferenceLocation: 'EITC E2, University of Manitoba',
 		presentationDate: 'Jul 28 2025',
 		fileSize: '1.7M',
-		tags: ['spectral_graph_theory', 'linear_algebra', 'linear_programming', 'path_finding']
+		tags: ['spectral_graph_theory', 'linear_algebra', 'linear_programming', 'path_finding', 'mathematics', 'research']
 	},
 	{
 		presentationName: 'Git Fundamentals',
@@ -21,7 +22,7 @@ const presentations = [
 		conferenceLocation: 'EITC E2, University of Manitoba',
 		presentationDate: 'Sep 18 2024',
 		fileSize: '179K',
-		tags: ['version_control', 'software_development']
+		tags: ['version_control', 'software_development', 'mathematics', 'research']
 	},
 	{
 		presentationName: 'Exploring Perfect Binary Trees With Relation To The HK-Property',
@@ -30,171 +31,129 @@ const presentations = [
 		conferenceLocation: 'Machray Hall, University of Manitoba',
 		presentationDate: 'Mar 28 2024',
 		fileSize: '233K',
-		tags: ['combinatorics', 'enumeration', 'graph_theory', 'independent_sets']
+		tags: ['combinatorics', 'enumeration', 'graph_theory', 'independent_sets', 'mathematics', 'research']
 	},
 ]
 ---
 
 <Layout title=":~$ cat ~/thoughts/*">
-			<div class="mb-8">
-				<div class="text-tertiary-base mb-2">
-					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/blog</span>$ ls -la thoughts/
-				</div>
-				<div class="pl-4 mb-6 space-y-2">
-					<div class="text-text-400 text-xs font-mono">
-						total 64
-					</div>
-					<div class="text-text-400 text-xs font-mono">
-						drwxr-xr-x  9 atish staff   288 Jul 27 12:00 .
-					</div>
-					<div class="text-text-400 text-xs font-mono">
-						drwxr-xr-x 15 atish staff   480 Jul 27 11:30 ..
-					</div>
-					<div class="text-text-400 text-xs font-mono">
-						-rw-r--r--  1 atish staff  2048 Jul 27 12:00 README.md
-					</div>
-					<div class="text-tertiary-base text-xs font-mono">
-						drwxr-xr-x  5 atish staff   160 Jul 28 14:20 presentations/
-					</div>
-					<div class="text-text-500 text-xs font-mono">
-						-rw-r--r--  1 atish staff     0 Jul 27 12:01 .coming_soon
-					</div>
-				</div>
+	<TerminalSection command="ls -la thoughts/" path="~/blog" className="mb-8">
+		<div class="space-y-2">
+			<div class="text-text-400 text-xs font-mono">
+				total 64
+			</div>
+			<div class="text-text-400 text-xs font-mono">
+				drwxr-xr-x  9 atish staff   288 Jul 27 12:00 .
+			</div>
+			<div class="text-text-400 text-xs font-mono">
+				drwxr-xr-x 15 atish staff   480 Jul 27 11:30 ..
+			</div>
+			<div class="text-text-400 text-xs font-mono">
+				-rw-r--r--  1 atish staff  2048 Jul 27 12:00 README.md
+			</div>
+			<div class="text-tertiary-base text-xs font-mono">
+				drwxr-xr-x  5 atish staff   160 Jul 28 14:20 presentations/
+			</div>
+			<div class="text-text-500 text-xs font-mono">
+				-rw-r--r--  1 atish staff     0 Jul 27 12:01 .coming_soon
+			</div>
+		</div>
+	</TerminalSection>
 
-				<div class="text-tertiary-base mb-2">
-					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/blog</span>$ cat README.md
+	<TerminalSection command="cat README.md" path="~/blog" className="mb-8">
+		<div class="max-w-4xl">
+			<div class="text-sm md:text-base border-l-2 border-tertiary-base pl-4 text-text-300 leading-relaxed">
+				# Blog & Insights
+				<br /><br />
+				Eventually, this will be where I share thoughts on math, code, and those "aha!" 
+				moments that happen during research. For now, it's a work in progress – but I'm 
+				actively working on putting together some thoughtful posts about the stuff I'm 
+				actually working on.
+				<br /><br />
+				You'll also find presentation slides from talks I've given over the years.
+				<br /><br />
+				Check the directories below for upcoming content areas:
+			</div>
+		</div>
+	</TerminalSection>
+
+	<TerminalSection command="ls -la presentations/" path="~/blog" className="mb-12">
+		<ContentBox borderColor="tertiary" className="p-6">
+			<div class="text-text-400 mb-4">
+				<span class="text-tertiary-base">></span> Conference talks and presentations:
+			</div>
+			<div class="space-y-4">
+				{presentations.map((presentation) => (
+					<PresentationCard
+						presentationName={presentation.presentationName}
+						presentationLink={presentation.presentationLink}
+						conferenceName={presentation.conferenceName}
+						conferenceLocation={presentation.conferenceLocation}
+						presentationDate={presentation.presentationDate}
+						fileSize={presentation.fileSize}
+						tags={presentation.tags}
+					/>
+				))}
+			</div>
+		</ContentBox>
+	</TerminalSection>
+
+	<TerminalSection command="systemctl status blog-engine" path="~/blog" className="mb-12">
+		<ContentBox borderColor="tertiary" className="p-8 text-center">
+			<div class="mb-6">
+				<div class="flex items-center justify-center mb-4">
+					<span class="w-3 h-3 bg-yellow-500 rounded-full mr-2 animate-pulse"></span>
+					<span class="text-tertiary-base font-mono text-base md:text-lg">Status: Development Mode</span>
 				</div>
-				<div class="md:pl-4 mb-8 max-w-4xl">
-					<div class="text-sm md:text-base border-l-2 border-tertiary-base pl-4 text-text-300 leading-relaxed">
-						# Blog & Insights
-						<br><br>
-						Eventually, this will be where I share thoughts on math, code, and those "aha!" 
-						moments that happen during research. For now, it's a work in progress – but I'm 
-						actively working on putting together some thoughtful posts about the stuff I'm 
-						actually working on.
-						<br><br>
-						You'll also find presentation slides from talks I've given over the years.
-						<br><br>
-						Check the directories below for upcoming content areas:
-					</div>
+				<h2 class="text-lg md:text-xl font-bold text-tertiary-200 mb-4 font-mono">
+					● blog-engine.service - Personal Blog System
+				</h2>
+				<div class="text-text-300 text-sm leading-relaxed font-mono w-full text-left md:text-center md:max-w-2xl md:mx-auto">
+					Currently building thoughtful posts about mathematical research, weird coding bugs, 
+					and those moments when theory suddenly clicks with practice. The content pipeline 
+					is being optimized for quality over quantity.
 				</div>
 			</div>
+			
+			<div class="text-xs text-text-500 font-mono space-y-1">
+				<div>Loaded: loaded (/home/atish/services/blog-engine.service; enabled)</div>
+				<div>Active: <span class="text-yellow-400">active (developing)</span> since {new Date().toLocaleDateString()}</div>
+				<div>Process: Writing quality content...</div>
+			</div>
+		</ContentBox>
+	</TerminalSection>
 
-			<!-- Presentations Section -->
-			<div class="mb-12">
-				<div class="text-tertiary-base mb-2">
-					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/blog</span>$ ls -la presentations/
+	<TerminalSection command="tail -f build.log" path="~/blog" className="mb-12">
+		<ContentBox>
+			<div class="text-text-400 mb-4">
+				<span class="text-tertiary-base">></span> Recent build activity:
+			</div>
+			<div class="space-y-2 text-xs font-mono">
+				<div class="text-text-500">
+					[{new Date().toISOString().slice(0,19)}] INFO: Content pipeline initialized
 				</div>
-				<div class="pl-4 mb-6">
-					<div class="bg-primary-900 border border-tertiary-base p-6">
-						<div class="text-text-400 mb-4">
-							<span class="text-tertiary-base">></span> Conference talks and presentations:
-						</div>
-						<div class="space-y-4">
-							{presentations.map((presentation) => {
-								return (
-											<div class="border-l-2 border-secondary-400 pl-4 hover:border-tertiary-base transition-colors duration-300">
-												<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-													<h3 class="text-base font-bold text-tertiary-200 font-mono">
-														{presentation.presentationName}.pdf
-													</h3>
-													<div class="text-xs text-text-500 font-mono">
--rw-r--r-- 1 atish staff {presentation.fileSize} {presentation.presentationDate}
-													</div>
-												</div>
-												<p class="text-sm text-text-400 font-mono mb-2">
-													"{presentation.presentationName}"
-													</p>
-													<div class="text-xs text-secondary-400 font-mono mb-2">
-														{ presentation.conferenceName } • {presentation.conferenceLocation} 
-													</div>
-												<div class="flex flex-wrap gap-2 text-xs">
-															{presentation.tags.map((tag) => (
-															<span class="bg-primary-800 text-tertiary-400 px-2 py-1 font-mono">#{tag}</span>
-															))}
-													<span class="bg-primary-800 text-tertiary-400 px-2 py-1 font-mono">#mathematics</span>
-													<span class="bg-primary-800 text-tertiary-400 px-2 py-1 font-mono">#research</span>
-<a href={presentation.presentationLink} class="bg-secondary-800 hover:bg-secondary-700 text-secondary-200 px-2 py-1 font-mono transition-colors duration-200">
-														[download.pdf]
-													</a>
-												</div>
-											</div>
-										)
-								})}
-						</div>
-					</div>
+				<div class="text-secondary-400">
+					[{new Date().toISOString().slice(0,19)}] DEBUG: Scanning for draft posts...
+				</div>
+				<div class="text-tertiary-400">
+					[{new Date().toISOString().slice(0,19)}] WARN: Quality gate enabled - minimum 2000 words per post
+				</div>
+				<div class="text-text-500">
+					[{new Date().toISOString().slice(0,19)}] INFO: Math notation renderer loaded successfully
+				</div>
+				<div class="text-secondary-400">
+					[{new Date().toISOString().slice(0,19)}] DEBUG: Code syntax highlighting configured
+				</div>
+				<div class="text-tertiary-base">
+					[{new Date().toISOString().slice(0,19)}] SUCCESS: PDF presentation parser ready
+				</div>
+				<div class="text-tertiary-base">
+					[{new Date().toISOString().slice(0,19)}] SUCCESS: Blog system ready for content
+				</div>
+				<div class="text-text-400">
+					<span class="animate-pulse">█</span> Watching for new posts...
 				</div>
 			</div>
-
-			<!-- Coming Soon Status -->
-			<div class="mb-12">
-				<div class="text-tertiary-base mb-2">
-					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/blog</span>$ systemctl status blog-engine
-				</div>
-				<div class="md:pl-4 mb-6">
-					<div class="bg-primary-900 border border-tertiary-base p-8 text-center">
-						<div class="mb-6">
-							<div class="flex items-center justify-center mb-4">
-								<span class="w-3 h-3 bg-yellow-500 rounded-full mr-2 animate-pulse"></span>
-								<span class="text-tertiary-base font-mono text-base md:text-lg">Status: Development Mode</span>
-							</div>
-							<h2 class="text-lg md:text-xl font-bold text-tertiary-200 mb-4 font-mono">
-								● blog-engine.service - Personal Blog System
-							</h2>
-							<div class="text-text-300 text-sm leading-relaxed font-mono w-full text-left md:text-center md:max-w-2xl md:mx-auto">
-								Currently building thoughtful posts about mathematical research, weird coding bugs, 
-								and those moments when theory suddenly clicks with practice. The content pipeline 
-								is being optimized for quality over quantity.
-							</div>
-						</div>
-						
-						<div class="text-xs text-text-500 font-mono space-y-1">
-							<div>Loaded: loaded (/home/atish/services/blog-engine.service; enabled)</div>
-							<div>Active: <span class="text-yellow-400">active (developing)</span> since {new Date().toLocaleDateString()}</div>
-							<div>Process: Writing quality content...</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-			<!-- Build Status -->
-			<div class="mb-12">
-				<div class="text-tertiary-base mb-2">
-					<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/blog</span>$ tail -f build.log
-				</div>
-				<div class="pl-4 mb-6">
-					<div class="bg-primary-900 border border-primary-700 p-6">
-						<div class="text-text-400 mb-4">
-							<span class="text-tertiary-base">></span> Recent build activity:
-						</div>
-						<div class="space-y-2 text-xs font-mono">
-							<div class="text-text-500">
-								[{new Date().toISOString().slice(0,19)}] INFO: Content pipeline initialized
-							</div>
-							<div class="text-secondary-400">
-								[{new Date().toISOString().slice(0,19)}] DEBUG: Scanning for draft posts...
-							</div>
-							<div class="text-tertiary-400">
-								[{new Date().toISOString().slice(0,19)}] WARN: Quality gate enabled - minimum 2000 words per post
-							</div>
-							<div class="text-text-500">
-								[{new Date().toISOString().slice(0,19)}] INFO: Math notation renderer loaded successfully
-							</div>
-							<div class="text-secondary-400">
-								[{new Date().toISOString().slice(0,19)}] DEBUG: Code syntax highlighting configured
-							</div>
-							<div class="text-tertiary-base">
-								[{new Date().toISOString().slice(0,19)}] SUCCESS: PDF presentation parser ready
-							</div>
-							<div class="text-tertiary-base">
-								[{new Date().toISOString().slice(0,19)}] SUCCESS: Blog system ready for content
-							</div>
-							<div class="text-text-400">
-								<span class="animate-pulse">█</span> Watching for new posts...
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		</ContentBox>
+	</TerminalSection>
 </Layout>

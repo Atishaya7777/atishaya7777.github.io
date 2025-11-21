@@ -1,0 +1,113 @@
+---
+import StatusBadge from '../StatusBadge/StatusBadge.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	status: 'active' | 'completed' | 'running';
+	pid: string;
+	url?: string;
+	imgSrc?: string;
+	imgAlt?: string;
+	technologies?: string[];
+	lab?: string;
+	supervisor?: string;
+	type?: 'professional' | 'research';
+	date?: string;
+	className?: string;
+}
+
+const { 
+	title,
+	description,
+	status,
+	pid,
+	url,
+	imgSrc,
+	imgAlt,
+	technologies = [],
+	lab,
+	supervisor,
+	type = 'professional',
+	date,
+	className = ""
+} = Astro.props;
+
+const displayDate = date || new Date().toLocaleDateString();
+---
+
+<div class={`bg-primary-900 border border-primary-700 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 group ${className}`}>
+	<div class="p-6">
+		<div class="flex items-center justify-between mb-4">
+			<div class="flex items-center">
+				{imgSrc && imgAlt && (
+					<div class="w-8 h-8 bg-white rounded-sm flex items-center justify-center mr-3 p-1">
+						<img src={imgSrc} alt={imgAlt} class="w-full h-full object-contain" />
+					</div>
+				)}
+				<div class="text-xs text-text-500 font-mono">
+					PID: {pid}
+				</div>
+			</div>
+			<StatusBadge status={status} />
+		</div>
+		
+		{type === 'research' ? (
+			<div class="mb-4">
+				<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+					<div class="flex-1">
+						<h3 class="text-lg font-bold text-tertiary-200 font-mono">
+							{title}
+						</h3>
+						{(lab || supervisor) && (
+							<div class="text-xs text-text-500 font-mono">
+								{lab && `Lab: ${lab}`}
+								{lab && supervisor && ' | '}
+								{supervisor && `Supervisor: ${supervisor}`}
+							</div>
+						)}
+					</div>
+				</div>
+			</div>
+		) : (
+			<h3 class="text-lg font-bold text-tertiary-200 mb-3 group-hover:text-tertiary-base transition-colors font-mono">
+				{title}
+			</h3>
+		)}
+		
+		<p class="text-text-400 text-sm leading-relaxed mb-4 font-mono">
+			{description}
+		</p>
+		
+		{technologies.length > 0 && (
+			<div class="border-l-2 border-tertiary-400 pl-4 mb-4">
+				<div class="text-xs text-text-500 font-mono mb-2">Technologies & Methods:</div>
+				<div class="flex flex-wrap gap-2">
+					{technologies.map((tech) => (
+						<span class="px-2 py-1 bg-primary-850 text-text-400 border border-primary-600 text-xs font-mono rounded">
+							{tech}
+						</span>
+					))}
+				</div>
+			</div>
+		)}
+		
+		<div class="flex items-center justify-between">
+			{url && (
+				<a 
+					href={url} 
+					target="_blank" 
+					rel="noopener noreferrer"
+					class="inline-flex items-center text-secondary-400 hover:text-secondary-300 font-mono text-sm transition-colors"
+				>
+					./visit_project.sh
+					<span class="ml-2">→</span>
+				</a>
+			)}
+			<div class="text-xs text-text-500 font-mono">
+				{displayDate}
+			</div>
+		</div>
+	</div>
+</div>
+

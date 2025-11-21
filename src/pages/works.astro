@@ -1,55 +1,58 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import LGLogo from '../assets/lg-logo.svg';
-import VersuredLogo from '../assets/versured-logo.svg';
-import EkNepalLogo from '../assets/eknepal-logo.svg';
-import TimeeroLogo from '../assets/timeero-logo.svg';
-import TrackflyLogo from '../assets/trackfly-logo.svg';
+import { TerminalCommand, TerminalSection, FileHeader, ProjectCard, SkillCategoryCard, ContentBox } from '../components';
+import LGLogo from '../assets/lg-logo.svg?url';
+import VersuredLogo from '../assets/versured-logo.svg?url';
+import EkNepalLogo from '../assets/eknepal-logo.svg?url';
+import TimeeroLogo from '../assets/timeero-logo.svg?url';
+import TrackflyLogo from '../assets/trackfly-logo.svg?url';
+
+// Extract image URLs as strings to avoid template parsing issues
+const lgLogoUrl = LGLogo as string;
+const trackflyLogoUrl = TrackflyLogo as string;
+const timeeroLogoUrl = TimeeroLogo as string;
+const versuredLogoUrl = VersuredLogo as string;
+const ekNepalLogoUrl = EkNepalLogo as string;
 
 const companiesData = [
 	{
-		img: LGLogo,
-		imgAlt: "Life's good logo.",
+		img: { src: lgLogoUrl, alt: "Life's good logo." },
 		title: "Life's Good - US",
 		desc: "Life's Good with electronics by your side!",
 		url: "https://lg.com/us",
-		status: "active",
+		status: "active" as const,
 		pid: "1001"
 	},
 	{
-		img: TrackflyLogo,
-		imgAlt: "Trackfly logo.",
+		img: { src: trackflyLogoUrl, alt: "Trackfly logo." },
 		title: "Trackfly",
 		desc: 'Better market intelligence to independent retailers and their suppliers.',
 		url: "https://www.trackfly.com/",
-		status: "completed",
+		status: "completed" as const,
 		pid: "1002"
 	},
 	{
-		img: TimeeroLogo,
-		imgAlt: "Timeero logo.",
+		img: { src: timeeroLogoUrl, alt: "Timeero logo." },
 		title: "Timeero",
 		desc: 'A time tracking and GPS company that provides precise and segmented time breakdowns for all employees.',
 		url: "https://timeero.com",
-		status: "completed",
+		status: "completed" as const,
 		pid: "1003"
 	},
 	{
-		img: VersuredLogo,
-		imgAlt: "Versured logo.",
+		img: { src: versuredLogoUrl, alt: "Versured logo." },
 		title: "Versured",
 		desc: 'An insurance portal that combines all possible insurance combinations to match your perfect needs.',
 		url: "https://www.linkedin.com/company/versured",
-		status: "completed",
+		status: "completed" as const,
 		pid: "1004"
 	},
 	{
-		img: EkNepalLogo,
-		imgAlt: "Ek Nepal logo.",
+		img: { src: ekNepalLogoUrl, alt: "Ek Nepal logo." },
 		title: "Ek Nepal",
 		desc: 'A truthful news aggregator. From Nepal, for Nepal.',
 		url: "https://www.eknepal.com/",
-		status: "completed",
+		status: "completed" as const,
 		pid: "1005"
 	},
 ];
@@ -61,7 +64,7 @@ const researchProjects = [
 		supervisor: "Dr. Mahsa Nasrollahi-Shirazi & Dr. Andrii",
 		description: "Working on k-nary trees and the HK-property. Connected to the Erdős–Ko–Rado theorem but applied to perfect binary trees.",
 		technologies: ["Perfect k-nary Trees", "HK-property Analysis", "SageMath Visualizations"],
-		status: "active",
+		status: "active" as const,
 		pid: "2001"
 	},
 	{
@@ -70,7 +73,7 @@ const researchProjects = [
 		supervisor: "Dr. Stephane Durocher",
 		description: "Working on approximation algorithms for spatially embedded graphs, tackling complex networks in manageable ways.",
 		technologies: ["Approximation Algorithms", "Spatially Embedded Graphs", "Metric Optimization"],
-		status: "active",
+		status: "active" as const,
 		pid: "2002"
 	},
 	{
@@ -79,7 +82,7 @@ const researchProjects = [
 		supervisor: "Dr. Christopher Henry",
 		description: "Collaborating on computer vision research, exploring innovative approaches to visual data analysis and machine learning.",
 		technologies: ["PyTorch and PyTorch Geometric", "Machine Learning", "Visual Data Analysis"],
-		status: "active",
+		status: "active" as const,
 		pid: "2003"
 	}
 ];
@@ -109,253 +112,148 @@ const skillCategories = [
 ---
 
 <Layout title=":~$ ls -la ~/projects/">
-	<section class="mb-8">
-		<div class="text-tertiary-base mb-2">
-			<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/projects</span>$ ls -la
+	<TerminalSection command="ls -la" path="~/projects">
+		<FileHeader 
+			fileName="PROJECTS_INDEX.md"
+			totalEntries={companiesData.length + researchProjects.length}
+			permission="rwxr-xr-x"
+		>
+			<h1 class="text-xl md:text-2xl md:text-3xl font-bold text-tertiary-base mb-4 font-mono">
+				PROJECTS_INDEX.md
+			</h1>
+			<p class="text-text-300 leading-relaxed mb-4">
+				Here's a collection of things I've been working on – from research projects 
+				that keep me up at night thinking, to professional work that actually pays the bills.
+			</p>
+		</FileHeader>
+	</TerminalSection>
+
+	<TerminalSection command='find ./professional -type f -name "*.project"' path="~/projects" className="mb-12">
+		<div class="text-text-400 mb-4">
+			<span class="text-tertiary-base">></span> Found {companiesData.length} professional project(s):
 		</div>
-		<div class="pl-4 mb-6">
-			<div class="text-text-400 text-sm mb-4">
-				<span class="text-tertiary-base">#</span> Directory: ~/projects/
-				<br><span class="text-tertiary-base">#</span> Total entries: {companiesData.length + researchProjects.length}
-				<br><span class="text-tertiary-base">#</span> Last updated: {new Date().toLocaleDateString()}
-				<br><span class="text-tertiary-base">#</span> Permission: rwxr-xr-x
-			</div>
-			<div class="border-l-2 border-tertiary-base pl-6 mb-6">
-				<h1 class="text-xl md:text-2xl md:text-3xl font-bold text-tertiary-base mb-4 font-mono">
-					PROJECTS_INDEX.md
-				</h1>
-				<p class="text-text-300 leading-relaxed mb-4">
-					Here's a collection of things I've been working on – from research projects 
-					that keep me up at night thinking, to professional work that actually pays the bills.
+		
+		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+			{companiesData.map((company) => {
+				const imgSrc = company.img.src;
+				const imgAlt = company.img.alt;
+				return (
+					<ProjectCard
+						title={company.title}
+						description={company.desc}
+						status={company.status}
+						pid={company.pid}
+						url={company.url}
+						imgSrc={imgSrc}
+						imgAlt={imgAlt}
+						type="professional"
+					/>
+				);
+			})}
+		</div>
+	</TerminalSection>
+
+	<TerminalSection command='find ./research -type d -name "*lab*"' path="~/projects" className="mb-12">
+		<div class="text-text-400 mb-4">
+			<span class="text-tertiary-base">></span> Research portfolio overview:
+		</div>
+		
+		<ContentBox 
+			title="== LAB_RESEARCH.md ==" 
+			borderColor="secondary"
+			className="mb-6"
+			centered={true}
+		>
+			<div class="space-y-4">
+				<p>I'm lucky enough to be doing research in three different labs.</p>
+				<p>
+					With the mathematics department, I'm diving deep into k-nary trees and something called the HK-property 
+					with Dr. Mahsa Nasrollahi-Shirazi and Dr. Andrii Arman. It's related to the famous 
+					<a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Ko%E2%80%93Rado_theorem" target="_blank" 
+						class="text-secondary-400 hover:text-secondary-300 underline">
+						Erdős–Ko–Rado theorem
+					</a> but restricted to 
+					<a href="https://xlinux.nist.gov/dads/HTML/perfectBinaryTree.html" target="_blank" 
+						class="text-secondary-400 hover:text-secondary-300 underline">
+						perfect binary trees
+					</a>.
+				</p>
+				<p>
+					On the theoretical algorithms side, I'm working with the 
+					<a href="https://home.cs.umanitoba.ca/~gada/" target="_blank" 
+						class="text-tertiary-base hover:text-tertiary-400 underline font-bold">
+						GADA lab
+					</a> under Dr. Stephane Durocher. We're working on approximation algorithms 
+					for spatially embedded graphs, which is a fancy way of saying we're trying to make 
+					sense of complex networks in a more manageable way.
+				</p>
+				<p>
+					And finally, I'm also doing some research in the 
+					<a href="https://terrabyte.acs.uwinnipeg.ca/" target="_blank" 
+						class="text-tertiary-base hover:text-tertiary-400 underline font-bold">
+						Computer Vision Lab
+					</a> with Dr. Christopher Henry.
 				</p>
 			</div>
-		</div>
-	</section>
+		</ContentBox>
 
-	<!-- Professional Projects -->
-	<section class="mb-12">
-		<div class="text-tertiary-base mb-2">
-			<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/projects</span>$ find ./professional -type f -name "*.project"
+		<div class="text-text-400 mb-4">
+			<span class="text-tertiary-base">></span> Active research processes:
 		</div>
-		<div class="pl-4 mb-6">
-			<div class="text-text-400 mb-4">
-				<span class="text-tertiary-base">></span> Found {companiesData.length} professional project(s):
-			</div>
-			
-			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-				{companiesData.map((company) => (
-					<div class="bg-primary-900 border border-primary-700 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 group">
-						<div class="p-6">
-							<div class="flex items-center justify-between mb-4">
-								<div class="flex items-center">
-									<div class="w-8 h-8 bg-white rounded-sm flex items-center justify-center mr-3 p-1">
-										<img src={company.img.src} alt={company.imgAlt} class="w-full h-full object-contain" />
-									</div>
-									<div class="text-xs text-text-500">
-										PID: {company.pid}
-									</div>
-								</div>
-								<div class={`px-2 py-1 text-xs font-mono rounded ${
-									company.status === 'active' 
-										? 'bg-green-900 text-green-400 border border-green-700' 
-										: 'bg-primary-850 text-text-400 border border-primary-600'
-								}`}>
-									[{company.status.toUpperCase()}]
-								</div>
-							</div>
-							
-							<h3 class="text-lg font-bold text-tertiary-200 mb-3 group-hover:text-tertiary-base transition-colors font-mono">
-								{company.title}
-							</h3>
-							
-							<p class="text-text-400 text-sm leading-relaxed mb-4 font-mono">
-								{company.desc}
-							</p>
-							
-							<div class="flex items-center justify-between">
-								<a 
-									href={company.url} 
-									target="_blank" 
-									class="inline-flex items-center text-secondary-400 hover:text-secondary-300 font-mono text-sm transition-colors"
-								>
-									./visit_project.sh
-									<span class="ml-2">→</span>
-								</a>
-								<div class="text-xs text-text-500 font-mono">
-									{new Date().toLocaleDateString()}
-								</div>
-							</div>
-						</div>
-					</div>
-				))}
-			</div>
+		
+		<div class="grid md:grid-cols-1 gap-4">
+			{researchProjects.map((project) => (
+				<ProjectCard
+					title={project.title}
+					description={project.description}
+					status={project.status}
+					pid={project.pid}
+					lab={project.lab}
+					supervisor={project.supervisor}
+					technologies={project.technologies}
+					type="research"
+				/>
+			))}
 		</div>
-	</section>
+	</TerminalSection>
 
-	<!-- Research Projects -->
-	<section class="mb-12">
-		<div class="text-tertiary-base mb-2">
-			<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/projects</span>$ find ./research -type d -name "*lab*"
+	<TerminalSection command="cat ~/config/skills.conf" path="~/projects" className="mb-12">
+		<div class="text-text-400 mb-4">
+			<span class="text-tertiary-base">></span> System configuration loaded:
 		</div>
-		<div class="md:pl-4 mb-6">
-			<div class="text-text-400 mb-4">
-				<span class="text-tertiary-base">></span> Research portfolio overview:
-			</div>
-			
-			<div class="bg-primary-900 border border-primary-700 p-3 md:p-6 mb-6">
-				<h2 class="text-lg md:text-xl font-bold text-tertiary-base mb-4 font-mono text-center">
-					== LAB_RESEARCH.md ==
-				</h2>
-				<div class="border-l-2 border-secondary-400 pl-4 text-text-300 leading-relaxed space-y-4 text-sm md:text-base">
-					<p>I'm lucky enough to be doing research in three different labs.</p>
-					<p>
-						With the mathematics department, I'm diving deep into k-nary trees and something called the HK-property 
-						with Dr. Mahsa Nasrollahi-Shirazi and Dr. Andrii Arman. It's related to the famous 
-						<a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Ko%E2%80%93Rado_theorem" target="_blank" 
-							class="text-secondary-400 hover:text-secondary-300 underline">
-							Erdős–Ko–Rado theorem
-						</a> but restricted to 
-						<a href="https://xlinux.nist.gov/dads/HTML/perfectBinaryTree.html" target="_blank" 
-							class="text-secondary-400 hover:text-secondary-300 underline">
-							perfect binary trees
-						</a>.
-					</p>
-					<p>
-						On the theoretical algorithms side, I'm working with the 
-						<a href="https://home.cs.umanitoba.ca/~gada/" target="_blank" 
-							class="text-tertiary-base hover:text-tertiary-400 underline font-bold">
-							GADA lab
-						</a> under Dr. Stephane Durocher. We're working on approximation algorithms 
-						for spatially embedded graphs, which is a fancy way of saying we're trying to make 
-						sense of complex networks in a more manageable way.
-					</p>
-					<p>
-						And finally, I'm also doing some research in the 
-						<a href="https://terrabyte.acs.uwinnipeg.ca/" target="_blank" 
-							class="text-tertiary-base hover:text-tertiary-400 underline font-bold">
-							Computer Vision Lab
-						</a> with Dr. Christopher Henry.
-					</p>
+		
+		<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+			{skillCategories.map((category, index) => (
+				<SkillCategoryCard
+					category={category.category}
+					skills={category.skills}
+					icon={category.icon}
+					index={index}
+				/>
+			))}
+		</div>
+	</TerminalSection>
+
+	<TerminalSection command="wc -l *" path="~/projects" className="mb-8">
+		<div class="bg-primary-900 border border-primary-700 p-4">
+			<div class="text-text-400 font-mono text-sm space-y-1">
+				<div class="flex justify-between">
+					<span>Professional projects:</span>
+					<span class="text-tertiary-base">{companiesData.length} files</span>
 				</div>
-			</div>
-
-			<div class="text-text-400 mb-4">
-				<span class="text-tertiary-base">></span> Active research processes:
-			</div>
-			
-			<div class="grid md:grid-cols-1 gap-4">
-				{researchProjects.map((project) => (
-					<div class="bg-primary-900 border border-primary-700 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300">
-						<div class="p-6">
-							<div class="flex flex-col md:flex-row items-center justify-between mb-4">
-								<div class="flex flex-col md:flex-row items-center space-x-4">
-									<div>
-										<h3 class="text-lg font-bold text-tertiary-200 font-mono">
-											{project.title}
-										</h3>
-										<div class="text-xs text-text-500 font-mono">
-											Lab: {project.lab} | Supervisor: {project.supervisor}
-										</div>
-									</div>
-								</div>
-								<div class="flex items-center justify-between w-full md:w-fit md:space-x-2">
-									<div class="px-2 py-1 bg-green-900 text-green-400 border border-green-700 text-xs font-mono rounded">
-										[{project.status.toUpperCase()}]
-									</div>
-									<div class="text-xs text-text-500 font-mono">
-										PID: {project.pid}
-									</div>
-								</div>
-							</div>
-							
-							<p class="text-text-400 text-sm leading-relaxed mb-4 font-mono">
-								{project.description}
-							</p>
-							
-							<div class="border-l-2 border-tertiary-400 pl-4">
-								<div class="text-xs text-text-500 font-mono mb-2">Technologies & Methods:</div>
-								<div class="flex flex-wrap gap-2">
-									{project.technologies.map((tech) => (
-										<span class="px-2 py-1 bg-primary-850 text-text-400 border border-primary-600 text-xs font-mono rounded">
-											{tech}
-										</span>
-									))}
-								</div>
-							</div>
-						</div>
-					</div>
-				))}
-			</div>
-		</div>
-	</section>
-
-	<!-- Skills & Technologies -->
-	<section class="mb-12">
-		<div class="text-tertiary-base mb-2">
-			<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/projects</span>$ cat ~/config/skills.conf
-		</div>
-		<div class="md:pl-4 mb-6">
-			<div class="text-text-400 mb-4">
-				<span class="text-tertiary-base">></span> System configuration loaded:
-			</div>
-			
-			<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-				{skillCategories.map((category, index) => (
-					<div class="bg-primary-900 border border-primary-700 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 group">
-						<div class="p-6">
-							<div class="flex items-center mb-4">
-								<div class="text-2xl mr-3">{category.icon}</div>
-								<div>
-									<h3 class="text-md font-bold text-tertiary-200 group-hover:text-tertiary-base transition-colors font-mono">
-										{category.category}
-									</h3>
-									<div class="text-xs text-text-500 font-mono">
-										config_section_{index + 1}
-									</div>
-								</div>
-							</div>
-							
-							<div class="space-y-2">
-								{category.skills.map((skill) => (
-									<div class="flex items-center">
-										<span class="w-2 h-2 bg-tertiary-400 rounded-full mr-3 flex-shrink-0"></span>
-										<span class="text-xs text-text-400 font-mono">{skill}</span>
-									</div>
-								))}
-							</div>
-						</div>
-					</div>
-				))}
-			</div>
-		</div>
-	</section>
-
-	<!-- Command Summary -->
-	<section class="mb-8">
-		<div class="text-tertiary-base mb-2">
-			<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/projects</span>$ wc -l *
-		</div>
-		<div class="md:pl-4 mb-6">
-			<div class="bg-primary-900 border border-primary-700 p-4">
-				<div class="text-text-400 font-mono text-sm space-y-1">
-					<div class="flex justify-between">
-						<span>Professional projects:</span>
-						<span class="text-tertiary-base">{companiesData.length} files</span>
-					</div>
-					<div class="flex justify-between">
-						<span>Research projects:</span>
-						<span class="text-tertiary-base">{researchProjects.length} directories</span>
-					</div>
-					<div class="flex justify-between">
-						<span>Skill categories:</span>
-						<span class="text-tertiary-base">{skillCategories.length} configs</span>
-					</div>
-					<div class="border-t border-primary-600 pt-2 mt-2 flex justify-between font-bold">
-						<span>Total entries:</span>
-						<span class="text-tertiary-base">{companiesData.length + researchProjects.length + skillCategories.length}</span>
-					</div>
+				<div class="flex justify-between">
+					<span>Research projects:</span>
+					<span class="text-tertiary-base">{researchProjects.length} directories</span>
+				</div>
+				<div class="flex justify-between">
+					<span>Skill categories:</span>
+					<span class="text-tertiary-base">{skillCategories.length} configs</span>
+				</div>
+				<div class="border-t border-primary-600 pt-2 mt-2 flex justify-between font-bold">
+					<span>Total entries:</span>
+					<span class="text-tertiary-base">{companiesData.length + researchProjects.length + skillCategories.length}</span>
 				</div>
 			</div>
 		</div>
-	</section>
+	</TerminalSection>
 </Layout>

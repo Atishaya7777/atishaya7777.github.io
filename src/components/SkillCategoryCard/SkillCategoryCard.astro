@@ -1,0 +1,37 @@
+---
+interface Props {
+	category: string;
+	skills: string[];
+	icon?: string;
+	index?: number;
+	className?: string;
+}
+
+const { category, skills, icon = "", index = 0, className = "" } = Astro.props;
+---
+
+<div class={`bg-primary-900 border border-primary-700 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 group ${className}`}>
+	<div class="p-6">
+		<div class="flex items-center mb-4">
+			{icon && <div class="text-2xl mr-3">{icon}</div>}
+			<div>
+				<h3 class="text-md font-bold text-tertiary-200 group-hover:text-tertiary-base transition-colors font-mono">
+					{category}
+				</h3>
+				<div class="text-xs text-text-500 font-mono">
+					config_section_{index + 1}
+				</div>
+			</div>
+		</div>
+		
+		<div class="space-y-2">
+			{skills.map((skill) => (
+				<div class="flex items-center">
+					<span class="w-2 h-2 bg-tertiary-400 rounded-full mr-3 flex-shrink-0"></span>
+					<span class="text-xs text-text-400 font-mono">{skill}</span>
+				</div>
+			))}
+		</div>
+	</div>
+</div>
+

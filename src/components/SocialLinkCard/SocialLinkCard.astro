@@ -1,0 +1,52 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	command?: string;
+	href: string;
+	protocol?: string;
+	iconText: string;
+	iconBg?: string;
+	className?: string;
+}
+
+const { 
+	title,
+	description,
+	command,
+	href,
+	protocol = "HTTPS/1.1",
+	iconText,
+	iconBg = "bg-gray-800",
+	className = ""
+} = Astro.props;
+---
+
+<a 
+	href={href}
+	target="_blank"
+	rel="noopener noreferrer"
+	class={`bg-primary-900 border border-primary-700 p-4 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 flex items-center group ${className}`}
+>
+	<div class="flex items-center flex-1">
+		<div class={`hidden w-10 h-10 ${iconBg} md:flex items-center justify-center mr-4 font-mono text-white font-bold`}>
+			{iconText}
+		</div>
+		<div class="flex-1">
+			<div class="flex items-center justify-between mb-1">
+				<h4 class="text-md font-bold text-tertiary-200 font-mono">{title}</h4>
+				<span class="text-sm text-text-500 font-mono">{protocol}</span>
+			</div>
+			<p class="text-sm text-text-400 font-mono">{description}</p>
+			{command && (
+				<div class="text-sm text-secondary-400 font-mono mt-1">
+					{command}
+				</div>
+			)}
+		</div>
+	</div>
+	<svg class="w-4 h-4 text-text-500 group-hover:translate-x-1 group-hover:text-tertiary-base transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+	</svg>
+</a>
+

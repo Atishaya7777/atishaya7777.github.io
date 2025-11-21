@@ -1,0 +1,23 @@
+---
+interface Props {
+	command: string;
+	path?: string;
+	user?: string;
+	showCursor?: boolean;
+	className?: string;
+}
+
+const { 
+	command, 
+	path = "~", 
+	user = "atish@terminal",
+	showCursor = false,
+	className = "" 
+} = Astro.props;
+---
+
+<div class={`text-tertiary-base mb-2 ${className}`}>
+	<span class="text-secondary-400">{user}</span>:<span class="text-tertiary-base">{path}</span>$ {command}
+	{showCursor && <span class="animate-pulse ml-1">█</span>}
+</div>
+

@@ -1,0 +1,54 @@
+---
+interface Props {
+	presentationName: string;
+	presentationLink: string;
+	conferenceName: string;
+	conferenceLocation: string;
+	presentationDate: string;
+	fileSize: string;
+	tags: string[];
+	className?: string;
+}
+
+const { 
+	presentationName,
+	presentationLink,
+	conferenceName,
+	conferenceLocation,
+	presentationDate,
+	fileSize,
+	tags = [],
+	className = ""
+} = Astro.props;
+---
+
+<div class={`border-l-2 border-secondary-400 pl-4 hover:border-tertiary-base transition-colors duration-300 ${className}`}>
+	<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+		<h3 class="text-base font-bold text-tertiary-200 font-mono">
+			{presentationName}.pdf
+		</h3>
+		<div class="text-xs text-text-500 font-mono">
+			-rw-r--r-- 1 atish staff {fileSize} {presentationDate}
+		</div>
+	</div>
+	<p class="text-sm text-text-400 font-mono mb-2">
+		"{presentationName}"
+	</p>
+	<div class="text-xs text-secondary-400 font-mono mb-2">
+		{conferenceName} • {conferenceLocation}
+	</div>
+	<div class="flex flex-wrap gap-2 text-xs">
+		{tags.map((tag) => (
+			<span class="bg-primary-800 text-tertiary-400 px-2 py-1 font-mono">#{tag}</span>
+		))}
+		<a 
+			href={presentationLink} 
+			target="_blank"
+			rel="noopener noreferrer"
+			class="bg-secondary-800 hover:bg-secondary-700 text-secondary-200 px-2 py-1 font-mono transition-colors duration-200"
+		>
+			[download.pdf]
+		</a>
+	</div>
+</div>
+

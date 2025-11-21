@@ -1,0 +1,54 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	fileInfo?: string;
+	href: string;
+	linkText: string;
+	icon?: string;
+	iconBg?: string;
+	className?: string;
+}
+
+const { 
+	title,
+	description,
+	fileInfo,
+	href,
+	linkText,
+	icon = "@",
+	iconBg = "text-secondary-400",
+	className = ""
+} = Astro.props;
+---
+
+<div class={`bg-primary-900 border border-primary-700 p-3 md:p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 ${className}`}>
+	<div class="flex items-start md:space-x-4 mb-4">
+		<div class={`hidden w-8 h-8 md:flex items-center justify-center font-bold text-lg ${iconBg}`}>
+			{icon}
+		</div>
+		<div class="flex-1">
+			<h3 class="text-lg font-bold text-tertiary-200 mb-2 font-mono">
+				{title}
+			</h3>
+			{fileInfo && (
+				<div class="text-sm text-text-500 font-mono mb-3">
+					{fileInfo}
+				</div>
+			)}
+			<p class="text-text-400 text-sm mb-4 font-mono">
+				{description}
+			</p>
+		</div>
+	</div>
+	<a 
+		href={href}
+		class="inline-flex items-center text-secondary-400 hover:text-tertiary-base font-mono text-sm transition-colors duration-200 group"
+	>
+		{linkText}
+		<svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+		</svg>
+	</a>
+</div>
+
