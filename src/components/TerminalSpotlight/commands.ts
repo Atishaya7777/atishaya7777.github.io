@@ -31,10 +31,10 @@ export const commands = {
       description: 'Navigate to about page',
       category: 'navigation'
     },
-    'cd projects': { 
+    'cd works': { 
       action: 'navigate', 
       route: '/works', 
-      description: 'Navigate to projects',
+      description: 'Navigate to works',
       category: 'navigation'
     },
     'cd blog': { 
@@ -83,5 +83,29 @@ export const commands = {
       action: 'exit', 
       description: 'Close command palette',
       category: 'system'
+    },
+    'discuss --topic="graph_theory" --depth="infinite"': {
+      action: 'navigate',
+      route: '/contact',
+      description: 'Discuss graph theory and mathematics',
+      category: 'contact'
+    },
+    'npm run discuss --framework="any" --bugs="welcome"': {
+      action: 'navigate',
+      route: '/contact',
+      description: 'Talk about web development',
+      category: 'contact'
+    },
+    'share --experience="grad_school" --advice="freely"': {
+      action: 'navigate',
+      route: '/contact',
+      description: 'Share academic experiences',
+      category: 'contact'
+    },
+    'help --mutual --learning="continuous"': {
+      action: 'navigate',
+      route: '/contact',
+      description: 'Get help or share knowledge',
+      category: 'contact'
     }
   };
