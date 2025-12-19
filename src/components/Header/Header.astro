@@ -25,12 +25,12 @@ const navItems = [
 			<!-- Navigation tabs -->
 			<nav class="flex items-center space-x-1" aria-label="Main navigation">
 				{navItems.map((item) => {
-					const isActive = currentPath === item.path || (currentPath === '/' && item.path === routes.home);
+					const isActive = currentPath === item.path;
 					return (
 						<a 
 							href={item.path}
 							title={item.title}
-							class={`px-3 py-1 font-mono text-sm border-b-2 ${
+							class={`px-3 py-1 font-mono text-sm border-b-2 transition-colors ${
 								isActive 
 									? 'text-tertiary-base border-tertiary-base' 
 									: 'text-text-400 border-transparent hover:border-tertiary-base'
