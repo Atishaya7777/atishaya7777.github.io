@@ -16,8 +16,8 @@ const { items } = Astro.props;
 
 const getCategoryColor = (category: string) => {
 	switch (category.toLowerCase()) {
-		case 'research': return 'bg-blue-600 text-blue-100';
-		case 'work': return 'bg-green-600 text-green-100';
+		case 'research': return 'bg-secondary-600 text-secondary-100';
+		case 'work': return 'bg-tertiary-600 text-tertiary-100';
 		case 'project': return 'bg-purple-600 text-purple-100';
 		default: return 'bg-gray-600 text-gray-100';
 	}
@@ -37,7 +37,7 @@ const getCategoryColor = (category: string) => {
 			{items.map((item, index) => (
 				<article class="group">
 					<a href={item.link} class="block">
-						<div class="bg-primary-900 border border-primary-700 p-5 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 rounded-sm">
+						<div class="bg-primary-900 border border-primary-700 p-5 hover:border-secondary-600 transition-colors rounded-sm">
 							<div class="flex items-center justify-between mb-3">
 								<div class="flex items-center space-x-3">
 									<span class={`px-3 py-1 rounded-sm font-mono text-xs font-semibold ${getCategoryColor(item.category)}`}>

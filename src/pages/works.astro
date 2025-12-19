@@ -20,40 +20,35 @@ const companiesData = [
 		title: "Life's Good - US",
 		desc: "Life's Good with electronics by your side!",
 		url: "https://lg.com/us",
-		status: "active" as const,
-		pid: "1001"
+		status: "active" as const
 	},
 	{
 		img: { src: trackflyLogoUrl, alt: "Trackfly logo." },
 		title: "Trackfly",
 		desc: 'Better market intelligence to independent retailers and their suppliers.',
 		url: "https://www.trackfly.com/",
-		status: "completed" as const,
-		pid: "1002"
+		status: "completed" as const
 	},
 	{
 		img: { src: timeeroLogoUrl, alt: "Timeero logo." },
 		title: "Timeero",
 		desc: 'A time tracking and GPS company that provides precise and segmented time breakdowns for all employees.',
 		url: "https://timeero.com",
-		status: "completed" as const,
-		pid: "1003"
+		status: "completed" as const
 	},
 	{
 		img: { src: versuredLogoUrl, alt: "Versured logo." },
 		title: "Versured",
 		desc: 'An insurance portal that combines all possible insurance combinations to match your perfect needs.',
 		url: "https://www.linkedin.com/company/versured",
-		status: "completed" as const,
-		pid: "1004"
+		status: "completed" as const
 	},
 	{
 		img: { src: ekNepalLogoUrl, alt: "Ek Nepal logo." },
 		title: "Ek Nepal",
 		desc: 'A truthful news aggregator. From Nepal, for Nepal.',
 		url: "https://www.eknepal.com/",
-		status: "completed" as const,
-		pid: "1005"
+		status: "completed" as const
 	},
 ];
 
@@ -64,8 +59,7 @@ const researchProjects = [
 		supervisor: "Dr. Mahsa Nasrollahi-Shirazi & Dr. Andrii",
 		description: "Working on k-nary trees and the HK-property. Connected to the Erdős–Ko–Rado theorem but applied to perfect binary trees.",
 		technologies: ["Perfect k-nary Trees", "HK-property Analysis", "SageMath Visualizations"],
-		status: "active" as const,
-		pid: "2001"
+		status: "active" as const
 	},
 	{
 		title: "GADA Lab Research",
@@ -73,8 +67,7 @@ const researchProjects = [
 		supervisor: "Dr. Stephane Durocher",
 		description: "Working on approximation algorithms for spatially embedded graphs, tackling complex networks in manageable ways.",
 		technologies: ["Approximation Algorithms", "Spatially Embedded Graphs", "Metric Optimization"],
-		status: "active" as const,
-		pid: "2002"
+		status: "active" as const
 	},
 	{
 		title: "Computer Vision Lab",
@@ -82,8 +75,7 @@ const researchProjects = [
 		supervisor: "Dr. Christopher Henry",
 		description: "Collaborating on computer vision research, exploring innovative approaches to visual data analysis and machine learning.",
 		technologies: ["PyTorch and PyTorch Geometric", "Machine Learning", "Visual Data Analysis"],
-		status: "active" as const,
-		pid: "2003"
+		status: "active" as const
 	}
 ];
 
@@ -111,27 +103,26 @@ const skillCategories = [
 ];
 ---
 
-<Layout title=":~$ ls -la ~/projects/">
-	<TerminalSection command="ls -la" path="~/projects">
-		<FileHeader 
-			fileName="PROJECTS_INDEX.md"
-			totalEntries={companiesData.length + researchProjects.length}
-			permission="rwxr-xr-x"
-		>
-			<h1 class="text-xl md:text-2xl md:text-3xl font-bold text-tertiary-base mb-4 font-mono">
-				PROJECTS_INDEX.md
-			</h1>
-			<p class="text-text-300 leading-relaxed mb-4">
-				Here's a collection of things I've been working on – from research projects 
-				that keep me up at night thinking, to professional work that actually pays the bills.
-			</p>
-		</FileHeader>
-	</TerminalSection>
-
-	<TerminalSection command='find ./professional -type f -name "*.project"' path="~/projects" className="mb-12">
-		<div class="text-text-400 mb-4">
-			<span class="text-tertiary-base">></span> Found {companiesData.length} professional project(s):
+<Layout title="Works | Atishaya Maharjan">
+	<!-- Page header -->
+	<div class="mb-12">
+		<div class="text-text-400 font-mono text-sm mb-4">
+			<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/works</span>$ ls
 		</div>
+		<h1 class="text-3xl md:text-4xl font-bold text-tertiary-base mb-4 font-mono">
+			Works & Research
+		</h1>
+		<p class="text-text-300 leading-relaxed max-w-3xl">
+			Here's a collection of things I've been working on – from research projects 
+			that keep me up at night thinking, to professional work that actually pays the bills.
+		</p>
+	</div>
+
+	<!-- Professional Projects -->
+	<section class="mb-16">
+		<h2 class="text-2xl font-bold text-tertiary-25 mb-6 font-mono">
+			Professional Work
+		</h2>
 		
 		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 			{companiesData.map((company) => {
@@ -142,7 +133,6 @@ const skillCategories = [
 						title={company.title}
 						description={company.desc}
 						status={company.status}
-						pid={company.pid}
 						url={company.url}
 						imgSrc={imgSrc}
 						imgAlt={imgAlt}
@@ -151,20 +141,16 @@ const skillCategories = [
 				);
 			})}
 		</div>
-	</TerminalSection>
+	</section>
 
-	<TerminalSection command='find ./research -type d -name "*lab*"' path="~/projects" className="mb-12">
-		<div class="text-text-400 mb-4">
-			<span class="text-tertiary-base">></span> Research portfolio overview:
-		</div>
+	<!-- Research Work -->
+	<section class="mb-16">
+		<h2 class="text-2xl font-bold text-tertiary-25 mb-6 font-mono">
+			Research Work
+		</h2>
 		
-		<ContentBox 
-			title="== LAB_RESEARCH.md ==" 
-			borderColor="secondary"
-			className="mb-6"
-			centered={true}
-		>
-			<div class="space-y-4">
+		<div class="bg-primary-850 border border-secondary-600 p-6 mb-8">
+			<div class="space-y-4 text-text-300">
 				<p>I'm lucky enough to be doing research in three different labs.</p>
 				<p>
 					With the mathematics department, I'm diving deep into k-nary trees and something called the HK-property 
@@ -195,10 +181,6 @@ const skillCategories = [
 					</a> with Dr. Christopher Henry.
 				</p>
 			</div>
-		</ContentBox>
-
-		<div class="text-text-400 mb-4">
-			<span class="text-tertiary-base">></span> Active research processes:
 		</div>
 		
 		<div class="grid md:grid-cols-1 gap-4">
@@ -207,7 +189,6 @@ const skillCategories = [
 					title={project.title}
 					description={project.description}
 					status={project.status}
-					pid={project.pid}
 					lab={project.lab}
 					supervisor={project.supervisor}
 					technologies={project.technologies}
@@ -215,12 +196,13 @@ const skillCategories = [
 				/>
 			))}
 		</div>
-	</TerminalSection>
+	</section>
 
-	<TerminalSection command="cat ~/config/skills.conf" path="~/projects" className="mb-12">
-		<div class="text-text-400 mb-4">
-			<span class="text-tertiary-base">></span> System configuration loaded:
-		</div>
+	<!-- Skills & Technologies -->
+	<section class="mb-16">
+		<h2 class="text-2xl font-bold text-tertiary-25 mb-6 font-mono">
+			Skills & Technologies
+		</h2>
 		
 		<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 			{skillCategories.map((category, index) => (
@@ -232,28 +214,5 @@ const skillCategories = [
 				/>
 			))}
 		</div>
-	</TerminalSection>
-
-	<TerminalSection command="wc -l *" path="~/projects" className="mb-8">
-		<div class="bg-primary-900 border border-primary-700 p-4">
-			<div class="text-text-400 font-mono text-sm space-y-1">
-				<div class="flex justify-between">
-					<span>Professional projects:</span>
-					<span class="text-tertiary-base">{companiesData.length} files</span>
-				</div>
-				<div class="flex justify-between">
-					<span>Research projects:</span>
-					<span class="text-tertiary-base">{researchProjects.length} directories</span>
-				</div>
-				<div class="flex justify-between">
-					<span>Skill categories:</span>
-					<span class="text-tertiary-base">{skillCategories.length} configs</span>
-				</div>
-				<div class="border-t border-primary-600 pt-2 mt-2 flex justify-between font-bold">
-					<span>Total entries:</span>
-					<span class="text-tertiary-base">{companiesData.length + researchProjects.length + skillCategories.length}</span>
-				</div>
-			</div>
-		</div>
-	</TerminalSection>
+	</section>
 </Layout>

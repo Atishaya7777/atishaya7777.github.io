@@ -62,7 +62,7 @@ const TerminalSpotlight = () => {
         const aCmd = a[0].toLowerCase();
         const bCmd = b[0].toLowerCase();
         const inputLower = input.toLowerCase();
-        
+
         if (aCmd === inputLower) return -1;
         if (bCmd === inputLower) return 1;
         if (aCmd.startsWith(inputLower) && !bCmd.startsWith(inputLower)) return -1;
@@ -91,20 +91,20 @@ const TerminalSpotlight = () => {
 
   const executeCommand = (command: keyof typeof commands) => {
     const cmd = commands[command];
-    
+
     addOutput(`$ ${command}`, 'command');
-    setHistory((prev: any)=> [command, ...prev.filter((h: any) => h !== command)].slice(0, 20));
-    
+    setHistory((prev: any) => [command, ...prev.filter((h: any) => h !== command)].slice(0, 20));
+
     if (!cmd) {
       addOutput(`bash: ${command}: command not found`, 'error');
       return;
     }
-    
+
     switch (cmd.action) {
       case 'navigate':
         navigate((cmd as any).route);
         break;
-        
+
       case 'showHelp':
         const helpContent = [
           'Available commands:',
@@ -123,7 +123,7 @@ const TerminalSpotlight = () => {
         ];
         addOutput(helpContent.join('\n'));
         break;
-        
+
       case 'showWhoami':
         addOutput([
           'Atishaya Maharjan',
@@ -134,11 +134,11 @@ const TerminalSpotlight = () => {
           'Currently: Building applications at Alpinist Studios'
         ].join('\n'));
         break;
-        
+
       case 'showPwd':
         addOutput('/home/atish');
         break;
-        
+
       case 'listDirectory':
         addOutput([
           'total 8',
@@ -150,7 +150,7 @@ const TerminalSpotlight = () => {
           '-rwxr-xr-x  1 atish atish  512 Jan 30 12:00 about*'
         ].join('\n'));
         break;
-        
+
       case 'showWelcome':
         addOutput([
           '=== Welcome to Atishaya\'s Terminal Interface ===',
@@ -165,13 +165,13 @@ const TerminalSpotlight = () => {
           '',
           'Quick navigation:',
           '• cd about    - Learn more about me',
-          '• cd projects - View my work',
+          '• cd works - View my work',
           '• cd blog     - Read my thoughts',
           '',
           'Happy exploring!'
         ].join('\n'));
         break;
-        
+
       case 'showAbout':
         addOutput([
           '=== About Atishaya Maharjan ===',
@@ -190,7 +190,7 @@ const TerminalSpotlight = () => {
           'For more details, try: ./about --verbose'
         ].join('\n'));
         break;
-        
+
       case 'showAboutVerbose':
         addOutput([
           '=== Detailed About Information ===',
@@ -224,7 +224,7 @@ const TerminalSpotlight = () => {
         ].join('\n'));
         navigate('/about');
         break;
-        
+
       case 'showTree':
         addOutput([
           '.',
@@ -237,7 +237,7 @@ const TerminalSpotlight = () => {
           '└── about*'
         ].join('\n'));
         break;
-        
+
       case 'showDate':
         const now = new Date();
         addOutput([
@@ -246,7 +246,7 @@ const TerminalSpotlight = () => {
           `Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`
         ].join('\n'));
         break;
-        
+
       case 'showSystem':
         addOutput([
           'AtishayaOS 1.0.0 (Mathematical Computing Environment)',
@@ -258,13 +258,12 @@ const TerminalSpotlight = () => {
           'Current Process: Building awesome things'
         ].join('\n'));
         break;
-        
+
       case 'clear':
         setOutput([]);
         setShowOutput(false);
-        addOutput('Terminal cleared', 'success');
         break;
-        
+
       case 'exit':
         addOutput('Goodbye! 👋', 'success');
         setTimeout(() => {
@@ -273,7 +272,7 @@ const TerminalSpotlight = () => {
           setShowOutput(false);
         }, 1000);
         break;
-        
+
       default:
         addOutput(`Executed: ${command}`, 'success');
     }
@@ -325,7 +324,7 @@ const TerminalSpotlight = () => {
         case 'n':
           e.preventDefault();
           if (suggestions.length > 0) {
-            setSelectedSuggestion(prev => 
+            setSelectedSuggestion(prev =>
               prev < suggestions.length - 1 ? prev + 1 : 0
             );
           }
@@ -333,7 +332,7 @@ const TerminalSpotlight = () => {
         case 'p':
           e.preventDefault();
           if (suggestions.length > 0) {
-            setSelectedSuggestion(prev => 
+            setSelectedSuggestion(prev =>
               prev > 0 ? prev - 1 : suggestions.length - 1
             );
           }
@@ -345,14 +344,14 @@ const TerminalSpotlight = () => {
     if (!e.ctrlKey && !e.metaKey && !e.altKey) {
       if (e.key === 'j' && suggestions.length > 0) {
         e.preventDefault();
-        setSelectedSuggestion(prev => 
+        setSelectedSuggestion(prev =>
           prev < suggestions.length - 1 ? prev + 1 : 0
         );
         return;
       }
       if (e.key === 'k' && suggestions.length > 0) {
         e.preventDefault();
-        setSelectedSuggestion(prev => 
+        setSelectedSuggestion(prev =>
           prev > 0 ? prev - 1 : suggestions.length - 1
         );
         return;
@@ -363,7 +362,7 @@ const TerminalSpotlight = () => {
         e.preventDefault();
         const newSequence = keySequence + e.key;
         setKeySequence(newSequence);
-        
+
         // Clear existing timeout
         if (keyTimeout) {
           clearTimeout(keyTimeout);
@@ -375,7 +374,7 @@ const TerminalSpotlight = () => {
           setKeySequence('');
           return;
         }
-        
+
         if (newSequence === '0' || newSequence === '$') {
           handleVimCommand(newSequence);
           setKeySequence('');
@@ -412,7 +411,7 @@ const TerminalSpotlight = () => {
       case 'ArrowUp':
         e.preventDefault();
         if (suggestions.length > 0) {
-          setSelectedSuggestion(prev => 
+          setSelectedSuggestion(prev =>
             prev > 0 ? prev - 1 : suggestions.length - 1
           );
         } else if (history.length > 0) {
@@ -424,7 +423,7 @@ const TerminalSpotlight = () => {
       case 'ArrowDown':
         e.preventDefault();
         if (suggestions.length > 0) {
-          setSelectedSuggestion(prev => 
+          setSelectedSuggestion(prev =>
             prev < suggestions.length - 1 ? prev + 1 : 0
           );
         } else if (historyIndex > -1) {
@@ -482,19 +481,18 @@ const TerminalSpotlight = () => {
 
         <div className="flex-1 flex flex-col min-h-0">
           {showOutput && (
-            <div 
+            <div
               ref={outputRef}
               className="flex-1 p-4 overflow-y-auto bg-gray-950 border-b border-gray-700"
               style={{ maxHeight: '50%' }}
             >
               {output.map((item: any) => (
                 <div key={item.id} className="mb-2">
-                  <pre className={`font-mono text-sm whitespace-pre-wrap ${
-                    item.type === 'command' ? 'text-cyan-400' :
+                  <pre className={`font-mono text-sm whitespace-pre-wrap ${item.type === 'command' ? 'text-cyan-400' :
                     item.type === 'error' ? 'text-red-400' :
-                    item.type === 'success' ? 'text-green-400' :
-                    'text-green-300'
-                  }`}>
+                      item.type === 'success' ? 'text-green-400' :
+                        'text-green-300'
+                    }`}>
                     {item.content}
                   </pre>
                 </div>
@@ -526,19 +524,17 @@ const TerminalSpotlight = () => {
                 {suggestions.map((suggestion: any, index: any) => (
                   <div
                     key={suggestion.cmd}
-                    className={`flex items-center justify-between p-2 rounded cursor-pointer font-mono text-sm transition-colors ${
-                      index === selectedSuggestion
-                        ? 'bg-green-900 bg-opacity-30 border border-green-500'
-                        : 'hover:bg-gray-800'
-                    }`}
+                    className={`flex items-center justify-between p-2 rounded cursor-pointer font-mono text-sm transition-colors ${index === selectedSuggestion
+                      ? 'bg-green-900 bg-opacity-30 border border-green-500'
+                      : 'hover:bg-gray-800'
+                      }`}
                     onClick={() => executeCommand(suggestion.cmd)}
                   >
                     <div className="flex items-center space-x-3">
-                      <span className={`text-xs px-2 py-1 rounded ${
-                        suggestion.category === 'navigation' 
-                          ? 'bg-blue-900 text-blue-300' 
-                          : 'bg-yellow-900 text-yellow-300'
-                      }`}>
+                      <span className={`text-xs px-2 py-1 rounded ${suggestion.category === 'navigation'
+                        ? 'bg-blue-900 text-blue-300'
+                        : 'bg-yellow-900 text-yellow-300'
+                        }`}>
                         {suggestion.category}
                       </span>
                       <span className="text-green-400">{suggestion.cmd}</span>

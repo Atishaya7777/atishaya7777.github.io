@@ -5,7 +5,6 @@ interface Props {
 	title: string;
 	description: string;
 	status: 'active' | 'completed' | 'running';
-	pid: string;
 	url?: string;
 	imgSrc?: string;
 	imgAlt?: string;
@@ -21,7 +20,6 @@ const {
 	title,
 	description,
 	status,
-	pid,
 	url,
 	imgSrc,
 	imgAlt,
@@ -36,19 +34,14 @@ const {
 const displayDate = date || new Date().toLocaleDateString();
 ---
 
-<div class={`bg-primary-900 border border-primary-700 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 group ${className}`}>
+<div class={`bg-primary-900 border border-primary-700 hover:border-secondary-600 transition-colors group ${className}`}>
 	<div class="p-6">
 		<div class="flex items-center justify-between mb-4">
-			<div class="flex items-center">
-				{imgSrc && imgAlt && (
-					<div class="w-8 h-8 bg-white rounded-sm flex items-center justify-center mr-3 p-1">
-						<img src={imgSrc} alt={imgAlt} class="w-full h-full object-contain" />
-					</div>
-				)}
-				<div class="text-xs text-text-500 font-mono">
-					PID: {pid}
+			{imgSrc && imgAlt && (
+				<div class="w-8 h-8 bg-white rounded-sm flex items-center justify-center p-1">
+					<img src={imgSrc} alt={imgAlt} class="w-full h-full object-contain" />
 				</div>
-			</div>
+			)}
 			<StatusBadge status={status} />
 		</div>
 		
@@ -98,10 +91,9 @@ const displayDate = date || new Date().toLocaleDateString();
 					href={url} 
 					target="_blank" 
 					rel="noopener noreferrer"
-					class="inline-flex items-center text-secondary-400 hover:text-secondary-300 font-mono text-sm transition-colors"
+					class="text-secondary-400 hover:text-secondary-300 font-mono text-sm transition-colors underline"
 				>
-					./visit_project.sh
-					<span class="ml-2">→</span>
+					visit
 				</a>
 			)}
 			<div class="text-xs text-text-500 font-mono">

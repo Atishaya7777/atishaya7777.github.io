@@ -16,10 +16,10 @@ const { items } = Astro.props;
 
 const getStatusColor = (status: string) => {
 	switch (status) {
-		case 'active': return 'text-green-400';
-		case 'running': return 'text-blue-400';
-		case 'paused': return 'text-yellow-400';
-		default: return 'text-gray-400';
+		case 'active': return 'text-tertiary-400';
+		case 'running': return 'text-secondary-400';
+		case 'paused': return 'text-tertiary-300';
+		default: return 'text-text-400';
 	}
 };
 
@@ -40,9 +40,9 @@ const getSymbolColor = (index: number) => {
 		<div class="grid lg:grid-cols-1 gap-6">
 			{items.map((area, index) => (
 				<a href={area.link} class="group block">
-					<article class="bg-primary-900 border border-primary-700 p-4 md:p-6 hover:border-tertiary-base hover:bg-primary-850 transition-all duration-300 rounded-sm">
+					<article class="bg-primary-900 border border-primary-700 p-4 md:p-6 hover:border-secondary-600 transition-colors rounded-sm">
 						<div class="flex items-start md:space-x-6">
-							<div class={`hidden md:flex w-12 h-12 items-center justify-center font-bold text-2xl ${getSymbolColor(index)} bg-primary-800 rounded-sm group-hover:scale-110 transition-transform`}>
+							<div class={`hidden md:flex w-12 h-12 items-center justify-center font-bold text-2xl ${getSymbolColor(index)} bg-primary-800 rounded-sm`}>
 								{area.symbol}
 							</div>
 							<div class="flex-1 min-w-0">
@@ -50,15 +50,9 @@ const getSymbolColor = (index: number) => {
 									<h3 class="text-base md:text-xl font-bold text-tertiary-200 group-hover:text-tertiary-base transition-colors font-mono">
 										{area.title}
 									</h3>
-									<div class="flex items-center space-x-3 text-xs">
-										<span class={`flex items-center space-x-1 ${getStatusColor(area.status)}`}>
-											<div class="w-2 h-2 bg-current rounded-full animate-pulse"></div>
-											<span>{area.status.toUpperCase()}</span>
-										</span>
-										<span class="text-text-500 font-mono">
-											PID: {1000 + index}
-										</span>
-									</div>
+									<span class={`text-xs ${getStatusColor(area.status)}`}>
+										[{area.status.toUpperCase()}]
+									</span>
 								</div>
 								<p class="text-text-400 mb-4 font-mono text-sm leading-relaxed">
 									{area.description}

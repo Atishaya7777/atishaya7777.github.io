@@ -1,43 +1,28 @@
 ---
-import TerminalPrompt from '../TerminalPrompt/TerminalPrompt.astro';
+// Simple, clean footer
 ---
 
-<footer class="border-t border-primary-800 pt-6 mt-12">
-	<TerminalPrompt command='echo "Thanks for visiting! Ready to explore more?"' />
-	<div class="pl-4 space-y-3">
-		<div class="text-text-400 font-mono text-sm flex items-center space-x-2">
-			<span class="text-tertiary-base">></span> 
-			<span>Session active since {new Date().toLocaleDateString()}</span>
-			<div class="flex items-center space-x-1 ml-4">
-				<div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-				<span class="text-green-400 text-xs">CONNECTED</span>
-			</div>
+<footer class="border-t border-primary-800 pt-8 mt-16">
+	<div class="space-y-4">
+		<div class="text-text-400 font-mono text-sm">
+			<span class="text-tertiary-base">$</span> 
+			<span>connect</span>
 		</div>
 		
-		<div class="flex flex-col md:flex-row items-center justify-between">
-			<div class="text-text-500 font-mono text-xs flex items-center space-x-2">
-				<span class="animate-pulse">█</span> 
-				<span>Ready for input...</span>
-			</div>
-			
-			<div class="flex flex-col md:flex-row items-center md:space-x-4 text-xs">
-				<a href="mailto:atishaya7777@gmail.com" target="_blank" class="text-secondary-400 hover:text-tertiary-base transition-colors font-mono underline">
-					./contact --email
-				</a>
-				<a href="https://github.com/Atishaya7777" target="_blank" class="text-secondary-400 hover:text-tertiary-base transition-colors font-mono underline">
-					git remote -v
-				</a>
-				<a href="https://www.linkedin.com/in/atishaya-maharjan07" target="_blank" class="text-secondary-400 hover:text-tertiary-base transition-colors font-mono underline">
-					./network --professional
-				</a>
-			</div>
+		<div class="flex flex-col md:flex-row items-start md:items-center md:space-x-6 space-y-2 md:space-y-0 pl-4">
+			<a href="mailto:atishaya7777@gmail.com" target="_blank" class="text-secondary-400 hover:text-secondary-300 transition-colors font-mono text-sm">
+				email
+			</a>
+			<a href="https://github.com/Atishaya7777" target="_blank" class="text-secondary-400 hover:text-secondary-300 transition-colors font-mono text-sm">
+				github
+			</a>
+			<a href="https://www.linkedin.com/in/atishaya-maharjan07" target="_blank" class="text-secondary-400 hover:text-secondary-300 transition-colors font-mono text-sm">
+				linkedin
+			</a>
 		</div>
 		
-		<div class="text-xs text-text-600 font-mono pt-2 border-t border-primary-800">
-			<div class="flex items-center justify-between">
-				<span>System: Portfolio OS v2.0 | Shell: bash 5.1</span>
-				<span>Uptime: {Math.floor(Math.random() * 30) + 1} days</span>
-			</div>
+		<div class="text-xs text-text-600 font-mono pt-4 border-t border-primary-800">
+			<span>© {new Date().getFullYear()} Atishaya Maharjan</span>
 		</div>
 	</div>
 </footer>

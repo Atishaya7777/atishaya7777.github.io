@@ -1,19 +1,50 @@
 ---
-const currDate = new Date().toLocaleTimeString();
+import routes from '../../global/routes';
+
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+	{ label: '~', path: routes.home, title: 'home' },
+	{ label: 'about', path: routes.about, title: 'about me' },
+	{ label: 'works', path: routes.works, title: 'projects & research' },
+	{ label: 'blog', path: routes.blog, title: 'thoughts & writing' },
+	{ label: 'contact', path: routes.contact, title: 'get in touch' }
+];
 ---
 
-<header class="bg-primary-900 border-b-2 border-tertiary-base font-medium sticky top-0 z-10">
-	<div class="container mx-auto px-4">
-		<div class="flex items-center justify-between py-3 text-sm">
-			<div class="flex items-center space-x-4">
-				<span class="text-text-400 font-mono">atish@terminal: ~</span>
+<header class="bg-primary-900 border-b border-primary-700 font-medium sticky top-0 z-50">
+	<div class="container mx-auto px-4 max-w-6xl">
+		<div class="flex items-center justify-between py-3">
+			<!-- Terminal prompt -->
+			<div class="flex items-center space-x-2">
+				<span class="text-secondary-400 font-mono text-sm">atish@terminal</span>
+				<span class="text-text-500 font-mono text-sm">:</span>
 			</div>
-			<div class="text-text-500 font-medium font-mono flex items-center space-x-4">
-				<span class="hidden sm:inline">{currDate}</span>
-				<span class="flex items-center space-x-1">
-					<span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-					<span>session: active</span>
-				</span>
+			
+			<!-- Navigation tabs -->
+			<nav class="flex items-center space-x-1" aria-label="Main navigation">
+				{navItems.map((item) => {
+					const isActive = currentPath === item.path || (currentPath === '/' && item.path === routes.home);
+					return (
+						<a 
+							href={item.path}
+							title={item.title}
+							class={`px-3 py-1 font-mono text-sm border-b-2 ${
+								isActive 
+									? 'text-tertiary-base border-tertiary-base' 
+									: 'text-text-400 border-transparent hover:border-tertiary-base'
+							}`}
+						>
+							[{item.label}]
+						</a>
+					);
+				})}
+			</nav>
+			
+			<!-- Session indicator (single, subtle) -->
+			<div class="flex items-center space-x-2">
+				<span class="w-2 h-2 bg-green-500 rounded-full"></span>
+				<span class="text-text-500 font-mono text-xs hidden sm:inline">online</span>
 			</div>
 		</div>
 	</div>
