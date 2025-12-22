@@ -5,7 +5,7 @@ import routes from '../../global/routes';
 
 const personal_bio = [
   "name: Atishaya Maharjan",
-  "job: mathematician | computer_scientist | problem_solver",
+  "job: mathematician | computer_scientist | statistician",
   "location: Winnipeg, Manitoba",
   "status: Researching and Studying"
 ]
@@ -13,11 +13,11 @@ const personal_bio = [
 
 <section class="mb-12">
 	<TerminalPrompt command="whoami" />
-	<div class="pl-4 mb-8 space-y-2">
+	<div class="pl-4 mb-8 space-y-2 text-sm md:text-base">
       {personal_bio.map((item, idx)=> {
           let clsx = "text-text-400";
           if (idx === 0) {
-            clsx = "text-tertiary-200 text-lg";
+            clsx = "text-tertiary-200 text-base md:text-lg";
           }
 
           return (
@@ -30,7 +30,7 @@ const personal_bio = [
 
 	<TerminalPrompt command="cat welcome.txt" />
 	<div class="pl-4 mb-8 max-w-4xl">
-		<div class="border-l-2 border-tertiary-base pl-6 text-text-300 leading-relaxed space-y-4">
+		<div class="border-l-2 border-tertiary-base pl-6 text-text-300 leading-relaxed space-y-4 text-sm md:text-base">
 			<p>
 				Hey there! You've found Atish's website.
 			</p>

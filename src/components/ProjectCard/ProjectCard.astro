@@ -49,7 +49,7 @@ const displayDate = date || new Date().toLocaleDateString();
 			<div class="mb-4">
 				<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
 					<div class="flex-1">
-						<h3 class="text-lg font-bold text-tertiary-200 font-mono">
+						<h3 class="text-base md:text-lg font-bold text-tertiary-200 font-mono">
 							{title}
 						</h3>
 						{(lab || supervisor) && (
@@ -63,7 +63,7 @@ const displayDate = date || new Date().toLocaleDateString();
 				</div>
 			</div>
 		) : (
-			<h3 class="text-lg font-bold text-tertiary-200 mb-3 group-hover:text-tertiary-base transition-colors font-mono">
+			<h3 class="text-base md:text-lg font-bold text-tertiary-200 mb-3 group-hover:text-tertiary-base transition-colors font-mono">
 				{title}
 			</h3>
 		)}

@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { TerminalCommand, TerminalSection, FileHeader, ProjectCard, SkillCategoryCard, ContentBox } from '../components';
+import { ProjectCard, SkillCategoryCard } from '../components';
 import LGLogo from '../assets/lg-logo.svg?url';
 import VersuredLogo from '../assets/versured-logo.svg?url';
 import EkNepalLogo from '../assets/eknepal-logo.svg?url';
@@ -106,7 +106,7 @@ const skillCategories = [
 <Layout title="Works | Atishaya Maharjan">
 	<!-- Page header -->
 	<div class="mb-12">
-		<div class="text-text-400 font-mono text-sm mb-4">
+		<div class="text-text-400 font-mono text-xs md:text-sm mb-4">
 			<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/works</span>$ ls
 		</div>
 		<h1 class="text-3xl md:text-4xl font-bold text-tertiary-base mb-4 font-mono">
@@ -120,7 +120,7 @@ const skillCategories = [
 
 	<!-- Professional Projects -->
 	<section class="mb-16">
-		<h2 class="text-2xl font-bold text-tertiary-25 mb-6 font-mono">
+		<h2 class="text-xl md:text-2xl font-bold text-tertiary-25 mb-6 font-mono">
 			Professional Work
 		</h2>
 		
@@ -145,7 +145,7 @@ const skillCategories = [
 
 	<!-- Research Work -->
 	<section class="mb-16">
-		<h2 class="text-2xl font-bold text-tertiary-25 mb-6 font-mono">
+		<h2 class="text-xl md:text-2xl font-bold text-tertiary-25 mb-6 font-mono">
 			Research Work
 		</h2>
 		
@@ -200,17 +200,15 @@ const skillCategories = [
 
 	<!-- Skills & Technologies -->
 	<section class="mb-16">
-		<h2 class="text-2xl font-bold text-tertiary-25 mb-6 font-mono">
+		<h2 class="text-xl md:text-2xl font-bold text-tertiary-25 mb-6 font-mono">
 			Skills & Technologies
 		</h2>
 		
 		<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-			{skillCategories.map((category, index) => (
+			{skillCategories.map((category) => (
 				<SkillCategoryCard
 					category={category.category}
 					skills={category.skills}
-					icon={category.icon}
-					index={index}
 				/>
 			))}
 		</div>

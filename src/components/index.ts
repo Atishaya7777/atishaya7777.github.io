@@ -1,8 +1,5 @@
-import { Button } from "./Button";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
-import { Navbar } from "./Navbar";
-import { Section } from "./Section";
 import { TerminalSpotlight } from "./TerminalSpotlight";
 import { TerminalCommand } from "./TerminalCommand";
 import { TerminalSection } from "./TerminalSection";
@@ -16,11 +13,8 @@ import { SocialLinkCard } from "./SocialLinkCard";
 import { ContentBox } from "./ContentBox";
 
 export {
-  Button,
   Footer,
   Header,
-  Navbar,
-  Section,
   TerminalSpotlight,
   TerminalCommand,
   TerminalSection,

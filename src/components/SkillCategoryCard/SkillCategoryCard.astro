@@ -2,18 +2,16 @@
 interface Props {
 	category: string;
 	skills: string[];
-	icon?: string;
-	index?: number;
 	className?: string;
 }
 
-const { category, skills, icon = "", index = 0, className = "" } = Astro.props;
+const { category, skills, className = "" } = Astro.props;
 ---
 
 <div class={`bg-primary-900 border border-primary-700 hover:border-secondary-600 transition-colors group ${className}`}>
 	<div class="p-6">
 		<div class="mb-4">
-			<h3 class="text-md font-bold text-tertiary-200 font-mono">
+			<h3 class="text-sm md:text-base font-bold text-tertiary-200 font-mono">
 				{category}
 			</h3>
 		</div>

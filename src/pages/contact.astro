@@ -1,11 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { TerminalCommand, TerminalSection, ContactCard, SocialLinkCard, ContentBox } from '../components';
+import { TerminalSection, ContactCard, SocialLinkCard, ContentBox } from '../components';
 ---
 
 <Layout title=":~$ contact --all">
 	<TerminalSection command="./start_conversation.sh" path="~/contact" className="mb-8">
-		<div class="space-y-2">
+		<div class="space-y-2 text-sm md:text-base">
 			<div class="text-tertiary-200">
 				<span class="text-tertiary-base">></span> Initiating contact protocols...
 			</div>
@@ -151,7 +151,7 @@ import { TerminalCommand, TerminalSection, ContactCard, SocialLinkCard, ContentB
 	<TerminalSection command="./conclusion.sh --call-to-action" path="~/contact" className="mb-12">
 		<ContentBox borderColor="tertiary" className="p-4 md:p-8 text-center">
 			<div class="mb-6">
-				<h2 class="text-xl font-bold text-tertiary-base mb-4 font-mono">
+				<h2 class="text-lg md:text-xl font-bold text-tertiary-base mb-4 font-mono">
 					$ echo "So, What Are You Waiting For?"
 				</h2>
 				<div class="max-w-2xl mx-auto text-text-300 text-sm leading-relaxed font-mono">

@@ -10,7 +10,7 @@ const TerminalSpotlight = () => {
   const [selectedSuggestion, setSelectedSuggestion] = useState(0);
   const [output, setOutput] = useState<any>([]);
   const [showOutput, setShowOutput] = useState(false);
-  const [vimMode, setVimMode] = useState(false);
+  const [vimMode] = useState(false);
   const [cursorPosition, setCursorPosition] = useState(0);
   const inputRef = useRef(null);
   const outputRef = useRef(null);
@@ -27,7 +27,6 @@ const TerminalSpotlight = () => {
         setSuggestions([]);
         setSelectedSuggestion(0);
         setShowOutput(false);
-        setVimMode(false);
       }
     };
 
@@ -127,7 +126,7 @@ const TerminalSpotlight = () => {
       case 'showWhoami':
         addOutput([
           'Atishaya Maharjan',
-          'mathematician | computer_scientist | problem_solver',
+          'mathematician | computer_scientist | statistician',
           'location: University of Manitoba',
           '',
           'Skills: Mathematics, Computer Science, Web Development',

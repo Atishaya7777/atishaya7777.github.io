@@ -16,14 +16,27 @@ const navItems = [
 <header class="bg-primary-900 border-b border-primary-700 font-medium sticky top-0 z-50">
 	<div class="container mx-auto px-4 max-w-6xl">
 		<div class="flex items-center justify-between py-3">
-			<!-- Terminal prompt -->
-			<div class="flex items-center space-x-2">
+			<!-- Terminal prompt - Hidden on mobile -->
+			<div class="hidden md:flex items-center space-x-2">
 				<span class="text-secondary-400 font-mono text-sm">atish@terminal</span>
 				<span class="text-text-500 font-mono text-sm">:</span>
 			</div>
 			
-			<!-- Navigation tabs -->
-			<nav class="flex items-center space-x-1" aria-label="Main navigation">
+			<!-- Mobile menu button -->
+			<button 
+				id="mobile-menu-btn"
+				class="md:hidden text-text-400 hover:text-tertiary-base focus:outline-none focus:text-tertiary-base ml-auto"
+				aria-label="Toggle menu"
+				aria-expanded="false"
+			>
+				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path class="menu-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+					<path class="menu-close hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+				</svg>
+			</button>
+			
+			<!-- Navigation tabs - Desktop -->
+			<nav class="hidden md:flex items-center space-x-1" aria-label="Main navigation">
 				{navItems.map((item) => {
 					const isActive = currentPath === item.path;
 					return (
@@ -42,11 +55,69 @@ const navItems = [
 				})}
 			</nav>
 			
-			<!-- Session indicator (single, subtle) -->
-			<div class="flex items-center space-x-2">
+			<!-- Session indicator - Hidden on mobile -->
+			<div class="hidden md:flex items-center space-x-2">
 				<span class="w-2 h-2 bg-green-500 rounded-full"></span>
-				<span class="text-text-500 font-mono text-xs hidden sm:inline">online</span>
+				<span class="text-text-500 font-mono text-xs">online</span>
 			</div>
 		</div>
+		
+		<!-- Mobile navigation menu -->
+		<nav id="mobile-menu" class="hidden md:hidden border-t border-primary-700 py-2" aria-label="Mobile navigation">
+			{navItems.map((item) => {
+				const isActive = currentPath === item.path;
+				return (
+					<a 
+						href={item.path}
+						title={item.title}
+						class={`block px-3 py-2 font-mono text-sm border-l-2 transition-colors ${
+							isActive 
+								? 'text-tertiary-base border-tertiary-base bg-primary-800' 
+								: 'text-text-400 border-transparent hover:border-tertiary-base hover:bg-primary-800'
+						}`}
+					>
+						[{item.label}]
+					</a>
+				);
+			})}
+		</nav>
 	</div>
 </header>
+
+<script>
+	// Mobile menu toggle functionality
+	const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+	const mobileMenu = document.getElementById('mobile-menu');
+	const menuOpenIcon = mobileMenuBtn?.querySelector('.menu-open');
+	const menuCloseIcon = mobileMenuBtn?.querySelector('.menu-close');
+
+	mobileMenuBtn?.addEventListener('click', () => {
+		const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+		
+		mobileMenuBtn.setAttribute('aria-expanded', (!isExpanded).toString());
+		mobileMenu?.classList.toggle('hidden');
+		menuOpenIcon?.classList.toggle('hidden');
+		menuCloseIcon?.classList.toggle('hidden');
+	});
+
+	// Close mobile menu when clicking outside
+	document.addEventListener('click', (event) => {
+		const target = event.target as HTMLElement;
+		if (!mobileMenuBtn?.contains(target) && !mobileMenu?.contains(target)) {
+			mobileMenu?.classList.add('hidden');
+			mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+			menuOpenIcon?.classList.remove('hidden');
+			menuCloseIcon?.classList.add('hidden');
+		}
+	});
+
+	// Close mobile menu on resize to desktop
+	window.addEventListener('resize', () => {
+		if (window.innerWidth >= 768) {
+			mobileMenu?.classList.add('hidden');
+			mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+			menuOpenIcon?.classList.remove('hidden');
+			menuCloseIcon?.classList.add('hidden');
+		}
+	});
+</script>

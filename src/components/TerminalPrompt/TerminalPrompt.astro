@@ -8,7 +8,7 @@ interface Props {
 const { command, showCursor = false, className = "" } = Astro.props;
 ---
 
-<div class={`text-tertiary-base mb-2 ${className}`}>
+<div class={`text-tertiary-base mb-2 text-xs md:text-sm font-mono ${className}`}>
 	<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~</span>$ {command}
 	{showCursor && <span class="animate-pulse ml-1">█</span>}
 </div>
