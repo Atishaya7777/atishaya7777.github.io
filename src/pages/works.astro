@@ -20,35 +20,40 @@ const companiesData = [
 		title: "Life's Good - US",
 		desc: "Life's Good with electronics by your side!",
 		url: "https://lg.com/us",
-		status: "active" as const
-	},
-	{
-		img: { src: trackflyLogoUrl, alt: "Trackfly logo." },
-		title: "Trackfly",
-		desc: 'Better market intelligence to independent retailers and their suppliers.',
-		url: "https://www.trackfly.com/",
-		status: "completed" as const
+		status: "active" as const,
+		date: "04/2024 -- Present"
 	},
 	{
 		img: { src: timeeroLogoUrl, alt: "Timeero logo." },
 		title: "Timeero",
 		desc: 'A time tracking and GPS company that provides precise and segmented time breakdowns for all employees.',
 		url: "https://timeero.com",
-		status: "completed" as const
+		status: "completed" as const,
+		date: "11/2022 -- 04/2024"
+	},
+	{
+		img: { src: trackflyLogoUrl, alt: "Trackfly logo." },
+		title: "Trackfly",
+		desc: 'Better market intelligence to independent retailers and their suppliers.',
+		url: "https://www.trackfly.com/",
+		status: "completed" as const,
+		date: "09/2023 -- 01/2024"
 	},
 	{
 		img: { src: versuredLogoUrl, alt: "Versured logo." },
 		title: "Versured",
 		desc: 'An insurance portal that combines all possible insurance combinations to match your perfect needs.',
 		url: "https://www.linkedin.com/company/versured",
-		status: "completed" as const
+		status: "completed" as const,
+		date: "11/2021 -- 10/2022"
 	},
 	{
 		img: { src: ekNepalLogoUrl, alt: "Ek Nepal logo." },
 		title: "Ek Nepal",
 		desc: 'A truthful news aggregator. From Nepal, for Nepal.',
 		url: "https://www.eknepal.com/",
-		status: "completed" as const
+		status: "completed" as const,
+		date: "08/2021 -- 10/2022"
 	},
 ];
 
@@ -104,7 +109,6 @@ const skillCategories = [
 ---
 
 <Layout title="Works | Atishaya Maharjan">
-	<!-- Page header -->
 	<div class="mb-12">
 		<div class="text-text-400 font-mono text-xs md:text-sm mb-4">
 			<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/works</span>$ ls
@@ -118,7 +122,6 @@ const skillCategories = [
 		</p>
 	</div>
 
-	<!-- Professional Projects -->
 	<section class="mb-16">
 		<h2 class="text-xl md:text-2xl font-bold text-tertiary-25 mb-6 font-mono">
 			Professional Work
@@ -137,13 +140,13 @@ const skillCategories = [
 						imgSrc={imgSrc}
 						imgAlt={imgAlt}
 						type="professional"
+						date={company.date}
 					/>
 				);
 			})}
 		</div>
 	</section>
 
-	<!-- Research Work -->
 	<section class="mb-16">
 		<h2 class="text-xl md:text-2xl font-bold text-tertiary-25 mb-6 font-mono">
 			Research Work
@@ -198,7 +201,6 @@ const skillCategories = [
 		</div>
 	</section>
 
-	<!-- Skills & Technologies -->
 	<section class="mb-16">
 		<h2 class="text-xl md:text-2xl font-bold text-tertiary-25 mb-6 font-mono">
 			Skills & Technologies
