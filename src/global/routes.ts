@@ -4,6 +4,7 @@ const routes = {
 	works: '/works',
 	blog: '/blog',
 	contact: '/contact'
+
 };
 
 export default routes;
