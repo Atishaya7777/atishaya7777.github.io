@@ -1,114 +1,59 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { TerminalSection, PresentationCard, ContentBox } from '../components';
-import GitFundamentalsPDF from '../../public/assets/git_fundamentals.pdf'
-import BinaryTreeHKPropertyPDF from '../../public/assets/perfect_binary_trees_hk_property.pdf'
-import SpectralGraphTheoryMazePDF from '../../public/assets/spectral_graph_theory_for_maze_solving.pdf'
 
-const presentations = [
-	{
-		presentationName: 'Spectral Graph Theory For Maze Solving',
-		presentationLink: SpectralGraphTheoryMazePDF,
-		conferenceName: 'GADA Lab Research Meetings',
-		conferenceLocation: 'EITC E2, University of Manitoba',
-		presentationDate: 'Jul 28 2025',
-		fileSize: '1.7M',
-		tags: ['spectral_graph_theory', 'linear_algebra', 'linear_programming', 'path_finding', 'mathematics', 'research']
-	},
-	{
-		presentationName: 'Git Fundamentals',
-		presentationLink: GitFundamentalsPDF,
-		conferenceName: 'Coding Kickoff',
-		conferenceLocation: 'EITC E2, University of Manitoba',
-		presentationDate: 'Sep 18 2024',
-		fileSize: '179K',
-		tags: ['version_control', 'software_development', 'mathematics', 'research']
-	},
-	{
-		presentationName: 'Exploring Perfect Binary Trees With Relation To The HK-Property',
-		presentationLink: BinaryTreeHKPropertyPDF,
-		conferenceName: 'UM Combinatorics Seminar',
-		conferenceLocation: 'Machray Hall, University of Manitoba',
-		presentationDate: 'Mar 28 2024',
-		fileSize: '233K',
-		tags: ['combinatorics', 'enumeration', 'graph_theory', 'independent_sets', 'mathematics', 'research']
-	},
-]
+const posts = await Astro.glob('./posts/*.md');
+const publishedPosts = posts.filter((p) => !p.frontmatter.draft && p.frontmatter.title);
+
 ---
 
-<Layout title=":~$ cat ~/thoughts/*">
-	<TerminalSection command="ls -la thoughts/" path="~/blog" className="mb-8">
-		<div class="space-y-2">
-			<div class="text-text-400 text-xs font-mono">
-				total 64
-			</div>
-			<div class="text-text-400 text-xs font-mono">
-				drwxr-xr-x  9 atish staff   288 Jul 27 12:00 .
-			</div>
-			<div class="text-text-400 text-xs font-mono">
-				drwxr-xr-x 15 atish staff   480 Jul 27 11:30 ..
-			</div>
-			<div class="text-text-400 text-xs font-mono">
-				-rw-r--r--  1 atish staff  2048 Jul 27 12:00 README.md
-			</div>
-			<div class="text-tertiary-base text-xs font-mono">
-				drwxr-xr-x  5 atish staff   160 Jul 28 14:20 presentations/
-			</div>
-			<div class="text-text-500 text-xs font-mono">
-				-rw-r--r--  1 atish staff     0 Jul 27 12:01 .coming_soon
-			</div>
-		</div>
-	</TerminalSection>
+<Layout title="Blog — Atishaya Maharjan" description="Writing on mathematics, algorithms, and software engineering.">
+	<div class="max-w-5xl mx-auto px-6 py-16">
 
-	<TerminalSection command="cat README.md" path="~/blog" className="mb-8">
-		<div class="max-w-4xl">
-			<div class="text-sm md:text-base border-l-2 border-tertiary-base pl-4 text-text-300 leading-relaxed">
-				# Blog & Insights
-				<br /><br />
-				Eventually, this will be where I share thoughts on math, code, and those "aha!" 
-				moments that happen during research. For now, it's a work in progress – but I'm 
-				actively working on putting together some thoughtful posts about the stuff I'm 
-				actually working on.
-				<br /><br />
-				You'll also find presentation slides from talks I've given over the years.
-				<br /><br />
-				Check the directories below for upcoming content areas:
-			</div>
+		<!-- Page header -->
+		<div class="mb-16">
+			<h1 class="font-cormorant text-5xl text-primary-900 dark:text-background-100 mb-4">Blog</h1>
+			<p class="text-base text-primary-600 dark:text-background-400 font-body max-w-xl leading-relaxed">
+				Writing on mathematics, algorithms, and software engineering. Occasional deep dives, research notes, and things worth documenting.
+			</p>
 		</div>
-	</TerminalSection>
 
-	<TerminalSection command="ls -la presentations/" path="~/blog" className="mb-12">
-		<ContentBox borderColor="tertiary" className="p-6">
-			<div class="text-text-400 mb-4">
-				<span class="text-tertiary-base">></span> Conference talks and presentations:
-			</div>
-			<div class="space-y-4">
-				{presentations.map((presentation) => (
-					<PresentationCard
-						presentationName={presentation.presentationName}
-						presentationLink={presentation.presentationLink}
-						conferenceName={presentation.conferenceName}
-						conferenceLocation={presentation.conferenceLocation}
-						presentationDate={presentation.presentationDate}
-						fileSize={presentation.fileSize}
-						tags={presentation.tags}
-					/>
+		<hr class="border-primary-100 dark:border-primary-300 mb-16" />
+
+		{publishedPosts.length > 0 ? (
+			<div class="space-y-12">
+				{publishedPosts.map((post) => (
+					<article>
+						<div class="grid md:grid-cols-[160px_1fr] gap-6">
+							<div class="text-xs tracking-wide text-primary-400 dark:text-background-600 font-body pt-1">
+								{new Date(post.frontmatter.date).toLocaleDateString('en-CA', { year: 'numeric', month: 'short', day: 'numeric' })}
+							</div>
+							<div>
+								<h2 class="font-cormorant text-2xl text-primary-900 dark:text-background-100 mb-2">
+									<a href={post.url} class="hover:text-tertiary-600 dark:hover:text-tertiary-400 transition-colors">
+										{post.frontmatter.title}
+									</a>
+								</h2>
+								{post.frontmatter.description && (
+									<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed mb-3">
+										{post.frontmatter.description}
+									</p>
+								)}
+								<a href={post.url} class="text-xs text-tertiary-600 dark:text-tertiary-400 hover:text-tertiary-800 dark:hover:text-tertiary-300 transition-colors font-body">
+									Read more →
+								</a>
+							</div>
+						</div>
+					</article>
 				))}
 			</div>
-		</ContentBox>
-	</TerminalSection>
-
-	<!-- Coming Soon Message -->
-	<section class="mb-12">
-		<div class="bg-primary-850 border border-yellow-600 p-8 text-center">
-			<h2 class="text-lg md:text-xl font-bold text-tertiary-base mb-4 font-mono">
-				Coming Soon
-			</h2>
-			<div class="text-text-300 leading-relaxed max-w-2xl mx-auto">
-				Currently writing thoughtful posts about mathematical research, coding discoveries, 
-				and those moments when theory suddenly clicks with practice. Building quality content 
-				takes time, but it's worth the wait.
+		) : (
+			<div class="py-24 text-center">
+				<p class="font-cormorant text-2xl text-primary-400 dark:text-background-600 italic mb-4">Nothing here yet.</p>
+				<p class="text-sm text-primary-400 dark:text-background-600 font-body max-w-md mx-auto leading-relaxed">
+					Writing is coming soon — notes on mathematical research, algorithmic ideas, and occasionally, software. Check back later.
+				</p>
 			</div>
-		</div>
-	</section>
+		)}
+
+	</div>
 </Layout>

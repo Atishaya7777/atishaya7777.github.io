@@ -1,123 +1,138 @@
 ---
 import routes from '../../global/routes';
+import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 
-// Normalize pathname by removing trailing slash (except for root)
 const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/$/, '');
 
 const navItems = [
-	{ label: '~', path: routes.home, title: 'home' },
-	{ label: 'about', path: routes.about, title: 'about me' },
-	{ label: 'works', path: routes.works, title: 'projects & research' },
-	{ label: 'blog', path: routes.blog, title: 'thoughts & writing' },
-	{ label: 'contact', path: routes.contact, title: 'get in touch' }
+	{ label: 'Works', path: routes.works },
+	{ label: 'Research', path: routes.research },
+	{ label: 'Blog', path: routes.blog },
+	{ label: 'Contact', path: routes.contact },
 ];
 ---
 
-<header class="bg-primary-900 border-b border-primary-700 font-medium sticky top-0 z-50">
-	<div class="container mx-auto px-4 max-w-6xl">
-		<div class="flex items-center justify-between py-3">
-			<!-- Terminal prompt - Hidden on mobile -->
-			<div class="hidden md:flex items-center space-x-2">
-				<span class="text-secondary-400 font-mono text-sm">atish@terminal</span>
-				<span class="text-text-500 font-mono text-sm">:</span>
-			</div>
-			
-			<!-- Mobile menu button -->
-			<button 
-				id="mobile-menu-btn"
-				class="md:hidden text-text-400 hover:text-tertiary-base focus:outline-none focus:text-tertiary-base ml-auto"
-				aria-label="Toggle menu"
-				aria-expanded="false"
-			>
-				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path class="menu-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-					<path class="menu-close hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-				</svg>
-			</button>
-			
-			<!-- Navigation tabs - Desktop -->
-			<nav class="hidden md:flex items-center space-x-1" aria-label="Main navigation">
-				{navItems.map((item) => {
-					const isActive = currentPath === item.path;
-					return (
-						<a 
-							href={item.path}
-							title={item.title}
-							class={`px-3 py-1 font-mono text-sm border-b-2 transition-colors ${
-								isActive 
-									? 'text-tertiary-base border-tertiary-base' 
-									: 'text-text-400 border-transparent hover:border-tertiary-base'
-							}`}
-						>
-							[{item.label}]
-						</a>
-					);
-				})}
-			</nav>
-			
-			<!-- Session indicator - Hidden on mobile -->
-			<div class="hidden md:flex items-center space-x-2">
-				<span class="w-2 h-2 bg-green-500 rounded-full"></span>
-				<span class="text-text-500 font-mono text-xs">online</span>
-			</div>
-		</div>
-		
-		<!-- Mobile navigation menu -->
-		<nav id="mobile-menu" class="hidden md:hidden border-t border-primary-700 py-2" aria-label="Mobile navigation">
+<header class="sticky top-0 z-50 bg-background-base/90 dark:bg-primary-950/90 backdrop-blur-sm border-b border-primary-100 dark:border-primary-300 transition-colors duration-300">
+	<div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+		<!-- Name / Logo -->
+		<a
+			href={routes.home}
+			class="font-yesteryear text-2xl text-primary-800 dark:text-background-200 hover:text-tertiary-600 dark:hover:text-tertiary-400 transition-colors"
+		>
+			Atishaya Maharjan
+		</a>
+
+		<!-- Desktop nav -->
+		<nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
 			{navItems.map((item) => {
-				const isActive = currentPath === item.path;
+				const isActive = currentPath === item.path || (item.path !== '/' && currentPath.startsWith(item.path));
 				return (
-					<a 
+<a
 						href={item.path}
-						title={item.title}
-						class={`block px-3 py-2 font-mono text-sm border-l-2 transition-colors ${
-							isActive 
-								? 'text-tertiary-base border-tertiary-base bg-primary-800' 
-								: 'text-text-400 border-transparent hover:border-tertiary-base hover:bg-primary-800'
-						}`}
+						class={`text-sm tracking-wide transition-colors duration-200 ${
+isActive
+? 'text-primary-900 dark:text-background-100 border-b border-primary-800 dark:border-background-200 pb-0.5'
+: 'text-primary-600 dark:text-background-400 hover:text-primary-900 dark:hover:text-background-100'
+}`}
 					>
-						[{item.label}]
+						{item.label}
 					</a>
 				);
 			})}
+			<a
+				href="/assets/resume.pdf"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="text-sm tracking-wide text-tertiary-600 dark:text-tertiary-400 hover:text-tertiary-800 dark:hover:text-tertiary-300 transition-colors duration-200"
+			>
+				Résumé ↗
+			</a>
+			<DarkModeToggle client:load />
 		</nav>
+
+		<!-- Mobile controls -->
+		<div class="flex items-center gap-3 md:hidden">
+			<DarkModeToggle client:load />
+			<button
+				id="mobile-menu-btn"
+				class="text-primary-700 dark:text-background-300 hover:text-primary-900 dark:hover:text-background-100 transition-colors"
+				aria-label="Toggle menu"
+				aria-expanded="false"
+			>
+				<svg class="w-5 h-5 menu-open" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+				</svg>
+				<svg class="w-5 h-5 menu-close hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+				</svg>
+			</button>
+		</div>
 	</div>
+
+	<!-- Mobile menu -->
+	<nav
+		id="mobile-menu"
+		class="hidden md:hidden border-t border-primary-100 dark:border-primary-300 bg-background-base dark:bg-primary-950"
+		aria-label="Mobile navigation"
+	>
+		<div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-4">
+			{navItems.map((item) => {
+				const isActive = currentPath === item.path || (item.path !== '/' && currentPath.startsWith(item.path));
+				return (
+<a
+						href={item.path}
+						class={`text-sm tracking-wide transition-colors ${
+isActive
+? 'text-primary-900 dark:text-background-100'
+: 'text-primary-600 dark:text-background-400 hover:text-primary-900 dark:hover:text-background-100'
+}`}
+					>
+						{item.label}
+					</a>
+				);
+			})}
+			<a
+				href="/assets/resume.pdf"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="text-sm tracking-wide text-tertiary-600 dark:text-tertiary-400 hover:text-tertiary-800 dark:hover:text-tertiary-300 transition-colors"
+			>
+				Résumé ↗
+			</a>
+		</div>
+	</nav>
 </header>
 
 <script>
-	// Mobile menu toggle functionality
-	const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-	const mobileMenu = document.getElementById('mobile-menu');
-	const menuOpenIcon = mobileMenuBtn?.querySelector('.menu-open');
-	const menuCloseIcon = mobileMenuBtn?.querySelector('.menu-close');
+	const btn = document.getElementById('mobile-menu-btn');
+	const menu = document.getElementById('mobile-menu');
+	const openIcon = btn?.querySelector('.menu-open');
+	const closeIcon = btn?.querySelector('.menu-close');
 
-	mobileMenuBtn?.addEventListener('click', () => {
-		const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
-		
-		mobileMenuBtn.setAttribute('aria-expanded', (!isExpanded).toString());
-		mobileMenu?.classList.toggle('hidden');
-		menuOpenIcon?.classList.toggle('hidden');
-		menuCloseIcon?.classList.toggle('hidden');
+	btn?.addEventListener('click', () => {
+		const expanded = btn.getAttribute('aria-expanded') === 'true';
+		btn.setAttribute('aria-expanded', String(!expanded));
+		menu?.classList.toggle('hidden');
+		openIcon?.classList.toggle('hidden');
+		closeIcon?.classList.toggle('hidden');
 	});
 
-	// Close mobile menu when clicking outside
-	document.addEventListener('click', (event) => {
-		const target = event.target as HTMLElement;
-		if (!mobileMenuBtn?.contains(target) && !mobileMenu?.contains(target)) {
-			mobileMenu?.classList.add('hidden');
-			mobileMenuBtn?.setAttribute('aria-expanded', 'false');
-			menuOpenIcon?.classList.remove('hidden');
-			menuCloseIcon?.classList.add('hidden');
+	document.addEventListener('click', (e) => {
+		const target = e.target as HTMLElement;
+		if (!btn?.contains(target) && !menu?.contains(target)) {
+			menu?.classList.add('hidden');
+			btn?.setAttribute('aria-expanded', 'false');
+			openIcon?.classList.remove('hidden');
+			closeIcon?.classList.add('hidden');
 		}
 	});
 
-	// Close mobile menu on resize to desktop
 	window.addEventListener('resize', () => {
 		if (window.innerWidth >= 768) {
-			mobileMenu?.classList.add('hidden');
-			mobileMenuBtn?.setAttribute('aria-expanded', 'false');
-			menuOpenIcon?.classList.remove('hidden');
-			menuCloseIcon?.classList.add('hidden');
+			menu?.classList.add('hidden');
+			btn?.setAttribute('aria-expanded', 'false');
+			openIcon?.classList.remove('hidden');
+			closeIcon?.classList.add('hidden');
 		}
 	});
 </script>
