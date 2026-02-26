@@ -1,218 +1,206 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { ProjectCard, SkillCategoryCard } from '../components';
-import LGLogo from '../assets/lg-logo.svg?url';
-import VersuredLogo from '../assets/versured-logo.svg?url';
-import EkNepalLogo from '../assets/eknepal-logo.svg?url';
-import TimeeroLogo from '../assets/timeero-logo.svg?url';
-import TrackflyLogo from '../assets/trackfly-logo.svg?url';
-
-// Extract image URLs as strings to avoid template parsing issues
-const lgLogoUrl = LGLogo as string;
-const trackflyLogoUrl = TrackflyLogo as string;
-const timeeroLogoUrl = TimeeroLogo as string;
-const versuredLogoUrl = VersuredLogo as string;
-const ekNepalLogoUrl = EkNepalLogo as string;
-
-const companiesData = [
-	{
-		img: { src: lgLogoUrl, alt: "Life's good logo." },
-		title: "Life's Good - US",
-		desc: "Life's Good with electronics by your side!",
-		url: "https://lg.com/us",
-		status: "active" as const,
-		date: "04/2024 -- Present"
-	},
-	{
-		img: { src: timeeroLogoUrl, alt: "Timeero logo." },
-		title: "Timeero",
-		desc: 'A time tracking and GPS company that provides precise and segmented time breakdowns for all employees.',
-		url: "https://timeero.com",
-		status: "completed" as const,
-		date: "11/2022 -- 04/2024"
-	},
-	{
-		img: { src: trackflyLogoUrl, alt: "Trackfly logo." },
-		title: "Trackfly",
-		desc: 'Better market intelligence to independent retailers and their suppliers.',
-		url: "https://www.trackfly.com/",
-		status: "completed" as const,
-		date: "09/2023 -- 01/2024"
-	},
-	{
-		img: { src: versuredLogoUrl, alt: "Versured logo." },
-		title: "Versured",
-		desc: 'An insurance portal that combines all possible insurance combinations to match your perfect needs.',
-		url: "https://www.linkedin.com/company/versured",
-		status: "completed" as const,
-		date: "11/2021 -- 10/2022"
-	},
-	{
-		img: { src: ekNepalLogoUrl, alt: "Ek Nepal logo." },
-		title: "Ek Nepal",
-		desc: 'A truthful news aggregator. From Nepal, for Nepal.',
-		url: "https://www.eknepal.com/",
-		status: "completed" as const,
-		date: "08/2021 -- 10/2022"
-	},
-];
-
-const researchProjects = [
-	{
-		title: "Mathematics Research",
-		lab: "Math Department",
-		supervisor: "Dr. Mahsa Nasrollahi-Shirazi & Dr. Andrii",
-		description: "Working on k-nary trees and the HK-property. Connected to the Erdős–Ko–Rado theorem but applied to perfect binary trees.",
-		technologies: ["Perfect k-nary Trees", "HK-property Analysis", "SageMath Visualizations"],
-		status: "active" as const
-	},
-	{
-		title: "GADA Lab Research",
-		lab: "GADA Lab",
-		supervisor: "Dr. Stephane Durocher",
-		description: "Working on approximation algorithms for spatially embedded graphs, tackling complex networks in manageable ways.",
-		technologies: ["Approximation Algorithms", "Spatially Embedded Graphs", "Metric Optimization"],
-		status: "active" as const
-	},
-	{
-		title: "Computer Vision Lab",
-		lab: "CV Lab",
-		supervisor: "Dr. Christopher Henry",
-		description: "Collaborating on computer vision research, exploring innovative approaches to visual data analysis and machine learning.",
-		technologies: ["PyTorch and PyTorch Geometric", "Machine Learning", "Visual Data Analysis"],
-		status: "active" as const
-	}
-];
-
-const skillCategories = [
-	{
-		category: "Languages & Databases",
-		icon: "",
-		skills: ["JavaScript, Java, Python", "C/C++, R, SageMath", "PostgreSQL, MSSQL", "SQLite, MongoDB"]
-	},
-	{
-		category: "Frameworks",
-		icon: "",
-		skills: ["ReactJS", "NextJS", "AstroJS", "FastAPI"]
-	},
-	{
-		category: "Developer Tools",
-		icon: "",
-		skills: ["Git, Neovim", "Tmux, Docker", "VS Code", "IntelliJ"]
-	},
-	{
-		category: "UI Tools",
-		icon: "",
-		skills: ["Figma", "Adobe XD", "Adobe Illustrator"]
-	}
-];
 ---
 
-<Layout title="Works | Atishaya Maharjan">
-	<div class="mb-12">
-		<div class="text-text-400 font-mono text-xs md:text-sm mb-4">
-			<span class="text-secondary-400">atish@terminal</span>:<span class="text-tertiary-base">~/works</span>$ ls
-		</div>
-		<h1 class="text-3xl md:text-4xl font-bold text-tertiary-base mb-4 font-mono">
-			Works & Research
-		</h1>
-		<p class="text-text-300 leading-relaxed max-w-3xl">
-			Here's a collection of things I've been working on – from research projects 
-			that keep me up at night thinking, to professional work that actually pays the bills.
-		</p>
-	</div>
+<Layout title="Works — Atishaya Maharjan" description="Professional experience, research projects, and technical work by Atishaya Maharjan.">
+	<div class="max-w-5xl mx-auto px-6 py-16">
 
-	<section class="mb-16">
-		<h2 class="text-xl md:text-2xl font-bold text-tertiary-25 mb-6 font-mono">
-			Professional Work
-		</h2>
-		
-		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-			{companiesData.map((company) => {
-				const imgSrc = company.img.src;
-				const imgAlt = company.img.alt;
-				return (
-					<ProjectCard
-						title={company.title}
-						description={company.desc}
-						status={company.status}
-						url={company.url}
-						imgSrc={imgSrc}
-						imgAlt={imgAlt}
-						type="professional"
-						date={company.date}
-					/>
-				);
-			})}
+		<!-- Page header -->
+		<div class="mb-16">
+			<h1 class="font-cormorant text-5xl text-primary-900 dark:text-background-100 mb-4">Works</h1>
+			<p class="text-base text-primary-600 dark:text-background-400 font-body max-w-xl leading-relaxed">
+				Professional experience, research contributions, personal projects, and technical skills.
+			</p>
 		</div>
-	</section>
 
-	<section class="mb-16">
-		<h2 class="text-xl md:text-2xl font-bold text-tertiary-25 mb-6 font-mono">
-			Research Work
-		</h2>
-		
-		<div class="bg-primary-850 border border-secondary-600 p-6 mb-8">
-			<div class="space-y-4 text-text-300">
-				<p>I'm lucky enough to be doing research in three different labs.</p>
-				<p>
-					With the mathematics department, I'm diving deep into k-nary trees and something called the HK-property 
-					with Dr. Mahsa Nasrollahi-Shirazi and Dr. Andrii Arman. It's related to the famous 
-					<a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Ko%E2%80%93Rado_theorem" target="_blank" 
-						class="text-secondary-400 hover:text-secondary-300 underline">
-						Erdős–Ko–Rado theorem
-					</a> but restricted to 
-					<a href="https://xlinux.nist.gov/dads/HTML/perfectBinaryTree.html" target="_blank" 
-						class="text-secondary-400 hover:text-secondary-300 underline">
-						perfect binary trees
-					</a>.
-				</p>
-				<p>
-					On the theoretical algorithms side, I'm working with the 
-					<a href="https://home.cs.umanitoba.ca/~gada/" target="_blank" 
-						class="text-tertiary-base hover:text-tertiary-400 underline font-bold">
-						GADA lab
-					</a> under Dr. Stephane Durocher. We're working on approximation algorithms 
-					for spatially embedded graphs, which is a fancy way of saying we're trying to make 
-					sense of complex networks in a more manageable way.
-				</p>
-				<p>
-					And finally, I'm also doing some research in the 
-					<a href="https://terrabyte.acs.uwinnipeg.ca/" target="_blank" 
-						class="text-tertiary-base hover:text-tertiary-400 underline font-bold">
-						Computer Vision Lab
-					</a> with Dr. Christopher Henry.
-				</p>
+		<hr class="border-primary-100 dark:border-primary-300 mb-16" />
+
+		<!-- ── Professional Experience ── -->
+		<section class="mb-20">
+			<h2 class="font-cormorant text-3xl text-primary-800 dark:text-background-200 mb-10">Professional Experience</h2>
+			<div class="space-y-10">
+
+				<div class="grid md:grid-cols-[160px_1fr] gap-6">
+					<div class="text-xs tracking-wide text-primary-400 dark:text-background-600 font-body pt-1">Mar 2024 – Present</div>
+					<div>
+						<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100 mb-0.5">Senior Software Engineer</h3>
+						<p class="text-sm text-tertiary-600 dark:text-tertiary-400 font-body mb-3">LG Electronics · Englewood Cliffs, USA (Remote)</p>
+						<ul class="space-y-1.5 text-sm text-primary-600 dark:text-background-500 font-body list-none">
+							<li class="flex gap-2"><span class="text-tertiary-400 shrink-0">–</span>Maintained and built new features for B2B microservices serving 1,000+ vendors using Next.js, Redux, and TypeScript, driving a 25% increase in user engagement.</li>
+							<li class="flex gap-2"><span class="text-tertiary-400 shrink-0">–</span>Implemented analytics and custom tagging frameworks to capture detailed performance metrics, enabling data-driven decisions across 6+ product teams.</li>
+							<li class="flex gap-2"><span class="text-tertiary-400 shrink-0">–</span>Developed an AI search engine for the global GNB header, improving search efficiency by 40% and reducing latency by 35ms on average.</li>
+							<li class="flex gap-2"><span class="text-tertiary-400 shrink-0">–</span>Engineered promo code functionality with magic link integration, increasing conversion rates by 15%.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="w-full h-px bg-primary-100 dark:bg-primary-600"></div>
+
+				<div class="grid md:grid-cols-[160px_1fr] gap-6">
+					<div class="text-xs tracking-wide text-primary-400 dark:text-background-600 font-body pt-1">Jun 2025 – Jan 2026</div>
+					<div>
+						<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100 mb-0.5">Senior Software Engineer</h3>
+						<p class="text-sm text-tertiary-600 dark:text-tertiary-400 font-body mb-3">Hoek Insights · Amsterdam, Netherlands (Remote)</p>
+						<ul class="space-y-1.5 text-sm text-primary-600 dark:text-background-500 font-body list-none">
+							<li class="flex gap-2"><span class="text-tertiary-400 shrink-0">–</span>Built a Python package to embed interactive Three.js visualisations in Jupyter Notebooks via React renderers, cutting render time by 38% and reducing bundle size by 25%.</li>
+							<li class="flex gap-2"><span class="text-tertiary-400 shrink-0">–</span>Designed an MVP marketing platform using FastAPI and PostgreSQL with 18+ endpoints, 10 workflows, and 95% integration-test coverage; achieved &lt;200ms median API latency in staging.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="w-full h-px bg-primary-100 dark:bg-primary-600"></div>
+
+				<div class="grid md:grid-cols-[160px_1fr] gap-6">
+					<div class="text-xs tracking-wide text-primary-400 dark:text-background-600 font-body pt-1">Aug 2019 – Apr 2024</div>
+					<div>
+						<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100 mb-0.5">Software Engineer</h3>
+						<p class="text-sm text-tertiary-600 dark:text-tertiary-400 font-body mb-3">Timeero · Phoenix, USA (Remote)</p>
+						<ul class="space-y-1.5 text-sm text-primary-600 dark:text-background-500 font-body list-none">
+							<li class="flex gap-2"><span class="text-tertiary-400 shrink-0">–</span>Led frontend development of mileage-tracking application using TypeScript, React.js, Vite, and Mapbox, serving 1,000+ active users.</li>
+							<li class="flex gap-2"><span class="text-tertiary-400 shrink-0">–</span>Implemented 15+ geo-spatial features for segment mapping, improving time-capture accuracy by 30%.</li>
+						</ul>
+					</div>
+				</div>
+
 			</div>
-		</div>
-		
-		<div class="grid md:grid-cols-1 gap-4">
-			{researchProjects.map((project) => (
-				<ProjectCard
-					title={project.title}
-					description={project.description}
-					status={project.status}
-					lab={project.lab}
-					supervisor={project.supervisor}
-					technologies={project.technologies}
-					type="research"
-				/>
-			))}
-		</div>
-	</section>
+		</section>
 
-	<section class="mb-16">
-		<h2 class="text-xl md:text-2xl font-bold text-tertiary-25 mb-6 font-mono">
-			Skills & Technologies
-		</h2>
-		
-		<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-			{skillCategories.map((category) => (
-				<SkillCategoryCard
-					category={category.category}
-					skills={category.skills}
-				/>
-			))}
-		</div>
-	</section>
+		<hr class="border-primary-100 dark:border-primary-300 mb-16" />
+
+		<!-- ── Research ── -->
+		<section class="mb-20">
+			<h2 class="font-cormorant text-3xl text-primary-800 dark:text-background-200 mb-10">Research</h2>
+			<div class="space-y-10">
+
+				<div class="grid md:grid-cols-[160px_1fr] gap-6">
+					<div class="text-xs tracking-wide text-primary-400 dark:text-background-600 font-body pt-1">Mar 2024 – Present</div>
+					<div>
+						<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100 mb-0.5">Researcher — Algorithms &amp; Graph Theory</h3>
+						<p class="text-sm text-tertiary-600 dark:text-tertiary-400 font-body mb-3">GADA Lab · University of Manitoba · Supervisor: Dr. Stephane Durocher</p>
+						<ul class="space-y-1.5 text-sm text-primary-600 dark:text-background-500 font-body list-none">
+							<li class="flex gap-2"><span class="text-tertiary-400 shrink-0">–</span>Delivered talks at weekly GADA lab meetings on wiggly permutations (CCCG 2025) and space-efficient Eulerian circuits (SOSA 2026).</li>
+							<li class="flex gap-2"><span class="text-tertiary-400 shrink-0">–</span>Developed a fast approximation algorithm for Hamiltonian path optimisation in spatially embedded graphs; built visualisation and randomised test-generation tooling across 100+ synthetic instances.</li>
+							<li class="flex gap-2"><span class="text-tertiary-400 shrink-0">–</span>Contributed to noncrossing spanning trees library, improving performance by 30% and establishing Python best practices.</li>
+							<li class="flex gap-2"><span class="text-tertiary-400 shrink-0">–</span>Engineered hypergraph visualisation tool for ML research.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="w-full h-px bg-primary-100 dark:bg-primary-600"></div>
+
+				<div class="grid md:grid-cols-[160px_1fr] gap-6">
+					<div class="text-xs tracking-wide text-primary-400 dark:text-background-600 font-body pt-1">May 2025 – Present</div>
+					<div>
+						<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100 mb-0.5">Machine Learning Researcher</h3>
+						<p class="text-sm text-tertiary-600 dark:text-tertiary-400 font-body mb-3">Terrabyte ML Research Group · University of Manitoba</p>
+						<ul class="space-y-1.5 text-sm text-primary-600 dark:text-background-500 font-body list-none">
+							<li class="flex gap-2"><span class="text-tertiary-400 shrink-0">–</span>Extended Graph Neural Diffusion architecture to Hypergraph Neural Diffusion networks using PyTorch and PyTorch Geometric, prototyping 4 model variants.</li>
+							<li class="flex gap-2"><span class="text-tertiary-400 shrink-0">–</span>Implemented MLFlow metrics and tracked 25+ experiments across 5+ datasets for reproducibility.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="w-full h-px bg-primary-100 dark:bg-primary-600"></div>
+
+				<div class="grid md:grid-cols-[160px_1fr] gap-6">
+					<div class="text-xs tracking-wide text-primary-400 dark:text-background-600 font-body pt-1">Jan 2024 – Jul 2025</div>
+					<div>
+						<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100 mb-0.5">Researcher — Combinatorics &amp; Graph Theory</h3>
+						<p class="text-sm text-tertiary-600 dark:text-tertiary-400 font-body mb-3">Department of Mathematics · University of Manitoba · Supervisors: Dr. Mahsa Nasrollahi-Shirazi &amp; Dr. Andrii Arman</p>
+						<ul class="space-y-1.5 text-sm text-primary-600 dark:text-background-500 font-body list-none">
+							<li class="flex gap-2"><span class="text-tertiary-400 shrink-0">–</span>Proved a closed-form solution for the independence number of perfect binary trees and verified Hurlbert–Kamat's Conjecture using generating functions and computational analysis across 1,000+ cases.</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<hr class="border-primary-100 dark:border-primary-300 mb-16" />
+
+		<!-- ── Projects ── -->
+		<section class="mb-20">
+			<h2 class="font-cormorant text-3xl text-primary-800 dark:text-background-200 mb-10">Projects &amp; Achievements</h2>
+			<div class="space-y-8">
+
+				<div>
+					<div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+						<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100">Brainstorm W</h3>
+						<span class="text-xs text-primary-400 dark:text-background-600 font-body">2026</span>
+					</div>
+					<p class="text-xs tracking-wide text-primary-400 dark:text-background-600 uppercase font-body mb-2">Next.js · FastAPI · PostgreSQL · Pinecone · Redis · RAG</p>
+					<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">AI-powered, role-specific knowledge management system (144 commits, 4 collaborators). Integrated Pinecone, Jira, Redis, and PostgreSQL with interactive charts. Implemented retrieval-augmented generation with role-based access controls across 4 integrated systems. Built a model-routing layer with dynamic model selection and fallback policies. Demoed to 7 users at Sprint to Innovate 2026; pitched for the CIPS Manitoba Challenge.</p>
+				</div>
+
+				<div class="w-full h-px bg-primary-100 dark:bg-primary-600"></div>
+
+				<div>
+					<div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+						<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100">Spatially Embedded Graphs</h3>
+						<span class="text-xs text-primary-400 dark:text-background-600 font-body">2024–Present</span>
+					</div>
+					<p class="text-xs tracking-wide text-primary-400 dark:text-background-600 uppercase font-body mb-2">Python · Algorithms · Visualisation</p>
+					<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">Modelled Hamiltonian paths in &#8477;&#178; with research presented at GADA lab meetings. Generated 200+ randomised instances, built visualisation pipelines, and validated approximation behaviour on 200+ inputs.</p>
+				</div>
+
+				<div class="w-full h-px bg-primary-100 dark:bg-primary-600"></div>
+
+				<div>
+					<div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+						<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100">Hurlbert–Kamat Property in Perfect m-ary Trees</h3>
+						<span class="text-xs text-primary-400 dark:text-background-600 font-body">2024</span>
+					</div>
+					<p class="text-xs tracking-wide text-primary-400 dark:text-background-600 uppercase font-body mb-2">SageMath · Combinatorics</p>
+					<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">Investigated the HK-property in perfect m-ary trees using SageMath and combinatorial analysis. Implemented computational checks across 1,000+ cases to support conjecture validation.</p>
+				</div>
+
+				<div class="w-full h-px bg-primary-100 dark:bg-primary-600"></div>
+
+				<div>
+					<div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+						<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100">.devHacks — "Most Chaotic Evil Hack"</h3>
+						<span class="text-xs text-primary-400 dark:text-background-600 font-body">2025</span>
+					</div>
+					<p class="text-xs tracking-wide text-primary-400 dark:text-background-600 uppercase font-body mb-2">React.js · FastAPI · BERT · Supabase · TailwindCSS</p>
+					<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">Winner of 'Most Chaotic Evil Hack' among 20+ teams. Built a chatroom using websockets with a BERT + PyTorch text classification model that categorises messages (e.g. 'brainrot', 'nerdy', 'dad joke') and rewards users with in-game currency. Built the FastAPI backend with Supabase for persistent storage and message reactions.</p>
+				</div>
+
+				<div class="w-full h-px bg-primary-100 dark:bg-primary-600"></div>
+
+				<div>
+					<div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+						<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100">CSSA CTF — 1st &amp; 2nd Place</h3>
+						<span class="text-xs text-primary-400 dark:text-background-600 font-body">2025–2026</span>
+					</div>
+					<p class="text-xs tracking-wide text-primary-400 dark:text-background-600 uppercase font-body mb-2">C · Python · Cryptography · Ghidra</p>
+					<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">1st place among 41 teams (2026) and 2nd place among 25+ teams (2025) at the annual CSSA Capture the Flag competition. Achieved 3rd place for Computational Sciences in the Summer Undergraduate Research Experience poster competition among 50+ student researchers.</p>
+				</div>
+
+			</div>
+		</section>
+
+		<hr class="border-primary-100 dark:border-primary-300 mb-16" />
+
+		<!-- ── Skills ── -->
+		<section class="mb-8">
+			<h2 class="font-cormorant text-3xl text-primary-800 dark:text-background-200 mb-10">Technical Skills</h2>
+			<div class="space-y-6">
+				{[
+					{ label: 'Languages', value: 'JavaScript, TypeScript, Python, Java, C, C++, R, SageMath, BASH, SQL' },
+					{ label: 'Databases', value: 'PostgreSQL, MongoDB, SQLite, MSSQL, Pinecone (Vector DB), Redis' },
+					{ label: 'Web Frameworks', value: 'Next.js, React.js, FastAPI, Node.js, Astro' },
+					{ label: 'ML / Data', value: 'PyTorch, PyTorch Geometric, NumPy, SciPy, Scikit-learn, MLFlow, Pandas' },
+					{ label: 'Cloud & DevOps', value: 'AWS, Docker, Tmux' },
+					{ label: 'Developer Tools', value: 'Git, Neovim, VS Code, IntelliJ, Figma, Jupyter' },
+					{ label: 'Specialised', value: 'AI MCPs for Application Integration, Three.js, Beamer (LaTeX)' },
+				].map(({ label, value }) => (
+					<div class="grid grid-cols-[140px_1fr] gap-4 items-baseline">
+						<span class="text-xs tracking-wide uppercase text-primary-400 dark:text-background-600 font-body">{label}</span>
+						<span class="text-sm text-primary-700 dark:text-background-400 font-body">{value}</span>
+					</div>
+				))}
+			</div>
+		</section>
+
+	</div>
 </Layout>

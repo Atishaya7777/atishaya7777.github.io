@@ -1,176 +1,79 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { TerminalSection, ContactCard, SocialLinkCard, ContentBox } from '../components';
 ---
 
-<Layout title=":~$ contact --all">
-	<TerminalSection command="./start_conversation.sh" path="~/contact" className="mb-8">
-		<div class="space-y-2 text-sm md:text-base">
-			<div class="text-tertiary-200">
-				<span class="text-tertiary-base">></span> Initiating contact protocols...
-			</div>
-			<div class="text-text-400">
-				<span class="text-tertiary-base">></span> Loading communication channels...
-			</div>
-			<div class="text-secondary-400">
-				<span class="text-tertiary-base">></span> Status: Ready to connect!
-			</div>
-		</div>
-	</TerminalSection>
+<Layout title="Contact — Atishaya Maharjan" description="Get in touch with Atishaya Maharjan.">
+	<div class="max-w-5xl mx-auto px-6 py-16">
 
-	<TerminalSection command="cat README.md" path="~/contact" className="mb-8">
-		<div class="max-w-4xl">
-			<div class="text-sm md:text-base border-l-2 border-tertiary-base pl-4 text-text-300 leading-relaxed">
-				# Let's Chat! 
-				<br /><br />
-				Whether you want to talk about math, code, research ideas, or just say hi – 
-				I'd love to hear from you. Seriously, don't be shy! I'm always excited to 
-				connect with fellow mathematicians, developers, and curious minds.
-				<br /><br />
-				Choose your preferred communication protocol below:
-			</div>
+		<!-- Page header -->
+		<div class="mb-16">
+			<h1 class="font-cormorant text-5xl text-primary-900 dark:text-background-100 mb-4">Contact</h1>
+			<p class="text-base text-primary-600 dark:text-background-400 font-body max-w-xl leading-relaxed">
+				For research collaborations, academic enquiries, or to say hello — email is the best way to reach me.
+			</p>
 		</div>
-	</TerminalSection>
 
-	<TerminalSection command="ls -la communication/" path="~/contact" className="mb-12">
-		<div class="text-text-400 mb-4">
-			<span class="text-tertiary-base">></span> Available communication channels:
-		</div>
-		
-		<div class="grid md:grid-cols-2 gap-6">
-			<ContactCard
-				title="Email"
-				description="Email is probably the best way to reach me. I try to respond pretty quickly, especially if you mention something interesting about math or programming!"
+		<hr class="border-primary-100 dark:border-primary-300 mb-16" />
+
+		<!-- Email -->
+		<section class="mb-16">
+			<h2 class="font-cormorant text-3xl text-primary-800 dark:text-background-200 mb-6">Email</h2>
+			<a
 				href="mailto:atishaya7777@gmail.com"
-				linkText="atishaya7777@gmail.com"
-				icon="@"
-				iconBg="text-secondary-400"
-			/>
-			<ContactCard
-				title="Priority Email"
-				description="For urgent matters or quick questions. This goes straight to my primary inbox with high priority notification."
-				href="mailto:atishaya7777@gmail.com?subject=Quick Connect - Urgent"
-				linkText="Send urgent message"
-				icon="!"
-				iconBg="text-tertiary-400"
-			/>
-		</div>
-	</TerminalSection>
+				class="text-xl font-cormorant text-tertiary-600 dark:text-tertiary-400 hover:text-tertiary-800 dark:hover:text-tertiary-300 transition-colors"
+			>
+				atishaya7777@gmail.com
+			</a>
+			<p class="text-sm text-primary-500 dark:text-background-500 font-body mt-3 leading-relaxed max-w-lg">
+				I try to reply within a few days. If you're reaching out about research or a collaboration, please include a brief description of what you have in mind.
+			</p>
+		</section>
 
-	<TerminalSection command='find . -name "*.social" -type f' path="~/contact" className="mb-12">
-		<div class="text-text-400 mb-4">
-			<span class="text-tertiary-base">></span> Social network endpoints discovered:
-		</div>
-		
-		<div class="grid gap-4">
-			<SocialLinkCard
-				title="./linkedin.social"
-				description="Where I pretend to be professional"
-				command='$ curl -X GET "professional_network"'
-				href="https://www.linkedin.com/in/atishaya-maharjan07"
-				protocol="HTTPS/1.1"
-				iconText="in"
-				iconBg="bg-blue-600"
-			/>
-			<SocialLinkCard
-				title="./github.social"
-				description="Where my code lives (and sometimes dies)"
-				command='$ git clone "interesting_projects"'
-				href="https://github.com/Atishaya7777"
-				protocol="Git/2.41"
-				iconText="gh"
-				iconBg="bg-gray-800"
-			/>
-		</div>
-	</TerminalSection>
+		<hr class="border-primary-100 dark:border-primary-300 mb-16" />
 
-	<TerminalSection command="cat topics_of_interest.txt" path="~/contact" className="mb-12">
-		<div class="text-text-400 mb-4">
-			<span class="text-tertiary-base">></span> Things I absolutely love talking about:
-		</div>
-		
-		<div class="grid md:grid-cols-2 gap-6">
-			<div class="space-y-4">
-				<ContentBox>
-					<h3 class="text-md font-bold text-tertiary-200 font-mono mb-2">
-						research_mathematics.md
-					</h3>
-					<p class="text-sm text-text-400 font-mono leading-relaxed mb-2">
-						Got an interesting problem? Want to collaborate on something? Or just want to 
-						geek out about graph theory? I'm all ears!
-					</p>
-					<div class="text-sm text-secondary-400 font-mono">
-						$ discuss --topic="graph_theory" --depth="infinite"
-					</div>
-				</ContentBox>
-
-				<ContentBox>
-					<h3 class="text-md font-bold text-tertiary-200 font-mono mb-2">
-						web_development.js
-					</h3>
-					<p class="text-sm text-text-400 font-mono leading-relaxed mb-2">
-						Frontend projects, cool libraries you've discovered, or that weird bug 
-						that's been driving you crazy – I love talking shop about development.
-					</p>
-					<div class="text-sm text-secondary-400 font-mono">
-						$ npm run discuss --framework="any" --bugs="welcome"
-					</div>
-				</ContentBox>
-			</div>
-
-			<div class="space-y-4">
-				<ContentBox>
-					<h3 class="text-md font-bold text-tertiary-200 font-mono mb-2">
-						academic_life.log
-					</h3>
-					<p class="text-sm text-text-400 font-mono leading-relaxed mb-2">
-						Thinking about grad programs? Want to share experiences about research or 
-						academic conferences? Let's chat about the academic journey.
-					</p>
-					<div class="text-sm text-secondary-400 font-mono">
-						$ share --experience="grad_school" --advice="freely"
-					</div>
-				</ContentBox>
-
-				<ContentBox>
-					<h3 class="text-md font-bold text-tertiary-200 font-mono mb-2">
-						teaching_learning.txt
-					</h3>
-					<p class="text-sm text-text-400 font-mono leading-relaxed mb-2">
-						Need help with something I might know? Want to share teaching experiences? 
-						I'm always down to help out or learn something new.
-					</p>
-					<div class="text-sm text-secondary-400 font-mono">
-						$ help --mutual --learning="continuous"
-					</div>
-				</ContentBox>
-			</div>
-		</div>
-	</TerminalSection>
-
-	<TerminalSection command="./conclusion.sh --call-to-action" path="~/contact" className="mb-12">
-		<ContentBox borderColor="tertiary" className="p-4 md:p-8 text-center">
-			<div class="mb-6">
-				<h2 class="text-lg md:text-xl font-bold text-tertiary-base mb-4 font-mono">
-					$ echo "So, What Are You Waiting For?"
-				</h2>
-				<div class="max-w-2xl mx-auto text-text-300 text-sm leading-relaxed font-mono">
-					Whether you have a cool project idea, want to debate the beauty of mathematical proofs, 
-					or just want to say hello – shoot me an email! I promise I don't bite (much).
+		<!-- Links -->
+		<section class="mb-16">
+			<h2 class="font-cormorant text-3xl text-primary-800 dark:text-background-200 mb-8">Elsewhere</h2>
+			<div class="space-y-6">
+				<div class="flex items-baseline gap-8">
+					<span class="text-xs uppercase tracking-widest text-primary-400 dark:text-background-600 font-body w-20 shrink-0">GitHub</span>
+					<a href="https://github.com/Atishaya7777" target="_blank" rel="noopener noreferrer" class="text-base text-primary-700 dark:text-background-300 hover:text-tertiary-600 dark:hover:text-tertiary-400 transition-colors font-body">
+						github.com/Atishaya7777 ↗
+					</a>
+				</div>
+				<div class="flex items-baseline gap-8">
+					<span class="text-xs uppercase tracking-widest text-primary-400 dark:text-background-600 font-body w-20 shrink-0">LinkedIn</span>
+					<a href="https://www.linkedin.com/in/atishaya-maharjan07" target="_blank" rel="noopener noreferrer" class="text-base text-primary-700 dark:text-background-300 hover:text-tertiary-600 dark:hover:text-tertiary-400 transition-colors font-body">
+						linkedin.com/in/atishaya-maharjan07 ↗
+					</a>
 				</div>
 			</div>
-			
-			<div class="space-y-4">
-				<a 
-					href="mailto:atishaya7777@gmail.com" 
-					class="text-sm md:text-base inline-flex items-center px-6 py-3 bg-tertiary-base text-primary-1000 font-bold font-mono hover:bg-tertiary-400 transition-all duration-300 group"
-				>
-					$ send_email --to="atish" --subject="Let's chat!"
-					<svg class="hidden md:block w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-					</svg>
-				</a>
+		</section>
+
+		<hr class="border-primary-100 dark:border-primary-300 mb-16" />
+
+		<!-- Topics -->
+		<section class="mb-8">
+			<h2 class="font-cormorant text-3xl text-primary-800 dark:text-background-200 mb-8">I enjoy talking about</h2>
+			<div class="grid sm:grid-cols-2 gap-x-12 gap-y-4">
+				<div>
+					<h3 class="font-cormorant text-lg text-primary-900 dark:text-background-100 mb-1">Research mathematics</h3>
+					<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">Combinatorics, graph theory, algorithms — always happy to geek out about a new problem or proof idea.</p>
+				</div>
+				<div>
+					<h3 class="font-cormorant text-lg text-primary-900 dark:text-background-100 mb-1">Graduate school & academia</h3>
+					<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">Thinking about grad programs, research positions, or navigating academic life? I'm happy to share what I know.</p>
+				</div>
+				<div>
+					<h3 class="font-cormorant text-lg text-primary-900 dark:text-background-100 mb-1">Software & web development</h3>
+					<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">Frontend projects, interesting libraries, architectural decisions — always up for a technical discussion.</p>
+				</div>
+				<div>
+					<h3 class="font-cormorant text-lg text-primary-900 dark:text-background-100 mb-1">Teaching & learning</h3>
+					<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">Have a concept you're stuck on? Want to share a pedagogy insight? I'm always happy to help or learn something new.</p>
+				</div>
 			</div>
-		</ContentBox>
-	</TerminalSection>
+		</section>
+
+	</div>
 </Layout>

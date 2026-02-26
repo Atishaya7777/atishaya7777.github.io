@@ -3,7 +3,6 @@ import './layout.css';
 
 import Header from '../components/Header/Header.astro';
 import Footer from '../components/Footer/Footer.astro';
-import TerminalSpotlight from '../components/TerminalSpotlight/TerminalSpotlight.component';
 
 interface Props {
 	title: string;
@@ -14,7 +13,7 @@ interface Props {
 
 const { 
 	title, 
-	description = "Student of Mathematics and Computer Science",
+	description = "Computer Science & Mathematics student, researcher, and software engineer.",
 	image = "/assets/logo.svg",
 	type = "website"
 } = Astro.props;
@@ -46,15 +45,23 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+		<!-- Prevent FOUC: apply saved theme before first paint -->
+		<script is:inline>
+			(function() {
+				var stored = localStorage.getItem('theme');
+				var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				if (stored === 'dark' || (!stored && prefersDark)) {
+					document.documentElement.classList.add('dark');
+				}
+			})();
+		</script>
 	</head>
-	<body class="bg-background-base dark:bg-primary-900 text-primary-800 dark:text-background-100 antialiased transition-colors duration-300">
+	<body class="bg-background-base dark:bg-primary-950 text-text-base dark:text-background-300 antialiased transition-colors duration-300 font-body">
 		<Header />
-		<main class="min-h-screen bg-primary-700 text-tertiary-25 font-mono">
-			<div class="container mx-auto px-4 py-6 max-w-6xl">
-				<TerminalSpotlight client:load />
-				<slot />
-				<Footer />
-			</div>
+		<main class="min-h-screen">
+			<slot />
 		</main>
+		<Footer />
 	</body>
 </html>

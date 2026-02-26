@@ -1,8 +1,10 @@
 const fontFamily = {
+	'yesteryear': ['"Yesteryear"', 'cursive'],
+	'cormorant': ['"Cormorant Garamond"', 'Georgia', 'ui-serif', 'serif'],
 	'helvetica-now': ['"Helvetica-Now"', 'serif'],
-	'display': ['"Helvetica-Now"', 'ui-serif', 'Georgia', 'serif'],
+	'display': ['"Cormorant Garamond"', '"Helvetica-Now"', 'ui-serif', 'Georgia', 'serif'],
 	'body': ['"Helvetica-Now"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-	'mono': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
+	'mono': ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
 };
 
 const fontWeight = {
