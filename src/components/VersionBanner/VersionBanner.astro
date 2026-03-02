@@ -1,0 +1,42 @@
+---
+// Only show the banner in production — /v1/ doesn't exist in the dev server
+const isProd = import.meta.env.PROD;
+---
+{isProd && <div
+  id="version-banner"
+  class="w-full bg-primary-950 dark:bg-primary-900 text-background-300 text-sm px-4 py-2 flex items-center justify-center gap-3 relative transition-all duration-300"
+>
+  <span class="font-body">
+    You're viewing the new portfolio —
+    <a
+      href="/v1/"
+      class="text-tertiary-400 hover:text-tertiary-300 underline underline-offset-2 transition-colors duration-200 font-medium"
+    >
+      View classic site ↗
+    </a>
+  </span>
+  <button
+    id="version-banner-dismiss"
+    aria-label="Dismiss banner"
+    class="absolute right-4 top-1/2 -translate-y-1/2 text-background-500 hover:text-background-200 transition-colors duration-200 leading-none"
+  >
+    ✕
+  </button>
+</div>}
+
+<script is:inline>
+  (function () {
+    var banner = document.getElementById('version-banner');
+    if (!banner) return;
+    if (localStorage.getItem('version-banner-dismissed') === '1') {
+      banner.style.display = 'none';
+    }
+    var btn = document.getElementById('version-banner-dismiss');
+    if (btn) {
+      btn.addEventListener('click', function () {
+        banner.style.display = 'none';
+        localStorage.setItem('version-banner-dismissed', '1');
+      });
+    }
+  })();
+</script>

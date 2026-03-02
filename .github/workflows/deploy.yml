@@ -18,15 +18,59 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
+      - name: Checkout current site
         uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v2
 
+      - name: Checkout old portfolio (v1)
+        uses: actions/checkout@v4
         with:
-          # path: . # The root location of your Astro project inside the repository. (optional)
-          # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
-          package-manager: pnpm@9 # Match lockfileVersion 6 to avoid lockfile being ignored
+          ref: 177550b4d81b08638f1943609cdaec1b002a71b9
+          path: v1-source
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      # Build current (new) site
+      - name: Install current site dependencies
+        run: pnpm install
+
+      - name: Build current site
+        run: pnpm build
+
+      # Build old portfolio at /v1/
+      - name: Patch v1 astro.config.mjs to set base = '/v1'
+        run: node scripts/patch-v1-config.mjs
+
+      - name: Install v1 dependencies
+        run: pnpm --dir v1-source install --no-frozen-lockfile
+
+      - name: Build v1 site
+        run: pnpm --dir v1-source build
+
+      # Inject "back to new site" banner into every v1 HTML page
+      - name: Inject classic-to-new banner into v1 HTML files
+        run: python3 scripts/inject-v1-banner.py
+
+      # Merge v1 output into main dist
+      - name: Copy v1 build into dist/v1
+        run: cp -r v1-source/dist dist/v1
+
+      # Upload combined dist
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
 
   deploy:
     needs: build
