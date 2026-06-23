@@ -1,0 +1,534 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f5f5f0;
+  color: #1a1a1a;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  height: 100vh;
+  border: 0.5px solid rgba(0,0,0,0.12);
+  overflow: hidden;
+  background: #fff;
+}
+
+#sidebar {
+  background: #fafaf8;
+  border-right: 0.5px solid rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#sidebar-header {
+  padding: 12px 14px 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a1a;
+  letter-spacing: -0.1px;
+}
+
+#sidebar-status {
+  padding: 0 14px 10px;
+  border-bottom: 0.5px solid rgba(0,0,0,0.12);
+  font-size: 10px;
+  color: #999;
+  font-family: 'SF Mono', 'Fira Mono', 'Consolas', monospace;
+}
+
+#entity-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+#entity-list::-webkit-scrollbar { width: 4px; }
+#entity-list::-webkit-scrollbar-track { background: transparent; }
+#entity-list::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 2px; }
+
+.entity-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 9px;
+  border-radius: 8px;
+  margin-bottom: 3px;
+  border: 0.5px solid transparent;
+  cursor: default;
+  transition: background 0.1s;
+}
+
+.entity-row:hover {
+  background: #fff;
+  border-color: rgba(0,0,0,0.08);
+}
+
+.entity-row.drone-out-of-scope .entity-label,
+.entity-row.drone-out-of-scope .entity-val {
+  color: #bbb;
+}
+
+.entity-row.route-to-target {
+  background: rgba(29, 158, 117, 0.06);
+  border-color: rgba(29, 158, 117, 0.18);
+}
+
+.entity-row.route-delivers {
+  background: rgba(55, 138, 221, 0.08);
+  border-color: rgba(55, 138, 221, 0.25);
+}
+
+.entity-row.route-delivers .entity-label {
+  color: #2a5a8a;
+  font-weight: 500;
+}
+
+.block-group {
+  margin-bottom: 2px;
+  border-radius: 8px;
+  border: 0.5px solid transparent;
+}
+
+.block-group.block-optimal-at-t {
+  background: rgba(55, 138, 221, 0.1);
+  border-color: rgba(55, 138, 221, 0.35);
+}
+
+.optimal-block-banner {
+  margin: 0 9px 8px;
+  padding: 7px 9px;
+  border-radius: 6px;
+  background: rgba(55, 138, 221, 0.08);
+  border: 0.5px solid rgba(55, 138, 221, 0.22);
+  font-size: 10px;
+  font-family: 'SF Mono', 'Fira Mono', 'Consolas', monospace;
+  color: #2a5a8a;
+  line-height: 1.4;
+}
+
+.optimal-badge {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: #378ADD;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.optimal-tag {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 0 4px;
+  border-radius: 3px;
+  background: rgba(55, 138, 221, 0.15);
+  color: #378ADD;
+  font-size: 9px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.target-optimal-block {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: rgba(55, 138, 221, 0.08);
+  border: 0.5px solid rgba(55, 138, 221, 0.2);
+}
+
+.target-optimal-block.global-optimum {
+  background: rgba(29, 158, 117, 0.08);
+  border-color: rgba(29, 158, 117, 0.28);
+}
+
+.target-optimal-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.target-optimal-val {
+  font-family: 'SF Mono', 'Fira Mono', 'Consolas', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  color: #1a6b4a;
+}
+
+.target-viewing {
+  color: #888;
+  margin-top: 4px;
+}
+
+.optimal-picker-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 6px 10px;
+  font-size: 11px;
+}
+
+.optimal-block-banner.global-match {
+  background: rgba(29, 158, 117, 0.08);
+  border-color: rgba(29, 158, 117, 0.25);
+  color: #1a6b4a;
+}
+
+.optimal-badge.viewing {
+  background: #999;
+}
+
+.optimal-tag.viewing {
+  background: rgba(0, 0, 0, 0.08);
+  color: #777;
+}
+
+#picker-comparison {
+  padding: 0 8px 10px;
+  border-bottom: 0.5px solid rgba(0,0,0,0.08);
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.picker-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9px;
+  font-family: 'SF Mono', 'Fira Mono', 'Consolas', monospace;
+}
+
+.picker-comparison-table th {
+  text-align: left;
+  color: #aaa;
+  font-weight: 500;
+  padding: 2px 4px;
+  border-bottom: 0.5px solid rgba(0,0,0,0.08);
+}
+
+.picker-comparison-table td {
+  padding: 3px 4px;
+  color: #555;
+  border-bottom: 0.5px solid rgba(0,0,0,0.04);
+}
+
+.picker-comparison-table tr.picker-row-best td {
+  color: #1a6b4a;
+  font-weight: 500;
+}
+
+.picker-comparison-table tr.picker-row-viewing td {
+  background: rgba(55, 138, 221, 0.04);
+}
+
+.picker-tag {
+  display: inline-block;
+  padding: 0 3px;
+  border-radius: 2px;
+  font-size: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.picker-tag.best {
+  background: rgba(29, 158, 117, 0.2);
+  color: #1a6b4a;
+}
+
+.picker-tag.viewing {
+  background: rgba(55, 138, 221, 0.15);
+  color: #378ADD;
+}
+
+.block-detail {
+  padding: 0 9px 6px 27px;
+  font-size: 10px;
+  color: #999;
+  font-family: 'SF Mono', 'Fira Mono', 'Consolas', monospace;
+  line-height: 1.4;
+}
+
+.block-clickable {
+  cursor: pointer;
+}
+
+#target-inspection {
+  padding: 10px 14px;
+  border-top: 0.5px solid rgba(0,0,0,0.08);
+  border-bottom: 0.5px solid rgba(0,0,0,0.08);
+  background: #f7f7f4;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.target-inspection-title {
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.target-line {
+  color: #666;
+  font-family: 'SF Mono', 'Fira Mono', 'Consolas', monospace;
+  font-size: 10px;
+}
+
+.target-savings {
+  color: #1D9E75;
+  font-weight: 500;
+}
+
+.target-sequence {
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.target-route-drones {
+  color: #1D9E75;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.entity-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.entity-label {
+  font-size: 12px;
+  color: #555;
+  flex: 1;
+}
+
+.entity-val {
+  font-size: 11px;
+  color: #999;
+  font-family: 'SF Mono', 'Fira Mono', 'Consolas', monospace;
+}
+
+.section-hdr {
+  padding: 6px 9px 2px;
+  font-size: 11px;
+  color: #aaa;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.block-help {
+  padding: 0 9px 6px;
+  font-size: 10px;
+  color: #999;
+  line-height: 1.4;
+}
+
+.block-picker-note {
+  margin: 0 9px 8px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: rgba(216, 90, 48, 0.08);
+  border: 0.5px solid rgba(216, 90, 48, 0.2);
+  font-size: 10px;
+  color: #8a4a2a;
+  line-height: 1.4;
+}
+
+#sidebar-controls {
+  padding: 12px 14px;
+  border-top: 0.5px solid rgba(0,0,0,0.12);
+}
+
+.ctrl-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.ctrl-label {
+  font-size: 12px;
+  color: #666;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.ctrl-val {
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 28px;
+  text-align: right;
+  font-family: 'SF Mono', 'Fira Mono', 'Consolas', monospace;
+  color: #1a1a1a;
+}
+
+.picker-select {
+  width: 100%;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 0.5px solid rgba(0,0,0,0.2);
+  background: #fff;
+  color: #1a1a1a;
+  outline: none;
+  cursor: pointer;
+}
+
+.picker-select:focus {
+  border-color: rgba(0,0,0,0.4);
+  box-shadow: 0 0 0 2px rgba(55,138,221,0.15);
+}
+
+.num-input {
+  flex: 1;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 0.5px solid rgba(0,0,0,0.2);
+  background: #fff;
+  color: #1a1a1a;
+  outline: none;
+  width: 100%;
+  font-family: 'SF Mono', 'Fira Mono', 'Consolas', monospace;
+}
+
+.num-input:focus {
+  border-color: rgba(0,0,0,0.4);
+  box-shadow: 0 0 0 2px rgba(55,138,221,0.15);
+}
+
+.action-btn {
+  flex: 1;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 0.5px solid rgba(0,0,0,0.18);
+  background: #fff;
+  color: #1a1a1a;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.action-btn:hover {
+  background: #f5f5f0;
+  border-color: rgba(0,0,0,0.28);
+}
+
+.action-btn:active {
+  background: #eee;
+}
+
+input[type="range"] {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(0,0,0,0.12);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #378ADD;
+  cursor: grab;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+input[type="range"]::-webkit-slider-thumb:active { cursor: grabbing; }
+
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.check-row input[type="checkbox"] {
+  cursor: pointer;
+  accent-color: #378ADD;
+  width: 13px;
+  height: 13px;
+}
+
+.check-row label {
+  font-size: 12px;
+  color: #666;
+  cursor: pointer;
+  user-select: none;
+}
+
+#canvas-wrap-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#canvas-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+#main-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  touch-action: none;
+}
+
+#tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: #fff;
+  border: 0.5px solid rgba(0,0,0,0.18);
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #1a1a1a;
+  display: none;
+  z-index: 10;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-family: 'SF Mono', 'Fira Mono', 'Consolas', monospace;
+}
+
+#tooltip.tooltip-multiline {
+  white-space: pre-line;
+  font-size: 11px;
+  line-height: 1.45;
+  max-width: 280px;
+}
+
+#block-info {
+  padding: 8px 14px;
+  border-top: 0.5px solid rgba(0,0,0,0.08);
+  font-size: 11px;
+  color: #888;
+  min-height: 34px;
+  line-height: 1.6;
+  background: #fafaf8;
+  font-family: 'SF Mono', 'Fira Mono', 'Consolas', monospace;
+}

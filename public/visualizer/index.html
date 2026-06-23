@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drone Delivery Block List Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="sidebar">
+      <div id="sidebar-header">Drone delivery visualizer</div>
+      <div id="sidebar-status"></div>
+      <div id="target-inspection"></div>
+      <div id="picker-comparison"></div>
+      <div id="entity-list"></div>
+      <div id="sidebar-controls">
+        <div class="ctrl-row">
+          <span class="ctrl-label">Drones</span>
+          <input type="number" id="drone-count" min="2" max="30" value="6" step="1" class="num-input">
+          <button type="button" id="randomize-btn" class="action-btn">Randomize</button>
+        </div>
+        <div class="ctrl-row">
+          <span class="ctrl-label">Picker</span>
+          <select id="picker-sel" class="picker-select" style="flex:1"></select>
+        </div>
+        <div class="ctrl-row">
+          <span class="ctrl-label">x max</span>
+          <input type="number" id="xmax-input" min="10" max="200" value="50" step="1" class="num-input">
+        </div>
+        <div class="ctrl-row">
+          <span class="ctrl-label">Target x</span>
+          <input type="range" id="target-slider" min="0" max="50" value="30" step="0.5">
+          <span class="ctrl-val" id="target-val">30</span>
+        </div>
+        <div class="check-row"><input type="checkbox" id="show-raw" checked><label for="show-raw">Raw costs</label></div>
+        <div class="check-row"><input type="checkbox" id="show-exchange"><label for="show-exchange">Exchange lines</label></div>
+        <div class="check-row"><input type="checkbox" id="show-kinks" checked><label for="show-kinks">Block boundaries</label></div>
+      </div>
+    </div>
+    <div id="canvas-wrap-inner">
+      <div id="canvas-container">
+        <canvas id="main-canvas"></canvas>
+        <div id="tooltip"></div>
+      </div>
+      <div id="block-info">Hover cost graph or delivery line for details.</div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
