@@ -10,42 +10,66 @@ interface Props {
 	description?: string;
 	image?: string;
 	type?: string;
+	structuredData?: Record<string, unknown>;
 }
 
-const { 
-	title, 
+const {
+	title,
 	description = "Computer Science & Mathematics student, researcher, and software engineer.",
-	image = "/assets/logo.svg",
-	type = "website"
+	image = "/assets/og-image.png",
+	type = "website",
+	structuredData,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const imageURL = new URL(image, Astro.site);
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
-		<link rel="sitemap" href="/sitemap-index.xml">
+		<meta name="description" content={description} />
+		<meta name="author" content="Atishaya Maharjan" />
 		<meta name="generator" content={Astro.generator} />
-		
+		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5F3F5" />
+		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#171218" />
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+		<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
 		<title>{title}</title>
 		<link rel="canonical" href={canonicalURL} />
-		
+
 		<meta property="og:type" content={type} />
 		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:site_name" content="Atishaya Maharjan" />
+		<meta property="og:locale" content="en_CA" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content={new URL(image, Astro.url)} />
-		
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={canonicalURL} />
-		<meta property="twitter:title" content={title} />
-		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={new URL(image, Astro.url)} />
+		<meta property="og:image" content={imageURL} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Title card reading: Atishaya Maharjan — Computer Science & Mathematics, University of Manitoba" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={imageURL} />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
+
+		{structuredData && (
+			<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+		)}
 
 		<!-- Prevent FOUC: apply saved theme before first paint -->
 		<script is:inline>
@@ -58,10 +82,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 			})();
 		</script>
 	</head>
-	<body class="bg-background-base dark:bg-primary-950 text-text-base dark:text-background-300 antialiased transition-colors duration-300 font-body">
+	<body class="bg-paper-100 dark:bg-paper-900 text-ink-700 dark:text-ink-200 font-body antialiased transition-colors duration-300">
+		<a
+			href="#main-content"
+			class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:bg-paper-50 dark:focus:bg-paper-800 focus:px-4 focus:py-2 text-sm text-accent-600 dark:text-accent-300 focus:border focus:border-rule-strong dark:focus:border-rule-dark-strong"
+		>
+			Skip to content
+		</a>
 		<VersionBanner />
 		<Header />
-		<main class="min-h-screen">
+		<main id="main-content" class="min-h-screen">
 			<slot />
 		</main>
 		<Footer />

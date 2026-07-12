@@ -4,13 +4,13 @@ const isProd = import.meta.env.PROD;
 ---
 {isProd && <div
   id="version-banner"
-  class="w-full bg-primary-950 dark:bg-primary-900 text-background-300 text-sm px-4 py-2 flex items-center justify-center gap-3 relative transition-all duration-300"
+  class="w-full bg-paper-200 dark:bg-paper-800 text-ink-700 dark:text-ink-200 text-xs px-4 py-2 flex items-center justify-center gap-3 relative border-b border-rule dark:border-rule-dark transition-all duration-300"
 >
-  <span class="font-body">
+  <span>
     You're viewing the new portfolio —
     <a
       href="/v1/"
-      class="text-tertiary-400 hover:text-tertiary-300 underline underline-offset-2 transition-colors duration-200 font-medium"
+      class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 underline underline-offset-2 transition-colors duration-200"
     >
       View classic site ↗
     </a>
@@ -18,7 +18,7 @@ const isProd = import.meta.env.PROD;
   <button
     id="version-banner-dismiss"
     aria-label="Dismiss banner"
-    class="absolute right-4 top-1/2 -translate-y-1/2 text-background-500 hover:text-background-200 transition-colors duration-200 leading-none"
+    class="absolute right-4 top-1/2 -translate-y-1/2 text-ink-400 dark:text-ink-300 hover:text-ink-900 dark:hover:text-ink-100 transition-colors duration-200 leading-none"
   >
     ✕
   </button>

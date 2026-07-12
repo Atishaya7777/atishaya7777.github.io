@@ -1,332 +1,323 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Seal from '../components/Seal/Seal.astro';
 import routes from '../global/routes';
+
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	name: "Atishaya Maharjan",
+	url: "https://atishaya7777.github.io",
+	email: "mailto:atishaya7777@gmail.com",
+	jobTitle: "Software Engineer & Researcher",
+	affiliation: {
+		"@type": "CollegeOrUniversity",
+		name: "University of Manitoba",
+	},
+	worksFor: {
+		"@type": "Organization",
+		name: "LG Electronics",
+	},
+	sameAs: [
+		"https://github.com/Atishaya7777",
+		"https://www.linkedin.com/in/atishaya-maharjan07",
+	],
+	knowsAbout: [
+		"Graph Theory",
+		"Combinatorics",
+		"Approximation Algorithms",
+		"Machine Learning on Graphs",
+		"Software Engineering",
+	],
+};
 ---
 
-<Layout title="Atishaya Maharjan" description="Computer Science & Mathematics student, researcher, and software engineer at the University of Manitoba.">
+<Layout
+	title="Atishaya Maharjan — Computer Science & Mathematics"
+	description="Computer Science & Mathematics student, researcher, and software engineer at the University of Manitoba."
+	structuredData={structuredData}
+>
 
-	<!-- ── Hero ── -->
-	<section class="relative min-h-[92vh] flex flex-col justify-center overflow-hidden">
-		<div class="max-w-5xl mx-auto px-6 py-24">
-			<p class="text-sm tracking-[0.2em] uppercase text-tertiary-600 dark:text-tertiary-400 mb-6 font-body">
-				Winnipeg, Canada
+	<article class="max-w-3xl mx-auto px-6">
+
+		<!-- ── Title block ── -->
+		<header class="pt-16 pb-12 text-center">
+			<div class="flex justify-center mb-6">
+				<Seal class="w-12 h-12 text-ink-500 dark:text-ink-300" />
+			</div>
+			<p class="text-xs tracking-[0.25em] uppercase text-ink-400 dark:text-ink-300 mb-8">
+				Curriculum Vitæ
 			</p>
 
-			<h1 class="font-cormorant font-light text-6xl sm:text-7xl md:text-8xl text-primary-800 dark:text-background-100 leading-none mb-6">
-				Atishaya<br /><em>Maharjan</em>
+			<h1 class="font-display font-medium text-5xl sm:text-6xl text-ink-900 dark:text-ink-100 leading-tight mb-6">
+				Atishaya Maharjan
 			</h1>
 
-			<p class="text-base md:text-lg text-primary-600 dark:text-background-400 max-w-xl leading-relaxed mb-10 font-body">
-				BSc. Joint Honours in Computer Science &amp; Mathematics at the University of Manitoba.
-				Senior Software Engineer at LG Electronics. Researcher in algorithms, graph theory, and machine learning.
+			<p class="text-base text-ink-500 dark:text-ink-300 leading-relaxed mb-2">
+				BSc. Joint Honours, Computer Science &amp; Mathematics · University of Manitoba
+			</p>
+			<p class="text-base text-ink-500 dark:text-ink-300 leading-relaxed mb-8">
+				Software Engineer · LG Electronics
 			</p>
 
-			<div class="flex flex-wrap gap-4">
-				<a
-					href="/assets/resume.pdf"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="inline-flex items-center gap-2 px-6 py-3 bg-primary-800 dark:bg-background-200 text-background-100 dark:text-primary-900 text-sm tracking-wide hover:bg-primary-900 dark:hover:bg-background-100 transition-colors font-body"
-				>
-					Download CV ↗
-				</a>
-				<a
-					href={routes.contact}
-					class="inline-flex items-center gap-2 px-6 py-3 border border-primary-300 dark:border-primary-700 text-primary-700 dark:text-background-300 text-sm tracking-wide hover:border-primary-700 dark:hover:border-primary-400 transition-colors font-body"
-				>
-					Get in Touch
-				</a>
-			</div>
-		</div>
-	</section>
+			<nav class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm" aria-label="Profile links">
+				<a href="/assets/atishaya_research_resume.pdf" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Research&nbsp;CV&nbsp;[PDF]</a>
+				<span class="text-ink-400 dark:text-ink-300" aria-hidden="true">·</span>
+				<a href="/assets/atishaya_swe_resume.pdf" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Industry&nbsp;Résumé&nbsp;[PDF]</a>
+				<span class="text-ink-400 dark:text-ink-300" aria-hidden="true">·</span>
+				<a href="mailto:atishaya7777@gmail.com" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Email</a>
+				<span class="text-ink-400 dark:text-ink-300" aria-hidden="true">·</span>
+				<a href="https://github.com/Atishaya7777" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">GitHub</a>
+				<span class="text-ink-400 dark:text-ink-300" aria-hidden="true">·</span>
+				<a href="https://www.linkedin.com/in/atishaya-maharjan07" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">LinkedIn</a>
+			</nav>
 
-	<!-- ── Divider ── -->
-	<div class="max-w-5xl mx-auto px-6">
-		<hr class="border-primary-100 dark:border-primary-300" />
-	</div>
-
-	<!-- ── Stats strip ── -->
-	<section class="max-w-5xl mx-auto px-6 py-12">
-		<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-			<div>
-				<p class="font-cormorant text-3xl text-primary-800 dark:text-background-200 mb-1">LG Electronics</p>
-				<p class="text-xs tracking-wide text-primary-500 dark:text-background-500 uppercase">Senior Engineer</p>
-			</div>
-			<div>
-				<p class="font-cormorant text-3xl text-primary-800 dark:text-background-200 mb-1">GADA Lab</p>
-				<p class="text-xs tracking-wide text-primary-500 dark:text-background-500 uppercase">Algorithms Researcher</p>
-			</div>
-			<div>
-				<p class="font-cormorant text-3xl text-primary-800 dark:text-background-200 mb-1">Dean's Honour</p>
-				<p class="text-xs tracking-wide text-primary-500 dark:text-background-500 uppercase">&amp; Int'l Scholarship</p>
-			</div>
-			<div>
-				<p class="font-cormorant text-3xl text-primary-800 dark:text-background-200 mb-1">2&times; CTF</p>
-				<p class="text-xs tracking-wide text-primary-500 dark:text-background-500 uppercase">Top Placement</p>
-			</div>
-		</div>
-	</section>
-
-	<!-- ── Divider ── -->
-	<div class="max-w-5xl mx-auto px-6">
-		<hr class="border-primary-100 dark:border-primary-300" />
-	</div>
-
-	<!-- ── Bio ── -->
-	<section class="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
-		<div class="md:col-span-1">
-			<h2 class="font-cormorant text-2xl text-primary-700 dark:text-background-300 mb-4">About</h2>
-			<div class="w-8 h-px bg-tertiary-base"></div>
-		</div>
-		<div class="md:col-span-2 space-y-4 text-primary-700 dark:text-background-400 leading-relaxed font-body text-base">
-			<p>
-				I study Computer Science and Mathematics (Joint Honours, minor in Statistics) at the University of Manitoba. My work is in discrete mathematics and algorithms — combinatorics on graph and tree structures, approximation algorithms in geometric settings, and extending diffusion-based neural networks to hypergraphs. I work across the <strong class="font-medium text-primary-900 dark:text-background-200">GADA Lab</strong>, the <strong class="font-medium text-primary-900 dark:text-background-200">Terrabyte ML Research Group</strong>, and the <strong class="font-medium text-primary-900 dark:text-background-200">Department of Mathematics</strong>.
+			<p class="text-xs tracking-[0.15em] uppercase text-ink-400 dark:text-ink-300 mt-8">
+				Winnipeg, Canada
 			</p>
-			<p>
-				On the engineering side, I build enterprise software at LG Electronics. I've also worked at Hoek Insights and Timeero, contributing to early-stage products.
+		</header>
+
+		<!-- Double rule, in the manner of a paper's title block -->
+		<hr class="border-t-4 border-double border-ink-900 dark:border-ink-100" />
+
+		<!-- ── Abstract ── -->
+		<section class="py-12">
+			<h2 class="text-center text-sm tracking-[0.2em] uppercase text-ink-900 dark:text-ink-100 font-semibold mb-6">Abstract</h2>
+			<div class="space-y-4 text-[15px] leading-[1.8] text-justify [hyphens:auto] max-w-2xl mx-auto">
+				<p>
+					I study Computer Science and Mathematics (Joint Honours, minor in Statistics) at the University of Manitoba.
+					My work is in discrete mathematics and algorithms — combinatorics on graph and tree structures, approximation
+					algorithms in geometric settings, and extending diffusion-based neural networks to hypergraphs. I work across
+					the <strong class="font-semibold text-ink-900 dark:text-ink-100">GADA Lab</strong>, the
+					<strong class="font-semibold text-ink-900 dark:text-ink-100">Terrabyte ML Research Group</strong>, and the
+					<strong class="font-semibold text-ink-900 dark:text-ink-100">Department of Mathematics</strong>.
+					On the engineering side, I build enterprise software at LG Electronics, and have contributed to early-stage
+					products at Hoek Insights and Timeero.
+				</p>
+			</div>
+		</section>
+
+		<hr class="border-rule dark:border-rule-dark" />
+
+		<!-- ── 1. Research Interests ── -->
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">1.</span>Research Interests
+			</h2>
+			<div class="space-y-5 text-[15px] leading-[1.8]">
+				<p>
+					<strong class="font-semibold text-ink-900 dark:text-ink-100">Algorithms &amp; graph theory.</strong>
+					Approximation algorithms, Eulerian circuits, and Hamiltonian paths in spatially embedded graphs.
+				</p>
+				<p>
+					<strong class="font-semibold text-ink-900 dark:text-ink-100">Combinatorics.</strong>
+					Independence numbers, the HK-property in perfect trees, and generating functions.
+				</p>
+				<p>
+					<strong class="font-semibold text-ink-900 dark:text-ink-100">Machine learning on graphs.</strong>
+					Hypergraph neural networks, graph neural diffusion, and PyTorch Geometric architectures.
+				</p>
+			</div>
+		</section>
+
+		<hr class="border-rule dark:border-rule-dark" />
+
+		<!-- ── 2. Education ── -->
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">2.</span>Education
+			</h2>
+			<div class="grid md:grid-cols-[150px_1fr] gap-x-8 gap-y-2">
+				<p class="text-xs tracking-wide text-ink-400 dark:text-ink-300 pt-1.5">Aug 2022 – Present</p>
+				<div>
+					<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">University of Manitoba</h3>
+					<p class="text-sm text-ink-500 dark:text-ink-300 mt-0.5">
+						BSc. Joint Honours — Computer Science &amp; Mathematics, Minor in Statistics
+					</p>
+					<p class="text-sm text-ink-500 dark:text-ink-300 mt-3 italic">
+						International Undergraduate Scholarship · Dean's Honour Roll
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<hr class="border-rule dark:border-rule-dark" />
+
+		<!-- ── 3. Experience ── -->
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">3.</span>Experience
+			</h2>
+			<div class="space-y-8">
+				<div class="grid md:grid-cols-[150px_1fr] gap-x-8 gap-y-1">
+					<p class="text-xs tracking-wide text-ink-400 dark:text-ink-300 pt-1.5">Mar 2024 – Present</p>
+					<div>
+						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">LG Electronics</h3>
+						<p class="text-sm text-ink-500 dark:text-ink-300">Software Engineer · Englewood Cliffs, USA (Remote)</p>
+						<p class="text-sm text-ink-500 dark:text-ink-300 mt-2 leading-relaxed">
+							B2B microservices for 1,000+ vendors using Next.js, Redux, and TypeScript. Built an AI search engine
+							for the global GNB header, promo code and magic link flows, and analytics tagging frameworks.
+						</p>
+					</div>
+				</div>
+
+				<div class="grid md:grid-cols-[150px_1fr] gap-x-8 gap-y-1">
+					<p class="text-xs tracking-wide text-ink-400 dark:text-ink-300 pt-1.5">Jun 2025 – Jan 2026</p>
+					<div>
+						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">Hoek Insights</h3>
+						<p class="text-sm text-ink-500 dark:text-ink-300">Software Engineer · Amsterdam, Netherlands (Remote)</p>
+						<p class="text-sm text-ink-500 dark:text-ink-300 mt-2 leading-relaxed">
+							Built a Python package embedding interactive Three.js visualisations in Jupyter Notebooks. Designed a
+							FastAPI + PostgreSQL MVP marketing platform with 18+ endpoints and 95% integration-test coverage.
+						</p>
+					</div>
+				</div>
+
+				<div class="grid md:grid-cols-[150px_1fr] gap-x-8 gap-y-1">
+					<p class="text-xs tracking-wide text-ink-400 dark:text-ink-300 pt-1.5">Mar 2024 – Present</p>
+					<div>
+						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">GADA Lab</h3>
+						<p class="text-sm text-ink-500 dark:text-ink-300">Algorithms Researcher · Geometric, Approximation &amp; Distributed Algorithms · University of Manitoba</p>
+						<p class="text-sm text-ink-500 dark:text-ink-300 mt-2 leading-relaxed">
+							Developed approximation algorithms for Hamiltonian path optimisation in spatially embedded graphs, with
+							visualisation and randomised test-generation tooling. Delivered talks on wiggly permutations and
+							space-efficient Eulerian circuits.
+						</p>
+					</div>
+				</div>
+
+				<div class="grid md:grid-cols-[150px_1fr] gap-x-8 gap-y-1">
+					<p class="text-xs tracking-wide text-ink-400 dark:text-ink-300 pt-1.5">May 2025 – Present</p>
+					<div>
+						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">Terrabyte ML Research Group</h3>
+						<p class="text-sm text-ink-500 dark:text-ink-300">Machine Learning Researcher · University of Manitoba</p>
+						<p class="text-sm text-ink-500 dark:text-ink-300 mt-2 leading-relaxed">
+							Extended Graph Neural Diffusion to Hypergraph Neural Diffusion networks using PyTorch and PyTorch
+							Geometric. Prototyped 4 model variants; tracked 25+ experiments with MLFlow across 5+ datasets.
+						</p>
+					</div>
+				</div>
+			</div>
+			<p class="mt-8 text-sm">
+				<a href={routes.works} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Full history →</a>
 			</p>
-		</div>
-	</section>
+		</section>
 
-	<!-- ── Divider ── -->
-	<div class="max-w-5xl mx-auto px-6">
-		<hr class="border-primary-100 dark:border-primary-300" />
-	</div>
+		<hr class="border-rule dark:border-rule-dark" />
 
-	<!-- ── Education ── -->
-	<section class="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
-		<div class="md:col-span-1">
-			<h2 class="font-cormorant text-2xl text-primary-700 dark:text-background-300 mb-4">Education</h2>
-			<div class="w-8 h-px bg-tertiary-base"></div>
-		</div>
-		<div class="md:col-span-2">
-			<div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
+		<!-- ── 4. Preprints & Working Papers ── -->
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">4.</span>Preprints &amp; Working Papers
+			</h2>
+			<ol class="space-y-6 text-[15px] leading-[1.8] list-none">
+				<li class="pl-8 relative">
+					<span class="absolute left-0 text-ink-400 dark:text-ink-300">[1]</span>
+					Maharjan, A. <em class="font-display">HK Property in Perfect Binary Trees.</em>
+					Preprint, unpublished. Proves a closed-form solution for the independence number of perfect binary trees and
+					verifies Hurlbert–Kamat's Conjecture using generating functions across 1,000+ cases.
+					<a href="/assets/hk_perfect_binary_trees.pdf" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors whitespace-nowrap">[PDF]</a>
+				</li>
+				<li class="pl-8 relative">
+					<span class="absolute left-0 text-ink-400 dark:text-ink-300">[2]</span>
+					Maharjan, A. <em class="font-display">Wiener Index.</em>
+					Preprint, unpublished. Original writeup on the Wiener index — a topological graph invariant defined as the sum
+					of pairwise distances between vertices — with novel combinatorial analysis and results.
+					<a href="/assets/wiener-index.pdf" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors whitespace-nowrap">[PDF]</a>
+				</li>
+			</ol>
+			<p class="mt-8 text-sm">
+				<a href={routes.research} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">All research →</a>
+			</p>
+		</section>
+
+		<hr class="border-rule dark:border-rule-dark" />
+
+		<!-- ── 5. Selected Projects ── -->
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">5.</span>Selected Projects
+			</h2>
+			<div class="space-y-8">
 				<div>
-					<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100">University of Manitoba</h3>
-					<p class="text-sm text-primary-600 dark:text-background-400 font-body mt-0.5">BSc. Joint Honours — Computer Science &amp; Mathematics, Minor in Statistics</p>
+					<div class="flex items-baseline justify-between gap-4 mb-1">
+						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">Brainstorm W</h3>
+						<span class="text-xs text-ink-400 dark:text-ink-300 whitespace-nowrap">2026</span>
+					</div>
+					<p class="text-xs tracking-[0.12em] uppercase text-ink-400 dark:text-ink-300 mb-2">Full-Stack · AI · RAG</p>
+					<p class="text-sm text-ink-500 dark:text-ink-300 leading-relaxed">
+						AI-powered, role-specific knowledge management system integrating Pinecone, Jira, Redis, and PostgreSQL.
+						Implemented RAG with role-based access controls and a dynamic model-routing layer. Demoed at Sprint to
+						Innovate 2026; pitched for the CIPS Manitoba Challenge.
+					</p>
 				</div>
-				<span class="text-xs tracking-wide text-primary-400 dark:text-background-600 shrink-0 font-body">Aug 2022 – Present</span>
-			</div>
-			<div class="flex flex-wrap gap-2 mt-4">
-				<span class="text-xs px-3 py-1 border border-primary-200 dark:border-primary-700 text-primary-600 dark:text-background-500 font-body">International Undergraduate Scholarship</span>
-				<span class="text-xs px-3 py-1 border border-primary-200 dark:border-primary-700 text-primary-600 dark:text-background-500 font-body">Dean's Honour Roll</span>
-			</div>
-		</div>
-	</section>
-
-	<!-- ── Divider ── -->
-	<div class="max-w-5xl mx-auto px-6">
-		<hr class="border-primary-100 dark:border-primary-300" />
-	</div>
-
-	<!-- ── Research Interests ── -->
-	<section class="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
-		<div class="md:col-span-1">
-			<h2 class="font-cormorant text-2xl text-primary-700 dark:text-background-300 mb-4">Research Interests</h2>
-			<div class="w-8 h-px bg-tertiary-base"></div>
-		</div>
-		<div class="md:col-span-2 grid sm:grid-cols-3 gap-8">
-			<div>
-				<h3 class="font-cormorant text-lg text-primary-900 dark:text-background-100 mb-2">Algorithms &amp; Graph Theory</h3>
-				<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">Approximation algorithms, Eulerian circuits, Hamiltonian paths in spatially embedded graphs.</p>
-			</div>
-			<div>
-				<h3 class="font-cormorant text-lg text-primary-900 dark:text-background-100 mb-2">Combinatorics</h3>
-				<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">Independence numbers, the HK-property in perfect trees, generating functions.</p>
-			</div>
-			<div>
-				<h3 class="font-cormorant text-lg text-primary-900 dark:text-background-100 mb-2">ML on Graphs</h3>
-				<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">Hypergraph neural networks, graph neural diffusion, PyTorch Geometric architectures.</p>
-			</div>
-		</div>
-	</section>
-
-	<!-- ── Divider ── -->
-	<div class="max-w-5xl mx-auto px-6">
-		<hr class="border-primary-100 dark:border-primary-300" />
-	</div>
-
-	<!-- ── Experience ── -->
-	<section class="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
-		<div class="md:col-span-1">
-			<h2 class="font-cormorant text-2xl text-primary-700 dark:text-background-300 mb-4">Experience</h2>
-			<div class="w-8 h-px bg-tertiary-base mb-6"></div>
-			<a href={routes.works} class="text-sm text-tertiary-600 dark:text-tertiary-400 hover:text-tertiary-800 dark:hover:text-tertiary-300 transition-colors font-body">
-				Full history →
-			</a>
-		</div>
-		<div class="md:col-span-2 space-y-8">
-			<div class="flex flex-col sm:flex-row sm:justify-between gap-2">
 				<div>
-					<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100">LG Electronics</h3>
-					<p class="text-sm text-primary-600 dark:text-background-400 font-body">Senior Software Engineer · Englewood Cliffs, USA (Remote)</p>
-					<p class="text-sm text-primary-500 dark:text-background-500 font-body mt-2 leading-relaxed">B2B microservices for 1,000+ vendors using Next.js, Redux, TypeScript. Built AI search engine for global GNB header, promo code + magic link flows, and analytics tagging frameworks.</p>
+					<div class="flex items-baseline justify-between gap-4 mb-1">
+						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">Spatially Embedded Graphs</h3>
+						<span class="text-xs text-ink-400 dark:text-ink-300 whitespace-nowrap">2024–Present</span>
+					</div>
+					<p class="text-xs tracking-[0.12em] uppercase text-ink-400 dark:text-ink-300 mb-2">Python · Research · Algorithms</p>
+					<p class="text-sm text-ink-500 dark:text-ink-300 leading-relaxed">
+						Modelled Hamiltonian paths in &#8477;&#178; with focus on approximation algorithms. Generated 200+
+						randomised instances, built visualisation pipelines, and presented findings at weekly GADA Lab meetings.
+					</p>
 				</div>
-				<span class="text-xs tracking-wide text-primary-400 dark:text-background-600 shrink-0 font-body">Mar 2024 – Present</span>
-			</div>
-			<div class="w-full h-px bg-primary-100 dark:bg-primary-600"></div>
-			<div class="flex flex-col sm:flex-row sm:justify-between gap-2">
 				<div>
-					<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100">Hoek Insights</h3>
-					<p class="text-sm text-primary-600 dark:text-background-400 font-body">Senior Software Engineer · Amsterdam, Netherlands (Remote)</p>
-					<p class="text-sm text-primary-500 dark:text-background-500 font-body mt-2 leading-relaxed">Built a Python package embedding interactive Three.js visualizations in Jupyter Notebooks. Designed a FastAPI + PostgreSQL MVP marketing platform with 18+ endpoints and 95% integration-test coverage.</p>
+					<div class="flex items-baseline justify-between gap-4 mb-1">
+						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">CSSA CTF</h3>
+						<span class="text-xs text-ink-400 dark:text-ink-300 whitespace-nowrap">2025–2026</span>
+					</div>
+					<p class="text-xs tracking-[0.12em] uppercase text-ink-400 dark:text-ink-300 mb-2">C · Python · Cryptography</p>
+					<p class="text-sm text-ink-500 dark:text-ink-300 leading-relaxed">
+						1st place among 41 teams (2026) and 2nd place among 25+ teams (2025) at the annual CSSA Capture the Flag
+						competition, solving web-based cryptography and reverse-engineering challenges.
+					</p>
 				</div>
-				<span class="text-xs tracking-wide text-primary-400 dark:text-background-600 shrink-0 font-body">Jun 2025 – Jan 2026</span>
 			</div>
-			<div class="w-full h-px bg-primary-100 dark:bg-primary-600"></div>
-			<div class="flex flex-col sm:flex-row sm:justify-between gap-2">
-				<div>
-					<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100">GADA Lab — Algorithms Researcher</h3>
-					<p class="text-sm text-primary-600 dark:text-background-400 font-body">Geometric, Approximation &amp; Distributed Algorithms · University of Manitoba</p>
-					<p class="text-sm text-primary-500 dark:text-background-500 font-body mt-2 leading-relaxed">Delivered talks on wiggly permutations and space-efficient Eulerian circuits. Developed approximation algorithms for Hamiltonian path optimisation in spatially embedded graphs, with visualisation and randomised test-generation tooling.</p>
-				</div>
-				<span class="text-xs tracking-wide text-primary-400 dark:text-background-600 shrink-0 font-body">Mar 2024 – Present</span>
-			</div>
-			<div class="w-full h-px bg-primary-100 dark:bg-primary-600"></div>
-			<div class="flex flex-col sm:flex-row sm:justify-between gap-2">
-				<div>
-					<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100">Terrabyte ML Research Group</h3>
-					<p class="text-sm text-primary-600 dark:text-background-400 font-body">Machine Learning Researcher · University of Manitoba</p>
-					<p class="text-sm text-primary-500 dark:text-background-500 font-body mt-2 leading-relaxed">Extended Graph Neural Diffusion to Hypergraph Neural Diffusion networks using PyTorch and PyTorch Geometric. Prototyped 4 model variants; tracked 25+ experiments with MLFlow across 5+ datasets.</p>
-				</div>
-				<span class="text-xs tracking-wide text-primary-400 dark:text-background-600 shrink-0 font-body">May 2025 – Present</span>
-			</div>
-		</div>
-	</section>
+			<p class="mt-8 text-sm">
+				<a href={routes.works} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">All work →</a>
+			</p>
+		</section>
 
-	<!-- ── Divider ── -->
-	<div class="max-w-5xl mx-auto px-6">
-		<hr class="border-primary-100 dark:border-primary-300" />
-	</div>
+		<hr class="border-rule dark:border-rule-dark" />
 
-	<!-- ── Preprints Teaser ── -->
-	<section class="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
-		<div class="md:col-span-1">
-			<h2 class="font-cormorant text-2xl text-primary-700 dark:text-background-300 mb-4">Preprints &amp; Working Papers</h2>
-			<div class="w-8 h-px bg-tertiary-base mb-6"></div>
-			<a href={routes.research} class="text-sm text-tertiary-600 dark:text-tertiary-400 hover:text-tertiary-800 dark:hover:text-tertiary-300 transition-colors font-body">
-				All research →
-			</a>
-		</div>
-		<div class="md:col-span-2 space-y-6">
-			<div class="flex items-start justify-between gap-4">
-				<div>
-					<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100 mb-1">HK Property in Perfect Binary Trees</h3>
-					<p class="text-xs tracking-wide text-primary-400 dark:text-background-600 uppercase font-body mb-2">Preprint · Unpublished · Combinatorics &amp; Graph Theory</p>
-					<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">Proved a closed-form solution for the independence number of perfect binary trees and verified Hurlbert–Kamat's Conjecture using generating functions and computational analysis across 1,000+ cases.</p>
+		<!-- ── 6. Teaching & Service ── -->
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">6.</span>Teaching &amp; Service
+			</h2>
+			<div class="space-y-6">
+				<div class="grid md:grid-cols-[150px_1fr] gap-x-8 gap-y-1">
+					<p class="text-xs tracking-wide text-ink-400 dark:text-ink-300 pt-1">Jan – Apr 2025</p>
+					<div>
+						<h3 class="font-display text-lg text-ink-900 dark:text-ink-100">CS Help Center Leader &amp; Teaching Assistant</h3>
+						<p class="text-sm text-ink-500 dark:text-ink-300 leading-relaxed">
+							University of Manitoba · Mentored 100+ students in first- to third-year CS courses. Graded 150+
+							assignments for Analysis of Algorithms (COMP 3170).
+						</p>
+					</div>
 				</div>
-				<a
-					href="/assets/hk_perfect_binary_trees.pdf"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="shrink-0 text-xs text-tertiary-600 dark:text-tertiary-400 hover:text-tertiary-800 dark:hover:text-tertiary-300 transition-colors font-body whitespace-nowrap"
-				>
-					PDF ↗
-				</a>
-			</div>
-			<div class="w-full h-px bg-primary-100 dark:bg-primary-600"></div>
-			<div class="flex items-start justify-between gap-4">
-				<div>
-					<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100 mb-1">Wiener Index</h3>
-					<p class="text-xs tracking-wide text-primary-400 dark:text-background-600 uppercase font-body mb-2">Preprint · Unpublished · Graph Theory</p>
-					<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">Original research writeup on the Wiener index, a topological graph invariant defined as the sum of pairwise distances between vertices, with novel analysis and combinatorial results.</p>
+				<div class="grid md:grid-cols-[150px_1fr] gap-x-8 gap-y-1">
+					<p class="text-xs tracking-wide text-ink-400 dark:text-ink-300 pt-1">Feb – Mar 2025</p>
+					<div>
+						<h3 class="font-display text-lg text-ink-900 dark:text-ink-100">Coding Kickoff Facilitator</h3>
+						<p class="text-sm text-ink-500 dark:text-ink-300 leading-relaxed">
+							University of Manitoba · Facilitated workshops on IDE setup and Git for 50+ first-year students.
+						</p>
+					</div>
 				</div>
-				<a
-					href="/assets/wiener-index.pdf"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="shrink-0 text-xs text-tertiary-600 dark:text-tertiary-400 hover:text-tertiary-800 dark:hover:text-tertiary-300 transition-colors font-body whitespace-nowrap"
-				>
-					PDF ↗
-				</a>
+				<div class="grid md:grid-cols-[150px_1fr] gap-x-8 gap-y-1">
+					<p class="text-xs tracking-wide text-ink-400 dark:text-ink-300 pt-1">Aug 2023 – Jul 2024</p>
+					<div>
+						<h3 class="font-display text-lg text-ink-900 dark:text-ink-100">Events Executive, .devClub</h3>
+						<p class="text-sm text-ink-500 dark:text-ink-300 leading-relaxed">
+							University of Manitoba · Co-led planning of workshops, hackathons, and academic review events for the
+							CS community.
+						</p>
+					</div>
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<!-- ── Divider ── -->
-	<div class="max-w-5xl mx-auto px-6">
-		<hr class="border-primary-100 dark:border-primary-300" />
-	</div>
-
-	<!-- ── Featured Projects ── -->
-	<section class="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
-		<div class="md:col-span-1">
-			<h2 class="font-cormorant text-2xl text-primary-700 dark:text-background-300 mb-4">Selected Projects</h2>
-			<div class="w-8 h-px bg-tertiary-base mb-6"></div>
-			<a href={routes.works} class="text-sm text-tertiary-600 dark:text-tertiary-400 hover:text-tertiary-800 dark:hover:text-tertiary-300 transition-colors font-body">
-				All work →
-			</a>
-		</div>
-		<div class="md:col-span-2 space-y-6">
-			<div>
-				<div class="flex items-start justify-between gap-4 mb-2">
-					<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100">Brainstorm W</h3>
-					<span class="text-xs text-primary-400 dark:text-background-600 font-body whitespace-nowrap">2026</span>
-				</div>
-				<p class="text-xs tracking-wide text-primary-400 dark:text-background-600 uppercase font-body mb-2">Full-Stack · AI · RAG</p>
-				<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">AI-powered, role-specific knowledge management system integrating Pinecone, Jira, Redis, and PostgreSQL. Implemented RAG with role-based access controls and a dynamic model-routing layer. Demoed at Sprint to Innovate 2026; pitched for the CIPS Manitoba Challenge.</p>
-			</div>
-			<div class="w-full h-px bg-primary-100 dark:bg-primary-600"></div>
-			<div>
-				<div class="flex items-start justify-between gap-4 mb-2">
-					<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100">Spatially Embedded Graphs</h3>
-					<span class="text-xs text-primary-400 dark:text-background-600 font-body whitespace-nowrap">2024–Present</span>
-				</div>
-				<p class="text-xs tracking-wide text-primary-400 dark:text-background-600 uppercase font-body mb-2">Python · Research · Algorithms</p>
-				<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">Modelled Hamiltonian paths in &#8477;&#178; with focus on approximation algorithms. Generated 200+ randomised instances, built visualisation pipelines, and presented findings at weekly GADA Lab meetings.</p>
-			</div>
-			<div class="w-full h-px bg-primary-100 dark:bg-primary-600"></div>
-			<div>
-				<div class="flex items-start justify-between gap-4 mb-2">
-					<h3 class="font-cormorant text-xl text-primary-900 dark:text-background-100">CSSA CTF</h3>
-					<span class="text-xs text-primary-400 dark:text-background-600 font-body whitespace-nowrap">2025–2026</span>
-				</div>
-				<p class="text-xs tracking-wide text-primary-400 dark:text-background-600 uppercase font-body mb-2">C · Python · Cryptography</p>
-				<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">1st place among 41 teams (2026) and 2nd place among 25+ teams (2025) at the annual CSSA Capture the Flag competition, solving web-based cryptography and reverse-engineering challenges.</p>
-			</div>
-		</div>
-	</section>
-
-	<!-- ── Divider ── -->
-	<div class="max-w-5xl mx-auto px-6">
-		<hr class="border-primary-100 dark:border-primary-300" />
-	</div>
-
-	<!-- ── Teaching & Volunteer ── -->
-	<section class="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
-		<div class="md:col-span-1">
-			<h2 class="font-cormorant text-2xl text-primary-700 dark:text-background-300 mb-4">Teaching &amp; Service</h2>
-			<div class="w-8 h-px bg-tertiary-base"></div>
-		</div>
-		<div class="md:col-span-2 space-y-6">
-			<div class="flex flex-col sm:flex-row sm:justify-between gap-2">
-				<div>
-					<h3 class="font-cormorant text-lg text-primary-900 dark:text-background-100">CS Help Center Leader &amp; Teaching Assistant</h3>
-					<p class="text-sm text-primary-600 dark:text-background-400 font-body">University of Manitoba · Mentored 100+ students in first- to third-year CS courses. Graded 150+ assignments for Analysis of Algorithms (COMP 3170).</p>
-				</div>
-				<span class="text-xs tracking-wide text-primary-400 dark:text-background-600 shrink-0 font-body">Jan – Apr 2025</span>
-			</div>
-			<div class="w-full h-px bg-primary-100 dark:bg-primary-600"></div>
-			<div class="flex flex-col sm:flex-row sm:justify-between gap-2">
-				<div>
-					<h3 class="font-cormorant text-lg text-primary-900 dark:text-background-100">Coding Kickoff Facilitator</h3>
-					<p class="text-sm text-primary-600 dark:text-background-400 font-body">University of Manitoba · Facilitated workshops on IDE setup and Git for 50+ first-year students.</p>
-				</div>
-				<span class="text-xs tracking-wide text-primary-400 dark:text-background-600 shrink-0 font-body">Feb – Mar 2025</span>
-			</div>
-			<div class="w-full h-px bg-primary-100 dark:bg-primary-600"></div>
-			<div class="flex flex-col sm:flex-row sm:justify-between gap-2">
-				<div>
-					<h3 class="font-cormorant text-lg text-primary-900 dark:text-background-100">Events Executive, .devClub</h3>
-					<p class="text-sm text-primary-600 dark:text-background-400 font-body">University of Manitoba · Co-led planning of workshops, hackathons, and academic review events for the CS community.</p>
-				</div>
-				<span class="text-xs tracking-wide text-primary-400 dark:text-background-600 shrink-0 font-body">Aug 2023 – Jul 2024</span>
-			</div>
-		</div>
-	</section>
-
-	<div class="max-w-5xl mx-auto px-6 pb-8">
-		<hr class="border-primary-100 dark:border-primary-300" />
-	</div>
-
+	</article>
 </Layout>

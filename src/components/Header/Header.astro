@@ -1,6 +1,7 @@
 ---
 import routes from '../../global/routes';
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
+import Seal from '../Seal/Seal.astro';
 
 const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/$/, '');
 
@@ -12,40 +13,59 @@ const navItems = [
 ];
 ---
 
-<header class="sticky top-0 z-50 bg-background-base/90 dark:bg-primary-950/90 backdrop-blur-sm border-b border-primary-100 dark:border-primary-300 transition-colors duration-300">
-	<div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-		<!-- Name / Logo -->
+<header class="sticky top-0 z-50 bg-paper-100/95 dark:bg-paper-900/95 backdrop-blur-sm border-b border-rule dark:border-rule-dark transition-colors duration-300">
+	<div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+		<!-- Wordmark: seal + spaced caps with raised plum initials -->
 		<a
 			href={routes.home}
-			class="font-yesteryear text-2xl text-primary-800 dark:text-background-200 hover:text-tertiary-600 dark:hover:text-tertiary-400 transition-colors"
+			class="group flex items-center gap-2.5 whitespace-nowrap"
 		>
-			Atishaya Maharjan
+			<Seal class="w-7 h-7 sm:w-8 sm:h-8 shrink-0 text-ink-900 dark:text-ink-100 group-hover:text-accent-600 dark:group-hover:text-accent-300 transition-colors" />
+			<span
+				aria-hidden="true"
+				class="font-display text-[13px] sm:text-sm tracking-[0.18em] uppercase leading-none text-ink-900 dark:text-ink-100 group-hover:text-accent-700 dark:group-hover:text-accent-200 transition-colors"
+			>
+				<span class="text-[1.45em] font-medium text-accent-600 dark:text-accent-300">A</span>tishaya
+				<span class="text-[1.45em] font-medium text-accent-600 dark:text-accent-300">M</span>aharjan
+			</span>
+			<span class="sr-only">Atishaya Maharjan — home</span>
 		</a>
 
 		<!-- Desktop nav -->
-		<nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
+		<nav class="hidden md:flex items-center gap-5" aria-label="Main navigation">
 			{navItems.map((item) => {
 				const isActive = currentPath === item.path || (item.path !== '/' && currentPath.startsWith(item.path));
 				return (
-<a
+					<a
 						href={item.path}
-						class={`text-sm tracking-wide transition-colors duration-200 ${
-isActive
-? 'text-primary-900 dark:text-background-100 border-b border-primary-800 dark:border-background-200 pb-0.5'
-: 'text-primary-600 dark:text-background-400 hover:text-primary-900 dark:hover:text-background-100'
-}`}
+						aria-current={isActive ? 'page' : undefined}
+						class={`text-xs tracking-[0.12em] uppercase transition-colors duration-200 ${
+							isActive
+								? 'text-accent-600 dark:text-accent-300 border-b border-accent-600 dark:border-accent-300 pb-0.5'
+								: 'text-ink-500 dark:text-ink-300 hover:text-ink-900 dark:hover:text-ink-100'
+						}`}
 					>
 						{item.label}
 					</a>
 				);
 			})}
 			<a
-				href="/assets/resume.pdf"
+				href="/assets/atishaya_research_resume.pdf"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="text-sm tracking-wide text-tertiary-600 dark:text-tertiary-400 hover:text-tertiary-800 dark:hover:text-tertiary-300 transition-colors duration-200"
+				title="Research CV — for academic audiences"
+				class="text-xs tracking-[0.12em] uppercase text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors duration-200"
 			>
-				Résumé ↗
+				CV&nbsp;↗
+			</a>
+			<a
+				href="/assets/atishaya_swe_resume.pdf"
+				target="_blank"
+				rel="noopener noreferrer"
+				title="Industry résumé — for software engineering roles"
+				class="text-xs tracking-[0.12em] uppercase text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors duration-200"
+			>
+				Résumé&nbsp;↗
 			</a>
 			<DarkModeToggle client:load />
 		</nav>
@@ -55,14 +75,16 @@ isActive
 			<DarkModeToggle client:load />
 			<button
 				id="mobile-menu-btn"
-				class="text-primary-700 dark:text-background-300 hover:text-primary-900 dark:hover:text-background-100 transition-colors"
+				type="button"
+				class="text-ink-700 dark:text-ink-200 hover:text-ink-900 dark:hover:text-ink-100 transition-colors"
 				aria-label="Toggle menu"
 				aria-expanded="false"
+				aria-controls="mobile-menu"
 			>
-				<svg class="w-5 h-5 menu-open" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<svg class="w-5 h-5 menu-open" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
 				</svg>
-				<svg class="w-5 h-5 menu-close hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<svg class="w-5 h-5 menu-close hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
 				</svg>
 			</button>
@@ -72,32 +94,41 @@ isActive
 	<!-- Mobile menu -->
 	<nav
 		id="mobile-menu"
-		class="hidden md:hidden border-t border-primary-100 dark:border-primary-300 bg-background-base dark:bg-primary-950"
+		class="hidden md:hidden border-t border-rule dark:border-rule-dark bg-paper-100 dark:bg-paper-900"
 		aria-label="Mobile navigation"
 	>
-		<div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-4">
+		<div class="max-w-3xl mx-auto px-6 py-4 flex flex-col gap-4">
 			{navItems.map((item) => {
 				const isActive = currentPath === item.path || (item.path !== '/' && currentPath.startsWith(item.path));
 				return (
-<a
+					<a
 						href={item.path}
-						class={`text-sm tracking-wide transition-colors ${
-isActive
-? 'text-primary-900 dark:text-background-100'
-: 'text-primary-600 dark:text-background-400 hover:text-primary-900 dark:hover:text-background-100'
-}`}
+						aria-current={isActive ? 'page' : undefined}
+						class={`text-xs tracking-[0.12em] uppercase transition-colors ${
+							isActive
+								? 'text-accent-600 dark:text-accent-300'
+								: 'text-ink-500 dark:text-ink-300 hover:text-ink-900 dark:hover:text-ink-100'
+						}`}
 					>
 						{item.label}
 					</a>
 				);
 			})}
 			<a
-				href="/assets/resume.pdf"
+				href="/assets/atishaya_research_resume.pdf"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="text-sm tracking-wide text-tertiary-600 dark:text-tertiary-400 hover:text-tertiary-800 dark:hover:text-tertiary-300 transition-colors"
+				class="text-xs tracking-[0.12em] uppercase text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors"
 			>
-				Résumé ↗
+				Research CV ↗
+			</a>
+			<a
+				href="/assets/atishaya_swe_resume.pdf"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="text-xs tracking-[0.12em] uppercase text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors"
+			>
+				Industry Résumé ↗
 			</a>
 		</div>
 	</nav>

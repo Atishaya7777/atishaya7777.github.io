@@ -1,0 +1,91 @@
+---
+import Layout from './Layout.astro';
+
+// Markdown layout for blog posts. Add `layout: ../../layouts/PostLayout.astro`
+// to a post's frontmatter so it renders inside the site chrome with SEO metadata.
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={`${frontmatter.title} — Atishaya Maharjan`} description={frontmatter.description} type="article">
+	<article class="max-w-3xl mx-auto px-6">
+		<header class="pt-20 pb-12 text-center">
+			{frontmatter.date && (
+				<p class="text-xs tracking-[0.2em] uppercase text-ink-400 dark:text-ink-300 mb-6">
+					{new Date(frontmatter.date).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' })}
+				</p>
+			)}
+			<h1 class="font-display font-medium text-4xl sm:text-5xl text-ink-900 dark:text-ink-100 mb-4">
+				{frontmatter.title}
+			</h1>
+			{frontmatter.description && (
+				<p class="text-base text-ink-500 dark:text-ink-300 max-w-xl mx-auto leading-relaxed italic">
+					{frontmatter.description}
+				</p>
+			)}
+		</header>
+
+		<hr class="border-t-4 border-double border-ink-900 dark:border-ink-100" />
+
+		<div class="post-body py-12 text-[15px] leading-[1.8]">
+			<slot />
+		</div>
+	</article>
+</Layout>
+
+<style is:global>
+	.post-body h1,
+	.post-body h2,
+	.post-body h3 {
+		font-family: theme('fontFamily.display');
+		color: theme('colors.ink.900');
+		margin: 2rem 0 0.75rem;
+	}
+	.dark .post-body h1,
+	.dark .post-body h2,
+	.dark .post-body h3 {
+		color: theme('colors.ink.100');
+	}
+	.post-body h1 { font-size: 1.75rem; }
+	.post-body h2 { font-size: 1.5rem; }
+	.post-body h3 { font-size: 1.25rem; }
+	.post-body p { margin-bottom: 1rem; }
+	.post-body a {
+		color: theme('colors.accent.600');
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+	.dark .post-body a {
+		color: theme('colors.accent.300');
+	}
+	.post-body ul,
+	.post-body ol {
+		margin: 0 0 1rem 1.5rem;
+	}
+	.post-body ul { list-style: disc; }
+	.post-body ol { list-style: decimal; }
+	.post-body blockquote {
+		border-left: 2px solid theme('colors.rule.strong');
+		padding-left: 1rem;
+		font-style: italic;
+		margin-bottom: 1rem;
+	}
+	.post-body hr {
+		border-color: theme('colors.rule.DEFAULT');
+		margin: 2rem 0;
+	}
+	.dark .post-body hr {
+		border-color: theme('colors.rule.dark');
+	}
+	.post-body pre {
+		background: theme('colors.paper.200');
+		border: 1px solid theme('colors.rule.DEFAULT');
+		border-radius: 2px;
+		padding: 1rem;
+		overflow-x: auto;
+		margin-bottom: 1rem;
+	}
+	.dark .post-body pre {
+		background: theme('colors.paper.800');
+		border-color: theme('colors.rule.dark');
+	}
+</style>

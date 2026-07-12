@@ -1,77 +1,95 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const links = [
+	{ label: 'GitHub', text: 'github.com/Atishaya7777', url: 'https://github.com/Atishaya7777' },
+	{ label: 'LinkedIn', text: 'linkedin.com/in/atishaya-maharjan07', url: 'https://www.linkedin.com/in/atishaya-maharjan07' },
+	{ label: 'Research CV', text: 'For academic audiences — positions, papers, and talks [PDF]', url: '/assets/atishaya_research_resume.pdf' },
+	{ label: 'Résumé', text: 'For industry audiences — software engineering experience [PDF]', url: '/assets/atishaya_swe_resume.pdf' },
+];
+
+const topics = [
+	{
+		title: 'Research mathematics',
+		description: 'Combinatorics, graph theory, algorithms — always happy to geek out about a new problem or proof idea.',
+	},
+	{
+		title: 'Graduate school & academia',
+		description: "Thinking about grad programs, research positions, or navigating academic life? I'm happy to share what I know.",
+	},
+	{
+		title: 'Software & web development',
+		description: 'Frontend projects, interesting libraries, architectural decisions — always up for a technical discussion.',
+	},
+	{
+		title: 'Teaching & learning',
+		description: "Have a concept you're stuck on? Want to share a pedagogy insight? I'm always happy to help or learn something new.",
+	},
+];
 ---
 
-<Layout title="Contact — Atishaya Maharjan" description="Get in touch with Atishaya Maharjan.">
-	<div class="max-w-5xl mx-auto px-6 py-16">
+<Layout title="Contact — Atishaya Maharjan" description="Get in touch with Atishaya Maharjan for research collaborations, academic enquiries, or software engineering discussions.">
+	<div class="max-w-3xl mx-auto px-6">
 
 		<!-- Page header -->
-		<div class="mb-16">
-			<h1 class="font-cormorant text-5xl text-primary-900 dark:text-background-100 mb-4">Contact</h1>
-			<p class="text-base text-primary-600 dark:text-background-400 font-body max-w-xl leading-relaxed">
+		<header class="pt-20 pb-12 text-center">
+			<h1 class="font-display font-medium text-4xl sm:text-5xl text-ink-900 dark:text-ink-100 mb-4">Contact</h1>
+			<p class="text-base text-ink-500 dark:text-ink-300 max-w-xl mx-auto leading-relaxed">
 				For research collaborations, academic enquiries, or to say hello — email is the best way to reach me.
 			</p>
-		</div>
+		</header>
 
-		<hr class="border-primary-100 dark:border-primary-300 mb-16" />
+		<hr class="border-t-4 border-double border-ink-900 dark:border-ink-100" />
 
-		<!-- Email -->
-		<section class="mb-16">
-			<h2 class="font-cormorant text-3xl text-primary-800 dark:text-background-200 mb-6">Email</h2>
+		<!-- ── 1. Email ── -->
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-6">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">1.</span>Email
+			</h2>
 			<a
 				href="mailto:atishaya7777@gmail.com"
-				class="text-xl font-cormorant text-tertiary-600 dark:text-tertiary-400 hover:text-tertiary-800 dark:hover:text-tertiary-300 transition-colors"
+				class="font-display text-xl text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors"
 			>
 				atishaya7777@gmail.com
 			</a>
-			<p class="text-sm text-primary-500 dark:text-background-500 font-body mt-3 leading-relaxed max-w-lg">
+			<p class="text-sm text-ink-500 dark:text-ink-300 mt-3 leading-relaxed max-w-lg">
 				I try to reply within a few days. If you're reaching out about research or a collaboration, please include a brief description of what you have in mind.
 			</p>
 		</section>
 
-		<hr class="border-primary-100 dark:border-primary-300 mb-16" />
+		<hr class="border-rule dark:border-rule-dark" />
 
-		<!-- Links -->
-		<section class="mb-16">
-			<h2 class="font-cormorant text-3xl text-primary-800 dark:text-background-200 mb-8">Elsewhere</h2>
-			<div class="space-y-6">
-				<div class="flex items-baseline gap-8">
-					<span class="text-xs uppercase tracking-widest text-primary-400 dark:text-background-600 font-body w-20 shrink-0">GitHub</span>
-					<a href="https://github.com/Atishaya7777" target="_blank" rel="noopener noreferrer" class="text-base text-primary-700 dark:text-background-300 hover:text-tertiary-600 dark:hover:text-tertiary-400 transition-colors font-body">
-						github.com/Atishaya7777 ↗
-					</a>
-				</div>
-				<div class="flex items-baseline gap-8">
-					<span class="text-xs uppercase tracking-widest text-primary-400 dark:text-background-600 font-body w-20 shrink-0">LinkedIn</span>
-					<a href="https://www.linkedin.com/in/atishaya-maharjan07" target="_blank" rel="noopener noreferrer" class="text-base text-primary-700 dark:text-background-300 hover:text-tertiary-600 dark:hover:text-tertiary-400 transition-colors font-body">
-						linkedin.com/in/atishaya-maharjan07 ↗
-					</a>
-				</div>
+		<!-- ── 2. Elsewhere ── -->
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">2.</span>Elsewhere
+			</h2>
+			<div class="space-y-4">
+				{links.map((link) => (
+					<div class="grid grid-cols-[100px_1fr] gap-4 items-baseline">
+						<span class="text-xs tracking-[0.12em] uppercase text-ink-400 dark:text-ink-300">{link.label}</span>
+						<a href={link.url} target="_blank" rel="noopener noreferrer" class="text-sm text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">
+							{link.text} ↗
+						</a>
+					</div>
+				))}
 			</div>
 		</section>
 
-		<hr class="border-primary-100 dark:border-primary-300 mb-16" />
+		<hr class="border-rule dark:border-rule-dark" />
 
-		<!-- Topics -->
-		<section class="mb-8">
-			<h2 class="font-cormorant text-3xl text-primary-800 dark:text-background-200 mb-8">I enjoy talking about</h2>
-			<div class="grid sm:grid-cols-2 gap-x-12 gap-y-4">
-				<div>
-					<h3 class="font-cormorant text-lg text-primary-900 dark:text-background-100 mb-1">Research mathematics</h3>
-					<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">Combinatorics, graph theory, algorithms — always happy to geek out about a new problem or proof idea.</p>
-				</div>
-				<div>
-					<h3 class="font-cormorant text-lg text-primary-900 dark:text-background-100 mb-1">Graduate school & academia</h3>
-					<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">Thinking about grad programs, research positions, or navigating academic life? I'm happy to share what I know.</p>
-				</div>
-				<div>
-					<h3 class="font-cormorant text-lg text-primary-900 dark:text-background-100 mb-1">Software & web development</h3>
-					<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">Frontend projects, interesting libraries, architectural decisions — always up for a technical discussion.</p>
-				</div>
-				<div>
-					<h3 class="font-cormorant text-lg text-primary-900 dark:text-background-100 mb-1">Teaching & learning</h3>
-					<p class="text-sm text-primary-600 dark:text-background-500 font-body leading-relaxed">Have a concept you're stuck on? Want to share a pedagogy insight? I'm always happy to help or learn something new.</p>
-				</div>
+		<!-- ── 3. Topics ── -->
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">3.</span>I enjoy talking about
+			</h2>
+			<div class="space-y-5 text-[15px] leading-[1.8]">
+				{topics.map((topic) => (
+					<p>
+						<strong class="font-semibold text-ink-900 dark:text-ink-100">{topic.title}.</strong>
+						{' '}{topic.description}
+					</p>
+				))}
 			</div>
 		</section>
 

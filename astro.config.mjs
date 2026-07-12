@@ -6,8 +6,14 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), sitemap()],
-  site: `https://www.atishaya7777.github.io`,
+  integrations: [
+    tailwind(),
+    react(),
+    sitemap({
+      filter: (page) => !page.includes('/404'),
+    }),
+  ],
+  site: `https://atishaya7777.github.io`,
   output: 'static',
   outDir: './dist',
   image: {

@@ -27,7 +27,7 @@ export default function DarkModeToggle() {
         return (
             <button
                 aria-label="Toggle dark mode"
-                className="w-8 h-8 flex items-center justify-center text-primary-600 dark:text-background-300 hover:text-primary-900 dark:hover:text-background-100 transition-colors"
+                className="w-8 h-8 flex items-center justify-center text-ink-500 dark:text-ink-300 hover:text-ink-900 dark:hover:text-ink-100 transition-colors"
             >
                 <span className="text-sm">○</span>
             </button>
@@ -39,7 +39,7 @@ export default function DarkModeToggle() {
             onClick={() => setDark(!dark)}
             aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
             title={dark ? 'Switch to light mode' : 'Switch to dark mode'}
-            className="w-8 h-8 flex items-center justify-center text-primary-600 dark:text-background-300 hover:text-primary-900 dark:hover:text-background-100 transition-colors"
+            className="w-8 h-8 flex items-center justify-center text-ink-500 dark:text-ink-300 hover:text-ink-900 dark:hover:text-ink-100 transition-colors"
         >
             {dark ? (
                 // Sun icon
