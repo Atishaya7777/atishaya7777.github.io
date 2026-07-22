@@ -3,10 +3,26 @@ import Layout from './Layout.astro';
 
 // Markdown layout for blog posts. Add `layout: ../../layouts/PostLayout.astro`
 // to a post's frontmatter so it renders inside the site chrome with SEO metadata.
-const { frontmatter } = Astro.props;
+const { frontmatter, url } = Astro.props;
+
+const canonicalURL = new URL(url ?? Astro.url.pathname, Astro.site);
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: frontmatter.title,
+	description: frontmatter.description,
+	url: canonicalURL,
+	datePublished: frontmatter.date,
+	dateModified: frontmatter.updated ?? frontmatter.date,
+	author: {
+		"@type": "Person",
+		name: "Atishaya Maharjan",
+		url: "https://atishaya7777.github.io",
+	},
+};
 ---
 
-<Layout title={`${frontmatter.title} — Atishaya Maharjan`} description={frontmatter.description} type="article">
+<Layout title={`${frontmatter.title} — Atishaya Maharjan`} description={frontmatter.description} type="article" structuredData={structuredData}>
 	<article class="max-w-3xl mx-auto px-6">
 		<header class="pt-20 pb-12 text-center">
 			{frontmatter.date && (

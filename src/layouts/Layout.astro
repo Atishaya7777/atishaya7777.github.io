@@ -9,16 +9,20 @@ interface Props {
 	title: string;
 	description?: string;
 	image?: string;
+	imageAlt?: string;
 	type?: string;
 	structuredData?: Record<string, unknown>;
+	noindex?: boolean;
 }
 
 const {
 	title,
 	description = "Computer Science & Mathematics student, researcher, and software engineer.",
 	image = "/assets/og-image.png",
+	imageAlt = title,
 	type = "website",
 	structuredData,
+	noindex = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -32,6 +36,7 @@ const imageURL = new URL(image, Astro.site);
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content={description} />
 		<meta name="author" content="Atishaya Maharjan" />
+		{noindex && <meta name="robots" content="noindex, nofollow" />}
 		<meta name="generator" content={Astro.generator} />
 		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5F3F5" />
 		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#171218" />
@@ -53,7 +58,7 @@ const imageURL = new URL(image, Astro.site);
 		<meta property="og:image" content={imageURL} />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
-		<meta property="og:image:alt" content="Title card reading: Atishaya Maharjan — Computer Science & Mathematics, University of Manitoba" />
+		<meta property="og:image:alt" content={imageAlt} />
 
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />

@@ -35,6 +35,7 @@ const structuredData = {
 <Layout
 	title="Atishaya Maharjan — Computer Science & Mathematics"
 	description="Computer Science & Mathematics student, researcher, and software engineer at the University of Manitoba."
+	imageAlt="Title card reading: Atishaya Maharjan — Computer Science & Mathematics, University of Manitoba"
 	structuredData={structuredData}
 >
 
@@ -99,6 +100,22 @@ const structuredData = {
 
 		<hr class="border-rule dark:border-rule-dark" />
 
+		<!-- ── Contents ── -->
+		<nav class="py-10" aria-label="Document contents">
+			<h2 class="text-center text-sm tracking-[0.2em] uppercase text-ink-900 dark:text-ink-100 font-semibold mb-6">Contents</h2>
+			<ol class="max-w-md mx-auto grid grid-cols-2 gap-x-8 gap-y-2 text-sm list-none">
+				<li><a href="#selected-works" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">§5&nbsp; Selected Works</a></li>
+				<li><a href={routes.research} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Research</a></li>
+				<li><a href="#experience" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">§3&nbsp; Experience</a></li>
+				<li><a href={routes.blog} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Notes</a></li>
+				<li><a href={`${routes.research}#talks`} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Talks</a></li>
+				<li><a href="/assets/atishaya_swe_resume.pdf" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Résumé&nbsp;[PDF]</a></li>
+				<li><a href={routes.contact} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Contact</a></li>
+			</ol>
+		</nav>
+
+		<hr class="border-rule dark:border-rule-dark" />
+
 		<!-- ── 1. Research Interests ── -->
 		<section class="py-12">
 			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
@@ -144,7 +161,7 @@ const structuredData = {
 		<hr class="border-rule dark:border-rule-dark" />
 
 		<!-- ── 3. Experience ── -->
-		<section class="py-12">
+		<section id="experience" class="py-12 scroll-mt-20">
 			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
 				<span class="text-ink-400 dark:text-ink-300 mr-2">3.</span>Experience
 			</h2>
@@ -233,22 +250,67 @@ const structuredData = {
 
 		<hr class="border-rule dark:border-rule-dark" />
 
-		<!-- ── 5. Selected Projects ── -->
-		<section class="py-12">
+		<!-- ── 5. Selected Works ── -->
+		<section id="selected-works" class="py-12 scroll-mt-20">
 			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
-				<span class="text-ink-400 dark:text-ink-300 mr-2">5.</span>Selected Projects
+				<span class="text-ink-400 dark:text-ink-300 mr-2">5.</span>Selected Works
 			</h2>
-			<div class="space-y-8">
+			<div class="space-y-10 text-[15px] leading-[1.8]">
+				<div>
+					<h3 class="font-display text-xl text-ink-900 dark:text-ink-100 mb-1">EkNepal</h3>
+					<p class="text-xs tracking-[0.12em] uppercase text-ink-400 dark:text-ink-300 mb-2">Frontend · Professional Project · Alpinist Studios</p>
+					<p class="text-ink-700 dark:text-ink-200">
+						A news-aggregation platform bringing reporting from multiple Nepali publications into one interface.
+						My first paid programming project — I contributed to the frontend while working through Alpinist
+						Studios.
+					</p>
+					<p class="mt-2 text-sm">
+						<a href={routes.eknepal} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Project&nbsp;note ↗</a>
+						<span class="text-ink-400 dark:text-ink-300 mx-2">·</span>
+						<a href="https://eknepal.com/" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">eknepal.com&nbsp;↗</a>
+					</p>
+				</div>
 				<div>
 					<div class="flex items-baseline justify-between gap-4 mb-1">
-						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">Brainstorm W</h3>
+						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">Brainstorm</h3>
 						<span class="text-xs text-ink-400 dark:text-ink-300 whitespace-nowrap">2026</span>
 					</div>
 					<p class="text-xs tracking-[0.12em] uppercase text-ink-400 dark:text-ink-300 mb-2">Full-Stack · AI · RAG</p>
-					<p class="text-sm text-ink-500 dark:text-ink-300 leading-relaxed">
-						AI-powered, role-specific knowledge management system integrating Pinecone, Jira, Redis, and PostgreSQL.
-						Implemented RAG with role-based access controls and a dynamic model-routing layer. Demoed at Sprint to
-						Innovate 2026; pitched for the CIPS Manitoba Challenge.
+					<p class="text-ink-700 dark:text-ink-200">
+						An AI-powered, role-specific knowledge management system integrating Pinecone, Jira, Redis, and
+						PostgreSQL. Implemented retrieval-augmented generation with role-based access controls and a
+						dynamic model-routing layer. Demoed at Sprint to Innovate 2026; pitched for the CIPS Manitoba
+						Challenge.
+					</p>
+				</div>
+				<div>
+					<div class="flex items-baseline justify-between gap-4 mb-1">
+						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">WinLocate</h3>
+						<span class="text-xs text-ink-400 dark:text-ink-300 whitespace-nowrap">2026</span>
+					</div>
+					<p class="text-xs tracking-[0.12em] uppercase text-ink-400 dark:text-ink-300 mb-2">Full-Stack · React · Civic Data</p>
+					<p class="text-ink-700 dark:text-ink-200">
+						A full-stack civic-data platform helping organizations compare Winnipeg locations using city
+						data, zoning maps, and budget estimates via the Socrata API. 1st place, 2026 Winnipeg Open Data
+						Datathon.
+					</p>
+					<p class="mt-2 text-sm">
+						<a href={routes.winlocate} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Project&nbsp;note ↗</a>
+					</p>
+				</div>
+				<div>
+					<div class="flex items-baseline justify-between gap-4 mb-1">
+						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">Get Good Grades</h3>
+						<span class="text-xs text-ink-400 dark:text-ink-300 whitespace-nowrap">2026</span>
+					</div>
+					<p class="text-xs tracking-[0.12em] uppercase text-ink-400 dark:text-ink-300 mb-2">Electron · React · TypeScript · YAML</p>
+					<p class="text-ink-700 dark:text-ink-200">
+						A desktop flashcard application that reads user-controlled YAML deck files from the local file
+						system instead of a proprietary database. Sole designer and developer. Winner, "Most Chaotic
+						Evil Hack," .devHacks 2026.
+					</p>
+					<p class="mt-2 text-sm">
+						<a href={routes.getGoodGrades} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Project&nbsp;note ↗</a>
 					</p>
 				</div>
 				<div>
@@ -257,9 +319,10 @@ const structuredData = {
 						<span class="text-xs text-ink-400 dark:text-ink-300 whitespace-nowrap">2024–Present</span>
 					</div>
 					<p class="text-xs tracking-[0.12em] uppercase text-ink-400 dark:text-ink-300 mb-2">Python · Research · Algorithms</p>
-					<p class="text-sm text-ink-500 dark:text-ink-300 leading-relaxed">
-						Modelled Hamiltonian paths in &#8477;&#178; with focus on approximation algorithms. Generated 200+
-						randomised instances, built visualisation pipelines, and presented findings at weekly GADA Lab meetings.
+					<p class="text-ink-700 dark:text-ink-200">
+						Modelled Hamiltonian paths in &#8477;&#178; with a focus on approximation algorithms. Generated
+						200+ randomised instances, built visualisation pipelines, and presented findings at weekly GADA
+						Lab meetings.
 					</p>
 				</div>
 				<div>
@@ -268,9 +331,9 @@ const structuredData = {
 						<span class="text-xs text-ink-400 dark:text-ink-300 whitespace-nowrap">2025–2026</span>
 					</div>
 					<p class="text-xs tracking-[0.12em] uppercase text-ink-400 dark:text-ink-300 mb-2">C · Python · Cryptography</p>
-					<p class="text-sm text-ink-500 dark:text-ink-300 leading-relaxed">
-						1st place among 41 teams (2026) and 2nd place among 25+ teams (2025) at the annual CSSA Capture the Flag
-						competition, solving web-based cryptography and reverse-engineering challenges.
+					<p class="text-ink-700 dark:text-ink-200">
+						1st place among 41 teams (2026) and 2nd place among 25+ teams (2025) at the annual CSSA Capture
+						the Flag competition, solving web-based cryptography and reverse-engineering challenges.
 					</p>
 				</div>
 			</div>

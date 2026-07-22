@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import routes from '../global/routes';
 
 const experience = [
 	{
@@ -66,11 +67,37 @@ const research = [
 
 const projects = [
 	{
-		title: 'Brainstorm W',
+		title: 'EkNepal',
+		year: '2024',
+		stack: 'Frontend · Professional Project · Alpinist Studios',
+		description:
+			'A news-aggregation platform bringing reporting from multiple Nepali publications into one interface. My first paid programming project — I contributed to the frontend while working through Alpinist Studios. The public product is proprietary; the source is not published.',
+		link: { href: routes.eknepal, label: 'Project note ↗' },
+		externalLink: { href: 'https://eknepal.com/', label: 'eknepal.com ↗' },
+	},
+	{
+		title: 'Brainstorm',
 		year: '2026',
 		stack: 'Next.js · FastAPI · PostgreSQL · Pinecone · Redis · RAG',
 		description:
 			'AI-powered, role-specific knowledge management system (144 commits, 4 collaborators). Integrated Pinecone, Jira, Redis, and PostgreSQL with interactive charts. Implemented retrieval-augmented generation with role-based access controls across 4 integrated systems. Built a model-routing layer with dynamic model selection and fallback policies. Demoed to 7 users at Sprint to Innovate 2026; pitched for the CIPS Manitoba Challenge.',
+	},
+	{
+		title: 'WinLocate',
+		year: '2026',
+		stack: 'React · Socrata API · Full-Stack · Civic Data',
+		description:
+			'Full-stack civic-data platform helping organizations compare Winnipeg locations using city data, zoning maps, budget estimates, and relocation-planning tools. Integrated City of Winnipeg open datasets via the Socrata API into interactive comparisons and maps. 1st place, 2026 Winnipeg Open Data Datathon.',
+		link: { href: routes.winlocate, label: 'Project note ↗' },
+		externalLink: { href: 'https://www.linkedin.com/posts/edwinnipeg_winnipeg-opendata-datathon-activity-7436856469112901632-dLVI', label: 'Winner announcement ↗' },
+	},
+	{
+		title: 'Get Good Grades',
+		year: '2026',
+		stack: 'Electron · React · TypeScript · YAML',
+		description:
+			'Desktop flashcard application that reads user-controlled .yaml deck files directly from the local file system, separating flashcard content from the viewer so decks stay portable and shareable as plain text. Sole designer and developer. Winner, "Most Chaotic Evil Hack," .devHacks 2026.',
+		link: { href: routes.getGoodGrades, label: 'Project note ↗' },
 	},
 	{
 		title: 'Spatially Embedded Graphs',
@@ -113,7 +140,7 @@ const skills = [
 ];
 ---
 
-<Layout title="Works — Atishaya Maharjan" description="Professional experience, research projects, and technical work by Atishaya Maharjan.">
+<Layout title="Works — Atishaya Maharjan" description="Software engineering and research work by Atishaya Maharjan — full-stack development in React, TypeScript, and Python, plus algorithms and graph-theory research at the University of Manitoba.">
 	<div class="max-w-3xl mx-auto px-6">
 
 		<!-- Page header -->
@@ -190,6 +217,17 @@ const skills = [
 						</div>
 						<p class="text-xs tracking-[0.12em] uppercase text-ink-400 dark:text-ink-300 mb-2">{project.stack}</p>
 						<p class="text-sm text-ink-500 dark:text-ink-300 leading-relaxed">{project.description}</p>
+						{(project.link || project.externalLink) && (
+							<p class="mt-2 text-sm">
+								{project.link && (
+									<a href={project.link.href} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">{project.link.label}</a>
+								)}
+								{project.link && project.externalLink && <span class="text-ink-400 dark:text-ink-300 mx-2">·</span>}
+								{project.externalLink && (
+									<a href={project.externalLink.href} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">{project.externalLink.label}</a>
+								)}
+							</p>
+						)}
 					</div>
 				))}
 			</div>

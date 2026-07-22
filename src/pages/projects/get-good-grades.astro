@@ -1,0 +1,113 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "SoftwareApplication",
+	name: "Get Good Grades",
+	applicationCategory: "Desktop flashcard application",
+	operatingSystem: "Cross-platform (Electron)",
+	description:
+		"A desktop flashcard application built with Electron, React, TypeScript, and YAML, that reads user-controlled .yaml deck files directly from the local file system instead of a centralized service.",
+	author: {
+		"@type": "Person",
+		name: "Atishaya Maharjan",
+		url: "https://atishaya7777.github.io",
+	},
+};
+---
+
+<Layout
+	title="Get Good Grades — Atishaya Maharjan"
+	description="Get Good Grades: a desktop flashcard app built with Electron, React, TypeScript, and YAML that reads user-controlled flashcard decks from the local file system. Winner, 'Most Chaotic Evil Hack,' .devHacks 2026."
+	type="article"
+	structuredData={structuredData}
+>
+	<article class="max-w-3xl mx-auto px-6">
+
+		<header class="pt-20 pb-10 text-center">
+			<p class="text-xs tracking-[0.25em] uppercase text-ink-400 dark:text-ink-300 mb-6">
+				Project&nbsp;Note
+			</p>
+			<h1 class="font-display font-medium text-4xl sm:text-5xl text-ink-900 dark:text-ink-100 leading-tight mb-4">
+				Get Good Grades
+			</h1>
+			<p class="text-base text-ink-500 dark:text-ink-300 max-w-xl mx-auto leading-relaxed">
+				A desktop flashcard app that keeps your decks as plain YAML files instead of a database you don't control.
+			</p>
+		</header>
+
+		<section class="pb-10">
+			<dl class="grid grid-cols-[110px_1fr] gap-x-6 gap-y-2 text-sm max-w-xl mx-auto">
+				<dt class="text-ink-400 dark:text-ink-300 uppercase text-xs tracking-[0.1em] pt-0.5">Type</dt>
+				<dd class="text-ink-700 dark:text-ink-200">Personal / hackathon project</dd>
+
+				<dt class="text-ink-400 dark:text-ink-300 uppercase text-xs tracking-[0.1em] pt-0.5">Role</dt>
+				<dd class="text-ink-700 dark:text-ink-200">Sole designer and developer</dd>
+
+				<dt class="text-ink-400 dark:text-ink-300 uppercase text-xs tracking-[0.1em] pt-0.5">Stack</dt>
+				<dd class="text-ink-700 dark:text-ink-200">Electron · React · TypeScript · YAML</dd>
+
+				<dt class="text-ink-400 dark:text-ink-300 uppercase text-xs tracking-[0.1em] pt-0.5">Event</dt>
+				<dd class="text-ink-700 dark:text-ink-200">.devHacks 2026 — "Most Chaotic Evil Hack"</dd>
+
+				<dt class="text-ink-400 dark:text-ink-300 uppercase text-xs tracking-[0.1em] pt-0.5">Source</dt>
+				<dd class="text-ink-700 dark:text-ink-200">Not currently public</dd>
+			</dl>
+		</section>
+
+		<hr class="border-t-4 border-double border-ink-900 dark:border-ink-100" />
+
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-6">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">1.</span>The Idea
+			</h2>
+			<div class="space-y-4 text-[15px] leading-[1.8]">
+				<p>
+					Most flashcard apps lock your decks inside a proprietary database or a cloud account. Get Good
+					Grades instead reads flashcard decks directly from user-controlled <code>.yaml</code> files on the
+					local file system — the content and the viewer are kept separate, so a deck is just a plain-text
+					file you can create, edit, organize, and share however you like, without depending on the app's own
+					storage.
+				</p>
+			</div>
+		</section>
+
+		<hr class="border-rule dark:border-rule-dark" />
+
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-6">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">2.</span>The Build
+			</h2>
+			<div class="space-y-4 text-[15px] leading-[1.8]">
+				<p>
+					I designed and built the application as an Electron desktop app with a React and TypeScript
+					frontend. The core design decision was to keep flashcard content as YAML rather than in a
+					database, so decks stay portable, human-readable, and shareable as plain text — no proprietary
+					format, no account required.
+				</p>
+			</div>
+		</section>
+
+		<hr class="border-rule dark:border-rule-dark" />
+
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-6">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">3.</span>Recognition
+			</h2>
+			<div class="space-y-4 text-[15px] leading-[1.8]">
+				<p>
+					I presented Get Good Grades at <strong class="font-semibold text-ink-900 dark:text-ink-100">.devHacks 2026</strong>,
+					where it received the "Most Chaotic Evil Hack" award.
+				</p>
+			</div>
+			{/*
+				TODO (Atishaya): this page still needs the screenshots, a short demo (link or GIF), and
+				an example of the YAML deck format you mentioned. Send those and I'll add a figure
+				gallery here, matching the EkNepal page's pattern. I deliberately didn't invent a YAML
+				schema or demo link since I haven't seen either.
+			*/}
+		</section>
+
+	</article>
+</Layout>

@@ -1,0 +1,115 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "SoftwareApplication",
+	name: "WinLocate",
+	applicationCategory: "Civic data / decision-support tool",
+	description:
+		"A full-stack civic-data platform that helps organizations considering a move to Winnipeg compare locations using city data, zoning maps, budget estimates, and relocation-planning tools.",
+	author: {
+		"@type": "Person",
+		name: "Atishaya Maharjan",
+		url: "https://atishaya7777.github.io",
+	},
+};
+---
+
+<Layout
+	title="WinLocate — Atishaya Maharjan"
+	description="WinLocate: a full-stack civic-data platform for comparing Winnipeg locations using open city data, built for the 2026 Winnipeg Open Data Datathon. 1st place winner."
+	type="article"
+	structuredData={structuredData}
+>
+	<article class="max-w-3xl mx-auto px-6">
+
+		<header class="pt-20 pb-10 text-center">
+			<p class="text-xs tracking-[0.25em] uppercase text-ink-400 dark:text-ink-300 mb-6">
+				Project&nbsp;Note
+			</p>
+			<h1 class="font-display font-medium text-4xl sm:text-5xl text-ink-900 dark:text-ink-100 leading-tight mb-4">
+				WinLocate
+			</h1>
+			<p class="text-base text-ink-500 dark:text-ink-300 max-w-xl mx-auto leading-relaxed">
+				A full-stack civic-data platform for comparing Winnipeg locations, built for the 2026 Winnipeg Open Data Datathon.
+			</p>
+		</header>
+
+		<section class="pb-10">
+			<dl class="grid grid-cols-[110px_1fr] gap-x-6 gap-y-2 text-sm max-w-xl mx-auto">
+				<dt class="text-ink-400 dark:text-ink-300 uppercase text-xs tracking-[0.1em] pt-0.5">Type</dt>
+				<dd class="text-ink-700 dark:text-ink-200">Hackathon project — civic data</dd>
+
+				<dt class="text-ink-400 dark:text-ink-300 uppercase text-xs tracking-[0.1em] pt-0.5">Role</dt>
+				<dd class="text-ink-700 dark:text-ink-200">Full-stack developer, team member</dd>
+
+				<dt class="text-ink-400 dark:text-ink-300 uppercase text-xs tracking-[0.1em] pt-0.5">Event</dt>
+				<dd class="text-ink-700 dark:text-ink-200">2026 Winnipeg Open Data Datathon</dd>
+
+				<dt class="text-ink-400 dark:text-ink-300 uppercase text-xs tracking-[0.1em] pt-0.5">Result</dt>
+				<dd class="text-ink-700 dark:text-ink-200">1st place</dd>
+
+				<dt class="text-ink-400 dark:text-ink-300 uppercase text-xs tracking-[0.1em] pt-0.5">Evidence</dt>
+				<dd>
+					<a href="https://www.linkedin.com/posts/edwinnipeg_winnipeg-opendata-datathon-activity-7436856469112901632-dLVI" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">
+						Winner announcement ↗
+					</a>
+				</dd>
+			</dl>
+		</section>
+
+		<hr class="border-t-4 border-double border-ink-900 dark:border-ink-100" />
+
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-6">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">1.</span>The Problem
+			</h2>
+			<div class="space-y-4 text-[15px] leading-[1.8]">
+				<p>
+					Organizations considering a move to Winnipeg have to weigh a scatter of city data — zoning, budgets,
+					services — that the City of Winnipeg publishes as open datasets but doesn't present as a comparison
+					tool. WinLocate turns that data into something a relocation decision can actually be made from:
+					side-by-side location comparisons, zoning maps, and budget estimates.
+				</p>
+			</div>
+		</section>
+
+		<hr class="border-rule dark:border-rule-dark" />
+
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-6">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">2.</span>The Build
+			</h2>
+			<div class="space-y-4 text-[15px] leading-[1.8]">
+				<p>
+					The platform pulls City of Winnipeg open data through the Socrata API and turns separate municipal
+					datasets into interactive comparisons, maps, and planning tools — rather than requiring a user to
+					interpret raw open-data tables themselves. I worked on the React interface, the data-driven
+					workflows that drive those comparisons, and the integration of the underlying Socrata datasets.
+				</p>
+			</div>
+		</section>
+
+		<hr class="border-rule dark:border-rule-dark" />
+
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-6">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">3.</span>Recognition
+			</h2>
+			<div class="space-y-4 text-[15px] leading-[1.8]">
+				<p>
+					WinLocate won first place at the 2026 Winnipeg Open Data Datathon.
+					<a href="https://www.linkedin.com/posts/edwinnipeg_winnipeg-opendata-datathon-activity-7436856469112901632-dLVI" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">
+						See the winner announcement ↗
+					</a>
+				</p>
+			</div>
+			{/*
+				TODO (Atishaya): a screenshot or demo link would strengthen this page — send one if you
+				have it and I'll add a figure here, following the same pattern as the EkNepal page.
+			*/}
+		</section>
+
+	</article>
+</Layout>

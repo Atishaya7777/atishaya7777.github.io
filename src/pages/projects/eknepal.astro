@@ -1,0 +1,205 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "Article",
+	headline: "EkNepal: A First Attempt at Building Around Uncertainty",
+	description:
+		"A project note on EkNepal, a news-aggregation product that brings reporting from multiple Nepali publications into one interface, and my work as a frontend contributor through Alpinist Studios.",
+	author: {
+		"@type": "Person",
+		name: "Atishaya Maharjan",
+		url: "https://atishaya7777.github.io",
+	},
+	about: {
+		"@type": "WebApplication",
+		name: "EkNepal",
+		url: "https://eknepal.com/",
+		applicationCategory: "News aggregator",
+	},
+};
+---
+
+<Layout
+	title="EkNepal — A First Attempt at Building Around Uncertainty · Atishaya Maharjan"
+	description="Project note on EkNepal, a news-aggregation platform bringing reporting from multiple Nepali publications into one interface. My first paid programming project — a frontend contribution through Alpinist Studios."
+	type="article"
+	structuredData={structuredData}
+>
+	<article class="max-w-3xl mx-auto px-6">
+
+		<!-- ── Title block ── -->
+		<header class="pt-20 pb-10 text-center">
+			<p class="text-xs tracking-[0.25em] uppercase text-ink-400 dark:text-ink-300 mb-6">
+				Project&nbsp;Note
+			</p>
+			<h1 class="font-display font-medium text-4xl sm:text-5xl text-ink-900 dark:text-ink-100 leading-tight mb-4">
+				EkNepal: A First Attempt at Building Around Uncertainty
+			</h1>
+		</header>
+
+		<!-- ── Metadata ── -->
+		<section class="pb-10">
+			<dl class="grid grid-cols-[110px_1fr] gap-x-6 gap-y-2 text-sm max-w-xl mx-auto">
+				<dt class="text-ink-400 dark:text-ink-300 uppercase text-xs tracking-[0.1em] pt-0.5">Type</dt>
+				<dd class="text-ink-700 dark:text-ink-200">Professional project</dd>
+
+				<dt class="text-ink-400 dark:text-ink-300 uppercase text-xs tracking-[0.1em] pt-0.5">Role</dt>
+				<dd class="text-ink-700 dark:text-ink-200">Frontend contributor</dd>
+
+				<dt class="text-ink-400 dark:text-ink-300 uppercase text-xs tracking-[0.1em] pt-0.5">Organization</dt>
+				<dd class="text-ink-700 dark:text-ink-200">Alpinist Studios</dd>
+
+				<dt class="text-ink-400 dark:text-ink-300 uppercase text-xs tracking-[0.1em] pt-0.5">Status</dt>
+				<dd class="text-ink-700 dark:text-ink-200">Public product</dd>
+
+				<dt class="text-ink-400 dark:text-ink-300 uppercase text-xs tracking-[0.1em] pt-0.5">Source</dt>
+				<dd class="text-ink-700 dark:text-ink-200">Proprietary — not published</dd>
+
+				<dt class="text-ink-400 dark:text-ink-300 uppercase text-xs tracking-[0.1em] pt-0.5">Link</dt>
+				<dd>
+					<a href="https://eknepal.com/" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">
+						eknepal.com&nbsp;↗
+					</a>
+				</dd>
+			</dl>
+		</section>
+
+		<hr class="border-t-4 border-double border-ink-900 dark:border-ink-100" />
+
+		<!-- ── Abstract ── -->
+		<section class="py-12">
+			<h2 class="text-center text-sm tracking-[0.2em] uppercase text-ink-900 dark:text-ink-100 font-semibold mb-6">Abstract</h2>
+			<div class="space-y-4 text-[15px] leading-[1.8] text-justify [hyphens:auto] max-w-2xl mx-auto">
+				<p>
+					EkNepal is a news-aggregation platform that brings reporting from multiple Nepali publications into a
+					single interface. It was my first paid programming project. I contributed to the frontend while
+					working through <strong class="font-semibold text-ink-900 dark:text-ink-100">Alpinist Studios</strong>.
+					This note is a short retrospective on the product, my contribution to it, and what the experience
+					changed about how I approach unclear problems.
+				</p>
+			</div>
+		</section>
+
+		<hr class="border-rule dark:border-rule-dark" />
+
+		<!-- ── 1. The Question ── -->
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-6">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">1.</span>The Question
+			</h2>
+			<div class="space-y-4 text-[15px] leading-[1.8]">
+				<p class="font-display text-xl italic text-ink-900 dark:text-ink-100">
+					Could you get truthful information?
+				</p>
+				<p>
+					Open a handful of Nepali news sites in a row and you get a handful of different accounts of the same
+					country — the same event described differently, or reported by one outlet and missed entirely by the
+					next. Nothing was necessarily wrong; there was just no single place that put the coverage side by
+					side and let a reader compare it. That gap — not a bug, not a feature request, just a genuinely
+					fuzzy problem — was the starting point for EkNepal.
+				</p>
+			</div>
+		</section>
+
+		<hr class="border-rule dark:border-rule-dark" />
+
+		<!-- ── 2. The Product ── -->
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-6">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">2.</span>The Product
+			</h2>
+			<div class="space-y-4 text-[15px] leading-[1.8]">
+				<p>
+					EkNepal is a Nepali-language news reader that pulls reporting from several distinct outlets — among
+					them Himalaya Times and News of Nepal — into one continuously updating feed, each item clearly
+					attributed to its source publication. Articles carry share links (email, Facebook, X, Viber,
+					WhatsApp) and a comment section, and the site is built mobile-first, with dates rendered in the
+					Bikram Sambat calendar alongside a live weather readout. Beyond news, it bundles a set of everyday
+					utilities Nepali readers commonly look for alongside their news — foreign-exchange rates, share-market
+					figures, a horoscope, a date converter, a Unicode converter, and gold and silver pricing — organised
+					behind a single navigation drawer.
+				</p>
+				<p>
+					EkNepal is a product built and maintained by a team; it is not something I built alone, and I did not
+					build its backend, its news-ingestion pipeline, or any fact-checking or source-classification system.
+				</p>
+			</div>
+		</section>
+
+		<hr class="border-rule dark:border-rule-dark" />
+
+		<!-- ── 3. My Contribution ── -->
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-6">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">3.</span>My Contribution
+			</h2>
+			<div class="space-y-4 text-[15px] leading-[1.8]">
+				<p>
+					I contributed to the frontend of EkNepal through Alpinist Studios — the part that turned scattered
+					reporting from multiple outlets into something a reader could actually navigate, read, and compare.
+					It was my first paid software engineering work, and the first time code I wrote shipped to real
+					users rather than a course instructor.
+				</p>
+			</div>
+			{/*
+				TODO (Atishaya): if you want more specifics than this (which components/pages you built,
+				the exact stack, concrete technical decisions), send them and I'll expand this section.
+				I didn't fabricate beyond what you've confirmed.
+			*/}
+		</section>
+
+		<hr class="border-rule dark:border-rule-dark" />
+
+		<!-- ── 4. Figures ── -->
+		<!--
+			TODO (Atishaya): real screenshots needed here — I viewed the live site via browser automation
+			(confirming the multi-outlet aggregation, category drawer, and article/share/comment layout
+			described above) but had no way to export those captures as files into this repo. Please add
+			four images to /public/assets/eknepal/ and this section will render them:
+
+				eknepal-fig-1-homepage.png   (1600×2400 or similar, full-height ok)  — main feed / hero + top stories
+				eknepal-fig-2-categories.png                                        — the category navigation drawer
+				eknepal-fig-3-article.png                                           — an article page (source badge, share icons, comments)
+				eknepal-fig-4-responsive.png                                        — the mobile-width layout
+
+			Suggested captions are below; wire them up in the <Figure> blocks once the files exist.
+				Figure 1: EkNepal's primary news interface
+				Figure 2: Browsing reporting across categories
+				Figure 3: Article presentation
+				Figure 4: Responsive interface
+		-->
+
+		<hr class="border-rule dark:border-rule-dark" />
+
+		<!-- ── 5. Reflection ── -->
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-6">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">5.</span>Reflection
+			</h2>
+			<div class="space-y-4 text-[15px] leading-[1.8]">
+				<p>
+					The habit EkNepal left me with wasn't a framework or a library — it was a way of starting: begin with
+					a question that doesn't have a clean shape yet, break it into pieces small enough to actually build,
+					ship something testable, and see what survives contact with real use. That's the same loop I now run
+					on algorithms and proofs — state the conjecture, try small cases, build the smallest thing that could
+					be wrong, and let the evidence tell you where the structure actually is.
+				</p>
+			</div>
+		</section>
+
+		<hr class="border-t-4 border-double border-ink-900 dark:border-ink-100" />
+
+		<p class="py-12 text-center font-display text-xl italic text-ink-900 dark:text-ink-100 max-w-xl mx-auto leading-relaxed">
+			If truth rarely arrives in one piece, why do we keep accepting it from a single source?
+		</p>
+
+		<p class="pb-16 text-center text-sm">
+			<a href="/posts/eknepal-retrospective/" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">
+				Read the personal retrospective →
+			</a>
+		</p>
+
+	</article>
+</Layout>

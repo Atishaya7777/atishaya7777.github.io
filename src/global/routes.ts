@@ -3,7 +3,10 @@ const routes = {
 	works: '/works',
 	research: '/research',
 	blog: '/blog',
-	contact: '/contact'
+	contact: '/contact',
+	eknepal: '/projects/eknepal',
+	winlocate: '/projects/winlocate',
+	getGoodGrades: '/projects/get-good-grades'
 };
 
 export default routes;
