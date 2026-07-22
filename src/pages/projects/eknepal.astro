@@ -7,6 +7,7 @@ const structuredData = {
 	headline: "EkNepal: A First Attempt at Building Around Uncertainty",
 	description:
 		"A project note on EkNepal, a news-aggregation product that brings reporting from multiple Nepali publications into one interface, and my work as a frontend contributor through Alpinist Studios.",
+	image: "https://atishaya7777.github.io/assets/eknepal/eknepal-fig-1-homepage.jpg",
 	author: {
 		"@type": "Person",
 		name: "Atishaya Maharjan",
@@ -24,6 +25,8 @@ const structuredData = {
 <Layout
 	title="EkNepal — A First Attempt at Building Around Uncertainty · Atishaya Maharjan"
 	description="Project note on EkNepal, a news-aggregation platform bringing reporting from multiple Nepali publications into one interface. My first paid programming project — a frontend contribution through Alpinist Studios."
+	image="/assets/eknepal/eknepal-fig-1-homepage.jpg"
+	imageAlt="Screenshot of EkNepal's news interface, showing a top-stories carousel and articles attributed to their source publications"
 	type="article"
 	structuredData={structuredData}
 >
@@ -153,23 +156,65 @@ const structuredData = {
 		<hr class="border-rule dark:border-rule-dark" />
 
 		<!-- ── 4. Figures ── -->
-		<!--
-			TODO (Atishaya): real screenshots needed here — I viewed the live site via browser automation
-			(confirming the multi-outlet aggregation, category drawer, and article/share/comment layout
-			described above) but had no way to export those captures as files into this repo. Please add
-			four images to /public/assets/eknepal/ and this section will render them:
-
-				eknepal-fig-1-homepage.png   (1600×2400 or similar, full-height ok)  — main feed / hero + top stories
-				eknepal-fig-2-categories.png                                        — the category navigation drawer
-				eknepal-fig-3-article.png                                           — an article page (source badge, share icons, comments)
-				eknepal-fig-4-responsive.png                                        — the mobile-width layout
-
-			Suggested captions are below; wire them up in the <Figure> blocks once the files exist.
-				Figure 1: EkNepal's primary news interface
-				Figure 2: Browsing reporting across categories
-				Figure 3: Article presentation
-				Figure 4: Responsive interface
-		-->
+		<section class="py-12">
+			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
+				<span class="text-ink-400 dark:text-ink-300 mr-2">4.</span>Figures
+			</h2>
+			<div class="space-y-10">
+				<figure>
+					<img
+						src="/assets/eknepal/eknepal-fig-1-homepage.jpg"
+						alt="EkNepal's primary news interface, showing a top-stories carousel and a feed of articles attributed to their source publications"
+						width="1400"
+						height="684"
+						loading="lazy"
+						class="w-full h-auto border border-rule dark:border-rule-dark"
+					/>
+					<figcaption class="mt-2 text-xs text-ink-400 dark:text-ink-300 text-center">
+						Figure 1: EkNepal's primary news interface
+					</figcaption>
+				</figure>
+				<figure>
+					<img
+						src="/assets/eknepal/eknepal-fig-2-categories.jpg"
+						alt="EkNepal's category navigation drawer, listing news, foreign exchange, share market, horoscope, and other sections"
+						width="1400"
+						height="680"
+						loading="lazy"
+						class="w-full h-auto border border-rule dark:border-rule-dark"
+					/>
+					<figcaption class="mt-2 text-xs text-ink-400 dark:text-ink-300 text-center">
+						Figure 2: Browsing reporting across categories
+					</figcaption>
+				</figure>
+				<figure>
+					<img
+						src="/assets/eknepal/eknepal-fig-3-article.jpg"
+						alt="An EkNepal article page, showing the source publication, share icons, and article body"
+						width="1400"
+						height="684"
+						loading="lazy"
+						class="w-full h-auto border border-rule dark:border-rule-dark"
+					/>
+					<figcaption class="mt-2 text-xs text-ink-400 dark:text-ink-300 text-center">
+						Figure 3: Article presentation
+					</figcaption>
+				</figure>
+				<figure class="max-w-sm mx-auto">
+					<img
+						src="/assets/eknepal/eknepal-fig-4-responsiveness.jpg"
+						alt="EkNepal's mobile-width layout, showing a single-column feed of video and article cards"
+						width="724"
+						height="1400"
+						loading="lazy"
+						class="w-full h-auto border border-rule dark:border-rule-dark"
+					/>
+					<figcaption class="mt-2 text-xs text-ink-400 dark:text-ink-300 text-center">
+						Figure 4: Responsive interface
+					</figcaption>
+				</figure>
+			</div>
+		</section>
 
 		<hr class="border-rule dark:border-rule-dark" />
 
