@@ -14,10 +14,17 @@ const structuredData = {
 		"@type": "CollegeOrUniversity",
 		name: "University of Manitoba",
 	},
-	worksFor: {
-		"@type": "Organization",
-		name: "LG Electronics",
-	},
+	worksFor: [
+		{
+			"@type": "Organization",
+			name: "LG Electronics",
+		},
+		{
+			"@type": "Organization",
+			name: "Vibecore",
+			url: "https://vibecore.cx/",
+		},
+	],
 	sameAs: [
 		"https://github.com/Atishaya7777",
 		"https://www.linkedin.com/in/atishaya-maharjan07",
@@ -30,6 +37,15 @@ const structuredData = {
 		"Software Engineering",
 	],
 };
+
+const contents = [
+	{ marker: 'I', href: '#research-interests', title: 'Research Interests', detail: 'Algorithms, combinatorics, and learning on graphs' },
+	{ marker: 'II', href: '#education', title: 'Education', detail: 'Joint Honours study and academic distinctions' },
+	{ marker: 'III', href: '#experience', title: 'Experience', detail: 'Software engineering and research appointments' },
+	{ marker: 'IV', href: '#papers', title: 'Preprints & Working Papers', detail: 'Current mathematical writing and manuscripts' },
+	{ marker: 'V', href: '#selected-works', title: 'Selected Works', detail: 'Award-winning products and technical projects' },
+	{ marker: 'VI', href: '#service', title: 'Teaching & Service', detail: 'Mentorship, instruction, and community work' },
+];
 ---
 
 <Layout
@@ -39,26 +55,26 @@ const structuredData = {
 	structuredData={structuredData}
 >
 
-	<article class="max-w-3xl mx-auto px-6">
+	<article class="max-w-4xl mx-auto px-6">
 
 		<!-- ── Title block ── -->
-		<header class="pt-16 pb-12 text-center">
-			<div class="flex justify-center mb-6">
+		<header class="pt-12 pb-10 text-center">
+			<div class="flex justify-center mb-5">
 				<Seal class="w-12 h-12 text-ink-500 dark:text-ink-300" />
 			</div>
-			<p class="text-xs tracking-[0.25em] uppercase text-ink-400 dark:text-ink-300 mb-8">
+			<p class="text-xs tracking-[0.25em] uppercase text-ink-400 dark:text-ink-300 mb-6">
 				Curriculum Vitæ
 			</p>
 
-			<h1 class="font-display font-medium text-5xl sm:text-6xl text-ink-900 dark:text-ink-100 leading-tight mb-6">
+			<h1 class="font-display font-medium text-5xl sm:text-6xl text-ink-900 dark:text-ink-100 leading-tight mb-4">
 				Atishaya Maharjan
 			</h1>
 
-			<p class="text-base text-ink-500 dark:text-ink-300 leading-relaxed mb-2">
+			<p class="text-base text-ink-500 dark:text-ink-300 leading-relaxed mb-1">
 				BSc. Joint Honours, Computer Science &amp; Mathematics · University of Manitoba
 			</p>
-			<p class="text-base text-ink-500 dark:text-ink-300 leading-relaxed mb-8">
-				Software Engineer · LG Electronics
+			<p class="text-base text-ink-500 dark:text-ink-300 leading-relaxed mb-6">
+				Software Engineer · LG Electronics &amp; Vibecore
 			</p>
 
 			<nav class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm" aria-label="Profile links">
@@ -73,7 +89,7 @@ const structuredData = {
 				<a href="https://www.linkedin.com/in/atishaya-maharjan07" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">LinkedIn</a>
 			</nav>
 
-			<p class="text-xs tracking-[0.15em] uppercase text-ink-400 dark:text-ink-300 mt-8">
+			<p class="text-xs tracking-[0.15em] uppercase text-ink-400 dark:text-ink-300 mt-6">
 				Winnipeg, Canada
 			</p>
 		</header>
@@ -82,9 +98,9 @@ const structuredData = {
 		<hr class="border-t-4 border-double border-ink-900 dark:border-ink-100" />
 
 		<!-- ── Abstract ── -->
-		<section class="py-12">
-			<h2 class="text-center text-sm tracking-[0.2em] uppercase text-ink-900 dark:text-ink-100 font-semibold mb-6">Abstract</h2>
-			<div class="space-y-4 text-[15px] leading-[1.8] text-justify [hyphens:auto] max-w-2xl mx-auto">
+		<section class="py-10">
+			<h2 class="text-center text-sm tracking-[0.2em] uppercase text-ink-900 dark:text-ink-100 font-semibold mb-5">Abstract</h2>
+			<div class="space-y-4 text-[15px] leading-[1.75] max-w-2xl mx-auto">
 				<p>
 					I study Computer Science and Mathematics (Joint Honours, minor in Statistics) at the University of Manitoba.
 					My work is in discrete mathematics and algorithms — combinatorics on graph and tree structures, approximation
@@ -92,8 +108,8 @@ const structuredData = {
 					the <strong class="font-semibold text-ink-900 dark:text-ink-100">GADA Lab</strong>, the
 					<strong class="font-semibold text-ink-900 dark:text-ink-100">Terrabyte ML Research Group</strong>, and the
 					<strong class="font-semibold text-ink-900 dark:text-ink-100">Department of Mathematics</strong>.
-					On the engineering side, I build enterprise software at LG Electronics, and have contributed to early-stage
-					products at Hoek Insights and Timeero.
+					On the engineering side, I build enterprise software at LG Electronics and cloud deployment infrastructure
+					at Vibecore, and have contributed to early-stage products at Hoek Insights and Timeero.
 				</p>
 			</div>
 		</section>
@@ -101,25 +117,51 @@ const structuredData = {
 		<hr class="border-rule dark:border-rule-dark" />
 
 		<!-- ── Contents ── -->
-		<nav class="py-10" aria-label="Document contents">
-			<h2 class="text-center text-sm tracking-[0.2em] uppercase text-ink-900 dark:text-ink-100 font-semibold mb-6">Contents</h2>
-			<ol class="max-w-md mx-auto grid grid-cols-2 gap-x-8 gap-y-2 text-sm list-none">
-				<li><a href="#selected-works" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">§5&nbsp; Selected Works</a></li>
-				<li><a href={routes.research} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Research</a></li>
-				<li><a href="#experience" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">§3&nbsp; Experience</a></li>
-				<li><a href={routes.blog} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Notes</a></li>
-				<li><a href={`${routes.research}#talks`} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Talks</a></li>
-				<li><a href="/assets/atishaya_swe_resume.pdf" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Résumé&nbsp;[PDF]</a></li>
-				<li><a href={routes.contact} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Contact</a></li>
-			</ol>
+		<nav class="py-10" aria-labelledby="contents-title">
+			<div class="grid md:grid-cols-[150px_minmax(0,1fr)] gap-8 md:gap-12 items-start">
+				<header>
+					<h2 id="contents-title" class="text-sm tracking-[0.2em] uppercase text-ink-900 dark:text-ink-100 font-semibold">Contents</h2>
+					<p class="mt-3 text-xs leading-relaxed text-ink-400 dark:text-ink-300">
+						A concise register of this curriculum vitæ.
+					</p>
+				</header>
+
+				<div>
+					<ol class="border-t border-rule-strong dark:border-rule-dark-strong list-none">
+						{contents.map((item) => (
+							<li class="border-b border-rule dark:border-rule-dark">
+								<a href={item.href} class="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] gap-3 sm:gap-5 items-baseline py-3.5">
+									<span class="font-mono text-[11px] tracking-[0.1em] text-ink-400 dark:text-ink-300">{item.marker}</span>
+									<span class="min-w-0">
+										<span class="block font-display text-lg leading-tight text-ink-900 dark:text-ink-100 group-hover:text-accent-700 dark:group-hover:text-accent-200 transition-colors">{item.title}</span>
+										<span class="block mt-1 text-xs leading-relaxed text-ink-400 dark:text-ink-300">{item.detail}</span>
+									</span>
+									<span aria-hidden="true" class="text-sm text-ink-400 dark:text-ink-300 group-hover:text-accent-600 dark:group-hover:text-accent-300 transition-colors">→</span>
+								</a>
+							</li>
+						))}
+					</ol>
+
+					<div class="mt-5 grid sm:grid-cols-[2.5rem_minmax(0,1fr)] gap-3 sm:gap-5 items-baseline">
+						<span class="font-mono text-[11px] tracking-[0.1em] uppercase text-ink-400 dark:text-ink-300">Ref.</span>
+						<div class="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+							<a href={routes.research} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Research dossier</a>
+							<a href={routes.blog} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Notes</a>
+							<a href="/assets/atishaya_research_resume.pdf" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Research CV [PDF]</a>
+							<a href="/assets/atishaya_swe_resume.pdf" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Industry résumé [PDF]</a>
+							<a href={routes.contact} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Contact</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</nav>
 
-		<hr class="border-rule dark:border-rule-dark" />
-
 		<!-- ── 1. Research Interests ── -->
-		<section class="py-12">
-			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
-				<span class="text-ink-400 dark:text-ink-300 mr-2">1.</span>Research Interests
+		<section id="research-interests" class="py-10 scroll-mt-20">
+			<h2 class="flex items-center gap-4 font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
+				<span class="w-8 shrink-0 font-mono text-[11px] tracking-[0.1em] text-ink-400 dark:text-ink-300">I</span>
+				<span>Research Interests</span>
+				<span class="h-px flex-1 bg-rule dark:bg-rule-dark" aria-hidden="true"></span>
 			</h2>
 			<div class="space-y-5 text-[15px] leading-[1.8]">
 				<p>
@@ -137,12 +179,12 @@ const structuredData = {
 			</div>
 		</section>
 
-		<hr class="border-rule dark:border-rule-dark" />
-
 		<!-- ── 2. Education ── -->
-		<section class="py-12">
-			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
-				<span class="text-ink-400 dark:text-ink-300 mr-2">2.</span>Education
+		<section id="education" class="py-10 scroll-mt-20">
+			<h2 class="flex items-center gap-4 font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
+				<span class="w-8 shrink-0 font-mono text-[11px] tracking-[0.1em] text-ink-400 dark:text-ink-300">II</span>
+				<span>Education</span>
+				<span class="h-px flex-1 bg-rule dark:bg-rule-dark" aria-hidden="true"></span>
 			</h2>
 			<div class="grid md:grid-cols-[150px_1fr] gap-x-8 gap-y-2">
 				<p class="text-xs tracking-wide text-ink-400 dark:text-ink-300 pt-1.5">Aug 2022 – Present</p>
@@ -158,12 +200,12 @@ const structuredData = {
 			</div>
 		</section>
 
-		<hr class="border-rule dark:border-rule-dark" />
-
 		<!-- ── 3. Experience ── -->
-		<section id="experience" class="py-12 scroll-mt-20">
-			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
-				<span class="text-ink-400 dark:text-ink-300 mr-2">3.</span>Experience
+		<section id="experience" class="py-10 scroll-mt-20">
+			<h2 class="flex items-center gap-4 font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
+				<span class="w-8 shrink-0 font-mono text-[11px] tracking-[0.1em] text-ink-400 dark:text-ink-300">III</span>
+				<span>Experience</span>
+				<span class="h-px flex-1 bg-rule dark:bg-rule-dark" aria-hidden="true"></span>
 			</h2>
 			<div class="space-y-8">
 				<div class="grid md:grid-cols-[150px_1fr] gap-x-8 gap-y-1">
@@ -171,9 +213,22 @@ const structuredData = {
 					<div>
 						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">LG Electronics</h3>
 						<p class="text-sm text-ink-500 dark:text-ink-300">Software Engineer · Englewood Cliffs, USA (Remote)</p>
-						<p class="text-sm text-ink-500 dark:text-ink-300 mt-2 leading-relaxed">
-							B2B microservices for 1,000+ vendors using Next.js, Redux, and TypeScript. Built an AI search engine
-							for the global GNB header, promo code and magic link flows, and analytics tagging frameworks.
+					<p class="text-sm text-ink-500 dark:text-ink-300 mt-2 leading-relaxed">
+						Shipped Next.js, Redux, and TypeScript B2B platform features for 1,000+ vendors, contributing to a
+						25% engagement lift. Built analytics adopted by 6+ teams and AI search with 35 ms lower latency;
+						checkout workflows drove a 15% conversion lift.
+						</p>
+					</div>
+				</div>
+
+				<div class="grid md:grid-cols-[150px_1fr] gap-x-8 gap-y-1">
+					<p class="text-xs tracking-wide text-ink-400 dark:text-ink-300 pt-1.5">Present</p>
+					<div>
+						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">Vibecore</h3>
+						<p class="text-sm text-ink-500 dark:text-ink-300">Software Engineer · Remote</p>
+					<p class="text-sm text-ink-500 dark:text-ink-300 mt-2 leading-relaxed">
+						Automated CI/CD deployments from GitHub Actions to AWS EC2; configured S3, DynamoDB, IAM
+						permissions, and EBS/EFS storage for cloud-hosted application workflows.
 						</p>
 					</div>
 				</div>
@@ -183,9 +238,10 @@ const structuredData = {
 					<div>
 						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">Hoek Insights</h3>
 						<p class="text-sm text-ink-500 dark:text-ink-300">Software Engineer · Amsterdam, Netherlands (Remote)</p>
-						<p class="text-sm text-ink-500 dark:text-ink-300 mt-2 leading-relaxed">
-							Built a Python package embedding interactive Three.js visualisations in Jupyter Notebooks. Designed a
-							FastAPI + PostgreSQL MVP marketing platform with 18+ endpoints and 95% integration-test coverage.
+					<p class="text-sm text-ink-500 dark:text-ink-300 mt-2 leading-relaxed">
+						Engineered a Python package for Three.js visualizations in Jupyter, reducing render time by 38% and
+						bundle size by 25%. Shipped a FastAPI and PostgreSQL MVP with 18+ endpoints, below 200 ms staging
+						latency, and 95% integration-test coverage.
 						</p>
 					</div>
 				</div>
@@ -195,10 +251,10 @@ const structuredData = {
 					<div>
 						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">GADA Lab</h3>
 						<p class="text-sm text-ink-500 dark:text-ink-300">Algorithms Researcher · Geometric, Approximation &amp; Distributed Algorithms · University of Manitoba</p>
-						<p class="text-sm text-ink-500 dark:text-ink-300 mt-2 leading-relaxed">
-							Developed approximation algorithms for Hamiltonian path optimisation in spatially embedded graphs, with
-							visualisation and randomised test-generation tooling. Delivered talks on wiggly permutations and
-							space-efficient Eulerian circuits.
+					<p class="text-sm text-ink-500 dark:text-ink-300 mt-2 leading-relaxed">
+						Optimizing collaborative drone-delivery routes for logistics through exact and approximation algorithms,
+						dynamic programming, and exchange-point geometry. Built Hamiltonian-path visualization and randomized
+						testing infrastructure across 100+ synthetic instances.
 						</p>
 					</div>
 				</div>
@@ -208,9 +264,9 @@ const structuredData = {
 					<div>
 						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">Terrabyte ML Research Group</h3>
 						<p class="text-sm text-ink-500 dark:text-ink-300">Machine Learning Researcher · University of Manitoba</p>
-						<p class="text-sm text-ink-500 dark:text-ink-300 mt-2 leading-relaxed">
-							Extended Graph Neural Diffusion to Hypergraph Neural Diffusion networks using PyTorch and PyTorch
-							Geometric. Prototyped 4 model variants; tracked 25+ experiments with MLFlow across 5+ datasets.
+					<p class="text-sm text-ink-500 dark:text-ink-300 mt-2 leading-relaxed">
+						Extended diffusion-based learning to hypergraphs with PyTorch and PyTorch Geometric. Implemented 4
+						model variants and built an MLflow pipeline tracking 25+ experiments across 5+ datasets.
 						</p>
 					</div>
 				</div>
@@ -220,12 +276,12 @@ const structuredData = {
 			</p>
 		</section>
 
-		<hr class="border-rule dark:border-rule-dark" />
-
 		<!-- ── 4. Preprints & Working Papers ── -->
-		<section class="py-12">
-			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
-				<span class="text-ink-400 dark:text-ink-300 mr-2">4.</span>Preprints &amp; Working Papers
+		<section id="papers" class="py-10 scroll-mt-20">
+			<h2 class="flex items-center gap-4 font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
+				<span class="w-8 shrink-0 font-mono text-[11px] tracking-[0.1em] text-ink-400 dark:text-ink-300">IV</span>
+				<span>Preprints &amp; Working Papers</span>
+				<span class="h-px flex-1 bg-rule dark:bg-rule-dark" aria-hidden="true"></span>
 			</h2>
 			<ol class="space-y-6 text-[15px] leading-[1.8] list-none">
 				<li class="pl-8 relative">
@@ -248,14 +304,48 @@ const structuredData = {
 			</p>
 		</section>
 
-		<hr class="border-rule dark:border-rule-dark" />
-
 		<!-- ── 5. Selected Works ── -->
-		<section id="selected-works" class="py-12 scroll-mt-20">
-			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
-				<span class="text-ink-400 dark:text-ink-300 mr-2">5.</span>Selected Works
+		<section id="selected-works" class="py-10 scroll-mt-20">
+			<h2 class="flex items-center gap-4 font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
+				<span class="w-8 shrink-0 font-mono text-[11px] tracking-[0.1em] text-ink-400 dark:text-ink-300">V</span>
+				<span>Selected Works</span>
+				<span class="h-px flex-1 bg-rule dark:bg-rule-dark" aria-hidden="true"></span>
 			</h2>
 			<div class="space-y-10 text-[15px] leading-[1.8]">
+				<div>
+					<div class="flex items-baseline justify-between gap-4 mb-1">
+						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">PayTime</h3>
+						<span class="text-xs text-ink-400 dark:text-ink-300 whitespace-nowrap">1st Place · 2026</span>
+					</div>
+					<p class="text-xs tracking-[0.12em] uppercase text-ink-400 dark:text-ink-300 mb-2">Next.js · TypeScript · FastAPI · Python · Supabase</p>
+					<p class="text-ink-700 dark:text-ink-200">
+						Won the CSSA Design &amp; Craft Case Competition by building an auditable payroll-ingestion platform in
+						6.5 hours. Added field mapping, validation, exception review, and source traceability across CSV, XLSX,
+						PDF, image, and email-derived records.
+					</p>
+					<p class="mt-2 text-sm">
+						<a href="https://github.com/pieberrykinnie/paytime" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">GitHub&nbsp;↗</a>
+						<span class="text-ink-400 dark:text-ink-300 mx-2">·</span>
+						<a href="https://umanitobacssa.ca/events/case-competition-2026" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Competition&nbsp;↗</a>
+					</p>
+				</div>
+				<div>
+					<div class="flex items-baseline justify-between gap-4 mb-1">
+						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">HAPA</h3>
+						<span class="text-xs text-ink-400 dark:text-ink-300 whitespace-nowrap">Winner · 2026</span>
+					</div>
+					<p class="text-xs tracking-[0.12em] uppercase text-ink-400 dark:text-ink-300 mb-2">Next.js · React · TypeScript · AI/LLM</p>
+					<p class="text-ink-700 dark:text-ink-200">
+						Won the AccelR8 Prairie AI Hackathon with a working personalized-shopping prototype built in 12 hours.
+						It adapts recommendations using onboarding preferences, swipe feedback, and natural-language/voice pivots;
+						the broader design supports multimodal personalization and AI-assisted commerce.
+					</p>
+					<p class="mt-2 text-sm">
+						<a href="https://github.com/pieberrykinnie/hapa" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">GitHub&nbsp;↗</a>
+						<span class="text-ink-400 dark:text-ink-300 mx-2">·</span>
+						<a href="https://www.accelr8.ca/event-details/accelr8-prairie-ai-hackathon-2026" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Hackathon&nbsp;↗</a>
+					</p>
+				</div>
 				<div>
 					<h3 class="font-display text-xl text-ink-900 dark:text-ink-100 mb-1">EkNepal</h3>
 					<p class="text-xs tracking-[0.12em] uppercase text-ink-400 dark:text-ink-300 mb-2">Frontend · Professional Project · Alpinist Studios</p>
@@ -268,19 +358,6 @@ const structuredData = {
 						<a href={routes.eknepal} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Project&nbsp;note ↗</a>
 						<span class="text-ink-400 dark:text-ink-300 mx-2">·</span>
 						<a href="https://eknepal.com/" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">eknepal.com&nbsp;↗</a>
-					</p>
-				</div>
-				<div>
-					<div class="flex items-baseline justify-between gap-4 mb-1">
-						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">Brainstorm</h3>
-						<span class="text-xs text-ink-400 dark:text-ink-300 whitespace-nowrap">2026</span>
-					</div>
-					<p class="text-xs tracking-[0.12em] uppercase text-ink-400 dark:text-ink-300 mb-2">Full-Stack · AI · RAG</p>
-					<p class="text-ink-700 dark:text-ink-200">
-						An AI-powered, role-specific knowledge management system integrating Pinecone, Jira, Redis, and
-						PostgreSQL. Implemented retrieval-augmented generation with role-based access controls and a
-						dynamic model-routing layer. Demoed at Sprint to Innovate 2026; pitched for the CIPS Manitoba
-						Challenge.
 					</p>
 				</div>
 				<div>
@@ -300,29 +377,14 @@ const structuredData = {
 				</div>
 				<div>
 					<div class="flex items-baseline justify-between gap-4 mb-1">
-						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">Get Good Grades</h3>
-						<span class="text-xs text-ink-400 dark:text-ink-300 whitespace-nowrap">2026</span>
-					</div>
-					<p class="text-xs tracking-[0.12em] uppercase text-ink-400 dark:text-ink-300 mb-2">Electron · React · TypeScript · YAML</p>
-					<p class="text-ink-700 dark:text-ink-200">
-						A desktop flashcard application that reads user-controlled YAML deck files from the local file
-						system instead of a proprietary database. Sole designer and developer. Winner, "Most Chaotic
-						Evil Hack," .devHacks 2026.
-					</p>
-					<p class="mt-2 text-sm">
-						<a href={routes.getGoodGrades} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Project&nbsp;note ↗</a>
-					</p>
-				</div>
-				<div>
-					<div class="flex items-baseline justify-between gap-4 mb-1">
 						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">Spatially Embedded Graphs</h3>
 						<span class="text-xs text-ink-400 dark:text-ink-300 whitespace-nowrap">2024–Present</span>
 					</div>
 					<p class="text-xs tracking-[0.12em] uppercase text-ink-400 dark:text-ink-300 mb-2">Python · Research · Algorithms</p>
 					<p class="text-ink-700 dark:text-ink-200">
 						Modelled Hamiltonian paths in &#8477;&#178; with a focus on approximation algorithms. Generated
-						200+ randomised instances, built visualisation pipelines, and presented findings at weekly GADA
-						Lab meetings.
+						100+ randomised instances, built visualisation pipelines, and validated algorithm behaviour across
+						synthetic inputs.
 					</p>
 				</div>
 				<div>
@@ -342,12 +404,12 @@ const structuredData = {
 			</p>
 		</section>
 
-		<hr class="border-rule dark:border-rule-dark" />
-
 		<!-- ── 6. Teaching & Service ── -->
-		<section class="py-12">
-			<h2 class="font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
-				<span class="text-ink-400 dark:text-ink-300 mr-2">6.</span>Teaching &amp; Service
+		<section id="service" class="py-10 scroll-mt-20">
+			<h2 class="flex items-center gap-4 font-display text-2xl text-ink-900 dark:text-ink-100 mb-8">
+				<span class="w-8 shrink-0 font-mono text-[11px] tracking-[0.1em] text-ink-400 dark:text-ink-300">VI</span>
+				<span>Teaching &amp; Service</span>
+				<span class="h-px flex-1 bg-rule dark:bg-rule-dark" aria-hidden="true"></span>
 			</h2>
 			<div class="space-y-6">
 				<div class="grid md:grid-cols-[150px_1fr] gap-x-8 gap-y-1">

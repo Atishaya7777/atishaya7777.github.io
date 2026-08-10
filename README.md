@@ -6,7 +6,7 @@ I am an undergraduate student majoring in Joint Honours Computer Science & Mathe
 
 I love tackling hard problems that nobody else wants to keep working. My current research interests are all things combinatorics, graph theory (Especially spectral graph theory), Hypergraph Neural Networks, and NP Hardness proofs for geometrical problems.
 
-Professionally, I work with LG Electronics US as a senior frontend developer for their B2B platform. While academically, I work with 2 computer science labs: The GADA lab and the Terrabyte research group. Additionally, I am working on a combinatorics paper with Dr. Mahsa N. Shirazi and Dr. Andrii Armann all at the University of Manitoba.
+Professionally, I work as a software engineer with LG Electronics US and Vibecore. At LG, I build B2B platform features and product analytics; at Vibecore, I work on GitHub Actions deployment pipelines and AWS infrastructure. Academically, I work with the GADA Lab and Terrabyte research group, and I am developing combinatorics research with Dr. Mahsa N. Shirazi and Dr. Andrii Armann at the University of Manitoba.
 
 # Contact Information
 

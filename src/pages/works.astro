@@ -8,10 +8,19 @@ const experience = [
 		role: 'Software Engineer',
 		org: 'LG Electronics · Englewood Cliffs, USA (Remote)',
 		points: [
-			'Maintained and built new features for B2B microservices serving 1,000+ vendors using Next.js, Redux, and TypeScript, driving a 25% increase in user engagement.',
-			'Implemented analytics and custom tagging frameworks to capture detailed performance metrics, enabling data-driven decisions across 6+ product teams.',
-			'Developed an AI search engine for the global GNB header, improving search efficiency by 40% and reducing latency by 35ms on average.',
-			'Engineered promo code functionality with magic link integration, increasing conversion rates by 15%.',
+			'Shipped Next.js, Redux, and TypeScript B2B platform features for 1,000+ vendors, contributing to a 25% user-engagement lift.',
+			'Designed analytics and tagging frameworks adopted by 6+ product teams, enabling real-time measurement and data-driven feature prioritization.',
+			'Built AI-powered global search with 35 ms lower latency and checkout workflows that drove a 15% conversion lift across promo-code and magic-link flows.',
+		],
+	},
+	{
+		dates: 'Present',
+		role: 'Software Engineer',
+		org: 'Vibecore · Remote',
+		points: [
+			'Automated CI/CD deployments from GitHub Actions to AWS EC2, standardizing releases for EC2-hosted applications.',
+			'Configured S3, DynamoDB, and IAM permissions for cloud-connected application workflows.',
+			'Provisioned and maintained EBS/EFS storage for application data and deployment infrastructure.',
 		],
 	},
 	{
@@ -19,8 +28,9 @@ const experience = [
 		role: 'Software Engineer',
 		org: 'Hoek Insights · Amsterdam, Netherlands (Remote)',
 		points: [
-			'Built a Python package to embed interactive Three.js visualisations in Jupyter Notebooks via React renderers, cutting render time by 38% and reducing bundle size by 25%.',
-			'Designed an MVP marketing platform using FastAPI and PostgreSQL with 18+ endpoints, 10 workflows, and 95% integration-test coverage; achieved <200ms median API latency in staging.',
+			'Engineered a Python package for Three.js visualizations in Jupyter, reducing render time by 38% and bundle size by 25% through React renderer optimization.',
+			'Shipped a FastAPI and PostgreSQL MVP with 18+ endpoints and 10 product workflows.',
+			'Maintained below 200 ms median staging latency and 95% integration-test coverage through automated API testing.',
 		],
 	},
 	{
@@ -28,8 +38,9 @@ const experience = [
 		role: 'Software Engineer',
 		org: 'Timeero · Phoenix, USA (Remote)',
 		points: [
-			'Led frontend development of mileage-tracking application using TypeScript, React.js, Vite, and Mapbox, serving 1,000+ active users.',
-			'Implemented 15+ geo-spatial features for segment mapping, improving time-capture accuracy by 30%.',
+			'Led frontend development of a TypeScript, React, Vite, and Mapbox mileage-tracking application supporting 1,000+ active users.',
+			'Shipped 15+ geospatial workflows for segment mapping, mileage capture, and field operations.',
+			'Improved time-capture accuracy by 30% through Mapbox-based mapping and production workflow refinements.',
 		],
 	},
 ];
@@ -40,10 +51,9 @@ const research = [
 		role: 'Researcher — Algorithms & Graph Theory',
 		org: 'GADA Lab · University of Manitoba · Supervisor: Dr. Stephane Durocher',
 		points: [
-			'Delivered talks at weekly GADA lab meetings on wiggly permutations (CCCG 2025) and space-efficient Eulerian circuits (SOSA 2026).',
-			'Developed a fast approximation algorithm for Hamiltonian path optimisation in spatially embedded graphs; built visualisation and randomised test-generation tooling across 100+ synthetic instances.',
-			'Contributed to noncrossing spanning trees library, improving performance by 30% and establishing Python best practices.',
-			'Engineered hypergraph visualisation tool for ML research.',
+			'Optimizing collaborative drone-delivery routes for logistics through exact and approximation algorithms, dynamic programming, and exchange-point geometry.',
+			'Developed an approximation algorithm for Hamiltonian-path optimization in spatially embedded graphs with visualization and randomized testing across 100+ synthetic instances.',
+			'Improved a noncrossing spanning-tree research library by 30% and strengthened its Python testing, documentation, and development practices.',
 		],
 	},
 	{
@@ -51,8 +61,9 @@ const research = [
 		role: 'Machine Learning Researcher',
 		org: 'Terrabyte ML Research Group · University of Manitoba',
 		points: [
-			'Extended Graph Neural Diffusion architecture to Hypergraph Neural Diffusion networks using PyTorch and PyTorch Geometric, prototyping 4 model variants.',
-			'Implemented MLFlow metrics and tracked 25+ experiments across 5+ datasets for reproducibility.',
+			'Extended diffusion-based learning to higher-order relational data by generalizing Graph Neural Diffusion architectures to hypergraphs.',
+			'Implemented 4 Hypergraph Neural Diffusion variants with PyTorch and PyTorch Geometric.',
+			'Built an MLflow pipeline tracking configurations, metrics, and evaluations for 25+ experiments across 5+ datasets.',
 		],
 	},
 	{
@@ -60,12 +71,32 @@ const research = [
 		role: 'Researcher — Combinatorics & Graph Theory',
 		org: 'Department of Mathematics · University of Manitoba · Supervisors: Dr. Mahsa Nasrollahi-Shirazi & Dr. Andrii Arman',
 		points: [
-			"Proved a closed-form solution for the independence number of perfect binary trees and verified Hurlbert–Kamat's Conjecture using generating functions and computational analysis across 1,000+ cases.",
+			'Developed a symbolic and computational proof framework for the Hurlbert–Kamat property on perfect m-ary trees.',
+			'Derived a closed-form expression for the independence number using generating functions and recurrence analysis.',
+			'Used induction and SageMath validation to test conjectures and verify symbolic identities across 1,000+ instances.',
 		],
 	},
 ];
 
 const projects = [
+	{
+		title: 'PayTime — 1st Place, CSSA Design & Craft',
+		year: '2026',
+		stack: 'Next.js · TypeScript · FastAPI · Python · Supabase',
+		description:
+			'Won 1st place at the 2026 CSSA Design & Craft Case Competition by building an auditable payroll-ingestion platform in a 6.5-hour technical sprint. Implemented field mapping, validation, exception review, and source traceability for CSV, XLSX, PDF, image, and email-derived records.',
+		link: { href: 'https://umanitobacssa.ca/events/case-competition-2026', label: 'Competition ↗' },
+		externalLink: { href: 'https://github.com/pieberrykinnie/paytime', label: 'GitHub ↗' },
+	},
+	{
+		title: 'HAPA — Winner, AccelR8 Prairie AI Hackathon',
+		year: '2026',
+		stack: 'Next.js · React · TypeScript · AI/LLM',
+		description:
+			'Won the 2026 AccelR8 Prairie AI Hackathon with a working personalized-shopping prototype built in 12 hours. Combined onboarding preferences, swipe feedback, and natural-language/voice pivots to adapt recommendations, with an extensible design for multimodal personalization and AI-assisted commerce.',
+		link: { href: 'https://www.accelr8.ca/event-details/accelr8-prairie-ai-hackathon-2026', label: 'Hackathon ↗' },
+		externalLink: { href: 'https://github.com/pieberrykinnie/hapa', label: 'GitHub ↗' },
+	},
 	{
 		title: 'EkNepal',
 		year: '2024',
@@ -104,7 +135,7 @@ const projects = [
 		year: '2024–Present',
 		stack: 'Python · Algorithms · Visualisation',
 		description:
-			'Modelled Hamiltonian paths in ℝ² with research presented at GADA lab meetings. Generated 200+ randomised instances, built visualisation pipelines, and validated approximation behaviour on 200+ inputs.',
+			'Modelled Hamiltonian paths in ℝ² for approximation algorithms. Generated 100+ randomised instances, built visualisation pipelines, and validated algorithm behaviour across synthetic inputs.',
 	},
 	{
 		title: 'Hurlbert–Kamat Property in Perfect m-ary Trees',
@@ -130,13 +161,15 @@ const projects = [
 ];
 
 const skills = [
-	{ label: 'Languages', value: 'JavaScript, TypeScript, Python, Java, C, C++, R, SageMath, BASH, SQL' },
-	{ label: 'Databases', value: 'PostgreSQL, MongoDB, SQLite, MSSQL, Pinecone (Vector DB), Redis' },
+	{ label: 'Languages', value: 'JavaScript, TypeScript, Python, Java, C, C++, R, SageMath, Bash, SQL' },
+	{ label: 'Databases', value: 'PostgreSQL, MongoDB, DynamoDB, SQLite, MSSQL, Pinecone (Vector DB), Redis' },
 	{ label: 'Web Frameworks', value: 'Next.js, React.js, FastAPI, Node.js, Astro' },
 	{ label: 'ML / Data', value: 'PyTorch, PyTorch Geometric, NumPy, SciPy, Scikit-learn, MLFlow, Pandas' },
-	{ label: 'Cloud & DevOps', value: 'AWS, Docker, Tmux' },
-	{ label: 'Developer Tools', value: 'Git, Neovim, VS Code, IntelliJ, Figma, Jupyter' },
-	{ label: 'Specialised', value: 'AI MCPs for Application Integration, Three.js, Beamer (LaTeX)' },
+	{ label: 'Cloud & Infrastructure', value: 'AWS EC2, S3, DynamoDB, IAM, EBS/EFS, Docker, GitHub Actions, Linux' },
+	{ label: 'Engineering Practices', value: 'CI/CD, API design, integration testing, automated testing, reproducible experimentation' },
+	{ label: 'Specializations', value: 'Full-stack development, cloud infrastructure, ML systems, geospatial systems' },
+	{ label: 'Developer Tools', value: 'Git, Tmux, Neovim, VS Code, IntelliJ, Figma, Jupyter' },
+	{ label: 'Research Tools', value: 'Model Context Protocol, Three.js, LaTeX, Beamer, Jupyter' },
 ];
 ---
 
