@@ -1,56 +1,89 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+import { people, groups, refs, a, peopleHtml, linkClass } from '../global/people';
+
 const positions = [
 	{
 		dates: 'Mar 2024 – Present',
-		role: 'Researcher — Algorithms & Graph Theory',
-		org: 'GADA Lab (Geometric, Approximation & Distributed Algorithms)',
-		orgUrl: 'https://home.cs.umanitoba.ca/~gada/',
-		detail: 'University of Manitoba · Supervisor: Dr. Stephane Durocher',
+		role: 'Undergraduate Researcher — Algorithms & Computational Geometry',
+		org: groups.gada.name,
+		orgUrl: groups.gada.url,
+		detail: 'University of Manitoba',
+		supervisors: [people.durocher, people.naredla, people.zhu, people.miller],
 		points: [
-			'Developed a fast approximation algorithm for Hamiltonian path optimisation in spatially embedded graphs; built visualisation and randomised test-generation tooling across 100+ synthetic instances.',
-			'Delivered talks at weekly GADA lab meetings on wiggly permutations and space-efficient Eulerian circuits (works by other authors).',
-			'Contributed to noncrossing spanning trees library, improving performance by 30% and establishing Python best practices.',
-			'Engineered hypergraph visualisation tool for ML research.',
+			`Co-authoring <em>Geometric Algorithms and Hardness for Fuel-Efficient Collaborative Delivery</em>, which studies how cooperating delivery agents (e.g. drones) can move a package while minimizing total fuel use.`,
+			`Results include an O(n²) algorithm for the line-restricted setting, improving the previous O(n³) bound from ${a(refs.walcom2025.url, refs.walcom2025.label)}, and an O(n³) algorithm for the unrestricted L1 setting.`,
+			'We prove the Euclidean (L2) setting is NP-hard, and show that the L1 algorithm gives a √2-approximation for it.',
+			'Developed an approximation algorithm for Hamiltonian-path optimization in spatially embedded graphs, with visualization and randomized testing across 100+ synthetic instances.',
+			'Improved the performance of a noncrossing spanning-tree research library by 30% and introduced stronger Python testing, documentation, and development practices.',
+			`Gave reading-group talks at weekly GADA lab meetings (see ${'<a href="#talks" class="' + linkClass + '">Talks</a>'}).`,
+		],
+	},
+	{
+		dates: 'Sep 2026 – Apr 2027',
+		role: 'Honours Research Project — Calibrated Risk Prediction',
+		org: 'Department of Computer Science',
+		orgUrl: null,
+		detail: 'University of Manitoba',
+		supervisors: [people.henry, people.sayari, people.salehkalaibar],
+		points: [
+			'Building calibrated models that predict potato pathogen risk and yield loss, so that predicted probabilities can be trusted when making decisions under uncertainty.',
+			'Interdisciplinary project in collaboration with the Department of Plant Science.',
 		],
 	},
 	{
 		dates: 'May 2025 – Present',
 		role: 'Machine Learning Researcher',
-		org: 'Terrabyte Machine Learning Research Group',
-		orgUrl: 'https://terrabyte.acs.uwinnipeg.ca/',
-		detail: 'University of Manitoba',
+		org: groups.terrabyte.name,
+		orgUrl: groups.terrabyte.url,
+		detail: 'Winnipeg',
+		supervisors: [],
 		points: [
-			'Extended Graph Neural Diffusion architecture to Hypergraph Neural Diffusion networks using PyTorch and PyTorch Geometric, prototyping 4 model variants.',
-			'Tracked 25+ experiments across 5+ datasets for reproducibility using MLFlow.',
+			'Extended diffusion-based learning to higher-order relational data by implementing 4 Hypergraph Neural Diffusion variants in PyTorch and PyTorch Geometric.',
+			'Built a reproducible MLflow pipeline tracking configurations, metrics, and evaluations for 25+ experiments across 5+ datasets.',
 		],
 	},
 	{
 		dates: 'Jan 2024 – Jul 2025',
-		role: 'Researcher — Combinatorics & Graph Theory',
-		org: 'Department of Mathematics',
-		orgUrl: null,
-		detail: 'University of Manitoba · Supervisors: Dr. Mahsa Nasrollahi-Shirazi & Dr. Andrii Arman',
+		role: 'Undergraduate Researcher — Combinatorics & Graph Theory',
+		org: groups.mxml.name,
+		orgUrl: groups.mxml.url,
+		detail: 'Department of Mathematics, University of Manitoba',
+		supervisors: [people.arman, people.shirazi],
 		points: [
-			"Proved a closed-form solution for the independence number of perfect binary trees and verified Hurlbert–Kamat's Conjecture using generating functions and computational analysis across 1,000+ cases.",
+			'Established a coefficientwise inequality underlying the Hurlbert–Kamat property for perfect m-ary trees, and derived a closed-form expression for their independence number.',
+			'Used generating functions, polynomial recurrences, induction, and coefficientwise analysis to build the argument.',
+			'Ran SageMath and Python experiments across 1,000+ instances to test conjectures, verify symbolic identities, and validate intermediate results.',
 		],
 	},
 ];
 
 const preprints = [
 	{
+		authors: `${a(people.durocher.url, 'S. Durocher')}, <strong class="font-semibold text-ink-900 dark:text-ink-100">A. Maharjan</strong>, ${a(people.miller.url, 'A. Miller')}, ${a(people.naredla.url, 'A. M. Naredla')}`,
+		title: 'Geometric Algorithms and Hardness for Fuel-Efficient Collaborative Delivery',
+		status: 'Manuscript in preparation',
+		area: 'Computational Geometry · Algorithms',
+		description: `An O(n²) algorithm for the line-restricted setting (improving the O(n³) bound of ${a(refs.walcom2025.url, refs.walcom2025.label)}), an O(n³) algorithm for the L1 setting, NP-hardness for the Euclidean (L2) setting, and a √2-approximation for L2.`,
+		pdf: null,
+	},
+	{
+		authors: `${a(people.arman.url, 'A. Arman')}, <strong class="font-semibold text-ink-900 dark:text-ink-100">A. Maharjan</strong>, ${a(people.shirazi.url, 'M. N. Shirazi')}`,
 		title: 'HK Property in Perfect Binary Trees',
+		status: 'Preprint',
 		area: 'Combinatorics · Graph Theory',
 		description:
-			"Proved a closed-form solution for the independence number of perfect binary trees and verified Hurlbert–Kamat's Conjecture using generating functions and computational analysis across 1,000+ cases.",
+			"A generating-function framework for counting the sizes of stars (independent sets containing a fixed vertex) in perfect m-ary trees. It gives an alternate, coefficientwise proof of the HK-property for perfect m-ary trees, first proved by Iľkovič and Yan with a combinatorial injection. It also measures the gap between the leaf star and the root star through a structured recurrence, and recovers EKR consequences such as formulas for the independence number and the minimum size of a maximal independent set.",
 		pdf: '/assets/hk_perfect_binary_trees.pdf',
 	},
 	{
+		authors: '<strong class="font-semibold text-ink-900 dark:text-ink-100">A. Maharjan</strong>',
 		title: 'Wiener Index',
-		area: 'Graph Theory',
+		status: 'Report',
+		area: 'Graph Theory · Heuristics',
 		description:
-			'Original research on the Wiener index — a topological graph invariant defined as the sum of pairwise distances between vertices — with novel combinatorial analysis and results.',
+			'Implementation of a heuristic algorithm for an open problem on the Wiener index (the sum of all pairwise distances between vertices of a graph), with an analysis of the problem. Exploratory; it does not resolve the problem.',
 		pdf: '/assets/wiener-index.pdf',
 	},
 ];
@@ -100,21 +133,25 @@ const talks = [
 
 const ongoing = [
 	{
-		title: 'Algorithmic Game Theory with Memory Pooling',
-		description: 'Investigating game-theoretic models and their interaction with memory-pooling techniques in algorithm design.',
+		title: 'Fuel-Efficient Collaborative Delivery',
+		description: `Writing up the manuscript with ${peopleHtml([people.durocher, people.naredla, people.miller])}, and exploring an implementation and benchmark of the line-restricted algorithm.`,
+	},
+	{
+		title: 'Calibrated Pathogen-Risk Prediction',
+		description: `Honours project with ${peopleHtml([people.henry])} on calibrated prediction of potato pathogen risk and yield loss — learning and decision-making under uncertainty.`,
+	},
+	{
+		title: 'Hurlbert–Kamat Property for Trees',
+		description: 'Continuing the investigation of the Hurlbert–Kamat property for tree families beyond the perfect binary case.',
 	},
 	{
 		title: 'Hypergraph Neural Networks',
-		description: 'Extending diffusion-based GNN architectures to hypergraph settings via PyTorch Geometric; prototyping novel message-passing schemes.',
-	},
-	{
-		title: 'HK-Property for Binary Trees',
-		description: 'Continuing investigation into the Hurlbert–Kamat property for more general tree families beyond the perfect binary case.',
+		description: 'Extending diffusion-based GNN architectures to hypergraphs with PyTorch Geometric.',
 	},
 ];
 ---
 
-<Layout title="Research — Atishaya Maharjan" description="Research positions, preprints, and talks in algorithms, approximation algorithms, graph theory, combinatorics, and machine learning on graphs, by Atishaya Maharjan at the University of Manitoba.">
+<Layout title="Research — Atishaya Maharjan" description="Research positions, working papers, and talks in algorithms, computational geometry, combinatorial optimization, combinatorics, and learning under uncertainty, by Atishaya Maharjan at the University of Manitoba.">
 	<div class="max-w-3xl mx-auto px-6">
 
 		<!-- Page header -->
@@ -148,9 +185,15 @@ const ongoing = [
 								)}
 								<span class="text-ink-500 dark:text-ink-300"> · {position.detail}</span>
 							</p>
+							{position.supervisors.length > 0 && (
+								<p class="text-sm text-ink-500 dark:text-ink-300 mb-1">
+									{position.supervisors.length > 1 ? 'Supervisors' : 'Supervisor'}: <Fragment set:html={peopleHtml(position.supervisors)} />
+								</p>
+							)}
+							<div class="mb-3"></div>
 							<ul class="space-y-1.5 text-sm text-ink-500 dark:text-ink-300 list-none">
 								{position.points.map((point) => (
-									<li class="flex gap-2"><span class="text-ink-400 dark:text-ink-300 shrink-0">–</span>{point}</li>
+									<li class="flex gap-2"><span class="text-ink-400 dark:text-ink-300 shrink-0">–</span><span set:html={point} /></li>
 								))}
 							</ul>
 						</div>
@@ -167,15 +210,17 @@ const ongoing = [
 				<span class="text-ink-400 dark:text-ink-300 mr-2">2.</span>Preprints &amp; Working Papers
 			</h2>
 			<p class="text-sm text-ink-400 dark:text-ink-300 italic mb-8">
-				Original novel work. Unpublished and not yet peer-reviewed.
+				Not yet peer-reviewed. Author order is alphabetical, as is standard in theoretical computer science.
 			</p>
 			<ol class="space-y-6 text-[15px] leading-[1.8] list-none">
 				{preprints.map((paper, i) => (
 					<li class="pl-8 relative">
 						<span class="absolute left-0 text-ink-400 dark:text-ink-300">[{i + 1}]</span>
-						Maharjan, A. <em class="font-display">{paper.title}.</em>
-						<span class="text-ink-500 dark:text-ink-300"> {paper.area}. {paper.description} </span>
-						<a href={paper.pdf} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors whitespace-nowrap">[PDF]</a>
+						<Fragment set:html={paper.authors} />. <em class="font-display">{paper.title}.</em>
+						<span class="text-ink-500 dark:text-ink-300"> {paper.status}. {paper.area}. <Fragment set:html={paper.description} /> </span>
+						{paper.pdf && (
+							<a href={paper.pdf} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors whitespace-nowrap">[PDF]</a>
+						)}
 					</li>
 				))}
 			</ol>
@@ -221,7 +266,7 @@ const ongoing = [
 				{ongoing.map((item) => (
 					<p>
 						<strong class="font-semibold text-ink-900 dark:text-ink-100">{item.title}.</strong>
-						{' '}{item.description}
+						{' '}<Fragment set:html={item.description} />
 					</p>
 				))}
 			</div>

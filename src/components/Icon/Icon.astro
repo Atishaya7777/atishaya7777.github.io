@@ -1,0 +1,38 @@
+---
+// Inline SVG icons (paths from Lucide, ISC licence). Sized to the surrounding
+// text (1em) and coloured with currentColor, so they inherit link styles.
+export type IconName = 'arrow-up-right' | 'arrow-right' | 'arrow-left' | 'x';
+
+interface Props {
+	name: IconName;
+	class?: string;
+	/** Accessible label. Omit for decorative icons next to text. */
+	label?: string;
+}
+
+const { name, class: className = '', label } = Astro.props;
+
+const paths: Record<IconName, string> = {
+	'arrow-up-right': '<path d="M7 7h10v10"/><path d="M7 17 17 7"/>',
+	'arrow-right': '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+	'arrow-left': '<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>',
+	x: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+};
+---
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 24 24"
+	width="1em"
+	height="1em"
+	fill="none"
+	stroke="currentColor"
+	stroke-width="1.75"
+	stroke-linecap="round"
+	stroke-linejoin="round"
+	class={`inline-block shrink-0 align-[-0.125em] ${className}`}
+	role={label ? 'img' : undefined}
+	aria-label={label}
+	aria-hidden={label ? undefined : 'true'}
+	focusable="false"
+	set:html={paths[name]}
+/>

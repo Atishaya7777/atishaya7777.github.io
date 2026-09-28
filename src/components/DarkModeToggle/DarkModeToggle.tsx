@@ -29,7 +29,7 @@ export default function DarkModeToggle() {
                 aria-label="Toggle dark mode"
                 className="w-8 h-8 flex items-center justify-center text-ink-500 dark:text-ink-300 hover:text-ink-900 dark:hover:text-ink-100 transition-colors"
             >
-                <span className="text-sm">○</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><circle cx="12" cy="12" r="5" /></svg>
             </button>
         );
     }

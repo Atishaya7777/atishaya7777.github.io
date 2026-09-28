@@ -1,4 +1,5 @@
 ---
+import Icon from '../Icon/Icon.astro';
 import routes from '../../global/routes';
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 import Seal from '../Seal/Seal.astro';
@@ -56,7 +57,7 @@ const navItems = [
 				title="Research CV — for academic audiences"
 				class="text-xs tracking-[0.12em] uppercase text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors duration-200"
 			>
-				CV&nbsp;↗
+				CV<Icon name="arrow-up-right" class="ml-[0.2em]" />
 			</a>
 			<a
 				href="/assets/atishaya_swe_resume.pdf"
@@ -65,7 +66,7 @@ const navItems = [
 				title="Industry résumé — for software engineering roles"
 				class="text-xs tracking-[0.12em] uppercase text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors duration-200"
 			>
-				Résumé&nbsp;↗
+				Résumé<Icon name="arrow-up-right" class="ml-[0.2em]" />
 			</a>
 			<DarkModeToggle client:load />
 		</nav>
@@ -120,7 +121,7 @@ const navItems = [
 				rel="noopener noreferrer"
 				class="text-xs tracking-[0.12em] uppercase text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors"
 			>
-				Research CV ↗
+				Research CV<Icon name="arrow-up-right" class="ml-[0.2em]" />
 			</a>
 			<a
 				href="/assets/atishaya_swe_resume.pdf"
@@ -128,7 +129,7 @@ const navItems = [
 				rel="noopener noreferrer"
 				class="text-xs tracking-[0.12em] uppercase text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors"
 			>
-				Industry Résumé ↗
+				Industry Résumé<Icon name="arrow-up-right" class="ml-[0.2em]" />
 			</a>
 		</div>
 	</nav>

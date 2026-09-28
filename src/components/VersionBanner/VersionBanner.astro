@@ -1,4 +1,5 @@
 ---
+import Icon from '../Icon/Icon.astro';
 // Only show the banner in production — /v1/ doesn't exist in the dev server
 const isProd = import.meta.env.PROD;
 ---
@@ -12,7 +13,7 @@ const isProd = import.meta.env.PROD;
       href="/v1/"
       class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 underline underline-offset-2 transition-colors duration-200"
     >
-      View classic site ↗
+      View classic site<Icon name="arrow-up-right" class="ml-[0.2em]" />
     </a>
   </span>
   <button
@@ -20,7 +21,7 @@ const isProd = import.meta.env.PROD;
     aria-label="Dismiss banner"
     class="absolute right-4 top-1/2 -translate-y-1/2 text-ink-400 dark:text-ink-300 hover:text-ink-900 dark:hover:text-ink-100 transition-colors duration-200 leading-none"
   >
-    ✕
+    <Icon name="x" class="w-3.5 h-3.5 align-middle" />
   </button>
 </div>}
 

@@ -1,6 +1,8 @@
 ---
+import Icon from '../components/Icon/Icon.astro';
 import Layout from '../layouts/Layout.astro';
 import routes from '../global/routes';
+import { people, groups, refs, a, peopleHtml } from '../global/people';
 
 const experience = [
 	{
@@ -15,9 +17,10 @@ const experience = [
 	},
 	{
 		dates: 'Present',
-		role: 'Software Engineer',
+		role: 'Tech Lead',
 		org: 'Vibecore · Remote',
 		points: [
+			'Lead a small engineering team building a GitHub-native software verification platform for founders who build with AI coding tools.',
 			'Automated CI/CD deployments from GitHub Actions to AWS EC2, standardizing releases for EC2-hosted applications.',
 			'Configured S3, DynamoDB, and IAM permissions for cloud-connected application workflows.',
 			'Provisioned and maintained EBS/EFS storage for application data and deployment infrastructure.',
@@ -48,32 +51,46 @@ const experience = [
 const research = [
 	{
 		dates: 'Mar 2024 – Present',
-		role: 'Researcher — Algorithms & Graph Theory',
-		org: 'GADA Lab · University of Manitoba · Supervisor: Dr. Stephane Durocher',
+		role: 'Undergraduate Researcher — Algorithms & Computational Geometry',
+		org: 'GADA Lab · University of Manitoba',
+		orgUrl: groups.gada.url,
+		supervisors: [people.durocher, people.naredla, people.zhu, people.miller],
 		points: [
-			'Optimizing collaborative drone-delivery routes for logistics through exact and approximation algorithms, dynamic programming, and exchange-point geometry.',
+			`Fuel-efficient collaborative delivery: an O(n²) algorithm for the line-restricted setting (improving the previous O(n³) bound from ${a(refs.walcom2025.url, refs.walcom2025.label)}), an O(n³) algorithm for the L1 setting, and an NP-hardness proof for the Euclidean setting, where the L1 algorithm gives a √2-approximation.`,
 			'Developed an approximation algorithm for Hamiltonian-path optimization in spatially embedded graphs with visualization and randomized testing across 100+ synthetic instances.',
 			'Improved a noncrossing spanning-tree research library by 30% and strengthened its Python testing, documentation, and development practices.',
 		],
 	},
 	{
+		dates: 'Sep 2026 – Apr 2027',
+		role: 'Honours Research Project — Calibrated Risk Prediction',
+		org: 'Department of Computer Science · University of Manitoba',
+		orgUrl: null,
+		supervisors: [people.henry, people.sayari, people.salehkalaibar],
+		points: [
+			'Building calibrated models for potato pathogen-risk and yield-loss prediction, in collaboration with the Department of Plant Science.',
+		],
+	},
+	{
 		dates: 'May 2025 – Present',
 		role: 'Machine Learning Researcher',
-		org: 'Terrabyte ML Research Group · University of Manitoba',
+		org: 'Terrabyte ML Research Group',
+		orgUrl: groups.terrabyte.url,
+		supervisors: [],
 		points: [
-			'Extended diffusion-based learning to higher-order relational data by generalizing Graph Neural Diffusion architectures to hypergraphs.',
-			'Implemented 4 Hypergraph Neural Diffusion variants with PyTorch and PyTorch Geometric.',
+			'Extended diffusion-based learning to higher-order relational data by implementing 4 Hypergraph Neural Diffusion variants with PyTorch and PyTorch Geometric.',
 			'Built an MLflow pipeline tracking configurations, metrics, and evaluations for 25+ experiments across 5+ datasets.',
 		],
 	},
 	{
 		dates: 'Jan 2024 – Jul 2025',
-		role: 'Researcher — Combinatorics & Graph Theory',
-		org: 'Department of Mathematics · University of Manitoba · Supervisors: Dr. Mahsa Nasrollahi-Shirazi & Dr. Andrii Arman',
+		role: 'Undergraduate Researcher — Combinatorics & Graph Theory',
+		org: 'MXML · Department of Mathematics · University of Manitoba',
+		orgUrl: groups.mxml.url,
+		supervisors: [people.arman, people.shirazi],
 		points: [
-			'Developed a symbolic and computational proof framework for the Hurlbert–Kamat property on perfect m-ary trees.',
-			'Derived a closed-form expression for the independence number using generating functions and recurrence analysis.',
-			'Used induction and SageMath validation to test conjectures and verify symbolic identities across 1,000+ instances.',
+			'Established a coefficientwise inequality underlying the Hurlbert–Kamat property for perfect m-ary trees and derived a closed-form expression for their independence number.',
+			'Used generating functions, polynomial recurrences, and induction, with SageMath validation across 1,000+ instances.',
 		],
 	},
 ];
@@ -85,8 +102,8 @@ const projects = [
 		stack: 'Next.js · TypeScript · FastAPI · Python · Supabase',
 		description:
 			'Won 1st place at the 2026 CSSA Design & Craft Case Competition by building an auditable payroll-ingestion platform in a 6.5-hour technical sprint. Implemented field mapping, validation, exception review, and source traceability for CSV, XLSX, PDF, image, and email-derived records.',
-		link: { href: 'https://umanitobacssa.ca/events/case-competition-2026', label: 'Competition ↗' },
-		externalLink: { href: 'https://github.com/pieberrykinnie/paytime', label: 'GitHub ↗' },
+		link: { href: 'https://umanitobacssa.ca/events/case-competition-2026', label: 'Competition' },
+		externalLink: { href: 'https://github.com/pieberrykinnie/paytime', label: 'GitHub' },
 	},
 	{
 		title: 'HAPA — Winner, AccelR8 Prairie AI Hackathon',
@@ -94,8 +111,8 @@ const projects = [
 		stack: 'Next.js · React · TypeScript · AI/LLM',
 		description:
 			'Won the 2026 AccelR8 Prairie AI Hackathon with a working personalized-shopping prototype built in 12 hours. Combined onboarding preferences, swipe feedback, and natural-language/voice pivots to adapt recommendations, with an extensible design for multimodal personalization and AI-assisted commerce.',
-		link: { href: 'https://www.accelr8.ca/event-details/accelr8-prairie-ai-hackathon-2026', label: 'Hackathon ↗' },
-		externalLink: { href: 'https://github.com/pieberrykinnie/hapa', label: 'GitHub ↗' },
+		link: { href: 'https://www.accelr8.ca/event-details/accelr8-prairie-ai-hackathon-2026', label: 'Hackathon' },
+		externalLink: { href: 'https://github.com/pieberrykinnie/hapa', label: 'GitHub' },
 	},
 	{
 		title: 'EkNepal',
@@ -103,8 +120,8 @@ const projects = [
 		stack: 'Frontend · Professional Project · Alpinist Studios',
 		description:
 			'A news-aggregation platform bringing reporting from multiple Nepali publications into one interface. My first paid programming project — I contributed to the frontend while working through Alpinist Studios. The public product is proprietary; the source is not published.',
-		link: { href: routes.eknepal, label: 'Project note ↗' },
-		externalLink: { href: 'https://eknepal.com/', label: 'eknepal.com ↗' },
+		link: { href: routes.eknepal, label: 'Project note' },
+		externalLink: { href: 'https://eknepal.com/', label: 'eknepal.com' },
 	},
 	{
 		title: 'Brainstorm',
@@ -119,8 +136,8 @@ const projects = [
 		stack: 'React · Socrata API · Full-Stack · Civic Data',
 		description:
 			'Full-stack civic-data platform helping organizations compare Winnipeg locations using city data, zoning maps, budget estimates, and relocation-planning tools. Integrated City of Winnipeg open datasets via the Socrata API into interactive comparisons and maps. 1st place, 2026 Winnipeg Open Data Datathon.',
-		link: { href: routes.winlocate, label: 'Project note ↗' },
-		externalLink: { href: 'https://www.linkedin.com/posts/edwinnipeg_winnipeg-opendata-datathon-activity-7436856469112901632-dLVI', label: 'Winner announcement ↗' },
+		link: { href: routes.winlocate, label: 'Project note' },
+		externalLink: { href: 'https://www.linkedin.com/posts/edwinnipeg_winnipeg-opendata-datathon-activity-7436856469112901632-dLVI', label: 'Winner announcement' },
 	},
 	{
 		title: 'Get Good Grades',
@@ -128,7 +145,7 @@ const projects = [
 		stack: 'Electron · React · TypeScript · YAML',
 		description:
 			'Desktop flashcard application that reads user-controlled .yaml deck files directly from the local file system, separating flashcard content from the viewer so decks stay portable and shareable as plain text. Sole designer and developer. Winner, "Most Chaotic Evil Hack," .devHacks 2026.',
-		link: { href: routes.getGoodGrades, label: 'Project note ↗' },
+		link: { href: routes.getGoodGrades, label: 'Project note' },
 	},
 	{
 		title: 'Spatially Embedded Graphs',
@@ -222,10 +239,21 @@ const skills = [
 						<p class="text-xs tracking-wide text-ink-400 dark:text-ink-300 pt-1.5">{position.dates}</p>
 						<div>
 							<h3 class="font-display text-xl text-ink-900 dark:text-ink-100 mb-0.5">{position.role}</h3>
-							<p class="text-sm text-accent-600 dark:text-accent-300 mb-3">{position.org}</p>
-							<ul class="space-y-1.5 text-sm text-ink-500 dark:text-ink-300 list-none">
+							<p class="text-sm mb-1">
+								{position.orgUrl ? (
+									<a href={position.orgUrl} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">{position.org}</a>
+								) : (
+									<span class="text-accent-600 dark:text-accent-300">{position.org}</span>
+								)}
+							</p>
+							{position.supervisors.length > 0 && (
+								<p class="text-sm text-ink-500 dark:text-ink-300">
+									{position.supervisors.length > 1 ? 'Supervisors' : 'Supervisor'}: <Fragment set:html={peopleHtml(position.supervisors)} />
+								</p>
+							)}
+							<ul class="mt-3 space-y-1.5 text-sm text-ink-500 dark:text-ink-300 list-none">
 								{position.points.map((point) => (
-									<li class="flex gap-2"><span class="text-ink-400 dark:text-ink-300 shrink-0">–</span>{point}</li>
+									<li class="flex gap-2"><span class="text-ink-400 dark:text-ink-300 shrink-0">–</span><span set:html={point} /></li>
 								))}
 							</ul>
 						</div>
@@ -253,11 +281,11 @@ const skills = [
 						{(project.link || project.externalLink) && (
 							<p class="mt-2 text-sm">
 								{project.link && (
-									<a href={project.link.href} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">{project.link.label}</a>
+									<a href={project.link.href} {...(project.link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">{project.link.label}<Icon name={project.link.href.startsWith('http') ? 'arrow-up-right' : 'arrow-right'} class="ml-[0.2em]" /></a>
 								)}
 								{project.link && project.externalLink && <span class="text-ink-400 dark:text-ink-300 mx-2">·</span>}
 								{project.externalLink && (
-									<a href={project.externalLink.href} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">{project.externalLink.label}</a>
+									<a href={project.externalLink.href} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">{project.externalLink.label}<Icon name="arrow-up-right" class="ml-[0.2em]" /></a>
 								)}
 							</p>
 						)}

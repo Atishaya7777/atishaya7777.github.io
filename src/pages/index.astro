@@ -1,7 +1,9 @@
 ---
+import Icon from '../components/Icon/Icon.astro';
 import Layout from '../layouts/Layout.astro';
 import Seal from '../components/Seal/Seal.astro';
 import routes from '../global/routes';
+import { people, groups, refs } from '../global/people';
 
 const structuredData = {
 	"@context": "https://schema.org",
@@ -30,16 +32,17 @@ const structuredData = {
 		"https://www.linkedin.com/in/atishaya-maharjan07",
 	],
 	knowsAbout: [
-		"Graph Theory",
+		"Algorithms",
+		"Computational Geometry",
+		"Combinatorial Optimization",
 		"Combinatorics",
-		"Approximation Algorithms",
-		"Machine Learning on Graphs",
+		"Machine Learning",
 		"Software Engineering",
 	],
 };
 
 const contents = [
-	{ marker: 'I', href: '#research-interests', title: 'Research Interests', detail: 'Algorithms, combinatorics, and learning on graphs' },
+	{ marker: 'I', href: '#research-interests', title: 'Research Interests', detail: 'Algorithms, geometry, optimization, and learning under uncertainty' },
 	{ marker: 'II', href: '#education', title: 'Education', detail: 'Joint Honours study and academic distinctions' },
 	{ marker: 'III', href: '#experience', title: 'Experience', detail: 'Software engineering and research appointments' },
 	{ marker: 'IV', href: '#papers', title: 'Preprints & Working Papers', detail: 'Current mathematical writing and manuscripts' },
@@ -74,7 +77,7 @@ const contents = [
 				BSc. Joint Honours, Computer Science &amp; Mathematics · University of Manitoba
 			</p>
 			<p class="text-base text-ink-500 dark:text-ink-300 leading-relaxed mb-6">
-				Software Engineer · LG Electronics &amp; Vibecore
+				Software Engineer, LG Electronics · Tech Lead, Vibecore
 			</p>
 
 			<nav class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm" aria-label="Profile links">
@@ -102,14 +105,17 @@ const contents = [
 			<h2 class="text-center text-sm tracking-[0.2em] uppercase text-ink-900 dark:text-ink-100 font-semibold mb-5">Abstract</h2>
 			<div class="space-y-4 text-[15px] leading-[1.75] max-w-2xl mx-auto">
 				<p>
-					I study Computer Science and Mathematics (Joint Honours, minor in Statistics) at the University of Manitoba.
-					My work is in discrete mathematics and algorithms — combinatorics on graph and tree structures, approximation
-					algorithms in geometric settings, and extending diffusion-based neural networks to hypergraphs. I work across
-					the <strong class="font-semibold text-ink-900 dark:text-ink-100">GADA Lab</strong>, the
-					<strong class="font-semibold text-ink-900 dark:text-ink-100">Terrabyte ML Research Group</strong>, and the
-					<strong class="font-semibold text-ink-900 dark:text-ink-100">Department of Mathematics</strong>.
-					On the engineering side, I build enterprise software at LG Electronics and cloud deployment infrastructure
-					at Vibecore, and have contributed to early-stage products at Hoek Insights and Timeero.
+					I am a final-year student in Computer Science and Mathematics (Joint Honours, minor in Statistics) at the
+					University of Manitoba. My research starts from algorithms and mathematical structure: exact and
+					approximation algorithms and hardness results for geometric optimization problems, and combinatorics on
+					trees. I am increasingly interested in optimization and learning under uncertainty, and in machine
+					learning that rests on solid theory. In the
+					<a href={groups.gada.url} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">GADA Lab</a>, I work with
+					<a href={people.durocher.url} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Dr. Stephane Durocher</a> and
+					<a href={people.naredla.url} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Dr. Anurag Murty Naredla</a> on fuel-efficient collaborative
+					delivery; my honours project with <a href={people.henry.url} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Dr. Christopher Henry</a> is on
+					calibrated risk prediction. On the engineering side, I am a software engineer at LG Electronics and
+					tech lead at Vibecore.
 				</p>
 			</div>
 		</section>
@@ -136,7 +142,7 @@ const contents = [
 										<span class="block font-display text-lg leading-tight text-ink-900 dark:text-ink-100 group-hover:text-accent-700 dark:group-hover:text-accent-200 transition-colors">{item.title}</span>
 										<span class="block mt-1 text-xs leading-relaxed text-ink-400 dark:text-ink-300">{item.detail}</span>
 									</span>
-									<span aria-hidden="true" class="text-sm text-ink-400 dark:text-ink-300 group-hover:text-accent-600 dark:group-hover:text-accent-300 transition-colors">→</span>
+									<span aria-hidden="true" class="text-sm text-ink-400 dark:text-ink-300 group-hover:text-accent-600 dark:group-hover:text-accent-300 transition-colors"><Icon name="arrow-right" /></span>
 								</a>
 							</li>
 						))}
@@ -165,16 +171,22 @@ const contents = [
 			</h2>
 			<div class="space-y-5 text-[15px] leading-[1.8]">
 				<p>
-					<strong class="font-semibold text-ink-900 dark:text-ink-100">Algorithms &amp; graph theory.</strong>
-					Approximation algorithms, Eulerian circuits, and Hamiltonian paths in spatially embedded graphs.
+					<strong class="font-semibold text-ink-900 dark:text-ink-100">Algorithms &amp; computational geometry.</strong>
+					Exact and approximation algorithms, and NP-hardness, for geometric problems such as collaborative
+					delivery and Hamiltonian paths in spatially embedded graphs.
+				</p>
+				<p>
+					<strong class="font-semibold text-ink-900 dark:text-ink-100">Combinatorial optimization under uncertainty.</strong>
+					Optimization and decision-making when inputs are uncertain; calibrated prediction that can be trusted
+					downstream.
+				</p>
+				<p>
+					<strong class="font-semibold text-ink-900 dark:text-ink-100">Theoretically grounded machine learning.</strong>
+					Learning methods with provable guarantees, including learning on graphs and hypergraphs.
 				</p>
 				<p>
 					<strong class="font-semibold text-ink-900 dark:text-ink-100">Combinatorics.</strong>
-					Independence numbers, the HK-property in perfect trees, and generating functions.
-				</p>
-				<p>
-					<strong class="font-semibold text-ink-900 dark:text-ink-100">Machine learning on graphs.</strong>
-					Hypergraph neural networks, graph neural diffusion, and PyTorch Geometric architectures.
+					The Hurlbert–Kamat property and independence numbers of perfect trees, via generating functions.
 				</p>
 			</div>
 		</section>
@@ -187,7 +199,7 @@ const contents = [
 				<span class="h-px flex-1 bg-rule dark:bg-rule-dark" aria-hidden="true"></span>
 			</h2>
 			<div class="grid md:grid-cols-[150px_1fr] gap-x-8 gap-y-2">
-				<p class="text-xs tracking-wide text-ink-400 dark:text-ink-300 pt-1.5">Aug 2022 – Present</p>
+				<p class="text-xs tracking-wide text-ink-400 dark:text-ink-300 pt-1.5">Aug 2022 – May 2027 (expected)</p>
 				<div>
 					<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">University of Manitoba</h3>
 					<p class="text-sm text-ink-500 dark:text-ink-300 mt-0.5">
@@ -225,9 +237,10 @@ const contents = [
 					<p class="text-xs tracking-wide text-ink-400 dark:text-ink-300 pt-1.5">Present</p>
 					<div>
 						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">Vibecore</h3>
-						<p class="text-sm text-ink-500 dark:text-ink-300">Software Engineer · Remote</p>
+						<p class="text-sm text-ink-500 dark:text-ink-300">Tech Lead · Remote</p>
 					<p class="text-sm text-ink-500 dark:text-ink-300 mt-2 leading-relaxed">
-						Automated CI/CD deployments from GitHub Actions to AWS EC2; configured S3, DynamoDB, IAM
+						Lead a small team building a GitHub-native software verification platform for founders who build with
+						AI coding tools. Automated CI/CD deployments from GitHub Actions to AWS EC2; configured S3, DynamoDB, IAM
 						permissions, and EBS/EFS storage for cloud-hosted application workflows.
 						</p>
 					</div>
@@ -249,12 +262,36 @@ const contents = [
 				<div class="grid md:grid-cols-[150px_1fr] gap-x-8 gap-y-1">
 					<p class="text-xs tracking-wide text-ink-400 dark:text-ink-300 pt-1.5">Mar 2024 – Present</p>
 					<div>
-						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">GADA Lab</h3>
-						<p class="text-sm text-ink-500 dark:text-ink-300">Algorithms Researcher · Geometric, Approximation &amp; Distributed Algorithms · University of Manitoba</p>
+						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100"><a href={groups.gada.url} target="_blank" rel="noopener noreferrer" class="hover:text-accent-700 dark:hover:text-accent-200 transition-colors">GADA Lab</a></h3>
+						<p class="text-sm text-ink-500 dark:text-ink-300">Undergraduate Researcher, Algorithms &amp; Computational Geometry · University of Manitoba</p>
+						<p class="text-sm text-ink-500 dark:text-ink-300">
+							Supervisors: <a href={people.durocher.url} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Dr. Stephane Durocher</a>,
+							<a href={people.naredla.url} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Dr. Anurag Murty Naredla</a>,
+							<a href={people.zhu.url} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Dr. Leqi (Jimmy) Zhu</a> &amp;
+							<a href={people.miller.url} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Dr. Avery Miller</a>
+						</p>
 					<p class="text-sm text-ink-500 dark:text-ink-300 mt-2 leading-relaxed">
-						Optimizing collaborative drone-delivery routes for logistics through exact and approximation algorithms,
-						dynamic programming, and exchange-point geometry. Built Hamiltonian-path visualization and randomized
-						testing infrastructure across 100+ synthetic instances.
+						Fuel-efficient collaborative delivery: an O(n²) algorithm for the line-restricted setting (improving the
+						previous O(n³) from <a href={refs.walcom2025.url} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">WALCOM 2025</a>), an O(n³) algorithm for the
+						L1 setting, and NP-hardness for the Euclidean setting, where the L1 algorithm gives a √2-approximation.
+						Also built Hamiltonian-path approximation and randomized testing tooling across 100+ instances.
+						</p>
+					</div>
+				</div>
+
+				<div class="grid md:grid-cols-[150px_1fr] gap-x-8 gap-y-1">
+					<p class="text-xs tracking-wide text-ink-400 dark:text-ink-300 pt-1.5">Sep 2026 – Apr 2027</p>
+					<div>
+						<h3 class="font-display text-xl text-ink-900 dark:text-ink-100">Honours Research Project</h3>
+						<p class="text-sm text-ink-500 dark:text-ink-300">Calibrated Risk Prediction · University of Manitoba</p>
+						<p class="text-sm text-ink-500 dark:text-ink-300">
+							Supervisors: <a href={people.henry.url} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Dr. Christopher Henry</a>,
+							<a href={people.sayari.url} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Dr. Mohammad Sayari</a> &amp;
+							<a href={people.salehkalaibar.url} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Dr. Sadaf Salehkalaibar</a>
+						</p>
+					<p class="text-sm text-ink-500 dark:text-ink-300 mt-2 leading-relaxed">
+						Calibrated prediction of potato pathogen risk and yield loss, in collaboration with the Department of
+						Plant Science.
 						</p>
 					</div>
 				</div>
@@ -272,7 +309,7 @@ const contents = [
 				</div>
 			</div>
 			<p class="mt-8 text-sm">
-				<a href={routes.works} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Full history →</a>
+				<a href={routes.works} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Full history<Icon name="arrow-right" class="ml-[0.2em]" /></a>
 			</p>
 		</section>
 
@@ -286,21 +323,36 @@ const contents = [
 			<ol class="space-y-6 text-[15px] leading-[1.8] list-none">
 				<li class="pl-8 relative">
 					<span class="absolute left-0 text-ink-400 dark:text-ink-300">[1]</span>
-					Maharjan, A. <em class="font-display">HK Property in Perfect Binary Trees.</em>
-					Preprint, unpublished. Proves a closed-form solution for the independence number of perfect binary trees and
-					verifies Hurlbert–Kamat's Conjecture using generating functions across 1,000+ cases.
-					<a href="/assets/hk_perfect_binary_trees.pdf" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors whitespace-nowrap">[PDF]</a>
+					<a href={people.durocher.url} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">S. Durocher</a>,
+					<strong class="font-semibold text-ink-900 dark:text-ink-100">A. Maharjan</strong>,
+					<a href={people.miller.url} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">A. Miller</a>,
+					<a href={people.naredla.url} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">A. M. Naredla</a>.
+					<em class="font-display">Geometric Algorithms and Hardness for Fuel-Efficient Collaborative Delivery.</em>
+					Manuscript in preparation. O(n²) and O(n³) algorithms for the line-restricted and L1 settings, and
+					NP-hardness for the Euclidean setting.
 				</li>
 				<li class="pl-8 relative">
 					<span class="absolute left-0 text-ink-400 dark:text-ink-300">[2]</span>
-					Maharjan, A. <em class="font-display">Wiener Index.</em>
-					Preprint, unpublished. Original writeup on the Wiener index — a topological graph invariant defined as the sum
-					of pairwise distances between vertices — with novel combinatorial analysis and results.
+					<a href={people.arman.url} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">A. Arman</a>,
+					<strong class="font-semibold text-ink-900 dark:text-ink-100">A. Maharjan</strong>,
+					<a href={people.shirazi.url} target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">M. N. Shirazi</a>.
+					<em class="font-display">HK Property in Perfect Binary Trees.</em>
+					Preprint. A generating-function framework for star sizes in perfect m-ary trees, giving an alternate,
+					coefficientwise proof of the HK-property, a structured recurrence for the gap between the leaf star and the
+					root star, and formulas for the independence number and the minimum size of a maximal independent set.
+					<a href="/assets/hk_perfect_binary_trees.pdf" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors whitespace-nowrap">[PDF]</a>
+				</li>
+				<li class="pl-8 relative">
+					<span class="absolute left-0 text-ink-400 dark:text-ink-300">[3]</span>
+					<strong class="font-semibold text-ink-900 dark:text-ink-100">A. Maharjan</strong>. <em class="font-display">Wiener Index.</em>
+					Report. Implementation of a heuristic algorithm for an open problem on the Wiener index (the sum of all
+					pairwise distances between vertices of a graph), with an analysis of the problem. Exploratory; it does not
+					resolve the problem.
 					<a href="/assets/wiener-index.pdf" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors whitespace-nowrap">[PDF]</a>
 				</li>
 			</ol>
 			<p class="mt-8 text-sm">
-				<a href={routes.research} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">All research →</a>
+				<a href={routes.research} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">All research<Icon name="arrow-right" class="ml-[0.2em]" /></a>
 			</p>
 		</section>
 
@@ -324,9 +376,9 @@ const contents = [
 						PDF, image, and email-derived records.
 					</p>
 					<p class="mt-2 text-sm">
-						<a href="https://github.com/pieberrykinnie/paytime" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">GitHub&nbsp;↗</a>
+						<a href="https://github.com/pieberrykinnie/paytime" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">GitHub<Icon name="arrow-up-right" class="ml-[0.2em]" /></a>
 						<span class="text-ink-400 dark:text-ink-300 mx-2">·</span>
-						<a href="https://umanitobacssa.ca/events/case-competition-2026" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Competition&nbsp;↗</a>
+						<a href="https://umanitobacssa.ca/events/case-competition-2026" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Competition<Icon name="arrow-up-right" class="ml-[0.2em]" /></a>
 					</p>
 				</div>
 				<div>
@@ -341,9 +393,9 @@ const contents = [
 						the broader design supports multimodal personalization and AI-assisted commerce.
 					</p>
 					<p class="mt-2 text-sm">
-						<a href="https://github.com/pieberrykinnie/hapa" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">GitHub&nbsp;↗</a>
+						<a href="https://github.com/pieberrykinnie/hapa" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">GitHub<Icon name="arrow-up-right" class="ml-[0.2em]" /></a>
 						<span class="text-ink-400 dark:text-ink-300 mx-2">·</span>
-						<a href="https://www.accelr8.ca/event-details/accelr8-prairie-ai-hackathon-2026" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Hackathon&nbsp;↗</a>
+						<a href="https://www.accelr8.ca/event-details/accelr8-prairie-ai-hackathon-2026" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Hackathon<Icon name="arrow-up-right" class="ml-[0.2em]" /></a>
 					</p>
 				</div>
 				<div>
@@ -355,9 +407,9 @@ const contents = [
 						Studios.
 					</p>
 					<p class="mt-2 text-sm">
-						<a href={routes.eknepal} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Project&nbsp;note ↗</a>
+						<a href={routes.eknepal} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Project note<Icon name="arrow-right" class="ml-[0.2em]" /></a>
 						<span class="text-ink-400 dark:text-ink-300 mx-2">·</span>
-						<a href="https://eknepal.com/" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">eknepal.com&nbsp;↗</a>
+						<a href="https://eknepal.com/" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">eknepal.com<Icon name="arrow-up-right" class="ml-[0.2em]" /></a>
 					</p>
 				</div>
 				<div>
@@ -372,7 +424,7 @@ const contents = [
 						Datathon.
 					</p>
 					<p class="mt-2 text-sm">
-						<a href={routes.winlocate} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Project&nbsp;note ↗</a>
+						<a href={routes.winlocate} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">Project note<Icon name="arrow-right" class="ml-[0.2em]" /></a>
 					</p>
 				</div>
 				<div>
@@ -400,7 +452,7 @@ const contents = [
 				</div>
 			</div>
 			<p class="mt-8 text-sm">
-				<a href={routes.works} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">All work →</a>
+				<a href={routes.works} class="text-accent-600 dark:text-accent-300 hover:text-accent-700 dark:hover:text-accent-200 transition-colors">All work<Icon name="arrow-right" class="ml-[0.2em]" /></a>
 			</p>
 		</section>
 
