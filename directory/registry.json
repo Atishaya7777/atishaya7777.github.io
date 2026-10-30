@@ -1,0 +1,104 @@
+[
+  {
+    "id": "manitoba",
+    "name": "University of Manitoba",
+    "province": "Manitoba",
+    "rosters": [
+      {
+        "discipline": "cs",
+        "department": "Department of Computer Science",
+        "url": "https://www.umanitoba.ca/science/directory/computer-science"
+      },
+      {
+        "discipline": "math",
+        "department": "Department of Mathematics",
+        "url": "https://www.umanitoba.ca/science/directory/mathematics"
+      }
+    ]
+  },
+  {
+    "id": "waterloo",
+    "name": "University of Waterloo",
+    "province": "Ontario",
+    "rosters": [
+      {
+        "discipline": "cs",
+        "department": "Cheriton School of Computer Science",
+        "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title="
+      },
+      {
+        "discipline": "math",
+        "department": "Department of Combinatorics and Optimization",
+        "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts"
+      }
+    ]
+  },
+  {
+    "id": "ubc",
+    "name": "University of British Columbia",
+    "province": "British Columbia",
+    "rosters": [
+      {
+        "discipline": "cs",
+        "department": "Department of Computer Science",
+        "url": "https://www.cs.ubc.ca/people/faculty"
+      },
+      {
+        "discipline": "math",
+        "department": "Department of Mathematics",
+        "url": "https://www.math.ubc.ca/people/faculty"
+      }
+    ]
+  },
+  {
+    "id": "toronto",
+    "name": "University of Toronto",
+    "province": "Ontario",
+    "rosters": [
+      {
+        "discipline": "cs",
+        "department": "Department of Computer Science",
+        "url": "https://web.cs.toronto.edu/people/faculty-directory"
+      },
+      {
+        "discipline": "math",
+        "department": "Department of Mathematics",
+        "url": "https://www.mathematics.utoronto.ca/people/directories/all-faculty"
+      }
+    ]
+  },
+  {
+    "id": "mcgill",
+    "name": "McGill University",
+    "province": "Quebec",
+    "rosters": [
+      {
+        "discipline": "cs",
+        "department": "School of Computer Science",
+        "url": "https://www.cs.mcgill.ca/people/faculty/"
+      },
+      {
+        "discipline": "math",
+        "department": "Department of Mathematics and Statistics",
+        "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff"
+      }
+    ]
+  },
+  {
+    "id": "alberta",
+    "name": "University of Alberta",
+    "province": "Alberta",
+    "rosters": [
+      {
+        "discipline": "cs",
+        "department": "Department of Computing Science",
+        "url": "https://apps.ualberta.ca/directory/search/department/360300"
+      },
+      {
+        "discipline": "math",
+        "department": "Department of Mathematical and Statistical Sciences",
+        "url": "https://apps.ualberta.ca/directory/search/department/360500"
+      }
+    ]
+  }
+]

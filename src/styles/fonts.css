@@ -1,0 +1,33 @@
+/* TeX Gyre Pagella (GUST Font License). Files in public/fonts/tex-gyre-pagella/. */
+
+@font-face {
+	font-family: 'TeX Gyre Pagella';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/tex-gyre-pagella/texgyrepagella-regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'TeX Gyre Pagella';
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/tex-gyre-pagella/texgyrepagella-italic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'TeX Gyre Pagella';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('/fonts/tex-gyre-pagella/texgyrepagella-bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'TeX Gyre Pagella';
+	font-style: italic;
+	font-weight: 700;
+	font-display: swap;
+	src: url('/fonts/tex-gyre-pagella/texgyrepagella-bolditalic.woff2') format('woff2');
+}

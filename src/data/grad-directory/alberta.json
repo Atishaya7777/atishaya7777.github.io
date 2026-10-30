@@ -1,0 +1,827 @@
+{
+  "schemaVersion": 1,
+  "university": {
+    "id": "alberta",
+    "name": "University of Alberta",
+    "province": "Alberta"
+  },
+  "coverage": "Partial pilot: selected research faculty from the Department of Computing Science and Department of Mathematical and Statistical Sciences. Identity and affiliation are sourced from institutional rosters; graduate recruitment and funding remain unknown unless separately supported. Individual supervision eligibility and departmental completeness have not been established.",
+  "professors": [
+    {
+      "id": "alberta-j-nelson-amaral",
+      "name": "J Nelson Amaral",
+      "sortName": "Amaral, J Nelson",
+      "universityId": "alberta",
+      "department": "Department of Computing Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360300",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/jamaral",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360300",
+        "quote": "Amaral, J Nelson",
+        "checkedAt": "2026-10-29T22:47:36.269Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-omid-ardakanian",
+      "name": "Omid Ardakanian",
+      "sortName": "Ardakanian, Omid",
+      "universityId": "alberta",
+      "department": "Department of Computing Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360300",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/oardakan",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360300",
+        "quote": "Ardakanian, Omid",
+        "checkedAt": "2026-10-29T22:47:36.269Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-denilson-barbosa",
+      "name": "Denilson Barbosa",
+      "sortName": "Barbosa, Denilson",
+      "universityId": "alberta",
+      "department": "Department of Computing Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360300",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/denilson",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360300",
+        "quote": "Barbosa, Denilson",
+        "checkedAt": "2026-10-29T22:47:36.269Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-anup-basu",
+      "name": "Anup Basu",
+      "sortName": "Basu, Anup",
+      "universityId": "alberta",
+      "department": "Department of Computing Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360300",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/basu",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360300",
+        "quote": "Basu, Anup",
+        "checkedAt": "2026-10-29T22:47:36.269Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-michael-bowling",
+      "name": "Michael Bowling",
+      "sortName": "Bowling, Michael",
+      "universityId": "alberta",
+      "department": "Department of Computing Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360300",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/mbowling",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360300",
+        "quote": "Bowling, Michael",
+        "checkedAt": "2026-10-29T22:47:36.269Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-vadim-bulitko",
+      "name": "Vadim Bulitko",
+      "sortName": "Bulitko, Vadim",
+      "universityId": "alberta",
+      "department": "Department of Computing Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360300",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/bulitko",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360300",
+        "quote": "Bulitko, Vadim",
+        "checkedAt": "2026-10-29T22:47:36.269Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-marlos-c-machado",
+      "name": "Marlos C. Machado",
+      "sortName": "C. Machado, Marlos",
+      "universityId": "alberta",
+      "department": "Department of Computing Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360300",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/machado",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360300",
+        "quote": "C. Machado, Marlos",
+        "checkedAt": "2026-10-29T22:47:36.269Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-jocelyn-qiaochu-chen",
+      "name": "Jocelyn Qiaochu Chen",
+      "sortName": "Chen, Jocelyn Qiaochu",
+      "universityId": "alberta",
+      "department": "Department of Computing Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360300",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/qiaochu8",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360300",
+        "quote": "Chen, Jocelyn Qiaochu",
+        "checkedAt": "2026-10-29T22:47:36.269Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-euijin-choo",
+      "name": "Euijin Choo",
+      "sortName": "Choo, Euijin",
+      "universityId": "alberta",
+      "department": "Department of Computing Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360300",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/euijin",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360300",
+        "quote": "Choo, Euijin",
+        "checkedAt": "2026-10-29T22:47:36.269Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-carrie-demmans-epp",
+      "name": "Carrie Demmans Epp",
+      "sortName": "Demmans Epp, Carrie",
+      "universityId": "alberta",
+      "department": "Department of Computing Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360300",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/demmanse",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360300",
+        "quote": "Demmans Epp, Carrie",
+        "checkedAt": "2026-10-29T22:47:36.269Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-ehab-elmallah",
+      "name": "Ehab Elmallah",
+      "sortName": "Elmallah, Ehab",
+      "universityId": "alberta",
+      "department": "Department of Computing Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360300",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/elmallah",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360300",
+        "quote": "Elmallah, Ehab",
+        "checkedAt": "2026-10-29T22:47:36.269Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-zachary-friggstad",
+      "name": "Zachary Friggstad",
+      "sortName": "Friggstad, Zachary",
+      "universityId": "alberta",
+      "department": "Department of Computing Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360300",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/zacharyf",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360300",
+        "quote": "Friggstad, Zachary",
+        "checkedAt": "2026-10-29T22:47:36.269Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-arno-berger",
+      "name": "Arno Berger",
+      "sortName": "Berger, Arno",
+      "universityId": "alberta",
+      "department": "Department of Mathematical and Statistical Sciences",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360500",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/berger",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360500",
+        "quote": "Berger, Arno",
+        "checkedAt": "2026-10-29T22:47:36.283Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-vincent-bouchard",
+      "name": "Vincent Bouchard",
+      "sortName": "Bouchard, Vincent",
+      "universityId": "alberta",
+      "department": "Department of Mathematical and Statistical Sciences",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360500",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/vbouchar",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360500",
+        "quote": "Bouchard, Vincent",
+        "checkedAt": "2026-10-29T22:47:36.283Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-xi-chen",
+      "name": "Xi Chen",
+      "sortName": "Chen, Xi",
+      "universityId": "alberta",
+      "department": "Department of Mathematical and Statistical Sciences",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360500",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/xic",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360500",
+        "quote": "Chen, Xi",
+        "checkedAt": "2026-10-29T22:47:36.283Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-vladimir-chernousov",
+      "name": "Vladimir Chernousov",
+      "sortName": "Chernousov, Vladimir",
+      "universityId": "alberta",
+      "department": "Department of Mathematical and Statistical Sciences",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360500",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/vladimir",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360500",
+        "quote": "Chernousov, Vladimir",
+        "checkedAt": "2026-10-29T22:47:36.283Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-t-choulli",
+      "name": "T Choulli",
+      "sortName": "Choulli, T",
+      "universityId": "alberta",
+      "department": "Department of Mathematical and Statistical Sciences",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360500",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/tchoulli",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360500",
+        "quote": "Choulli, T",
+        "checkedAt": "2026-10-29T22:47:36.283Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-feng-dai",
+      "name": "Feng Dai",
+      "sortName": "Dai, Feng",
+      "universityId": "alberta",
+      "department": "Department of Mathematical and Statistical Sciences",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360500",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/fdai",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360500",
+        "quote": "Dai, Feng",
+        "checkedAt": "2026-10-29T22:47:36.283Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-engel-john-dela-vega",
+      "name": "Engel John Dela Vega",
+      "sortName": "Dela Vega, Engel John",
+      "universityId": "alberta",
+      "department": "Department of Mathematical and Statistical Sciences",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360500",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/engeljoh",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360500",
+        "quote": "Dela Vega, Engel John",
+        "checkedAt": "2026-10-29T22:47:36.283Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-charles-doran",
+      "name": "Charles Doran",
+      "sortName": "Doran, Charles",
+      "universityId": "alberta",
+      "department": "Department of Mathematical and Statistical Sciences",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360500",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/doran1",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360500",
+        "quote": "Doran, Charles",
+        "checkedAt": "2026-10-29T22:47:36.283Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-chris-frei",
+      "name": "Chris Frei",
+      "sortName": "Frei, Chris",
+      "universityId": "alberta",
+      "department": "Department of Mathematical and Statistical Sciences",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360500",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/cfrei",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360500",
+        "quote": "Frei, Chris",
+        "checkedAt": "2026-10-29T22:47:36.283Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-bowen-gang",
+      "name": "Bowen Gang",
+      "sortName": "Gang, Bowen",
+      "universityId": "alberta",
+      "department": "Department of Mathematical and Statistical Sciences",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360500",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/bgang",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360500",
+        "quote": "Gang, Bowen",
+        "checkedAt": "2026-10-29T22:47:36.283Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-terry-gannon",
+      "name": "Terry Gannon",
+      "sortName": "Gannon, Terry",
+      "universityId": "alberta",
+      "department": "Department of Mathematical and Statistical Sciences",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360500",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/tjgannon",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360500",
+        "quote": "Gannon, Terry",
+        "checkedAt": "2026-10-29T22:47:36.283Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "alberta-stefan-gille",
+      "name": "Stefan Gille",
+      "sortName": "Gille, Stefan",
+      "universityId": "alberta",
+      "department": "Department of Mathematical and Statistical Sciences",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/search/department/360500",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://apps.ualberta.ca/directory/person/gille",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://apps.ualberta.ca/directory/search/department/360500",
+        "quote": "Gille, Stefan",
+        "checkedAt": "2026-10-29T22:47:36.283Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    }
+  ]
+}

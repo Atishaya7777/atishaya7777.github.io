@@ -1,4 +1,8 @@
-/* Paper-matte base styles. Fonts are loaded via <link> in Layout.astro. */
+/* Paper-matte base styles. Pagella is self-hosted; JetBrains Mono loads from Layout.astro. */
+
+body {
+	font-synthesis-weight: none;
+}
 
 ::selection {
     background: rgba(92, 46, 96, 0.16);

@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "properties": {
+    "people": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sortName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "department": {
+            "type": "string",
+            "minLength": 1
+          },
+          "disciplines": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "cs",
+                "math"
+              ]
+            }
+          },
+          "profileUrl": {
+            "type": "string",
+            "pattern": "^https?://[^\\s]+$"
+          },
+          "identityQuote": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "name",
+          "sortName",
+          "department",
+          "disciplines",
+          "profileUrl",
+          "identityQuote"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "people",
+    "notes"
+  ],
+  "additionalProperties": false
+}

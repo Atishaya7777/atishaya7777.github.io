@@ -1,0 +1,827 @@
+{
+  "schemaVersion": 1,
+  "university": {
+    "id": "manitoba",
+    "name": "University of Manitoba",
+    "province": "Manitoba"
+  },
+  "coverage": "Partial pilot: selected research faculty from the Department of Computer Science and Department of Mathematics. Identity and affiliation are sourced from institutional rosters; graduate recruitment and funding remain unknown unless separately supported. Individual supervision eligibility and departmental completeness have not been established.",
+  "professors": [
+    {
+      "id": "manitoba-parimala-thulasiraman",
+      "name": "Parimala Thulasiraman",
+      "sortName": "Thulasiraman, Parimala Thulasiraman",
+      "universityId": "manitoba",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science/parimala-thulasiraman",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/computer-science",
+        "quote": "Parimala Thulasiraman",
+        "checkedAt": "2026-10-29T22:47:36.142Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-ben-li",
+      "name": "Ben Li",
+      "sortName": "Li, Ben Li",
+      "universityId": "manitoba",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science/ben-li",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/computer-science",
+        "quote": "Ben Li",
+        "checkedAt": "2026-10-29T22:47:36.143Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-olivier-tremblay-savard",
+      "name": "Olivier Tremblay-Savard",
+      "sortName": "Tremblay-Savard, Olivier Tremblay-Savard",
+      "universityId": "manitoba",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/node/564",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/computer-science",
+        "quote": "Olivier Tremblay-Savard",
+        "checkedAt": "2026-10-29T22:47:36.143Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-celine-latulipe",
+      "name": "Celine Latulipe",
+      "sortName": "Latulipe, Celine Latulipe",
+      "universityId": "manitoba",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science/celine-latulipe",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/computer-science",
+        "quote": "Celine Latulipe",
+        "checkedAt": "2026-10-29T22:47:36.143Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-john-eric-anderson",
+      "name": "John Eric Anderson",
+      "sortName": "Anderson, John Eric Anderson",
+      "universityId": "manitoba",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science/john-anderson",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/computer-science",
+        "quote": "John Eric Anderson",
+        "checkedAt": "2026-10-29T22:47:36.143Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-andrea-bunt",
+      "name": "Andrea Bunt",
+      "sortName": "Bunt, Andrea Bunt",
+      "universityId": "manitoba",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science/andrea-bunt",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/computer-science",
+        "quote": "Andrea Bunt",
+        "checkedAt": "2026-10-29T22:47:36.143Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-shaiful-chowdhury",
+      "name": "Shaiful Chowdhury",
+      "sortName": "Chowdhury, Shaiful Chowdhury",
+      "universityId": "manitoba",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science/shaiful-chowdhury",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/computer-science",
+        "quote": "Shaiful Chowdhury",
+        "checkedAt": "2026-10-29T22:47:36.143Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-stephane-durocher",
+      "name": "Stephane Durocher",
+      "sortName": "Durocher, Stephane Durocher",
+      "universityId": "manitoba",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science/stephane-durocher",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/computer-science",
+        "quote": "Stephane Durocher",
+        "checkedAt": "2026-10-29T22:47:36.143Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-houda-elmimouni",
+      "name": "Houda Elmimouni",
+      "sortName": "Elmimouni, Houda Elmimouni",
+      "universityId": "manitoba",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/node/430",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/computer-science",
+        "quote": "Houda Elmimouni",
+        "checkedAt": "2026-10-29T22:47:36.143Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-david-gerhard",
+      "name": "David Gerhard",
+      "sortName": "Gerhard, David Gerhard",
+      "universityId": "manitoba",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science/david-gerhard",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/computer-science",
+        "quote": "David Gerhard",
+        "checkedAt": "2026-10-29T22:47:36.143Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-christopher-henry",
+      "name": "Christopher Henry",
+      "sortName": "Henry, Christopher Henry",
+      "universityId": "manitoba",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science/christopher-henry",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/computer-science",
+        "quote": "Christopher Henry",
+        "checkedAt": "2026-10-29T22:47:36.143Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-mengjun-hu",
+      "name": "Mengjun Hu",
+      "sortName": "Hu, Mengjun Hu",
+      "universityId": "manitoba",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/computer-science/mengjun-hu",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/computer-science",
+        "quote": "Mengjun Hu",
+        "checkedAt": "2026-10-29T22:47:36.143Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-adam-clay",
+      "name": "Adam Clay",
+      "sortName": "Clay, Adam Clay",
+      "universityId": "manitoba",
+      "department": "Department of Mathematics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics/adam-clay",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/mathematics",
+        "quote": "Adam Clay",
+        "checkedAt": "2026-10-29T22:47:36.151Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-susan-cooper",
+      "name": "Susan Cooper",
+      "sortName": "Cooper, Susan Cooper",
+      "universityId": "manitoba",
+      "department": "Department of Mathematics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics/susan-cooper",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/mathematics",
+        "quote": "Susan Cooper",
+        "checkedAt": "2026-10-29T22:47:36.151Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-julien-arino",
+      "name": "Julien Arino",
+      "sortName": "Arino, Julien Arino",
+      "universityId": "manitoba",
+      "department": "Department of Mathematics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics/julien-arino",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/mathematics",
+        "quote": "Julien Arino",
+        "checkedAt": "2026-10-29T22:47:36.151Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-leo-butler",
+      "name": "Leo Butler",
+      "sortName": "Butler, Leo Butler",
+      "universityId": "manitoba",
+      "department": "Department of Mathematics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics/leo-butler",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/mathematics",
+        "quote": "Leo Butler",
+        "checkedAt": "2026-10-29T22:47:36.151Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-jaydeep-chipalkatti",
+      "name": "Jaydeep Chipalkatti",
+      "sortName": "Chipalkatti, Jaydeep Chipalkatti",
+      "universityId": "manitoba",
+      "department": "Department of Mathematics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics/jaydeep-chipalkatti",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/mathematics",
+        "quote": "Jaydeep Chipalkatti",
+        "checkedAt": "2026-10-29T22:47:36.151Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-raphael-clouatre",
+      "name": "Raphaël Clouâtre",
+      "sortName": "Clouâtre, Raphaël Clouâtre",
+      "universityId": "manitoba",
+      "department": "Department of Mathematics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics/raphael-clouatre",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/mathematics",
+        "quote": "Raphaël Clouâtre",
+        "checkedAt": "2026-10-29T22:47:36.151Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-craig-cowan",
+      "name": "Craig Cowan",
+      "sortName": "Cowan, Craig Cowan",
+      "universityId": "manitoba",
+      "department": "Department of Mathematics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics/craig-cowan",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/mathematics",
+        "quote": "Craig Cowan",
+        "checkedAt": "2026-10-29T22:47:36.151Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-robert-craigen",
+      "name": "Robert Craigen",
+      "sortName": "Craigen, Robert Craigen",
+      "universityId": "manitoba",
+      "department": "Department of Mathematics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics/robert-craigen",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/mathematics",
+        "quote": "Robert Craigen",
+        "checkedAt": "2026-10-29T22:47:36.151Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-margherita-maria-ferrari",
+      "name": "Margherita Maria Ferrari",
+      "sortName": "Ferrari, Margherita Maria Ferrari",
+      "universityId": "manitoba",
+      "department": "Department of Mathematics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics/margherita-maria-ferrari",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/mathematics",
+        "quote": "Margherita Maria Ferrari",
+        "checkedAt": "2026-10-29T22:47:36.151Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-karen-gunderson",
+      "name": "Karen Gunderson",
+      "sortName": "Gunderson, Karen Gunderson",
+      "universityId": "manitoba",
+      "department": "Department of Mathematics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics/karen-gunderson",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/mathematics",
+        "quote": "Karen Gunderson",
+        "checkedAt": "2026-10-29T22:47:36.151Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-christopher-heggerud",
+      "name": "Christopher Heggerud",
+      "sortName": "Heggerud, Christopher Heggerud",
+      "universityId": "manitoba",
+      "department": "Department of Mathematics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics/christopher-heggerud",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/mathematics",
+        "quote": "Christopher Heggerud",
+        "checkedAt": "2026-10-29T22:47:36.151Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "manitoba-stephen-kirkland",
+      "name": "Stephen Kirkland",
+      "sortName": "Kirkland, Stephen Kirkland",
+      "universityId": "manitoba",
+      "department": "Department of Mathematics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.umanitoba.ca/science/directory/mathematics/stephen-kirkland",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.umanitoba.ca/science/directory/mathematics",
+        "quote": "Stephen Kirkland",
+        "checkedAt": "2026-10-29T22:47:36.151Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    }
+  ]
+}

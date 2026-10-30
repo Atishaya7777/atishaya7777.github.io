@@ -1,0 +1,827 @@
+{
+  "schemaVersion": 1,
+  "university": {
+    "id": "waterloo",
+    "name": "University of Waterloo",
+    "province": "Ontario"
+  },
+  "coverage": "Partial pilot: selected research faculty from the Cheriton School of Computer Science and Department of Combinatorics and Optimization. Identity and affiliation are sourced from institutional rosters; graduate recruitment and funding remain unknown unless separately supported. Individual supervision eligibility and departmental completeness have not been established.",
+  "professors": [
+    {
+      "id": "waterloo-yousra-aafer",
+      "name": "Yousra Aafer",
+      "sortName": "Aafer, Yousra Aafer",
+      "universityId": "waterloo",
+      "department": "Cheriton School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/about/people/yaafer",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+        "quote": "Yousra Aafer",
+        "checkedAt": "2026-10-29T22:47:36.172Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-samer-al-kiswany",
+      "name": "Samer Al-Kiswany",
+      "sortName": "Al-Kiswany, Samer Al-Kiswany",
+      "universityId": "waterloo",
+      "department": "Cheriton School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts/samer-al-kiswany",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+        "quote": "Samer Al-Kiswany",
+        "checkedAt": "2026-10-29T22:47:36.172Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-mina-tahmasbi-arashloo",
+      "name": "Mina Tahmasbi Arashloo",
+      "sortName": "Arashloo, Mina Tahmasbi Arashloo",
+      "universityId": "waterloo",
+      "department": "Cheriton School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/about/people/mtahmasb",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+        "quote": "Mina Tahmasbi Arashloo",
+        "checkedAt": "2026-10-29T22:47:36.172Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-n-asokan",
+      "name": "N. Asokan",
+      "sortName": "Asokan, N. Asokan",
+      "universityId": "waterloo",
+      "department": "Cheriton School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/about/people/nasokan",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+        "quote": "N. Asokan",
+        "checkedAt": "2026-10-29T22:47:36.172Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-sepehr-assadi",
+      "name": "Sepehr Assadi",
+      "sortName": "Assadi, Sepehr Assadi",
+      "universityId": "waterloo",
+      "department": "Cheriton School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/about/people/sassadi",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+        "quote": "Sepehr Assadi",
+        "checkedAt": "2026-10-29T22:47:36.172Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-joanne-atlee",
+      "name": "Joanne Atlee",
+      "sortName": "Atlee, Joanne Atlee",
+      "universityId": "waterloo",
+      "department": "Cheriton School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts/joanne-atlee",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+        "quote": "Joanne Atlee",
+        "checkedAt": "2026-10-29T22:47:36.172Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-gladimir-baranoski",
+      "name": "Gladimir Baranoski",
+      "sortName": "Baranoski, Gladimir Baranoski",
+      "universityId": "waterloo",
+      "department": "Cheriton School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts/gladimir-baranoski",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+        "quote": "Gladimir Baranoski",
+        "checkedAt": "2026-10-29T22:47:36.172Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-diogo-barradas",
+      "name": "Diogo Barradas",
+      "sortName": "Barradas, Diogo Barradas",
+      "universityId": "waterloo",
+      "department": "Cheriton School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/about/people/dbarrada",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+        "quote": "Diogo Barradas",
+        "checkedAt": "2026-10-29T22:47:36.172Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-christopher-batty",
+      "name": "Christopher Batty",
+      "sortName": "Batty, Christopher Batty",
+      "universityId": "waterloo",
+      "department": "Cheriton School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts/christopher-batty",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+        "quote": "Christopher Batty",
+        "checkedAt": "2026-10-29T22:47:36.172Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-shai-ben-david",
+      "name": "Shai Ben-David",
+      "sortName": "Ben-David, Shai Ben-David",
+      "universityId": "waterloo",
+      "department": "Cheriton School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts/shai-ben-david",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+        "quote": "Shai Ben-David",
+        "checkedAt": "2026-10-29T22:47:36.172Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-shalev-ben-david",
+      "name": "Shalev Ben-David",
+      "sortName": "Ben-David, Shalev Ben-David",
+      "universityId": "waterloo",
+      "department": "Cheriton School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/about/people/shalevb",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+        "quote": "Shalev Ben-David",
+        "checkedAt": "2026-10-29T22:47:36.172Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-daniel-berry",
+      "name": "Daniel Berry",
+      "sortName": "Berry, Daniel Berry",
+      "universityId": "waterloo",
+      "department": "Cheriton School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/computer-science/contacts/daniel-berry",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/computer-science/contacts?group%5B68%5D=68&title=",
+        "quote": "Daniel Berry",
+        "checkedAt": "2026-10-29T22:47:36.172Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-douglas-stebila",
+      "name": "Douglas Stebila",
+      "sortName": "Stebila, Douglas Stebila",
+      "universityId": "waterloo",
+      "department": "Department of Combinatorics and Optimization",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts/douglas-stebila",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+        "quote": "Douglas Stebila",
+        "checkedAt": "2026-10-29T22:47:36.185Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-vijay-bhattiprolu",
+      "name": "Vijay Bhattiprolu",
+      "sortName": "Bhattiprolu, Vijay Bhattiprolu",
+      "universityId": "waterloo",
+      "department": "Department of Combinatorics and Optimization",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts/vijay-bhattiprolu",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+        "quote": "Vijay Bhattiprolu",
+        "checkedAt": "2026-10-29T22:47:36.185Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-joseph-cheriyan",
+      "name": "Joseph Cheriyan",
+      "sortName": "Cheriyan, Joseph Cheriyan",
+      "universityId": "waterloo",
+      "department": "Department of Combinatorics and Optimization",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts/joseph-cheriyan",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+        "quote": "Joseph Cheriyan",
+        "checkedAt": "2026-10-29T22:47:36.185Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-lila-crew",
+      "name": "Lila Crew",
+      "sortName": "Crew, Lila Crew",
+      "universityId": "waterloo",
+      "department": "Department of Combinatorics and Optimization",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts/lila-crew",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+        "quote": "Lila Crew",
+        "checkedAt": "2026-10-29T22:47:36.185Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-ricardo-fukasawa",
+      "name": "Ricardo Fukasawa",
+      "sortName": "Fukasawa, Ricardo Fukasawa",
+      "universityId": "waterloo",
+      "department": "Department of Combinatorics and Optimization",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts/ricardo-fukasawa",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+        "quote": "Ricardo Fukasawa",
+        "checkedAt": "2026-10-29T22:47:36.185Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-jane-gao",
+      "name": "Jane Gao",
+      "sortName": "Gao, Jane Gao",
+      "universityId": "waterloo",
+      "department": "Department of Combinatorics and Optimization",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts/jane-gao",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+        "quote": "Jane Gao",
+        "checkedAt": "2026-10-29T22:47:36.185Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-james-geelen",
+      "name": "James Geelen",
+      "sortName": "Geelen, James Geelen",
+      "universityId": "waterloo",
+      "department": "Department of Combinatorics and Optimization",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts/james-geelen",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+        "quote": "James Geelen",
+        "checkedAt": "2026-10-29T22:47:36.185Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-david-gosset",
+      "name": "David Gosset",
+      "sortName": "Gosset, David Gosset",
+      "universityId": "waterloo",
+      "department": "Department of Combinatorics and Optimization",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts/david-gosset",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+        "quote": "David Gosset",
+        "checkedAt": "2026-10-29T22:47:36.185Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-bertrand-guenin",
+      "name": "Bertrand Guenin",
+      "sortName": "Guenin, Bertrand Guenin",
+      "universityId": "waterloo",
+      "department": "Department of Combinatorics and Optimization",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts/bertrand-guenin",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+        "quote": "Bertrand Guenin",
+        "checkedAt": "2026-10-29T22:47:36.185Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-penny-haxell",
+      "name": "Penny Haxell",
+      "sortName": "Haxell, Penny Haxell",
+      "universityId": "waterloo",
+      "department": "Department of Combinatorics and Optimization",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts/penny-haxell",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+        "quote": "Penny Haxell",
+        "checkedAt": "2026-10-29T22:47:36.185Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-sam-jaques",
+      "name": "Sam Jaques",
+      "sortName": "Jaques, Sam Jaques",
+      "universityId": "waterloo",
+      "department": "Department of Combinatorics and Optimization",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts/sam-jaques",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+        "quote": "Sam Jaques",
+        "checkedAt": "2026-10-29T22:47:36.185Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "waterloo-jochen-koenemann",
+      "name": "Jochen Koenemann",
+      "sortName": "Koenemann, Jochen Koenemann",
+      "universityId": "waterloo",
+      "department": "Department of Combinatorics and Optimization",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts/jochen-koenemann",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://uwaterloo.ca/combinatorics-and-optimization/contacts",
+        "quote": "Jochen Koenemann",
+        "checkedAt": "2026-10-29T22:47:36.185Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    }
+  ]
+}

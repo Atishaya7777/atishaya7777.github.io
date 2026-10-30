@@ -24,3 +24,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Private directory collection: source caches, candidate data, and unapproved portraits
+.directory-work/
+.pnpm-store/

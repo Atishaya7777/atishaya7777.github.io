@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "university": {
+    "id": "toronto",
+    "name": "University of Toronto",
+    "province": "Ontario"
+  },
+  "coverage": "Partial pilot: selected research faculty from the Department of Computer Science. Identity and affiliation are sourced from institutional rosters; graduate recruitment and funding remain unknown unless separately supported. Individual supervision eligibility and departmental completeness have not been established.",
+  "professors": [
+    {
+      "id": "toronto-ishtiaque-ahmed",
+      "name": "Ishtiaque Ahmed",
+      "sortName": "Ahmed, Ishtiaque Ahmed",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "human-computer interaction, ICTD Research Interests: computing for marginalized communities, critical computing, social justice, sustainability"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://www.ishtiaque.net/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "Ishtiaque Ahmed",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "toronto-ashton-anderson",
+      "name": "Ashton Anderson",
+      "sortName": "Anderson, Ashton Anderson",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "computational social science Research Interests: empirical analysis of large-scale social data, social media analysis, social networks, large-scale community dynamics, algorithmic fairness and bias"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://www.cs.toronto.edu/~ashton/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "Ashton Anderson",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "toronto-alan-aspuru-guzik",
+      "name": "Alán Aspuru-Guzik",
+      "sortName": "Aspuru-Guzik, Alán Aspuru-Guzik",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "machine learning, quantum computing, robotics, high-performance computing Research Interests: machine learning for molecular and materials discovery, autonomous robotic laboratories, quantum computing algorithms, accurate numerical solutions for the quantum many-body problem"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://matter.toronto.edu/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "Alán Aspuru-Guzik",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "toronto-jimmy-ba",
+      "name": "Jimmy Ba",
+      "sortName": "Ba, Jimmy Ba",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "machine learning Research Interests: deep learning, neural networks, deep reinforcement learning, optimization"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://jimmylba.github.io/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "Jimmy Ba",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "toronto-ravin-balakrishnan",
+      "name": "Ravin Balakrishnan",
+      "sortName": "Balakrishnan, Ravin Balakrishnan",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "human-computer interaction, interactive computer graphics Research Interests: most aspects of HCI and interactive graphics"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://www.dgp.toronto.edu/~ravin/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "Ravin Balakrishnan",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "toronto-varinia-bernales",
+      "name": "Varinia Bernales",
+      "sortName": "Bernales, Varinia Bernales",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "AI for science, self-driving labs, next gen materials, electronic structure methods"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://bernales.matter.toronto.edu/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "Varinia Bernales",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "toronto-anthony-bonner",
+      "name": "Anthony Bonner",
+      "sortName": "Bonner, Anthony Bonner",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "machine learning Research Interests: deep learning, generative models, learning representations"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://www.cs.toronto.edu/~bonner/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "Anthony Bonner",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "toronto-allan-borodin",
+      "name": "Allan Borodin",
+      "sortName": "Borodin, Allan Borodin",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "theoretical computer science Research Interests: design and analysis of algorithms, algorithmic paradigms, online algorithms, algorithmic game theory, social choice theory"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://www.cs.toronto.edu/~bor/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "Allan Borodin",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "toronto-angela-brown",
+      "name": "Angela Brown",
+      "sortName": "Brown, Angela Brown",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "systems Research Interests: file and storage systems, distributed data processing, dynamic instrumentation, performance and reliability"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://www.cs.toronto.edu/~demke/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "Angela Brown",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "toronto-michael-brudno",
+      "name": "Michael Brudno",
+      "sortName": "Brudno, Michael Brudno",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "computational medicine, computational biology, human-computer interaction Research Interests: machine learning for clinical human-computer interaction, medical natural language processing, mobile devices in medicine, rare disease genomics and epigenomics"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://www.cs.toronto.edu/~brudno/public/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "Michael Brudno",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "toronto-jessica-burgner-kahrs",
+      "name": "Jessica Burgner-Kahrs",
+      "sortName": "Burgner-Kahrs, Jessica Burgner-Kahrs",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "robotics Research Interests: continuum robots, robot modelling, motion planning and control, human-robot interaction, surgical robotics, robot design"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://www.cs.toronto.edu/~jbk/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "Jessica Burgner-Kahrs",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "toronto-marsha-chechik",
+      "name": "Marsha Chechik",
+      "sortName": "Chechik, Marsha Chechik",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "software engineering, programming languages & formal methods Research Interests: analysis of software, automotive safety, model-driven engineering, software product lines, model-checking"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://www.cs.toronto.edu/~chechik/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "Marsha Chechik",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "toronto-fanny-chevalier",
+      "name": "Fanny Chevalier",
+      "sortName": "Chevalier, Fanny Chevalier",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "information visualization, human-computer interaction Research Interests: visual analytics, visualization and statistical literacy, visualization of machine learning, sketch-based interfaces"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "http://fannychevalier.net/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "Fanny Chevalier",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "toronto-christina-christara",
+      "name": "Christina Christara",
+      "sortName": "Christara, Christina Christara",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "numerical analysis and computing, high performance computing Research Interests: numerical methods, analysis and computation of PDEs, solution of large sparse linear systems, high performance and parallel scientific computing, computational finance"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://www.cs.toronto.edu/~ccc/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "Christina Christara",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "toronto-niv-dayan",
+      "name": "Niv Dayan",
+      "sortName": "Dayan, Niv Dayan",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "data management, databases, systems Research Interests: storage engines, key-value stores, NoSQL, data structures, probabilistic filters"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://nivdayan.net/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "Niv Dayan",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "toronto-eyal-de-lara",
+      "name": "Eyal de Lara",
+      "sortName": "Lara, Eyal de Lara",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "systems Research Interests: mobile, pervasive, cloud, and edge computing"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://www.cs.toronto.edu/~delara/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "Eyal de Lara",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "toronto-sven-dickinson",
+      "name": "Sven Dickinson",
+      "sortName": "Dickinson, Sven Dickinson",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "computer vision Research Interests: segmentation and grouping, shape representation and perception, object recognition, language-vision integration, human vision, scene perception"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://www.cs.toronto.edu/~sven/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "Sven Dickinson",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "toronto-david-duvenaud",
+      "name": "David Duvenaud",
+      "sortName": "Duvenaud, David Duvenaud",
+      "universityId": "toronto",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "machine learning Research Interests: probabilistic models, neural networks"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://web.cs.toronto.edu/people/faculty-directory",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://www.cs.toronto.edu/~duvenaud/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://web.cs.toronto.edu/people/faculty-directory",
+        "quote": "David Duvenaud",
+        "checkedAt": "2026-10-29T22:47:36.235Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    }
+  ]
+}

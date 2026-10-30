@@ -1,5 +1,6 @@
 ---
 import './layout.css';
+import '../styles/fonts.css';
 
 import Header from '../components/Header/Header.astro';
 import Footer from '../components/Footer/Footer.astro';
@@ -68,7 +69,7 @@ const imageURL = new URL(image, Astro.site);
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap"
 			rel="stylesheet"
 		/>
 
@@ -87,7 +88,7 @@ const imageURL = new URL(image, Astro.site);
 			})();
 		</script>
 	</head>
-	<body class="bg-paper-100 dark:bg-paper-900 text-ink-700 dark:text-ink-200 font-body antialiased transition-colors duration-300">
+	<body class="bg-paper-100 dark:bg-paper-900 text-ink-900 dark:text-ink-100 font-body antialiased transition-colors duration-300">
 		<a
 			href="#main-content"
 			class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:bg-paper-50 dark:focus:bg-paper-800 focus:px-4 focus:py-2 text-sm text-accent-600 dark:text-accent-300 focus:border focus:border-rule-strong dark:focus:border-rule-dark-strong"

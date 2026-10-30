@@ -1,0 +1,869 @@
+{
+  "schemaVersion": 1,
+  "university": {
+    "id": "mcgill",
+    "name": "McGill University",
+    "province": "Quebec"
+  },
+  "coverage": "Partial pilot: selected research faculty from the School of Computer Science and Department of Mathematics and Statistics. Identity and affiliation are sourced from institutional rosters; graduate recruitment and funding remain unknown unless separately supported. Individual supervision eligibility and departmental completeness have not been established.",
+  "professors": [
+    {
+      "id": "mcgill-david-adelani",
+      "name": "David Adelani",
+      "sortName": "Adelani, David Adelani",
+      "universityId": "mcgill",
+      "department": "School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Natural Language Processing",
+        "Machine Learning",
+        "Speech processing"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.mcgill.ca/people/faculty/",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://dadelani.github.io/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.mcgill.ca/people/faculty/",
+        "quote": "David Adelani",
+        "checkedAt": "2026-10-29T22:47:36.240Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-oana-balmau",
+      "name": "Oana Balmau",
+      "sortName": "Balmau, Oana Balmau",
+      "universityId": "mcgill",
+      "department": "School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Computer Systems",
+        "Storage and Persistent Memory",
+        "Storage Systems for Data Science",
+        "Data Management for IoT"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.mcgill.ca/people/faculty/",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "http://www.cs.mcgill.ca/~balmau",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.mcgill.ca/people/faculty/",
+        "quote": "Oana Balmau",
+        "checkedAt": "2026-10-29T22:47:36.240Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-mathieu-blanchette",
+      "name": "Mathieu Blanchette",
+      "sortName": "Blanchette, Mathieu Blanchette",
+      "universityId": "mcgill",
+      "department": "School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Bioinformatics",
+        "Computational Biology",
+        "Artificial Intelligence"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.mcgill.ca/people/faculty/",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "http://www.cs.mcgill.ca/~blanchem/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.mcgill.ca/people/faculty/",
+        "quote": "Mathieu Blanchette",
+        "checkedAt": "2026-10-29T22:47:36.240Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-xiao-wen-chang",
+      "name": "Xiao-Wen Chang",
+      "sortName": "Chang, Xiao-Wen Chang",
+      "universityId": "mcgill",
+      "department": "School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Numerical Linear Algebra",
+        "Numerical Methods for Estimation",
+        "Optimization"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.mcgill.ca/people/faculty/",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "http://www.cs.mcgill.ca/~chang/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.mcgill.ca/people/faculty/",
+        "quote": "Xiao-Wen Chang",
+        "checkedAt": "2026-10-29T22:47:36.240Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-jackie-chi-kit-cheung",
+      "name": "Jackie Chi Kit Cheung",
+      "sortName": "Cheung, Jackie Chi Kit Cheung",
+      "universityId": "mcgill",
+      "department": "School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Computational Linguistics",
+        "Natural Language Processing"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.mcgill.ca/people/faculty/",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "http://www.cs.mcgill.ca/~jcheung",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.mcgill.ca/people/faculty/",
+        "quote": "Jackie Chi Kit Cheung",
+        "checkedAt": "2026-10-29T22:47:36.240Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-luc-devroye",
+      "name": "Luc Devroye",
+      "sortName": "Devroye, Luc Devroye",
+      "universityId": "mcgill",
+      "department": "School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Probabilistic Analysis of Algorithms"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.mcgill.ca/people/faculty/",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "http://luc.devroye.org/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.mcgill.ca/people/faculty/",
+        "quote": "Luc Devroye",
+        "checkedAt": "2026-10-29T22:47:36.240Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-christophe-dubach",
+      "name": "Christophe Dubach",
+      "sortName": "Dubach, Christophe Dubach",
+      "universityId": "mcgill",
+      "department": "School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Compilers and Programming Languages",
+        "Parallel Hardware (GPUs, FPGAs, ...)",
+        "Machine Learning applied to Computing Systems"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.mcgill.ca/people/faculty/",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.mcgill.ca/~cdubach/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.mcgill.ca/people/faculty/",
+        "quote": "Christophe Dubach",
+        "checkedAt": "2026-10-29T22:47:36.240Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-gregory-dudek",
+      "name": "Gregory Dudek",
+      "sortName": "Dudek, Gregory Dudek",
+      "universityId": "mcgill",
+      "department": "School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Internet Technologies",
+        "Swarm Robotics",
+        "Robotics"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.mcgill.ca/people/faculty/",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "http://www.cim.mcgill.ca/~dudek/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.mcgill.ca/people/faculty/",
+        "quote": "Gregory Dudek",
+        "checkedAt": "2026-10-29T22:47:36.240Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-golnoosh-farnadi",
+      "name": "Golnoosh Farnadi",
+      "sortName": "Farnadi, Golnoosh Farnadi",
+      "universityId": "mcgill",
+      "department": "School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Artificial Intelligence"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.mcgill.ca/people/faculty/",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://gfarnadi.github.io/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.mcgill.ca/people/faculty/",
+        "quote": "Golnoosh Farnadi",
+        "checkedAt": "2026-10-29T22:47:36.240Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-jin-guo",
+      "name": "Jin Guo",
+      "sortName": "Guo, Jin Guo",
+      "universityId": "mcgill",
+      "department": "School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Software Engineering"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.mcgill.ca/people/faculty/",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "http://cs.mcgill.ca/~jguo/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.mcgill.ca/people/faculty/",
+        "quote": "Jin Guo",
+        "checkedAt": "2026-10-29T22:47:36.240Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-hamed-hatami",
+      "name": "Hamed Hatami",
+      "sortName": "Hatami, Hamed Hatami",
+      "universityId": "mcgill",
+      "department": "School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Computational Complexity",
+        "Discrete Mathematics"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.mcgill.ca/people/faculty/",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "http://www.cs.mcgill.ca/~hatami/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.mcgill.ca/people/faculty/",
+        "quote": "Hamed Hatami",
+        "checkedAt": "2026-10-29T22:47:36.240Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-bettina-kemme",
+      "name": "Bettina Kemme",
+      "sortName": "Kemme, Bettina Kemme",
+      "universityId": "mcgill",
+      "department": "School of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Databases",
+        "Networks",
+        "Parallel and Distributed Systems",
+        "Computer Games"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.mcgill.ca/people/faculty/",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "http://www.cs.mcgill.ca/~kemme/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.mcgill.ca/people/faculty/",
+        "quote": "Bettina Kemme",
+        "checkedAt": "2026-10-29T22:47:36.240Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-louigi-addario-berry",
+      "name": "Louigi Addario-Berry",
+      "sortName": "Addario-Berry, Louigi",
+      "universityId": "mcgill",
+      "department": "Department of Mathematics and Statistics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "http://problab.ca/louigi/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+        "quote": "Addario-Berry, Louigi",
+        "checkedAt": "2026-10-29T22:47:36.245Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-patrick-allen",
+      "name": "Patrick Allen",
+      "sortName": "Allen, Patrick",
+      "universityId": "mcgill",
+      "department": "Department of Mathematics and Statistics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.mcgill.ca/mathstat/patrick-allen",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+        "quote": "Allen, Patrick",
+        "checkedAt": "2026-10-29T22:47:36.245Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-masoud-asgharian",
+      "name": "Masoud Asgharian",
+      "sortName": "Asgharian, Masoud",
+      "universityId": "mcgill",
+      "department": "Department of Mathematics and Statistics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.mcgill.ca/mathstat/masoud-asgharian",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+        "quote": "Asgharian, Masoud",
+        "checkedAt": "2026-10-29T22:47:36.245Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-linan-chen",
+      "name": "Linan Chen",
+      "sortName": "Chen, Linan",
+      "universityId": "mcgill",
+      "department": "Department of Mathematics and Statistics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.mcgill.ca/mathstat/linan-chen",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+        "quote": "Chen, Linan",
+        "checkedAt": "2026-10-29T22:47:36.245Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-rustum-choksi",
+      "name": "Rustum Choksi",
+      "sortName": "Choksi, Rustum",
+      "universityId": "mcgill",
+      "department": "Department of Mathematics and Statistics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "http://www.math.mcgill.ca/rchoksi/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+        "quote": "Choksi, Rustum",
+        "checkedAt": "2026-10-29T22:47:36.245Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-mehdi-dagdoug",
+      "name": "Mehdi Dagdoug",
+      "sortName": "Dagdoug, Mehdi",
+      "universityId": "mcgill",
+      "department": "Department of Mathematics and Statistics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://mehdidagdoug.github.io/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+        "quote": "Dagdoug, Mehdi",
+        "checkedAt": "2026-10-29T22:47:36.245Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-henri-darmon",
+      "name": "Henri Darmon",
+      "sortName": "Darmon, Henri",
+      "universityId": "mcgill",
+      "department": "Department of Mathematics and Statistics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "http://www.math.mcgill.ca/darmon",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+        "quote": "Darmon, Henri",
+        "checkedAt": "2026-10-29T22:47:36.245Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-ameer-dharamshi",
+      "name": "Ameer Dharamshi",
+      "sortName": "Dharamshi, Ameer",
+      "universityId": "mcgill",
+      "department": "Department of Mathematics and Statistics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "personal",
+          "url": "https://ameerd.github.io/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+        "quote": "Dharamshi, Ameer",
+        "checkedAt": "2026-10-29T22:47:36.245Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-christian-genest",
+      "name": "Christian Genest",
+      "sortName": "Genest, Christian",
+      "universityId": "mcgill",
+      "department": "Department of Mathematics and Statistics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "http://www.math.mcgill.ca/cgenest/",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+        "quote": "Genest, Christian",
+        "checkedAt": "2026-10-29T22:47:36.245Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-eyal-goren",
+      "name": "Eyal Goren",
+      "sortName": "Goren, Eyal",
+      "universityId": "mcgill",
+      "department": "Department of Mathematics and Statistics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "http://www.math.mcgill.ca/goren",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+        "quote": "Goren, Eyal",
+        "checkedAt": "2026-10-29T22:47:36.245Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-pengfei-guan",
+      "name": "Pengfei Guan",
+      "sortName": "Guan, Pengfei",
+      "universityId": "mcgill",
+      "department": "Department of Mathematics and Statistics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.mcgill.ca/mathstat/pengfei-guan",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+        "quote": "Guan, Pengfei",
+        "checkedAt": "2026-10-29T22:47:36.245Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "mcgill-tim-hoheisel",
+      "name": "Tim Hoheisel",
+      "sortName": "Hoheisel, Tim",
+      "universityId": "mcgill",
+      "department": "Department of Mathematics and Statistics",
+      "disciplines": [
+        "math"
+      ],
+      "interests": [],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.mcgill.ca/mathstat/tim-hoheisel",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.mcgill.ca/mathstat/people-0/academic-staff",
+        "quote": "Hoheisel, Tim",
+        "checkedAt": "2026-10-29T22:47:36.245Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    }
+  ]
+}

@@ -1,0 +1,762 @@
+{
+  "schemaVersion": 1,
+  "university": {
+    "id": "ubc",
+    "name": "University of British Columbia",
+    "province": "British Columbia"
+  },
+  "coverage": "Partial pilot: selected research faculty from the Department of Computer Science. Identity and affiliation are sourced from institutional rosters; graduate recruitment and funding remain unknown unless separately supported. Individual supervision eligibility and departmental completeness have not been established.",
+  "professors": [
+    {
+      "id": "ubc-kelsey-allen",
+      "name": "Kelsey Allen",
+      "sortName": "Allen, Kelsey Allen",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Artificial Intelligence & Machine Learning",
+        "Visual Computing",
+        "Robotics",
+        "Human‐AI Interaction"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/kelsey-allen",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Kelsey Allen",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-ivan-beschastnikh",
+      "name": "Ivan Beschastnikh",
+      "sortName": "Beschastnikh, Ivan Beschastnikh",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Artificial Intelligence & Machine Learning",
+        "Formal Methods",
+        "Human-Computer Interaction",
+        "Program Analysis & Verification",
+        "Security & Privacy",
+        "Software Engineering",
+        "Systems & Networking",
+        "Visualization"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/ivan-beschastnikh",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Ivan Beschastnikh",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-william-j-bowman",
+      "name": "William J. Bowman",
+      "sortName": "Bowman, William J. Bowman",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Programming Languages"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/william-j-bowman",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "William J. Bowman",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-giuseppe-carenini",
+      "name": "Giuseppe Carenini",
+      "sortName": "Carenini, Giuseppe Carenini",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Artificial Intelligence & Machine Learning",
+        "Human-Computer Interaction",
+        "Human‐AI Interaction",
+        "Natural Language Processing",
+        "Visualization"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/giuseppe-carenini",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Giuseppe Carenini",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-peter-yichen-chen",
+      "name": "Peter Yichen Chen",
+      "sortName": "Chen, Peter Yichen Chen",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Artificial Intelligence & Machine Learning",
+        "Robotics",
+        "Scientific Computing",
+        "Visual Computing"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/peter-yichen-chen",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Peter Yichen Chen",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-jeff-clune",
+      "name": "Jeff Clune",
+      "sortName": "Clune, Jeff Clune",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Artificial Intelligence & Machine Learning"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/jeff-clune",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Jeff Clune",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-cristina-conati",
+      "name": "Cristina Conati",
+      "sortName": "Conati, Cristina Conati",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Artificial Intelligence & Machine Learning",
+        "Human-Computer Interaction",
+        "Human‐AI Interaction"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/cristina-conati",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Cristina Conati",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-jiarui-ding",
+      "name": "Jiarui Ding",
+      "sortName": "Ding, Jiarui Ding",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Artificial Intelligence & Machine Learning",
+        "Bioinformatics & Computational Biology",
+        "Visualization"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/jiarui-ding",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Jiarui Ding",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-mike-feeley",
+      "name": "Mike Feeley",
+      "sortName": "Feeley, Mike Feeley",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Systems & Networking"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/mike-feeley",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Mike Feeley",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-michael-friedlander",
+      "name": "Michael Friedlander",
+      "sortName": "Friedlander, Michael Friedlander",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Algorithms",
+        "Artificial Intelligence & Machine Learning",
+        "Mathematical Programming",
+        "Scientific Computing"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/michael-friedlander",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Michael Friedlander",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-joel-friedman",
+      "name": "Joel Friedman",
+      "sortName": "Friedman, Joel Friedman",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Algorithms"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/joel-friedman",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Joel Friedman",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-ronald-garcia",
+      "name": "Ronald Garcia",
+      "sortName": "Garcia, Ronald Garcia",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Programming Languages",
+        "Program Analysis & Verification"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/ronald-garcia",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Ronald Garcia",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-hila-gonen",
+      "name": "Hila Gonen",
+      "sortName": "Gonen, Hila Gonen",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Artificial Intelligence & Machine Learning",
+        "Natural Language Processing"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/hila-gonen",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Hila Gonen",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-chen-greif",
+      "name": "Chen Greif",
+      "sortName": "Greif, Chen Greif",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Scientific Computing"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/chen-greif",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Chen Greif",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-arpan-gujarati",
+      "name": "Arpan Gujarati",
+      "sortName": "Gujarati, Arpan Gujarati",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Systems & Networking"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/arpan-gujarati",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Arpan Gujarati",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-nathan-harms",
+      "name": "Nathan Harms",
+      "sortName": "Harms, Nathan Harms",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Algorithms"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/nathan-harms",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Nathan Harms",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-nick-harvey",
+      "name": "Nick Harvey",
+      "sortName": "Harvey, Nick Harvey",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Algorithms",
+        "Mathematical Programming",
+        "Statistical & Theoretical Machine Learning"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/nick-harvey",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Nick Harvey",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-nguyen-phong-hoang",
+      "name": "Nguyen Phong Hoang",
+      "sortName": "Hoang, Nguyen Phong Hoang",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Systems & Networking",
+        "Security & Privacy"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/nguyen-phong-hoang",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Nguyen Phong Hoang",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-reid-holmes",
+      "name": "Reid Holmes",
+      "sortName": "Holmes, Reid Holmes",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Computer Science Education",
+        "Software Engineering",
+        "Program Analysis & Verification"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/reid-holmes",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Reid Holmes",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    },
+    {
+      "id": "ubc-norm-hutchinson",
+      "name": "Norm Hutchinson",
+      "sortName": "Hutchinson, Norm Hutchinson",
+      "universityId": "ubc",
+      "department": "Department of Computer Science",
+      "disciplines": [
+        "cs"
+      ],
+      "interests": [
+        "Systems & Networking"
+      ],
+      "links": [
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/faculty",
+          "label": "Institutional faculty roster"
+        },
+        {
+          "kind": "university",
+          "url": "https://www.cs.ubc.ca/people/norm-hutchinson",
+          "label": "Original profile"
+        }
+      ],
+      "identityEvidence": {
+        "url": "https://www.cs.ubc.ca/people/faculty",
+        "quote": "Norm Hutchinson",
+        "checkedAt": "2026-10-29T22:47:36.205Z",
+        "sourceDate": null
+      },
+      "recruitment": [],
+      "funding": [],
+      "applicationInstructions": null,
+      "conflicts": [],
+      "portrait": null
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 ---
+import Icon from '../components/Icon/Icon.astro';
 import Layout from '../layouts/Layout.astro';
 
 import { people, groups, refs, a, peopleHtml, linkClass } from '../global/people';
@@ -163,6 +164,7 @@ const ongoing = [
 		</header>
 
 		<hr class="border-t-4 border-double border-ink-900 dark:border-ink-100" />
+		<aside class="py-5 text-sm leading-relaxed border-b border-rule dark:border-rule-dark">Applying to graduate school? <a href="/grad-directory" class="inline-flex items-center gap-1.5 text-accent-600 dark:text-accent-300 hover:underline">Explore the Canadian CS &amp; mathematics supervisor directory <Icon name="arrow-right" /></a></aside>
 
 		<!-- ── 1. Positions ── -->
 		<section class="py-12">

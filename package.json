@@ -1,13 +1,22 @@
 {
   "name": "personal-website",
   "type": "module",
+  "packageManager": "pnpm@9.15.9",
+  "engines": { "node": ">=20" },
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "pnpm directory:validate && astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "directory:validate": "node --import tsx scripts/directory/cli.ts validate",
+    "directory:collect": "node --import tsx scripts/directory/cli.ts collect",
+    "directory:review": "node --import tsx scripts/directory/cli.ts review",
+    "directory:approve-photo": "node --import tsx scripts/directory/cli.ts approve-photo",
+    "directory:promote": "node --import tsx scripts/directory/cli.ts promote",
+    "directory:schedule": "node --import tsx scripts/directory/cli.ts schedule",
+    "directory:test": "node --import tsx --test scripts/directory/*.test.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
@@ -21,5 +30,11 @@
     "react-dom": "^19.1.0",
     "tailwindcss": "^3.4.7",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "20",
+    "ajv": "8",
+    "parse5": "7",
+    "tsx": "4"
   }
 }

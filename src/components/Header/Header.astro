@@ -9,13 +9,14 @@ const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replac
 const navItems = [
 	{ label: 'Works', path: routes.works },
 	{ label: 'Research', path: routes.research },
+	{ label: 'Grad Directory', path: routes.gradDirectory },
 	{ label: 'Blog', path: routes.blog },
 	{ label: 'Contact', path: routes.contact },
 ];
 ---
 
 <header class="sticky top-0 z-50 bg-paper-100/95 dark:bg-paper-900/95 backdrop-blur-sm border-b border-rule dark:border-rule-dark transition-colors duration-300">
-	<div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+	<div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
 		<!-- Wordmark: seal + spaced caps with raised plum initials -->
 		<a
 			href={routes.home}
@@ -33,7 +34,7 @@ const navItems = [
 		</a>
 
 		<!-- Desktop nav -->
-		<nav class="hidden md:flex items-center gap-5" aria-label="Main navigation">
+		<nav class="hidden xl:flex items-center gap-5" aria-label="Main navigation">
 			{navItems.map((item) => {
 				const isActive = currentPath === item.path || (item.path !== '/' && currentPath.startsWith(item.path));
 				return (
@@ -72,7 +73,7 @@ const navItems = [
 		</nav>
 
 		<!-- Mobile controls -->
-		<div class="flex items-center gap-3 md:hidden">
+		<div class="flex items-center gap-3 xl:hidden">
 			<DarkModeToggle client:load />
 			<button
 				id="mobile-menu-btn"
@@ -95,7 +96,7 @@ const navItems = [
 	<!-- Mobile menu -->
 	<nav
 		id="mobile-menu"
-		class="hidden md:hidden border-t border-rule dark:border-rule-dark bg-paper-100 dark:bg-paper-900"
+		class="hidden xl:hidden border-t border-rule dark:border-rule-dark bg-paper-100 dark:bg-paper-900"
 		aria-label="Mobile navigation"
 	>
 		<div class="max-w-3xl mx-auto px-6 py-4 flex flex-col gap-4">
@@ -160,7 +161,7 @@ const navItems = [
 	});
 
 	window.addEventListener('resize', () => {
-		if (window.innerWidth >= 768) {
+		if (window.innerWidth >= 1280) {
 			menu?.classList.add('hidden');
 			btn?.setAttribute('aria-expanded', 'false');
 			openIcon?.classList.remove('hidden');

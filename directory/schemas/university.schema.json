@@ -1,0 +1,364 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "university": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "province": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "province"
+      ],
+      "additionalProperties": false
+    },
+    "coverage": {
+      "type": "string",
+      "minLength": 1
+    },
+    "professors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sortName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "universityId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "department": {
+            "type": "string",
+            "minLength": 1
+          },
+          "disciplines": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "cs",
+                "math"
+              ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "interests": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "university",
+                    "personal",
+                    "lab"
+                  ]
+                },
+                "url": {
+                  "type": "string",
+                  "pattern": "^https?://[^\\s]+$"
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "kind",
+                "url",
+                "label"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "identityEvidence": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string",
+                "pattern": "^https?://[^\\s]+$"
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 1
+              },
+              "checkedAt": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+              },
+              "sourceDate": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "url",
+              "quote",
+              "checkedAt",
+              "sourceDate"
+            ],
+            "additionalProperties": false
+          },
+          "recruitment": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "opening",
+                    "invitation",
+                    "closed",
+                    "unknown"
+                  ]
+                },
+                "degree": {
+                  "type": "string",
+                  "enum": [
+                    "masters",
+                    "phd",
+                    "unspecified"
+                  ]
+                },
+                "intake": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "validUntil": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "summary": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string",
+                      "pattern": "^https?://[^\\s]+$"
+                    },
+                    "quote": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "checkedAt": {
+                      "type": "string",
+                      "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+                    },
+                    "sourceDate": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "url",
+                    "quote",
+                    "checkedAt",
+                    "sourceDate"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "status",
+                "degree",
+                "intake",
+                "validUntil",
+                "summary",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "funding": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "position",
+                    "program",
+                    "external",
+                    "unspecified"
+                  ]
+                },
+                "degree": {
+                  "type": "string",
+                  "enum": [
+                    "masters",
+                    "phd",
+                    "unspecified"
+                  ]
+                },
+                "intake": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "summary": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string",
+                      "pattern": "^https?://[^\\s]+$"
+                    },
+                    "quote": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "checkedAt": {
+                      "type": "string",
+                      "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+                    },
+                    "sourceDate": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "url",
+                    "quote",
+                    "checkedAt",
+                    "sourceDate"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "status",
+                "degree",
+                "intake",
+                "summary",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "applicationInstructions": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "conflicts": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "portrait": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string",
+                    "pattern": "^/assets/grad-directory/[a-z0-9-]+-[a-f0-9]{64}\\.(jpg|png|webp)$"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  }
+                },
+                "required": [
+                  "path",
+                  "sha256"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "sortName",
+          "universityId",
+          "department",
+          "disciplines",
+          "interests",
+          "links",
+          "identityEvidence",
+          "recruitment",
+          "funding",
+          "applicationInstructions",
+          "conflicts",
+          "portrait"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "university",
+    "coverage",
+    "professors"
+  ],
+  "additionalProperties": false
+}

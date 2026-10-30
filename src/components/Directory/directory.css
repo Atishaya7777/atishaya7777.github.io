@@ -1,0 +1,30 @@
+.directory-link { color: #5C2E60; text-underline-offset: 3px; }
+.directory-link:hover { text-decoration: underline; }
+.dark .directory-link { color: #C9A3CE; }
+.directory-input { display: block; width: 100%; min-height: 44px; border: 1px solid #C7BEC8; border-radius: 0; padding: .6rem .75rem; color: #251C26; background: #FAF8F9; font: inherit; }
+.dark .directory-input { border-color: #57495B; color: #ECE7ED; background: #211A23; color-scheme: dark; }
+.directory-input:focus-visible { outline: 2px solid #5C2E60; outline-offset: 2px; }
+.dark .directory-input:focus-visible { outline-color: #C9A3CE; }
+.directory-input::placeholder { color: #6F6671; opacity: 1; }
+.dark .directory-input::placeholder { color: #A69DA8; }
+.directory-select { appearance: none; padding-right: 2.5rem; }
+.directory-label { display: inline-block; border: 1px solid #C7BEC8; padding: .25rem .5rem; color: #4A414B; background: #EBE7EC; }
+.dark .directory-label { border-color: #57495B; color: #CEC7D0; background: #211A23; }
+.directory-evidence { border-left: 2px solid #C7BEC8; padding-left: 1rem; }
+.dark .directory-evidence { border-color: #57495B; }
+.directory-evidence a { overflow-wrap: anywhere; }
+.directory-info-btn { display: inline-flex; align-items: center; justify-content: center; margin: 0; padding: 0; border: 0; border-radius: 999px; background: none; color: #5C545E; font-size: 1.25rem; line-height: 1; vertical-align: middle; cursor: pointer; }
+.directory-info-btn:hover { color: #5C2E60; }
+.dark .directory-info-btn { color: #CEC7D0; }
+.dark .directory-info-btn:hover { color: #C9A3CE; }
+.directory-popover { width: min(20rem, calc(100vw - 2rem)); padding: .85rem 1rem; border: 1px solid #C7BEC8; background: #FAF8F9; color: #251C26; font: inherit; font-size: .875rem; line-height: 1.5; }
+.directory-popover::backdrop { background: transparent; }
+.dark .directory-popover { border-color: #57495B; background: #211A23; color: #ECE7ED; }
+@supports (top: anchor(top)) {
+	.directory-popover { inset: auto; margin: 0 0 0 .5rem; top: anchor(top); left: anchor(right); position-try-fallbacks: flip-inline, flip-block; }
+}
+.directory-more > summary { list-style: none; }
+.directory-more > summary::-webkit-details-marker { display: none; }
+.directory-more > summary::marker { content: ''; }
+.directory-more-chevron { transition: transform 150ms ease; }
+.directory-more[open] .directory-more-chevron { transform: rotate(180deg); }
